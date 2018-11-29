@@ -1,0 +1,247 @@
+\section{/export\_\-home/yosimura/Flight/include/flight\_\-edif.h}
+\label{flight__edif_8h}\index{/export_home/yosimura/Flight/include/flight_edif.h@{/export\_\-home/yosimura/Flight/include/flight\_\-edif.h}}
+\subsection*{¹½À®}
+\begin{CompactItemize}
+\item 
+struct {\bf cell\_\-head}
+\item 
+struct {\bf cell}
+\item 
+struct {\bf cell\_\-io}
+\end{CompactItemize}
+\subsection*{¥Þ¥¯¥íÄêµÁ}
+\begin{CompactItemize}
+\item 
+\#define {\bf CELL\_\-SIZE}~999991
+\item 
+\#define {\bf CELL\_\-NAME\_\-SIZE}~1024
+\item 
+\#define {\bf EDIF\_\-STR\_\-INPUT}~\char`\"{}INPUT\char`\"{}
+\item 
+\#define {\bf EDIF\_\-STR\_\-OUTPUT}~\char`\"{}OUTPUT\char`\"{}
+\item 
+\#define {\bf EDIF\_\-STR\_\-GATE\_\-CONECT}~'='
+\item 
+\#define {\bf EDIF\_\-STR\_\-COMMENT}~'\#'
+\item 
+\#define {\bf EDIF\_\-GATE\_\-AND}~\char`\"{}AND\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-NAND}~\char`\"{}NAND\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-OR}~\char`\"{}OR\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-NOR}~\char`\"{}NOR\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-NOT}~\char`\"{}NOT\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-BUF}~\char`\"{}BUF\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-INV}~\char`\"{}INV\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-XOR}~\char`\"{}XOR\char`\"{}
+\item 
+\#define {\bf EDIF\_\-GATE\_\-XNOR}~\char`\"{}XNOR\char`\"{}
+\end{CompactItemize}
+\subsection*{·¿ÄêµÁ}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf edif\_\-cell\_\-define} {\bf EDIF\_\-CELL\_\-DEFINE}
+\item 
+typedef enum {\bf edif\_\-analyze\_\-header} {\bf EDIF\_\-ANALYZE\_\-HEADER}
+\item 
+typedef enum {\bf edif\_\-analyze\_\-line\_\-end} {\bf EDIF\_\-ANALYZE\_\-LINE\_\-END}
+\item 
+typedef {\bf cell\_\-head} {\bf CELL\_\-HEAD}
+\item 
+typedef {\bf cell} {\bf CELL}
+\item 
+typedef {\bf cell\_\-io} {\bf CELL\_\-IO}
+\end{CompactItemize}
+\subsection*{Îóµó·¿}
+\begin{CompactItemize}
+\item 
+enum {\bf edif\_\-cell\_\-define} \{ {\bf EDIF\_\-CELL\_\-INPUT}, 
+{\bf EDIF\_\-CELL\_\-OUTPUT}, 
+{\bf EDIF\_\-CELL\_\-UNKNOWN}
+ \}
+\item 
+enum {\bf edif\_\-analyze\_\-header} \{ \par
+{\bf EDIF\_\-COMMENT} =  1, 
+{\bf EDIF\_\-END}, 
+{\bf EDIF\_\-INPUT}, 
+{\bf EDIF\_\-OUTPUT}, 
+\par
+{\bf EDIF\_\-GATE}
+ \}
+\item 
+enum {\bf edif\_\-analyze\_\-line\_\-end} \{ {\bf EDIF\_\-LINE\_\-END} =  1, 
+{\bf EDIF\_\-LINE\_\-CONTINUE}
+ \}
+\end{CompactItemize}
+
+
+\subsection{¥Þ¥¯¥íÄêµÁ}
+\index{flight_edif.h@{flight\_\-edif.h}!CELL_NAME_SIZE@{CELL\_\-NAME\_\-SIZE}}
+\index{CELL_NAME_SIZE@{CELL\_\-NAME\_\-SIZE}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CELL\_\-NAME\_\-SIZE~1024}\label{flight__edif_8h_a1}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!CELL_SIZE@{CELL\_\-SIZE}}
+\index{CELL_SIZE@{CELL\_\-SIZE}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CELL\_\-SIZE~999991}\label{flight__edif_8h_a0}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_AND@{EDIF\_\-GATE\_\-AND}}
+\index{EDIF_GATE_AND@{EDIF\_\-GATE\_\-AND}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-AND~\char`\"{}AND\char`\"{}}\label{flight__edif_8h_a6}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_BUF@{EDIF\_\-GATE\_\-BUF}}
+\index{EDIF_GATE_BUF@{EDIF\_\-GATE\_\-BUF}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-BUF~\char`\"{}BUF\char`\"{}}\label{flight__edif_8h_a11}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_INV@{EDIF\_\-GATE\_\-INV}}
+\index{EDIF_GATE_INV@{EDIF\_\-GATE\_\-INV}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-INV~\char`\"{}INV\char`\"{}}\label{flight__edif_8h_a12}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_NAND@{EDIF\_\-GATE\_\-NAND}}
+\index{EDIF_GATE_NAND@{EDIF\_\-GATE\_\-NAND}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-NAND~\char`\"{}NAND\char`\"{}}\label{flight__edif_8h_a7}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_NOR@{EDIF\_\-GATE\_\-NOR}}
+\index{EDIF_GATE_NOR@{EDIF\_\-GATE\_\-NOR}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-NOR~\char`\"{}NOR\char`\"{}}\label{flight__edif_8h_a9}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_NOT@{EDIF\_\-GATE\_\-NOT}}
+\index{EDIF_GATE_NOT@{EDIF\_\-GATE\_\-NOT}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-NOT~\char`\"{}NOT\char`\"{}}\label{flight__edif_8h_a10}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_OR@{EDIF\_\-GATE\_\-OR}}
+\index{EDIF_GATE_OR@{EDIF\_\-GATE\_\-OR}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-OR~\char`\"{}OR\char`\"{}}\label{flight__edif_8h_a8}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_XNOR@{EDIF\_\-GATE\_\-XNOR}}
+\index{EDIF_GATE_XNOR@{EDIF\_\-GATE\_\-XNOR}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-XNOR~\char`\"{}XNOR\char`\"{}}\label{flight__edif_8h_a14}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE_XOR@{EDIF\_\-GATE\_\-XOR}}
+\index{EDIF_GATE_XOR@{EDIF\_\-GATE\_\-XOR}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-GATE\_\-XOR~\char`\"{}XOR\char`\"{}}\label{flight__edif_8h_a13}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_STR_COMMENT@{EDIF\_\-STR\_\-COMMENT}}
+\index{EDIF_STR_COMMENT@{EDIF\_\-STR\_\-COMMENT}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-STR\_\-COMMENT~'\#'}\label{flight__edif_8h_a5}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_STR_GATE_CONECT@{EDIF\_\-STR\_\-GATE\_\-CONECT}}
+\index{EDIF_STR_GATE_CONECT@{EDIF\_\-STR\_\-GATE\_\-CONECT}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-STR\_\-GATE\_\-CONECT~'='}\label{flight__edif_8h_a4}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_STR_INPUT@{EDIF\_\-STR\_\-INPUT}}
+\index{EDIF_STR_INPUT@{EDIF\_\-STR\_\-INPUT}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-STR\_\-INPUT~\char`\"{}INPUT\char`\"{}}\label{flight__edif_8h_a2}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_STR_OUTPUT@{EDIF\_\-STR\_\-OUTPUT}}
+\index{EDIF_STR_OUTPUT@{EDIF\_\-STR\_\-OUTPUT}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EDIF\_\-STR\_\-OUTPUT~\char`\"{}OUTPUT\char`\"{}}\label{flight__edif_8h_a3}
+
+
+
+
+\subsection{·¿ÄêµÁ}
+\index{flight_edif.h@{flight\_\-edif.h}!CELL@{CELL}}
+\index{CELL@{CELL}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell}  {\bf CELL}}\label{flight__edif_8h_a19}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!CELL_HEAD@{CELL\_\-HEAD}}
+\index{CELL_HEAD@{CELL\_\-HEAD}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell\_\-head}  {\bf CELL\_\-HEAD}}\label{flight__edif_8h_a18}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!CELL_IO@{CELL\_\-IO}}
+\index{CELL_IO@{CELL\_\-IO}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell\_\-io}  {\bf CELL\_\-IO}}\label{flight__edif_8h_a20}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_ANALYZE_HEADER@{EDIF\_\-ANALYZE\_\-HEADER}}
+\index{EDIF_ANALYZE_HEADER@{EDIF\_\-ANALYZE\_\-HEADER}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf edif\_\-analyze\_\-header}  {\bf EDIF\_\-ANALYZE\_\-HEADER}}\label{flight__edif_8h_a16}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_ANALYZE_LINE_END@{EDIF\_\-ANALYZE\_\-LINE\_\-END}}
+\index{EDIF_ANALYZE_LINE_END@{EDIF\_\-ANALYZE\_\-LINE\_\-END}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf edif\_\-analyze\_\-line\_\-end}  {\bf EDIF\_\-ANALYZE\_\-LINE\_\-END}}\label{flight__edif_8h_a17}
+
+
+\index{flight_edif.h@{flight\_\-edif.h}!EDIF_CELL_DEFINE@{EDIF\_\-CELL\_\-DEFINE}}
+\index{EDIF_CELL_DEFINE@{EDIF\_\-CELL\_\-DEFINE}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf edif\_\-cell\_\-define}  {\bf EDIF\_\-CELL\_\-DEFINE}}\label{flight__edif_8h_a15}
+
+
+
+
+\subsection{Îóµó·¿}
+\index{flight_edif.h@{flight\_\-edif.h}!edif_analyze_header@{edif\_\-analyze\_\-header}}
+\index{edif_analyze_header@{edif\_\-analyze\_\-header}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf edif\_\-analyze\_\-header}}\label{flight__edif_8h_a32}
+
+
+\begin{Desc}
+\item[Îóµó·¿¤ÎÃÍ: ]\par
+\begin{description}
+\index{EDIF_COMMENT@{EDIF\_\-COMMENT}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_COMMENT@{EDIF\_\-COMMENT}}\item[{\em 
+EDIF\_\-COMMENT\label{flight__edif_8h_a32a24}
+}]\index{EDIF_END@{EDIF\_\-END}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_END@{EDIF\_\-END}}\item[{\em 
+EDIF\_\-END\label{flight__edif_8h_a32a25}
+}]\index{EDIF_INPUT@{EDIF\_\-INPUT}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_INPUT@{EDIF\_\-INPUT}}\item[{\em 
+EDIF\_\-INPUT\label{flight__edif_8h_a32a26}
+}]\index{EDIF_OUTPUT@{EDIF\_\-OUTPUT}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_OUTPUT@{EDIF\_\-OUTPUT}}\item[{\em 
+EDIF\_\-OUTPUT\label{flight__edif_8h_a32a27}
+}]\index{EDIF_GATE@{EDIF\_\-GATE}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_GATE@{EDIF\_\-GATE}}\item[{\em 
+EDIF\_\-GATE\label{flight__edif_8h_a32a28}
+}]\end{description}
+\end{Desc}
+
+\index{flight_edif.h@{flight\_\-edif.h}!edif_analyze_line_end@{edif\_\-analyze\_\-line\_\-end}}
+\index{edif_analyze_line_end@{edif\_\-analyze\_\-line\_\-end}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf edif\_\-analyze\_\-line\_\-end}}\label{flight__edif_8h_a33}
+
+
+\begin{Desc}
+\item[Îóµó·¿¤ÎÃÍ: ]\par
+\begin{description}
+\index{EDIF_LINE_END@{EDIF\_\-LINE\_\-END}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_LINE_END@{EDIF\_\-LINE\_\-END}}\item[{\em 
+EDIF\_\-LINE\_\-END\label{flight__edif_8h_a33a29}
+}]\index{EDIF_LINE_CONTINUE@{EDIF\_\-LINE\_\-CONTINUE}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_LINE_CONTINUE@{EDIF\_\-LINE\_\-CONTINUE}}\item[{\em 
+EDIF\_\-LINE\_\-CONTINUE\label{flight__edif_8h_a33a30}
+}]\end{description}
+\end{Desc}
+
+\index{flight_edif.h@{flight\_\-edif.h}!edif_cell_define@{edif\_\-cell\_\-define}}
+\index{edif_cell_define@{edif\_\-cell\_\-define}!flight_edif.h@{flight\_\-edif.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf edif\_\-cell\_\-define}}\label{flight__edif_8h_a31}
+
+
+\begin{Desc}
+\item[Îóµó·¿¤ÎÃÍ: ]\par
+\begin{description}
+\index{EDIF_CELL_INPUT@{EDIF\_\-CELL\_\-INPUT}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_CELL_INPUT@{EDIF\_\-CELL\_\-INPUT}}\item[{\em 
+EDIF\_\-CELL\_\-INPUT\label{flight__edif_8h_a31a21}
+}]\index{EDIF_CELL_OUTPUT@{EDIF\_\-CELL\_\-OUTPUT}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_CELL_OUTPUT@{EDIF\_\-CELL\_\-OUTPUT}}\item[{\em 
+EDIF\_\-CELL\_\-OUTPUT\label{flight__edif_8h_a31a22}
+}]\index{EDIF_CELL_UNKNOWN@{EDIF\_\-CELL\_\-UNKNOWN}!flight_edif.h@{flight\_\-edif.h}}\index{flight_edif.h@{flight\_\-edif.h}!EDIF_CELL_UNKNOWN@{EDIF\_\-CELL\_\-UNKNOWN}}\item[{\em 
+EDIF\_\-CELL\_\-UNKNOWN\label{flight__edif_8h_a31a23}
+}]\end{description}
+\end{Desc}
+

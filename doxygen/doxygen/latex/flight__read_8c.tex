@@ -1,0 +1,146 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-read.c ‚Ì‰ğà}
+\label{flight__read_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_read.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-read.c}}
+¥Í¥Ã¥È¥ê¥¹¥È¤Ê¤É¥Õ¥¡¥¤¥ëÆÉ¹ş¤Ë´Ø¤¹¤ë´Ø¿ô·² 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ƒ\}ƒNƒ’è‹`}
+\begin{CompactItemize}
+\item 
+\#define {\bf FSIM\_\-SA0}\ 0
+\item 
+\#define {\bf FSIM\_\-SA1}\ 1
+\end{CompactItemize}
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+void {\bf read\_\-circuit} (char $\ast$)
+\item 
+void {\bf make\_\-flist} (void)
+\item 
+void {\bf cell\_\-head\_\-initialize} (void)
+\item 
+void {\bf cell\_\-remake\_\-primitive\_\-for\_\-line} (void)
+\item 
+void {\bf cell\_\-print\_\-table} (void)
+\item 
+void {\bf cell\_\-make\_\-fanout} (void)
+\item 
+void {\bf cell\_\-2\_\-line} (void)
+\item 
+void {\bf cell\_\-head\_\-free} (void)
+\item 
+void {\bf read\_\-circuit\_\-bench} (char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-cell\_\-head} (void)
+\item 
+void {\bf test\_\-line\_\-structure\_\-all} (char $\ast$)
+\end{CompactItemize}
+\subsection*{•Ï”}
+\begin{CompactItemize}
+\item 
+{\bf FLIST} $\ast$$\ast$ {\bf Flist\_\-head}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head}
+\end{CompactItemize}
+
+
+\subsection{‰ğà}
+¥Í¥Ã¥È¥ê¥¹¥È¤Ê¤É¥Õ¥¡¥¤¥ëÆÉ¹ş¤Ë´Ø¤¹¤ë´Ø¿ô·²
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2005 / 07 / 07 initialize\end{Desc}
+
+
+\subsection{ƒ\}ƒNƒ’è‹`‚Ì‰ğà}
+\index{flight_read.c@{flight\_\-read.c}!FSIM_SA0@{FSIM\_\-SA0}}
+\index{FSIM_SA0@{FSIM\_\-SA0}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FSIM\_\-SA0\ 0}\label{flight__read_8c_a0}
+
+
+\index{flight_read.c@{flight\_\-read.c}!FSIM_SA1@{FSIM\_\-SA1}}
+\index{FSIM_SA1@{FSIM\_\-SA1}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FSIM\_\-SA1\ 1}\label{flight__read_8c_a1}
+
+
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_read.c@{flight\_\-read.c}!cell_2_line@{cell\_\-2\_\-line}}
+\index{cell_2_line@{cell\_\-2\_\-line}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-2\_\-line (void)}\label{flight__read_8c_a10}
+
+
+\index{flight_read.c@{flight\_\-read.c}!cell_head_free@{cell\_\-head\_\-free}}
+\index{cell_head_free@{cell\_\-head\_\-free}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-free (void)}\label{flight__read_8c_a11}
+
+
+\index{flight_read.c@{flight\_\-read.c}!cell_head_initialize@{cell\_\-head\_\-initialize}}
+\index{cell_head_initialize@{cell\_\-head\_\-initialize}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-initialize (void)}\label{flight__read_8c_a6}
+
+
+\index{flight_read.c@{flight\_\-read.c}!cell_make_fanout@{cell\_\-make\_\-fanout}}
+\index{cell_make_fanout@{cell\_\-make\_\-fanout}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-make\_\-fanout (void)}\label{flight__read_8c_a9}
+
+
+\index{flight_read.c@{flight\_\-read.c}!cell_print_table@{cell\_\-print\_\-table}}
+\index{cell_print_table@{cell\_\-print\_\-table}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-print\_\-table (void)}\label{flight__read_8c_a8}
+
+
+\index{flight_read.c@{flight\_\-read.c}!cell_remake_primitive_for_line@{cell\_\-remake\_\-primitive\_\-for\_\-line}}
+\index{cell_remake_primitive_for_line@{cell\_\-remake\_\-primitive\_\-for\_\-line}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-remake\_\-primitive\_\-for\_\-line (void)}\label{flight__read_8c_a7}
+
+
+\index{flight_read.c@{flight\_\-read.c}!flight_print_mes_cell_head@{flight\_\-print\_\-mes\_\-cell\_\-head}}
+\index{flight_print_mes_cell_head@{flight\_\-print\_\-mes\_\-cell\_\-head}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-cell\_\-head (void)}\label{flight__read_8c_a13}
+
+
+\index{flight_read.c@{flight\_\-read.c}!make_flist@{make\_\-flist}}
+\index{make_flist@{make\_\-flist}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void make\_\-flist (void)}\label{flight__read_8c_a5}
+
+
+\index{flight_read.c@{flight\_\-read.c}!read_circuit@{read\_\-circuit}}
+\index{read_circuit@{read\_\-circuit}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void read\_\-circuit (char $\ast$)}\label{flight__read_8c_a4}
+
+
+\index{flight_read.c@{flight\_\-read.c}!read_circuit_bench@{read\_\-circuit\_\-bench}}
+\index{read_circuit_bench@{read\_\-circuit\_\-bench}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void read\_\-circuit\_\-bench (char $\ast$)}\label{flight__read_8c_a12}
+
+
+\index{flight_read.c@{flight\_\-read.c}!test_line_structure_all@{test\_\-line\_\-structure\_\-all}}
+\index{test_line_structure_all@{test\_\-line\_\-structure\_\-all}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-all (char $\ast$)}\label{flight__read_8c_a14}
+
+
+
+
+\subsection{•Ï”‚Ì‰ğà}
+\index{flight_read.c@{flight\_\-read.c}!Flist_head@{Flist\_\-head}}
+\index{Flist_head@{Flist\_\-head}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FLIST}$\ast$$\ast$ Flist\_\-head}\label{flight__read_8c_a2}
+
+
+\index{flight_read.c@{flight\_\-read.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_read.c@{flight\_\-read.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head}\label{flight__read_8c_a3}
+
+

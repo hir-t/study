@@ -1,0 +1,341 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-cell.c ÇÃâê‡}
+\label{flight__cell_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_cell.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-cell.c}}
+CELL format§À¥ÿ§π§Î¥ÿøÙ∑≤. 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-tm.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-cell.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-out.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+int {\bf cmp\_\-id} (const void $\ast$d0, const void $\ast$d1)
+\item 
+{\bf CELL} $\ast$ {\bf cell\_\-make\_\-new\_\-cell} (void)
+\item 
+void {\bf cell\_\-make\_\-new\_\-iolist} ({\bf CELL\_\-IO} $\ast$$\ast$, {\bf CELL} $\ast$)
+\item 
+void {\bf cell\_\-entry\_\-name} ({\bf CELL} $\ast$, char $\ast$)
+\item 
+void {\bf cell\_\-entry\_\-n\_\-in} ({\bf CELL} $\ast$, {\bf Ulong})
+\item 
+void {\bf cell\_\-entry\_\-n\_\-out} ({\bf CELL} $\ast$, {\bf Ulong})
+\item 
+{\bf Ulong} {\bf utility\_\-calc\_\-string\_\-hash\_\-value} (char $\ast$, {\bf Ulong})
+\item 
+FILE $\ast$ {\bf flight\_\-open\_\-add\_\-name} (char $\ast$, char $\ast$, char $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-close} (FILE $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-char} (int, int, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-char\_\-char} (int, int, char $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info} ({\bf CELL} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result} ({\bf CELL} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} ()
+\item 
+void {\bf flight\_\-print\_\-mes\_\-cell\_\-fault} ({\bf CELL} $\ast$, {\bf LINE} $\ast$, {\bf Ulong})
+\item 
+void {\bf test\_\-cell\_\-null} ({\bf CELL} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-cell\_\-io\_\-null} ({\bf CELL\_\-IO} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-number\_\-equal\_\-ulong} ({\bf Ulong}, {\bf Ulong}, char $\ast$)
+\item 
+void {\bf cell\_\-head\_\-initialize} (void)
+\item 
+{\bf CELL} $\ast$ {\bf cell\_\-search\_\-with\_\-hash\_\-table} (char $\ast$name)
+\item 
+void {\bf cell\_\-entry\_\-type} ({\bf CELL} $\ast$cell\_\-p, {\bf CELL\_\-TYPE} type)
+\item 
+void {\bf cell\_\-reentry\_\-type} ({\bf CELL} $\ast$cell\_\-p, {\bf CELL\_\-TYPE} type)
+\item 
+void {\bf cell\_\-entry\_\-id} ({\bf CELL} $\ast$cell\_\-p)
+\item 
+void {\bf cell\_\-entry\_\-table} ({\bf CELL} $\ast$cell\_\-p, {\bf Ulong} hash\_\-value)
+\item 
+void {\bf cell\_\-io\_\-hand\_\-over\_\-input} ({\bf CELL} $\ast$old, {\bf CELL} $\ast$new)
+\item 
+void {\bf cell\_\-io\_\-hand\_\-over\_\-output} ({\bf CELL} $\ast$old, {\bf CELL} $\ast$new)
+\item 
+void {\bf cell\_\-make\_\-fanout} (void)
+\item 
+void {\bf cell\_\-2\_\-line} (void)
+\item 
+void {\bf cell\_\-head\_\-free} (void)
+\item 
+void {\bf cell\_\-remake\_\-primitive\_\-for\_\-line} (void)
+\item 
+void {\bf cell\_\-head\_\-pi\_\-count\_\-up} (void)
+\item 
+void {\bf cell\_\-head\_\-po\_\-count\_\-up} (void)
+\item 
+void {\bf cell\_\-in\_\-count\_\-up} ({\bf CELL} $\ast$cell\_\-p)
+\item 
+void {\bf cell\_\-out\_\-count\_\-up} ({\bf CELL} $\ast$cell\_\-p)
+\item 
+{\bf CELL} $\ast$ {\bf cell\_\-check\_\-and\_\-make\_\-gate} (char $\ast$cell\_\-name, {\bf CELL\_\-TYPE} type)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-cell\_\-head} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Pi\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Po\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf BBPi\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf BBPo\_\-head}
+\item 
+{\bf FLIST} $\ast$$\ast$ {\bf Flist\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+CELL format§À¥ÿ§π§Î¥ÿøÙ∑≤.
+
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 7 / 7 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_cell.c@{flight\_\-cell.c}!cell_2_line@{cell\_\-2\_\-line}}
+\index{cell_2_line@{cell\_\-2\_\-line}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-2\_\-line (void)}\label{flight__cell_8c_a47}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_check_and_make_gate@{cell\_\-check\_\-and\_\-make\_\-gate}}
+\index{cell_check_and_make_gate@{cell\_\-check\_\-and\_\-make\_\-gate}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CELL}$\ast$ cell\_\-check\_\-and\_\-make\_\-gate (char $\ast$ {\em cell\_\-name}, {\bf CELL\_\-TYPE} {\em type})}\label{flight__cell_8c_a54}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_id@{cell\_\-entry\_\-id}}
+\index{cell_entry_id@{cell\_\-entry\_\-id}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-id ({\bf CELL} $\ast$ {\em cell\_\-p})}\label{flight__cell_8c_a42}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_n_in@{cell\_\-entry\_\-n\_\-in}}
+\index{cell_entry_n_in@{cell\_\-entry\_\-n\_\-in}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-n\_\-in ({\bf CELL} $\ast$, {\bf Ulong})}\label{flight__cell_8c_a24}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_n_out@{cell\_\-entry\_\-n\_\-out}}
+\index{cell_entry_n_out@{cell\_\-entry\_\-n\_\-out}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-n\_\-out ({\bf CELL} $\ast$, {\bf Ulong})}\label{flight__cell_8c_a25}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_name@{cell\_\-entry\_\-name}}
+\index{cell_entry_name@{cell\_\-entry\_\-name}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-name ({\bf CELL} $\ast$, char $\ast$)}\label{flight__cell_8c_a23}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_table@{cell\_\-entry\_\-table}}
+\index{cell_entry_table@{cell\_\-entry\_\-table}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-table ({\bf CELL} $\ast$ {\em cell\_\-p}, {\bf Ulong} {\em hash\_\-value})}\label{flight__cell_8c_a43}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_entry_type@{cell\_\-entry\_\-type}}
+\index{cell_entry_type@{cell\_\-entry\_\-type}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-type ({\bf CELL} $\ast$ {\em cell\_\-p}, {\bf CELL\_\-TYPE} {\em type})}\label{flight__cell_8c_a40}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_head_free@{cell\_\-head\_\-free}}
+\index{cell_head_free@{cell\_\-head\_\-free}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-free (void)}\label{flight__cell_8c_a48}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_head_initialize@{cell\_\-head\_\-initialize}}
+\index{cell_head_initialize@{cell\_\-head\_\-initialize}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-initialize (void)}\label{flight__cell_8c_a38}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_head_pi_count_up@{cell\_\-head\_\-pi\_\-count\_\-up}}
+\index{cell_head_pi_count_up@{cell\_\-head\_\-pi\_\-count\_\-up}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-pi\_\-count\_\-up (void)}\label{flight__cell_8c_a50}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_head_po_count_up@{cell\_\-head\_\-po\_\-count\_\-up}}
+\index{cell_head_po_count_up@{cell\_\-head\_\-po\_\-count\_\-up}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-po\_\-count\_\-up (void)}\label{flight__cell_8c_a51}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_in_count_up@{cell\_\-in\_\-count\_\-up}}
+\index{cell_in_count_up@{cell\_\-in\_\-count\_\-up}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-in\_\-count\_\-up ({\bf CELL} $\ast$ {\em cell\_\-p})}\label{flight__cell_8c_a52}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_io_hand_over_input@{cell\_\-io\_\-hand\_\-over\_\-input}}
+\index{cell_io_hand_over_input@{cell\_\-io\_\-hand\_\-over\_\-input}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-io\_\-hand\_\-over\_\-input ({\bf CELL} $\ast$ {\em old}, {\bf CELL} $\ast$ {\em new})}\label{flight__cell_8c_a44}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_io_hand_over_output@{cell\_\-io\_\-hand\_\-over\_\-output}}
+\index{cell_io_hand_over_output@{cell\_\-io\_\-hand\_\-over\_\-output}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-io\_\-hand\_\-over\_\-output ({\bf CELL} $\ast$ {\em old}, {\bf CELL} $\ast$ {\em new})}\label{flight__cell_8c_a45}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_make_fanout@{cell\_\-make\_\-fanout}}
+\index{cell_make_fanout@{cell\_\-make\_\-fanout}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-make\_\-fanout (void)}\label{flight__cell_8c_a46}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_make_new_cell@{cell\_\-make\_\-new\_\-cell}}
+\index{cell_make_new_cell@{cell\_\-make\_\-new\_\-cell}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CELL}$\ast$ cell\_\-make\_\-new\_\-cell (void)}\label{flight__cell_8c_a21}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_make_new_iolist@{cell\_\-make\_\-new\_\-iolist}}
+\index{cell_make_new_iolist@{cell\_\-make\_\-new\_\-iolist}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-make\_\-new\_\-iolist ({\bf CELL\_\-IO} $\ast$$\ast$, {\bf CELL} $\ast$)}\label{flight__cell_8c_a22}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_out_count_up@{cell\_\-out\_\-count\_\-up}}
+\index{cell_out_count_up@{cell\_\-out\_\-count\_\-up}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-out\_\-count\_\-up ({\bf CELL} $\ast$ {\em cell\_\-p})}\label{flight__cell_8c_a53}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_reentry_type@{cell\_\-reentry\_\-type}}
+\index{cell_reentry_type@{cell\_\-reentry\_\-type}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-reentry\_\-type ({\bf CELL} $\ast$ {\em cell\_\-p}, {\bf CELL\_\-TYPE} {\em type})}\label{flight__cell_8c_a41}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_remake_primitive_for_line@{cell\_\-remake\_\-primitive\_\-for\_\-line}}
+\index{cell_remake_primitive_for_line@{cell\_\-remake\_\-primitive\_\-for\_\-line}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-remake\_\-primitive\_\-for\_\-line (void)}\label{flight__cell_8c_a49}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cell_search_with_hash_table@{cell\_\-search\_\-with\_\-hash\_\-table}}
+\index{cell_search_with_hash_table@{cell\_\-search\_\-with\_\-hash\_\-table}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CELL}$\ast$ cell\_\-search\_\-with\_\-hash\_\-table (char $\ast$ {\em name})}\label{flight__cell_8c_a39}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!cmp_id@{cmp\_\-id}}
+\index{cmp_id@{cmp\_\-id}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int cmp\_\-id (const void $\ast$ {\em d0}, const void $\ast$ {\em d1})}\label{flight__cell_8c_a10}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_close@{flight\_\-close}}
+\index{flight_close@{flight\_\-close}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-close (FILE $\ast$, char $\ast$)}\label{flight__cell_8c_a28}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_open_add_name@{flight\_\-open\_\-add\_\-name}}
+\index{flight_open_add_name@{flight\_\-open\_\-add\_\-name}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FILE $\ast$ flight\_\-open\_\-add\_\-name (char $\ast$, char $\ast$, char $\ast$, char $\ast$)}\label{flight__cell_8c_a27}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_bench_char@{flight\_\-print\_\-mes\_\-bench\_\-char}}
+\index{flight_print_mes_bench_char@{flight\_\-print\_\-mes\_\-bench\_\-char}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-char (int, int, char $\ast$)}\label{flight__cell_8c_a29}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_bench_char_char@{flight\_\-print\_\-mes\_\-bench\_\-char\_\-char}}
+\index{flight_print_mes_bench_char_char@{flight\_\-print\_\-mes\_\-bench\_\-char\_\-char}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-char\_\-char (int, int, char $\ast$, char $\ast$)}\label{flight__cell_8c_a30}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_bench_fanout_info@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info}}
+\index{flight_print_mes_bench_fanout_info@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info ({\bf CELL} $\ast$)}\label{flight__cell_8c_a31}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_bench_fanout_result@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result}}
+\index{flight_print_mes_bench_fanout_result@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result ({\bf CELL} $\ast$)}\label{flight__cell_8c_a32}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_cell_fault@{flight\_\-print\_\-mes\_\-cell\_\-fault}}
+\index{flight_print_mes_cell_fault@{flight\_\-print\_\-mes\_\-cell\_\-fault}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-cell\_\-fault ({\bf CELL} $\ast$, {\bf LINE} $\ast$, {\bf Ulong})}\label{flight__cell_8c_a34}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_cell_head@{flight\_\-print\_\-mes\_\-cell\_\-head}}
+\index{flight_print_mes_cell_head@{flight\_\-print\_\-mes\_\-cell\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-cell\_\-head (void)}\label{flight__cell_8c_a55}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n ()}\label{flight__cell_8c_a33}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!test_cell_io_null@{test\_\-cell\_\-io\_\-null}}
+\index{test_cell_io_null@{test\_\-cell\_\-io\_\-null}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-cell\_\-io\_\-null ({\bf CELL\_\-IO} $\ast$, char $\ast$)}\label{flight__cell_8c_a36}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!test_cell_null@{test\_\-cell\_\-null}}
+\index{test_cell_null@{test\_\-cell\_\-null}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-cell\_\-null ({\bf CELL} $\ast$, char $\ast$)}\label{flight__cell_8c_a35}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!test_number_equal_ulong@{test\_\-number\_\-equal\_\-ulong}}
+\index{test_number_equal_ulong@{test\_\-number\_\-equal\_\-ulong}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-number\_\-equal\_\-ulong ({\bf Ulong}, {\bf Ulong}, char $\ast$)}\label{flight__cell_8c_a37}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}}
+\index{utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} utility\_\-calc\_\-string\_\-hash\_\-value (char $\ast$, {\bf Ulong})}\label{flight__cell_8c_a26}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_cell.c@{flight\_\-cell.c}!BBPi_head@{BBPi\_\-head}}
+\index{BBPi_head@{BBPi\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ BBPi\_\-head}\label{flight__cell_8c_a5}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!BBPo_head@{BBPo\_\-head}}
+\index{BBPo_head@{BBPo\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ BBPo\_\-head}\label{flight__cell_8c_a6}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!Flist_head@{Flist\_\-head}}
+\index{Flist_head@{Flist\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FLIST}$\ast$$\ast$ Flist\_\-head}\label{flight__cell_8c_a7}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head}\label{flight__cell_8c_a2}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__cell_8c_a1}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!Pi_head@{Pi\_\-head}}
+\index{Pi_head@{Pi\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Pi\_\-head}\label{flight__cell_8c_a3}
+
+
+\index{flight_cell.c@{flight\_\-cell.c}!Po_head@{Po\_\-head}}
+\index{Po_head@{Po\_\-head}!flight_cell.c@{flight\_\-cell.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Po\_\-head}\label{flight__cell_8c_a4}
+
+

@@ -1,0 +1,519 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-justified.c ÇÃâê‡}
+\label{flight__justified_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_justified.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-justified.c}}
+¿µ≈ˆ≤Ω§À¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+int {\bf atpg\_\-justified} (void)
+\item 
+void {\bf atpg\_\-enter\_\-justified} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+{\bf GENE\_\-RESULT} {\bf atpg\_\-line\_\-justified} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+{\bf Ulong} {\bf atpg\_\-startlist\_\-justified} (void)
+\item 
+void {\bf atpg\_\-search\_\-justified} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+void {\bf atpg\_\-enter\_\-line\_\-cand\_\-justified} ({\bf LINE} $\ast${\bf line}, {\bf Uint} {\bf condition})
+\item 
+int {\bf atpg\_\-check\_\-finish\_\-justified} (void)
+\item 
+{\bf JUST\_\-INFO} $\ast$ {\bf atpg\_\-select\_\-line\_\-justified} (void)
+\item 
+int {\bf atpg\_\-back\_\-track\_\-justified} (void)
+\item 
+void {\bf atpg\_\-justified\_\-init} (void)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-check\_\-reverse\_\-state\_\-btree} ({\bf BTREE} $\ast${\bf btree})
+\item 
+void {\bf atpg\_\-enter\_\-reverse\_\-state} ({\bf STATE\_\-3} r\_\-state3, {\bf BTREE} $\ast${\bf btree}, {\bf ASS\_\-LIST} $\ast${\bf ass\_\-list})
+\item 
+int {\bf atpg\_\-justified\_\-cand\_\-update} ({\bf LINE} $\ast${\bf line}, {\bf Ulong} cand\_\-in, {\bf Ulong} ass\_\-in)
+\item 
+{\bf Ulong} {\bf atpg\_\-justified\_\-get\_\-cand\_\-value} ({\bf LINE} $\ast${\bf line})
+\item 
+int {\bf atpg\_\-justified\_\-judge} ({\bf Ulong} cand\_\-value, {\bf Ulong} ass\_\-value)
+\item 
+void {\bf atpg\_\-btree\_\-just\_\-info\_\-reflesh} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf Ulong} {\bf atpg\_\-get\_\-just\_\-info} (void)
+\item 
+{\bf JUST\_\-INFO} $\ast$ {\bf atpg\_\-make\_\-just\_\-info} ({\bf LINE} $\ast${\bf line}, {\bf Uint} {\bf condition})
+\item 
+void {\bf atpg\_\-enter\_\-lv\_\-head\_\-just\_\-info} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+int {\bf atpg\_\-check\_\-cand\_\-justified\_\-in1} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+int {\bf atpg\_\-check\_\-cand\_\-justified\_\-in0} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+int {\bf atpg\_\-check\_\-cand\_\-justified\_\-and\_\-nand\_\-or\_\-nor} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-line\_\-justified\_\-and\_\-nand\_\-or\_\-nor} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-line\_\-justified\_\-in1} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-line\_\-justified\_\-in0} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+int {\bf atpg\_\-enter\_\-state} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3} ({\bf STATE\_\-9}, {\bf Uint})
+\item 
+{\bf Uint} {\bf atpg\_\-reverse\_\-condition} ({\bf Uint})
+\item 
+void {\bf atpg\_\-ent\_\-just\_\-btree} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+void {\bf atpg\_\-ent\_\-btree} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+void {\bf atpg\_\-make\_\-btree} (void)
+\item 
+void {\bf atpg\_\-imp\_\-trace\_\-2\_\-btree} (void)
+\item 
+void {\bf atpg\_\-btree\_\-enter\_\-just\_\-flag} ({\bf JUST\_\-INFO} $\ast$)
+\item 
+void {\bf atpg\_\-btree\_\-state\_\-reflesh} ({\bf BTREE} $\ast${\bf btree})
+\item 
+int {\bf implication2} (void)
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-flag\_\-justify} (char $\ast$)
+\item 
+void {\bf test\_\-state\_\-normal} ({\bf Ulong}, char $\ast$)
+\item 
+void {\bf test\_\-condition} ({\bf Uint}, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-just\_\-info} ({\bf JUST\_\-INFO} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-just\_\-info\_\-null} ({\bf JUST\_\-INFO} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-btree\_\-null} ({\bf BTREE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-lv\_\-head\_\-null} (char $\ast$)
+\item 
+{\bf LINE\_\-STACK} $\ast$ {\bf atpg\_\-justified\_\-packjust\_\-info} ({\bf JUST\_\-INFO} $\ast$, {\bf LINE\_\-STACK} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-type\_\-state9} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-just} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-lv\_\-head} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-can\_\-just} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-j\_\-ass\_\-list} ({\bf LINE} $\ast$, {\bf ASS\_\-LIST} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-justified\_\-search} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-at\_\-condition} ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-next\_\-condition} ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-end\_\-condition} ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-just\_\-e} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-ent\_\-just\_\-flag} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-btree\_\-ass\_\-only} (void)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-line\_\-justified\_\-xor} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-line\_\-justified\_\-xnor} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+void {\bf atpg\_\-enter\_\-btree\_\-just\_\-info} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\item 
+{\bf JUST\_\-INFO} $\ast$$\ast$ {\bf Lv\_\-head}
+\item 
+int($\ast$ {\bf Switch\_\-cand\_\-justified} [FLIGHT\_\-NUM\_\-PRIM])({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf ASS\_\-LIST} $\ast$($\ast$ {\bf Switch\_\-line\_\-justified} [FLIGHT\_\-NUM\_\-PRIM])({\bf JUST\_\-INFO} $\ast$)
+\item 
+{\bf Ulong}($\ast$ {\bf Switch\_\-get\_\-justified\_\-stat} )({\bf Ulong})
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+¿µ≈ˆ≤Ω§À¥ÿ§π§Î¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 1 / 20 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_back_track_justified@{atpg\_\-back\_\-track\_\-justified}}
+\index{atpg_back_track_justified@{atpg\_\-back\_\-track\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-back\_\-track\_\-justified (void)}\label{flight__justified_8c_a17}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_btree_enter_just_flag@{atpg\_\-btree\_\-enter\_\-just\_\-flag}}
+\index{atpg_btree_enter_just_flag@{atpg\_\-btree\_\-enter\_\-just\_\-flag}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-btree\_\-enter\_\-just\_\-flag ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a43}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_btree_just_info_reflesh@{atpg\_\-btree\_\-just\_\-info\_\-reflesh}}
+\index{atpg_btree_just_info_reflesh@{atpg\_\-btree\_\-just\_\-info\_\-reflesh}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-btree\_\-just\_\-info\_\-reflesh ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a24}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_btree_state_reflesh@{atpg\_\-btree\_\-state\_\-reflesh}}
+\index{atpg_btree_state_reflesh@{atpg\_\-btree\_\-state\_\-reflesh}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-btree\_\-state\_\-reflesh ({\bf BTREE} $\ast$ {\em btree})}\label{flight__justified_8c_a44}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_check_cand_justified_and_nand_or_nor@{atpg\_\-check\_\-cand\_\-justified\_\-and\_\-nand\_\-or\_\-nor}}
+\index{atpg_check_cand_justified_and_nand_or_nor@{atpg\_\-check\_\-cand\_\-justified\_\-and\_\-nand\_\-or\_\-nor}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-cand\_\-justified\_\-and\_\-nand\_\-or\_\-nor ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a30}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_check_cand_justified_in0@{atpg\_\-check\_\-cand\_\-justified\_\-in0}}
+\index{atpg_check_cand_justified_in0@{atpg\_\-check\_\-cand\_\-justified\_\-in0}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-cand\_\-justified\_\-in0 ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a29}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_check_cand_justified_in1@{atpg\_\-check\_\-cand\_\-justified\_\-in1}}
+\index{atpg_check_cand_justified_in1@{atpg\_\-check\_\-cand\_\-justified\_\-in1}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-cand\_\-justified\_\-in1 ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a28}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_check_finish_justified@{atpg\_\-check\_\-finish\_\-justified}}
+\index{atpg_check_finish_justified@{atpg\_\-check\_\-finish\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-finish\_\-justified (void)}\label{flight__justified_8c_a15}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_check_reverse_state_btree@{atpg\_\-check\_\-reverse\_\-state\_\-btree}}
+\index{atpg_check_reverse_state_btree@{atpg\_\-check\_\-reverse\_\-state\_\-btree}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-check\_\-reverse\_\-state\_\-btree ({\bf BTREE} $\ast$ {\em btree})}\label{flight__justified_8c_a19}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_ent_btree@{atpg\_\-ent\_\-btree}}
+\index{atpg_ent_btree@{atpg\_\-ent\_\-btree}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-btree ({\bf ASS\_\-LIST} $\ast$)}\label{flight__justified_8c_a40}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_ent_just_btree@{atpg\_\-ent\_\-just\_\-btree}}
+\index{atpg_ent_just_btree@{atpg\_\-ent\_\-just\_\-btree}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-just\_\-btree ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a39}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_btree_just_info@{atpg\_\-enter\_\-btree\_\-just\_\-info}}
+\index{atpg_enter_btree_just_info@{atpg\_\-enter\_\-btree\_\-just\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-btree\_\-just\_\-info ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a72}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_justified@{atpg\_\-enter\_\-justified}}
+\index{atpg_enter_justified@{atpg\_\-enter\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-justified ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a10}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_line_cand_justified@{atpg\_\-enter\_\-line\_\-cand\_\-justified}}
+\index{atpg_enter_line_cand_justified@{atpg\_\-enter\_\-line\_\-cand\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-line\_\-cand\_\-justified ({\bf LINE} $\ast$ {\em line}, {\bf Uint} {\em condition})}\label{flight__justified_8c_a14}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_lv_head_just_info@{atpg\_\-enter\_\-lv\_\-head\_\-just\_\-info}}
+\index{atpg_enter_lv_head_just_info@{atpg\_\-enter\_\-lv\_\-head\_\-just\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-lv\_\-head\_\-just\_\-info ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a27}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_reverse_state@{atpg\_\-enter\_\-reverse\_\-state}}
+\index{atpg_enter_reverse_state@{atpg\_\-enter\_\-reverse\_\-state}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-reverse\_\-state ({\bf STATE\_\-3} {\em r\_\-state3}, {\bf BTREE} $\ast$ {\em btree}, {\bf ASS\_\-LIST} $\ast$ {\em ass\_\-list})}\label{flight__justified_8c_a20}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_enter_state@{atpg\_\-enter\_\-state}}
+\index{atpg_enter_state@{atpg\_\-enter\_\-state}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-enter\_\-state ({\bf ASS\_\-LIST} $\ast$)}\label{flight__justified_8c_a34}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_get_just_info@{atpg\_\-get\_\-just\_\-info}}
+\index{atpg_get_just_info@{atpg\_\-get\_\-just\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-get\_\-just\_\-info (void)}\label{flight__justified_8c_a25}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}}
+\index{atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3 ({\bf STATE\_\-9})}\label{flight__justified_8c_a36}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__justified_8c_a35}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}}
+\index{atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3 ({\bf STATE\_\-9}, {\bf Uint})}\label{flight__justified_8c_a37}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_imp_trace_2_btree@{atpg\_\-imp\_\-trace\_\-2\_\-btree}}
+\index{atpg_imp_trace_2_btree@{atpg\_\-imp\_\-trace\_\-2\_\-btree}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-imp\_\-trace\_\-2\_\-btree (void)}\label{flight__justified_8c_a42}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified@{atpg\_\-justified}}
+\index{atpg_justified@{atpg\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-justified (void)}\label{flight__justified_8c_a9}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified_cand_update@{atpg\_\-justified\_\-cand\_\-update}}
+\index{atpg_justified_cand_update@{atpg\_\-justified\_\-cand\_\-update}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-justified\_\-cand\_\-update ({\bf LINE} $\ast$ {\em line}, {\bf Ulong} {\em cand\_\-in}, {\bf Ulong} {\em ass\_\-in})}\label{flight__justified_8c_a21}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified_get_cand_value@{atpg\_\-justified\_\-get\_\-cand\_\-value}}
+\index{atpg_justified_get_cand_value@{atpg\_\-justified\_\-get\_\-cand\_\-value}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-justified\_\-get\_\-cand\_\-value ({\bf LINE} $\ast$ {\em line})}\label{flight__justified_8c_a22}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified_init@{atpg\_\-justified\_\-init}}
+\index{atpg_justified_init@{atpg\_\-justified\_\-init}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-justified\_\-init (void)}\label{flight__justified_8c_a18}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified_judge@{atpg\_\-justified\_\-judge}}
+\index{atpg_justified_judge@{atpg\_\-justified\_\-judge}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-justified\_\-judge ({\bf Ulong} {\em cand\_\-value}, {\bf Ulong} {\em ass\_\-value})}\label{flight__justified_8c_a23}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_justified_packjust_info@{atpg\_\-justified\_\-packjust\_\-info}}
+\index{atpg_justified_packjust_info@{atpg\_\-justified\_\-packjust\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-STACK}$\ast$ atpg\_\-justified\_\-packjust\_\-info ({\bf JUST\_\-INFO} $\ast$, {\bf LINE\_\-STACK} $\ast$)}\label{flight__justified_8c_a56}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified@{atpg\_\-line\_\-justified}}
+\index{atpg_line_justified@{atpg\_\-line\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-RESULT} atpg\_\-line\_\-justified ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a11}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified_and_nand_or_nor@{atpg\_\-line\_\-justified\_\-and\_\-nand\_\-or\_\-nor}}
+\index{atpg_line_justified_and_nand_or_nor@{atpg\_\-line\_\-justified\_\-and\_\-nand\_\-or\_\-nor}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST} $\ast$ atpg\_\-line\_\-justified\_\-and\_\-nand\_\-or\_\-nor ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a31}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified_in0@{atpg\_\-line\_\-justified\_\-in0}}
+\index{atpg_line_justified_in0@{atpg\_\-line\_\-justified\_\-in0}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST} $\ast$ atpg\_\-line\_\-justified\_\-in0 ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a33}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified_in1@{atpg\_\-line\_\-justified\_\-in1}}
+\index{atpg_line_justified_in1@{atpg\_\-line\_\-justified\_\-in1}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST} $\ast$ atpg\_\-line\_\-justified\_\-in1 ({\bf JUST\_\-INFO} $\ast$)}\label{flight__justified_8c_a32}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified_xnor@{atpg\_\-line\_\-justified\_\-xnor}}
+\index{atpg_line_justified_xnor@{atpg\_\-line\_\-justified\_\-xnor}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST}$\ast$ atpg\_\-line\_\-justified\_\-xnor ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a71}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_line_justified_xor@{atpg\_\-line\_\-justified\_\-xor}}
+\index{atpg_line_justified_xor@{atpg\_\-line\_\-justified\_\-xor}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST}$\ast$ atpg\_\-line\_\-justified\_\-xor ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a70}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_make_btree@{atpg\_\-make\_\-btree}}
+\index{atpg_make_btree@{atpg\_\-make\_\-btree}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-make\_\-btree (void)}\label{flight__justified_8c_a41}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_make_just_info@{atpg\_\-make\_\-just\_\-info}}
+\index{atpg_make_just_info@{atpg\_\-make\_\-just\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf JUST\_\-INFO} $\ast$ atpg\_\-make\_\-just\_\-info ({\bf LINE} $\ast$ {\em line}, {\bf Uint} {\em condition})}\label{flight__justified_8c_a26}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_reverse_condition@{atpg\_\-reverse\_\-condition}}
+\index{atpg_reverse_condition@{atpg\_\-reverse\_\-condition}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint} atpg\_\-reverse\_\-condition ({\bf Uint})}\label{flight__justified_8c_a38}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_search_justified@{atpg\_\-search\_\-justified}}
+\index{atpg_search_justified@{atpg\_\-search\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-search\_\-justified ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__justified_8c_a13}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_select_line_justified@{atpg\_\-select\_\-line\_\-justified}}
+\index{atpg_select_line_justified@{atpg\_\-select\_\-line\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf JUST\_\-INFO} $\ast$ atpg\_\-select\_\-line\_\-justified (void)}\label{flight__justified_8c_a16}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!atpg_startlist_justified@{atpg\_\-startlist\_\-justified}}
+\index{atpg_startlist_justified@{atpg\_\-startlist\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-startlist\_\-justified (void)}\label{flight__justified_8c_a12}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__justified_8c_a57}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_btree_ass_only@{flight\_\-print\_\-mes\_\-btree\_\-ass\_\-only}}
+\index{flight_print_mes_btree_ass_only@{flight\_\-print\_\-mes\_\-btree\_\-ass\_\-only}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-btree\_\-ass\_\-only (void)}\label{flight__justified_8c_a69}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_can_just@{flight\_\-print\_\-mes\_\-can\_\-just}}
+\index{flight_print_mes_can_just@{flight\_\-print\_\-mes\_\-can\_\-just}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-can\_\-just ({\bf LINE} $\ast$)}\label{flight__justified_8c_a61}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_ent_just_flag@{flight\_\-print\_\-mes\_\-ent\_\-just\_\-flag}}
+\index{flight_print_mes_ent_just_flag@{flight\_\-print\_\-mes\_\-ent\_\-just\_\-flag}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-ent\_\-just\_\-flag (void)}\label{flight__justified_8c_a68}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_gate_at_condition@{flight\_\-print\_\-mes\_\-gate\_\-at\_\-condition}}
+\index{flight_print_mes_gate_at_condition@{flight\_\-print\_\-mes\_\-gate\_\-at\_\-condition}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-at\_\-condition ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})}\label{flight__justified_8c_a64}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_gate_end_condition@{flight\_\-print\_\-mes\_\-gate\_\-end\_\-condition}}
+\index{flight_print_mes_gate_end_condition@{flight\_\-print\_\-mes\_\-gate\_\-end\_\-condition}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-end\_\-condition ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})}\label{flight__justified_8c_a66}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_gate_next_condition@{flight\_\-print\_\-mes\_\-gate\_\-next\_\-condition}}
+\index{flight_print_mes_gate_next_condition@{flight\_\-print\_\-mes\_\-gate\_\-next\_\-condition}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-next\_\-condition ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Uint})}\label{flight__justified_8c_a65}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}}
+\index{flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-type\_\-state9 ({\bf LINE} $\ast$)}\label{flight__justified_8c_a58}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_j_ass_list@{flight\_\-print\_\-mes\_\-j\_\-ass\_\-list}}
+\index{flight_print_mes_j_ass_list@{flight\_\-print\_\-mes\_\-j\_\-ass\_\-list}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-j\_\-ass\_\-list ({\bf LINE} $\ast$, {\bf ASS\_\-LIST} $\ast$)}\label{flight__justified_8c_a62}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_just@{flight\_\-print\_\-mes\_\-just}}
+\index{flight_print_mes_just@{flight\_\-print\_\-mes\_\-just}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-just ({\bf LINE} $\ast$)}\label{flight__justified_8c_a59}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_just_e@{flight\_\-print\_\-mes\_\-just\_\-e}}
+\index{flight_print_mes_just_e@{flight\_\-print\_\-mes\_\-just\_\-e}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-just\_\-e (void)}\label{flight__justified_8c_a67}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_justified_search@{flight\_\-print\_\-mes\_\-justified\_\-search}}
+\index{flight_print_mes_justified_search@{flight\_\-print\_\-mes\_\-justified\_\-search}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-justified\_\-search ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__justified_8c_a63}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!flight_print_mes_lv_head@{flight\_\-print\_\-mes\_\-lv\_\-head}}
+\index{flight_print_mes_lv_head@{flight\_\-print\_\-mes\_\-lv\_\-head}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-lv\_\-head (void)}\label{flight__justified_8c_a60}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!implication2@{implication2}}
+\index{implication2@{implication2}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication2 (void)}\label{flight__justified_8c_a45}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__justified_8c_a51}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_btree_null@{test\_\-btree\_\-null}}
+\index{test_btree_null@{test\_\-btree\_\-null}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-btree\_\-null ({\bf BTREE} $\ast$, char $\ast$)}\label{flight__justified_8c_a54}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_condition@{test\_\-condition}}
+\index{test_condition@{test\_\-condition}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-condition ({\bf Uint}, char $\ast$)}\label{flight__justified_8c_a50}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_just_info@{test\_\-just\_\-info}}
+\index{test_just_info@{test\_\-just\_\-info}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-just\_\-info ({\bf JUST\_\-INFO} $\ast$, char $\ast$)}\label{flight__justified_8c_a52}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_just_info_null@{test\_\-just\_\-info\_\-null}}
+\index{test_just_info_null@{test\_\-just\_\-info\_\-null}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-just\_\-info\_\-null ({\bf JUST\_\-INFO} $\ast$, char $\ast$)}\label{flight__justified_8c_a53}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_line_flag_justify@{test\_\-line\_\-flag\_\-justify}}
+\index{test_line_flag_justify@{test\_\-line\_\-flag\_\-justify}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-flag\_\-justify (char $\ast$)}\label{flight__justified_8c_a48}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__justified_8c_a47}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__justified_8c_a46}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_lv_head_null@{test\_\-lv\_\-head\_\-null}}
+\index{test_lv_head_null@{test\_\-lv\_\-head\_\-null}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-lv\_\-head\_\-null (char $\ast$)}\label{flight__justified_8c_a55}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!test_state_normal@{test\_\-state\_\-normal}}
+\index{test_state_normal@{test\_\-state\_\-normal}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-normal ({\bf Ulong}, char $\ast$)}\label{flight__justified_8c_a49}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_justified.c@{flight\_\-justified.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__justified_8c_a0}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!Lv_head@{Lv\_\-head}}
+\index{Lv_head@{Lv\_\-head}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf JUST\_\-INFO}$\ast$$\ast$ Lv\_\-head}\label{flight__justified_8c_a1}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!Switch_cand_justified@{Switch\_\-cand\_\-justified}}
+\index{Switch_cand_justified@{Switch\_\-cand\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int($\ast$  Switch\_\-cand\_\-justified[ FLIGHT\_\-NUM\_\-PRIM])( {\bf JUST\_\-INFO} $\ast$ )}\label{flight__justified_8c_a2}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!Switch_get_justified_stat@{Switch\_\-get\_\-justified\_\-stat}}
+\index{Switch_get_justified_stat@{Switch\_\-get\_\-justified\_\-stat}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong}($\ast$  Switch\_\-get\_\-justified\_\-stat)( {\bf Ulong} )}\label{flight__justified_8c_a4}
+
+
+\index{flight_justified.c@{flight\_\-justified.c}!Switch_line_justified@{Switch\_\-line\_\-justified}}
+\index{Switch_line_justified@{Switch\_\-line\_\-justified}!flight_justified.c@{flight\_\-justified.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST}$\ast$($\ast$  Switch\_\-line\_\-justified[ FLIGHT\_\-NUM\_\-PRIM ])( {\bf JUST\_\-INFO} $\ast$ )}\label{flight__justified_8c_a3}
+
+

@@ -1,0 +1,144 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-output.c ‚Ì‰ğà}
+\label{flight__output_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_output.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-output.c}}
+Flight¤Î·ë²Ì¤ò½ĞÎÏ¤¹¤ë´Ø¤¹¤ë´Ø¿ô·². 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-out.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+void {\bf all\_\-fault\_\-output} (void)
+\item 
+void {\bf one\_\-pat\_\-output} (void)
+\item 
+char $\ast$ {\bf add\_\-name} (char $\ast$, char $\ast$)
+\item 
+FILE $\ast$ {\bf flight\_\-open} (char $\ast$, char $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-close} (FILE $\ast$, char $\ast$)
+\item 
+FILE $\ast$ {\bf flight\_\-open\_\-add\_\-name} (char $\ast$, char $\ast$, char $\ast$, char $\ast$)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+void {\bf atpg\_\-get\_\-chara\_\-stat} ({\bf STATE\_\-3}, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-pat\_\-cnt} ({\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-pat} (char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} (void)
+\item 
+void {\bf output} (void)
+\end{CompactItemize}
+\subsection*{•Ï”}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf FLIST} $\ast$$\ast$ {\bf Flist\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Pi\_\-head}
+\end{CompactItemize}
+
+
+\subsection{‰ğà}
+Flight¤Î·ë²Ì¤ò½ĞÎÏ¤¹¤ë´Ø¤¹¤ë´Ø¿ô·².
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2005 / 05 / 11 initialize\end{Desc}
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_output.c@{flight\_\-output.c}!add_name@{add\_\-name}}
+\index{add_name@{add\_\-name}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ add\_\-name (char $\ast$, char $\ast$)}\label{flight__output_8c_a6}
+
+
+\index{flight_output.c@{flight\_\-output.c}!all_fault_output@{all\_\-fault\_\-output}}
+\index{all_fault_output@{all\_\-fault\_\-output}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void all\_\-fault\_\-output (void)}\label{flight__output_8c_a4}
+
+
+\index{flight_output.c@{flight\_\-output.c}!atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}}
+\index{atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-get\_\-chara\_\-stat ({\bf STATE\_\-3}, char $\ast$)}\label{flight__output_8c_a11}
+
+
+\index{flight_output.c@{flight\_\-output.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__output_8c_a10}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_close@{flight\_\-close}}
+\index{flight_close@{flight\_\-close}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-close (FILE $\ast$, char $\ast$)}\label{flight__output_8c_a8}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_open@{flight\_\-open}}
+\index{flight_open@{flight\_\-open}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ flight\_\-open (char $\ast$, char $\ast$, char $\ast$)}\label{flight__output_8c_a7}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_open_add_name@{flight\_\-open\_\-add\_\-name}}
+\index{flight_open_add_name@{flight\_\-open\_\-add\_\-name}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FILE$\ast$ flight\_\-open\_\-add\_\-name (char $\ast$, char $\ast$, char $\ast$, char $\ast$)}\label{flight__output_8c_a9}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n (void)}\label{flight__output_8c_a14}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_print_mes_pat@{flight\_\-print\_\-mes\_\-pat}}
+\index{flight_print_mes_pat@{flight\_\-print\_\-mes\_\-pat}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-pat (char $\ast$)}\label{flight__output_8c_a13}
+
+
+\index{flight_output.c@{flight\_\-output.c}!flight_print_mes_pat_cnt@{flight\_\-print\_\-mes\_\-pat\_\-cnt}}
+\index{flight_print_mes_pat_cnt@{flight\_\-print\_\-mes\_\-pat\_\-cnt}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-pat\_\-cnt ({\bf Ulong})}\label{flight__output_8c_a12}
+
+
+\index{flight_output.c@{flight\_\-output.c}!one_pat_output@{one\_\-pat\_\-output}}
+\index{one_pat_output@{one\_\-pat\_\-output}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void one\_\-pat\_\-output (void)}\label{flight__output_8c_a5}
+
+
+\index{flight_output.c@{flight\_\-output.c}!output@{output}}
+\index{output@{output}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void output (void)}\label{flight__output_8c_a15}
+
+
+
+
+\subsection{•Ï”‚Ì‰ğà}
+\index{flight_output.c@{flight\_\-output.c}!Flist_head@{Flist\_\-head}}
+\index{Flist_head@{Flist\_\-head}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FLIST}$\ast$$\ast$ Flist\_\-head}\label{flight__output_8c_a1}
+
+
+\index{flight_output.c@{flight\_\-output.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__output_8c_a0}
+
+
+\index{flight_output.c@{flight\_\-output.c}!Pi_head@{Pi\_\-head}}
+\index{Pi_head@{Pi\_\-head}!flight_output.c@{flight\_\-output.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Pi\_\-head}\label{flight__output_8c_a2}
+
+

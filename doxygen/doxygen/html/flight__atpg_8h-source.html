@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>/cygdrive/c/home/yosimura/Flight/include/flight_atpg.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_atpg.h</h1><a href="flight__atpg_8h.html">âê‡Çå©ÇÈÅB</a><div class="fragment"><pre>00001 <span class="comment">/********************************************************************************</span>
+00002 <span class="comment"></span>
+00003 <span class="comment">                            FLIGHT</span>
+00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+00007 <span class="comment"></span>
+00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00025"></a><a class="code" href="flight__atpg_8h.html#a0">00025</a> <span class="preprocessor">#define ATPG_PROPA_E    0x00000001      </span>
+<a name="l00026"></a><a class="code" href="flight__atpg_8h.html#a1">00026</a> <span class="preprocessor">#define ATPG_JUSTI_S    0x00000002      </span>
+<a name="l00027"></a><a class="code" href="flight__atpg_8h.html#a2">00027</a> <span class="preprocessor">#define ATPG_UNT            0x00000004  </span>
+00028 <span class="preprocessor"></span>
+<a name="l00035"></a><a class="code" href="flight__atpg_8h.html#a3">00035</a> <span class="preprocessor">#define ALL_FLAG_ON   0x00000000    </span><span class="comment">/* implication state check flag ( for uncontrol state ) */</span>
+<a name="l00036"></a><a class="code" href="flight__atpg_8h.html#a4">00036</a> <span class="preprocessor">#define ALL_FLAG_OFF  0x00000001    </span><span class="comment">/* implication state check flag ( for uncontrol state ) */</span>
+00037 
+<a name="l00038"></a><a class="code" href="flight__atpg_8h.html#a5">00038</a> <span class="preprocessor">#define ONE_FLAG_ON   0x00000000    </span><span class="comment">/* implication state check flag ( for control state ) */</span>
+<a name="l00039"></a><a class="code" href="flight__atpg_8h.html#a6">00039</a> <span class="preprocessor">#define ONE_FLAG_OFF  0x00000001    </span><span class="comment">/* implication state check flag ( for control state ) */</span>
+00040 
+<a name="l00041"></a><a class="code" href="flight__atpg_8h.html#a7">00041</a> <span class="preprocessor">#define UNK_FLAG_ON   0x00000000    </span><span class="comment">/* implication state check flag ( for unknown state ) */</span>
+<a name="l00042"></a><a class="code" href="flight__atpg_8h.html#a8">00042</a> <span class="preprocessor">#define UNK_FLAG_OFF  0x00000001    </span><span class="comment">/* implication state check flag ( for unknown state ) */</span>
+00043 
+<a name="l00044"></a><a class="code" href="flight__atpg_8h.html#a9">00044</a> <span class="preprocessor">#define OUT_PIN_NUM   0x00000000    </span><span class="comment">/* ¥ﬁ∞’¡‡∫Ó§Œpin_num§À§™§±§ÎΩ–Œœ•‘•Û§Œ»÷πÊ */</span>
+<a name="l00045"></a><a class="code" href="flight__atpg_8h.html#a10">00045</a> <span class="preprocessor">#define IN0_PIN_NUM   0x00000001    </span><span class="comment">/* ¥ﬁ∞’¡‡∫Ó§Œpin_num§À§™§±§Î1»÷Ã‹§Œ∆˛Œœ•‘•Û§Œ»÷πÊ */</span>
+<a name="l00046"></a><a class="code" href="flight__atpg_8h.html#a11">00046</a> <span class="preprocessor">#define IN1_PIN_NUM   0x00000002    </span><span class="comment">/* ¥ﬁ∞’¡‡∫Ó§Œpin_num§À§™§±§Î2»÷Ã‹§Œ∆˛Œœ•‘•Û§Œ»÷πÊ */</span>
+00047 
+<a name="l00055"></a><a class="code" href="flight__atpg_8h.html#a12">00055</a> <span class="preprocessor">#define ASS_N_0         0x00000001         </span>
+<a name="l00056"></a><a class="code" href="flight__atpg_8h.html#a13">00056</a> <span class="preprocessor">#define ASS_N_1         0x00000002         </span>
+<a name="l00057"></a><a class="code" href="flight__atpg_8h.html#a14">00057</a> <span class="preprocessor">#define ASS_F_0         0x00000004         </span>
+<a name="l00058"></a><a class="code" href="flight__atpg_8h.html#a15">00058</a> <span class="preprocessor">#define ASS_F_1         0x00000008         </span>
+<a name="l00059"></a><a class="code" href="flight__atpg_8h.html#a16">00059</a> <span class="preprocessor">#define ASS_C_N         0x00000003         </span>
+<a name="l00060"></a><a class="code" href="flight__atpg_8h.html#a17">00060</a> <span class="preprocessor">#define ASS_C_F         0x0000000c         </span>
+00061 <span class="preprocessor"></span>
+00068 <span class="preprocessor"></span><span class="comment">/* assign result */</span>
+00069 
+<a name="l00070"></a><a class="code" href="flight__atpg_8h.html#a18">00070</a> <span class="preprocessor">#define ASS_KEEP        0x00000008      </span><span class="comment">/* conflict on assign */</span>
+<a name="l00071"></a><a class="code" href="flight__atpg_8h.html#a19">00071</a> <span class="preprocessor">#define ASS_CONF        0x00000010      </span><span class="comment">/* keep     on assign */</span>
+00072 
+00073 
+00074 <span class="comment">/* drive_dfront§Œµ¢§Í√Õ(int) */</span>
+<a name="l00075"></a><a class="code" href="flight__atpg_8h.html#a20">00075</a> <span class="preprocessor">#define DRIVE_CONT  0x00000020  </span><span class="comment">/* drive ∑—¬≥ */</span>
+<a name="l00076"></a><a class="code" href="flight__atpg_8h.html#a21">00076</a> <span class="preprocessor">#define DRIVE_END   0x00000040  </span><span class="comment">/* drive ¥∞Œª */</span>
+<a name="l00077"></a><a class="code" href="flight__atpg_8h.html#a22">00077</a> <span class="preprocessor">#define DRIVE_IMPOS 0x00000080  </span><span class="comment">/* drive …‘≤ƒ«Ω */</span>
+<a name="l00078"></a><a class="code" href="flight__atpg_8h.html#a23">00078</a> <span class="preprocessor">#define DRIVE_POINT 0x00000100  </span><span class="comment">/* drive §π§Î∏ƒΩÍ */</span>
+00079 
+00080 <span class="comment">/* justified§Œµ¢§Í√Õ(int) */</span>
+00081 <span class="comment">/* justified check result */</span>
+<a name="l00082"></a><a class="code" href="flight__atpg_8h.html#a24">00082</a> <span class="preprocessor">#define JUSTI_END       0x00000200      </span><span class="comment">/* justified end (flight_justified) */</span>
+<a name="l00083"></a><a class="code" href="flight__atpg_8h.html#a25">00083</a> <span class="preprocessor">#define JUSTI_KEEP  0x00000400  </span><span class="comment">/* not justified end */</span>
+00084                                 <span class="comment">/* justified ∑—¬≥ */</span>
+<a name="l00085"></a><a class="code" href="flight__atpg_8h.html#a26">00085</a> <span class="preprocessor">#define JUSTI_CONF  0x00000800  </span><span class="comment">/* justified æ◊∆Õ */</span>
+00086 <span class="comment">/* propagate check result */</span>
+<a name="l00087"></a><a class="code" href="flight__atpg_8h.html#a27">00087</a> <span class="preprocessor">#define PROPA_END       0x00001000      </span><span class="comment">/* propagate end (flight_propagate) */</span>
+00088 <span class="comment">/* #define      PROPA_CONT      0x00002000      /\* not propagate end *\/ */</span>
+00089 
+00090 <span class="comment">/* #define      LIM_BACK_END 0x00004000 /\* end for limit of back track *\/ */</span>
+<a name="l00091"></a><a class="code" href="flight__atpg_8h.html#a28">00091</a> <span class="preprocessor">#define ASS_R_CONF      0x00000010      </span><span class="comment">/* STAT_YY§Ë§Í¬Á§≠§ √Õ§«§¢§Î…¨Õ◊§¢§Í */</span>
+00092 
+00093 
+00094 <span class="comment">/* dfrontier flag */</span>
+<a name="l00095"></a><a class="code" href="flight__atpg_8h.html#a29">00095</a> <span class="preprocessor">#define DF_NOCHECK      0x00000001      </span><span class="comment">/* 1bit §ﬁ§¿Ã§≥Œ«ß§Œ•Î°º•» */</span>
+<a name="l00096"></a><a class="code" href="flight__atpg_8h.html#a30">00096</a> <span class="preprocessor">#define DF_ROOT         0x00000002      </span><span class="comment">/* 2bit ∏Ω∫ﬂ≥Œ«ß√Ê§Œ•Î°º•» */</span>
+<a name="l00097"></a><a class="code" href="flight__atpg_8h.html#a31">00097</a> <span class="preprocessor">#define DF_DEADEND      0x00000004      </span><span class="comment">/* 3bit ≥Œ«ß∫—(π‘§≠ªﬂ§ﬁ§Í) */</span>
+00098 
+00099 <span class="comment">/* justified result */</span>
+<a name="l00100"></a><a class="code" href="flight__atpg_8h.html#a32">00100</a> <span class="preprocessor">#define JUST_ERROR      0x00000000      </span><span class="comment">/* all 0 §…§≥§À§‚…¨Õ◊§ §§(PI§ §…) */</span>
+<a name="l00101"></a><a class="code" href="flight__atpg_8h.html#a33">00101</a> <span class="preprocessor">#define JUST_NONE       0x00000001      </span><span class="comment">/* 1bit ERROR (1)           */</span>
+<a name="l00102"></a><a class="code" href="flight__atpg_8h.html#a34">00102</a> <span class="preprocessor">#define JUST_OWN        0x00000002      </span><span class="comment">/* 2bit ∏Ω∫ﬂ§Œline§¨¿µ≈ˆ≤Ω§Œ…¨Õ◊§¢§Í (2)*/</span>
+<a name="l00103"></a><a class="code" href="flight__atpg_8h.html#a35">00103</a> <span class="preprocessor">#define JUST_ALL        0x00000004      </span><span class="comment">/* 3bit ∆˛ŒœøÆπÊ¿˛§π§Ÿ§∆¿µ≈ˆ≤Ω§Œ…¨Õ◊§¢§Í(4) */</span>
+<a name="l00104"></a><a class="code" href="flight__atpg_8h.html#a36">00104</a> <span class="preprocessor">#define JUST_1IN        0x00000008      </span><span class="comment">/* 4bit ∆˛Œœ§Œ§…§Ï§´∞Ï§ƒ§À¿µ≈ˆ≤Ω§¨…¨Õ◊ (8)*/</span>
+<a name="l00105"></a><a class="code" href="flight__atpg_8h.html#a37">00105</a> <span class="preprocessor">#define JUST_1IN_N      0x00000010      </span><span class="comment">/* 5bit in2§À¿µ≈ˆ≤Ω§Œ…¨Õ◊ */</span>
+<a name="l00106"></a><a class="code" href="flight__atpg_8h.html#a38">00106</a> <span class="preprocessor">#define JUST_IN0        0x00000020      </span><span class="comment">/* 5bit in0§À¿µ≈ˆ≤Ω§Œ…¨Õ◊ */</span>
+<a name="l00107"></a><a class="code" href="flight__atpg_8h.html#a39">00107</a> <span class="preprocessor">#define JUST_IN1        0x00000040      </span><span class="comment">/* 5bit in1§À¿µ≈ˆ≤Ω§Œ…¨Õ◊ */</span>
+<a name="l00108"></a><a class="code" href="flight__atpg_8h.html#a40">00108</a> <span class="preprocessor">#define JUST_IN2        0x00000080      </span><span class="comment">/* 5bit in2§À¿µ≈ˆ≤Ω§Œ…¨Õ◊ */</span>
+00109 
+00110 <span class="comment">/* atpg_back_track§Œ ÷√Õ(int) */</span>
+<a name="l00111"></a><a class="code" href="flight__atpg_8h.html#a41">00111</a> <span class="preprocessor">#define ATPG_BACK_END   0x00000000      </span><span class="comment">/* back track Ω™Œª(while§Œ§ø§·0) */</span>
+<a name="l00112"></a><a class="code" href="flight__atpg_8h.html#a42">00112</a> <span class="preprocessor">#define ATPG_BACK_CONT  0x00000001      </span><span class="comment">/* ATPG∑—¬≥(while§Œ§ø§·1) */</span>
+00113 
+00114 <span class="comment">/* for xor */</span>
+<a name="l00115"></a><a class="code" href="flight__atpg_8h.html#a43">00115</a> <span class="preprocessor">#define IMP_XOR         0x0001</span>
+00116 <span class="preprocessor"></span>
+<a name="l00121"></a><a class="code" href="flight__atpg_8h.html#a92">00121</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__atpg_8h.html#a92">atpg_check</a> {
+00122         <a class="code" href="flight__atpg_8h.html#a92a59">ATPG_CONT</a>  = 0,    
+00123         <a class="code" href="flight__atpg_8h.html#a92a60">ATPG_NOFLT</a> = 1     
+00124 } <a class="code" href="flight__atpg_8h.html#a44">ATPG_CHECK</a>;
+00125 
+<a name="l00131"></a><a class="code" href="flight__atpg_8h.html#a93">00131</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__atpg_8h.html#a93">gene_result</a> {
+00132         <a class="code" href="flight__atpg_8h.html#a93a61">NO_RESULT</a> = 0,     
+00133         <a class="code" href="flight__atpg_8h.html#a93a62">INSERT_FAIL</a>,       
+00134         <a class="code" href="flight__atpg_8h.html#a93a63">INSERT_PASS</a>,       
+00135         <a class="code" href="flight__atpg_8h.html#a93a64">LIM_BACK_END</a>,      
+00136         <a class="code" href="flight__atpg_8h.html#a93a65">PROPA_PASS</a>,        
+00137         <a class="code" href="flight__atpg_8h.html#a93a66">PROPA_FAIL</a>,        
+00138         <a class="code" href="flight__atpg_8h.html#a93a67">PROPA_FAIL_DRIVE</a>,  
+00139         <a class="code" href="flight__atpg_8h.html#a93a68">PROPA_FAIL_ENTER</a>,  
+00140         <a class="code" href="flight__atpg_8h.html#a93a69">PROPA_FAIL_IMP</a>,    
+00141         <a class="code" href="flight__atpg_8h.html#a93a70">PROPA_CONT</a>,        
+00142         <a class="code" href="flight__atpg_8h.html#a93a71">JUSTI_PASS</a>,        
+00143         <a class="code" href="flight__atpg_8h.html#a93a72">JUSTI_CONT</a>,        
+00144         <a class="code" href="flight__atpg_8h.html#a93a73">JUSTI_FAIL</a>,        
+00145         <a class="code" href="flight__atpg_8h.html#a93a74">JUSTI_FAIL_ENTER</a>,  
+00146         <a class="code" href="flight__atpg_8h.html#a93a75">JUSTI_FAIL_IMP</a>,    
+00147         <a class="code" href="flight__atpg_8h.html#a93a76">GENE_CONT</a>,         
+00148         <a class="code" href="flight__atpg_8h.html#a93a77">GENE_END</a>,          
+00149 } <a class="code" href="flight__atpg_8h.html#a45">GENE_RESULT</a>;
+00150 
+<a name="l00155"></a><a class="code" href="flight__atpg_8h.html#a94">00155</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__atpg_8h.html#a94">condition</a> {
+00156         <a class="code" href="flight__atpg_8h.html#a94a78">COND_FAILURE</a>   = 1, 
+00157         <a class="code" href="flight__atpg_8h.html#a94a79">COND_NORMAL</a>    = 4, 
+00158         <a class="code" href="flight__atpg_8h.html#a94a80">COND_REVERSE</a>   = 5, 
+00159 } <a class="code" href="flight__atpg_8h.html#a46">CONDITION</a>;
+00160 
+00161 
+<a name="l00168"></a><a class="code" href="flight__atpg_8h.html#a95">00168</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__atpg_8h.html#a95">imp_result</a> {
+00169         <a class="code" href="flight__atpg_8h.html#a95a81">IMP_KEEP</a> = 1,   
+00170         <a class="code" href="flight__atpg_8h.html#a95a82">IMP_CONF</a> = 2,   
+00171         <a class="code" href="flight__atpg_8h.html#a95a83">IMP_UPDA</a> = 4,   
+00172 } <a class="code" href="flight__atpg_8h.html#a47">IMP_RESULT</a>;
+00173 
+00174 
+<a name="l00179"></a><a class="code" href="flight__atpg_8h.html#a96">00179</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__atpg_8h.html#a96">f_class</a> {
+00180         <a class="code" href="flight__atpg_8h.html#a96a84">NO_DEFINE</a> = 0,     
+00181         <a class="code" href="flight__atpg_8h.html#a96a85">GENE_NO_FAULT</a>,     
+00182         <a class="code" href="flight__atpg_8h.html#a96a86">GENE_DET_A</a>,        
+00183         <a class="code" href="flight__atpg_8h.html#a96a87">GENE_DET_S</a>,        
+00184         <a class="code" href="flight__atpg_8h.html#a96a88">GENE_RED</a>,          
+00185         <a class="code" href="flight__atpg_8h.html#a96a89">GENE_UNT</a>,          
+00186         <a class="code" href="flight__atpg_8h.html#a96a90">GENE_IUN</a>,          
+00187         <a class="code" href="flight__atpg_8h.html#a96a91">GENE_ABT</a>,          
+00188 } <a class="code" href="flight__atpg_8h.html#a48">F_CLASS</a>;
+00189 
+<a name="l00194"></a><a class="code" href="structgene__head.html">00194</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structgene__head.html">gene_head</a>
+00195 {
+<a name="l00196"></a><a class="code" href="structgene__head.html#m0">00196</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structgene__head.html#m0">flag</a>;            
+<a name="l00197"></a><a class="code" href="structgene__head.html#m1">00197</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structgene__head.html#m1">limit_back</a>;      
+<a name="l00198"></a><a class="code" href="structgene__head.html#m2">00198</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structgene__head.html#m2">back_all</a>;        
+<a name="l00199"></a><a class="code" href="structgene__head.html#m3">00199</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structgene__head.html#m3">back_drive</a>;      
+<a name="l00200"></a><a class="code" href="structgene__head.html#m4">00200</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structgene__head.html#m4">back_drive_just</a>; 
+<a name="l00201"></a><a class="code" href="structgene__head.html#m5">00201</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>         *fault_line;     
+<a name="l00202"></a><a class="code" href="structgene__head.html#m6">00202</a>         <span class="keyword">struct </span><a class="code" href="structline.html">line</a>         *propa_line;     
+<a name="l00203"></a><a class="code" href="structgene__head.html#m7">00203</a>     <span class="keyword">struct </span><a class="code" href="structdfront.html">dfront</a>       *dfront_t;       
+<a name="l00204"></a><a class="code" href="structgene__head.html#m8">00204</a>     <span class="keyword">struct </span><a class="code" href="structdfront.html">dfront</a>       *dfront_c;           
+<a name="l00205"></a><a class="code" href="structgene__head.html#m9">00205</a>     <span class="keyword">struct </span><a class="code" href="structimp__info.html">imp_info</a>     *imp_f;              
+<a name="l00206"></a><a class="code" href="structgene__head.html#m10">00206</a>     <span class="keyword">struct </span><a class="code" href="structimp__info.html">imp_info</a>     *imp_l;              
+<a name="l00207"></a><a class="code" href="structgene__head.html#m11">00207</a>     <span class="keyword">struct </span><a class="code" href="structbtree.html">btree</a>                *btree;              
+<a name="l00208"></a><a class="code" href="structgene__head.html#m12">00208</a>     <span class="keyword">struct </span><a class="code" href="structimp__trace.html">imp_trace</a>    *imp_trace;          
+00209 } <a class="code" href="structgene__head.html">GENE_HEAD</a>;
+00210 
+00211 
+<a name="l00216"></a><a class="code" href="structass__list.html">00216</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structass__list.html">ass_list</a>
+00217 {
+<a name="l00218"></a><a class="code" href="structass__list.html#m0">00218</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>             *line;           
+<a name="l00219"></a><a class="code" href="structass__list.html#m1">00219</a>         <span class="keyword">enum</span>   <a class="code" href="flight__state_8h.html#a28">state_3</a>      <a class="code" href="structass__list.html#m1">ass_state3</a>;      
+<a name="l00220"></a><a class="code" href="structass__list.html#m2">00220</a>         <span class="keyword">enum</span>   <a class="code" href="structass__list.html#m2">condition</a>    <a class="code" href="structass__list.html#m2">condition</a>;       
+<a name="l00221"></a><a class="code" href="structass__list.html#m3">00221</a>     <span class="keyword">struct </span><a class="code" href="structass__list.html">ass_list</a>     *next;           
+00222 } <a class="code" href="structass__list.html">ASS_LIST</a>;
+00223 
+<a name="l00230"></a><a class="code" href="structbtree.html">00230</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structbtree.html">btree</a>
+00231 {
+<a name="l00232"></a><a class="code" href="structbtree.html#m0">00232</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structbtree.html#m0">flag</a>;                    
+<a name="l00233"></a><a class="code" href="structbtree.html#m1">00233</a>         <span class="keyword">enum</span>    <a class="code" href="structbtree.html#m1">condition</a>   <a class="code" href="structbtree.html#m1">condition</a>;       
+<a name="l00234"></a><a class="code" href="structbtree.html#m2">00234</a>         <span class="keyword">enum</span>    <a class="code" href="flight__state_8h.html#a28">state_3</a>     <a class="code" href="structbtree.html#m2">ass_state3</a>;      
+<a name="l00235"></a><a class="code" href="structbtree.html#m3">00235</a>     <span class="keyword">struct      </span><a class="code" href="structline.html">line</a>            *line;           
+<a name="l00236"></a><a class="code" href="structbtree.html#m4">00236</a>     <span class="keyword">struct      </span><a class="code" href="structimp__trace.html">imp_trace</a>   *imp_trace;      
+<a name="l00237"></a><a class="code" href="structbtree.html#m5">00237</a>     <span class="keyword">struct      </span><a class="code" href="structjust__info.html">just_info</a>       *just_e;             
+<a name="l00238"></a><a class="code" href="structbtree.html#m6">00238</a>     <span class="keyword">struct      </span><a class="code" href="structjust__info.html">just_info</a>       *just_d;             
+<a name="l00239"></a><a class="code" href="structbtree.html#m7">00239</a>         <span class="keyword">struct  </span><a class="code" href="structjust__info.html">just_info</a>       *just_flag;      
+<a name="l00240"></a><a class="code" href="structbtree.html#m8">00240</a>     <span class="keyword">struct      </span><a class="code" href="structbtree.html">btree</a>           *next;               
+<a name="l00241"></a><a class="code" href="structbtree.html#m9">00241</a>     <span class="keyword">struct      </span><a class="code" href="structbtree.html">btree</a>           *prev;               
+00242 } <a class="code" href="structbtree.html">BTREE</a>;
+00243 
+00244 
+<a name="l00252"></a><a class="code" href="structdfront.html">00252</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structdfront.html">dfront</a>
+00253 {
+<a name="l00254"></a><a class="code" href="structdfront.html#m0">00254</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>               <a class="code" href="structdfront.html#m0">flag</a>;                   
+<a name="l00255"></a><a class="code" href="structdfront.html#m1">00255</a>         <span class="keyword">struct  </span><a class="code" href="structline.html">line</a>            *line;              
+<a name="l00256"></a><a class="code" href="structdfront.html#m2">00256</a>     <span class="keyword">struct      </span><a class="code" href="structass__list.html">ass_list</a>    *ass_list;      
+00257         
+<a name="l00258"></a><a class="code" href="structdfront.html#m3">00258</a>     <span class="keyword">struct      </span><a class="code" href="structimp__trace.html">imp_trace</a>       *imp_trace;         
+<a name="l00259"></a><a class="code" href="structdfront.html#m4">00259</a>         <span class="keyword">struct  </span><a class="code" href="structdfront.html">dfront</a>          *prev;              
+<a name="l00260"></a><a class="code" href="structdfront.html#m5">00260</a>     <span class="keyword">struct      </span><a class="code" href="structdfront.html">dfront</a>          **next;             
+00261 } <a class="code" href="structdfront.html">DFRONT</a>;
+00262 
+<a name="l00267"></a><a class="code" href="structdfront__list.html">00267</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structdfront__list.html">dfront_list</a>                      
+00268 {
+<a name="l00269"></a><a class="code" href="structdfront__list.html#m0">00269</a>     <span class="keyword">struct      </span><a class="code" href="structdfront.html">dfront</a>          *dfront;            
+<a name="l00270"></a><a class="code" href="structdfront__list.html#m1">00270</a>     <span class="keyword">struct      </span><a class="code" href="structdfront__list.html">dfront_list</a>     *next;              
+00271 } <a class="code" href="structdfront__list.html">DFRONT_LIST</a>;
+00272 
+00273 
+<a name="l00280"></a><a class="code" href="structimp__info.html">00280</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structimp__info.html">imp_info</a>                     
+00281 {
+<a name="l00282"></a><a class="code" href="structimp__info.html#m0">00282</a>     <span class="keyword">enum</span>   <a class="code" href="flight__state_8h.html#a28">state_3</a>      <a class="code" href="structimp__info.html#m0">new_state3</a>;        
+<a name="l00283"></a><a class="code" href="structimp__info.html#m1">00283</a>         <span class="keyword">enum</span>   <a class="code" href="structimp__info.html#m1">condition</a>    <a class="code" href="structimp__info.html#m1">condition</a>;     
+<a name="l00284"></a><a class="code" href="structimp__info.html#m2">00284</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>                   <a class="code" href="structimp__info.html#m2">pin_num</a>;       
+<a name="l00285"></a><a class="code" href="structimp__info.html#m3">00285</a>         <span class="keyword">struct </span><a class="code" href="structline.html">line</a>         *line;             
+<a name="l00286"></a><a class="code" href="structimp__info.html#m4">00286</a>         <span class="keyword">struct </span><a class="code" href="structimp__info.html">imp_info</a>     *next;             
+00287 } <a class="code" href="structimp__info.html">IMP_INFO</a>;
+00288 
+<a name="l00293"></a><a class="code" href="structjust__info.html">00293</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structjust__info.html">just_info</a>
+00294 {
+<a name="l00295"></a><a class="code" href="structjust__info.html#m0">00295</a>         <span class="keyword">enum</span>   <a class="code" href="structjust__info.html#m0">condition</a>    <a class="code" href="structjust__info.html#m0">condition</a>;     
+<a name="l00296"></a><a class="code" href="structjust__info.html#m1">00296</a>         <span class="keyword">struct </span><a class="code" href="structline.html">line</a>         *line;             
+<a name="l00297"></a><a class="code" href="structjust__info.html#m2">00297</a>         <span class="keyword">struct </span><a class="code" href="structjust__info.html">just_info</a>    *next;             
+00298 } <a class="code" href="structjust__info.html">JUST_INFO</a>;
+00299 
+00300 
+<a name="l00305"></a><a class="code" href="structimp__result__info.html">00305</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structimp__result__info.html">imp_result_info</a>
+00306 {
+<a name="l00307"></a><a class="code" href="structimp__result__info.html#m0">00307</a>         <span class="keyword">enum</span>   <a class="code" href="flight__atpg_8h.html#a95">imp_result</a>   <a class="code" href="structimp__result__info.html#m0">result</a>;       
+<a name="l00308"></a><a class="code" href="structimp__result__info.html#m1">00308</a>         <span class="keyword">enum</span>   <a class="code" href="flight__state_8h.html#a28">state_3</a>      <a class="code" href="structimp__result__info.html#m1">state3</a>;       
+<a name="l00309"></a><a class="code" href="structimp__result__info.html#m2">00309</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>                           <a class="code" href="structimp__result__info.html#m2">pin_num</a>;      
+00310 } <a class="code" href="structimp__result__info.html">IMP_RESULT_INFO</a>;
+00311 
+<a name="l00318"></a><a class="code" href="structimp__trace.html">00318</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structimp__trace.html">imp_trace</a>
+00319 {
+<a name="l00320"></a><a class="code" href="structimp__trace.html#m0">00320</a>         <span class="keyword">enum</span>   <a class="code" href="structimp__trace.html#m0">condition</a>    <a class="code" href="structimp__trace.html#m0">condition</a>;   
+<a name="l00321"></a><a class="code" href="structimp__trace.html#m1">00321</a>         <span class="keyword">struct </span><a class="code" href="structline.html">line</a>         *line;       
+<a name="l00322"></a><a class="code" href="structimp__trace.html#m2">00322</a>         <span class="keyword">struct </span><a class="code" href="structimp__trace.html">imp_trace</a>    *next;       
+00323 } <a class="code" href="structimp__trace.html">IMP_TRACE</a>;
+00324 
+00325 
+<a name="l00330"></a><a class="code" href="structgene__info.html">00330</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structgene__info.html">gene_info</a>
+00331 {
+<a name="l00332"></a><a class="code" href="structgene__info.html#m0">00332</a>         <span class="keyword">enum</span>   <a class="code" href="structgene__info.html#m0">f_class</a>      <a class="code" href="structgene__info.html#m0">f_class</a>;     
+<a name="l00333"></a><a class="code" href="structgene__info.html#m1">00333</a>         <span class="keyword">enum</span>   <a class="code" href="flight__atpg_8h.html#a93">gene_result</a>  <a class="code" href="structgene__info.html#m1">result</a>;      
+<a name="l00334"></a><a class="code" href="structgene__info.html#m2">00334</a>         <span class="keyword">struct </span><a class="code" href="structflist.html">flist</a>        *fault;      
+<a name="l00335"></a><a class="code" href="structgene__info.html#m3">00335</a>         <span class="keyword">struct </span><a class="code" href="structcc__pattern.html">cc_pattern</a>   *cc_pat;     
+00336 } <a class="code" href="structgene__info.html">GENE_INFO</a>;
+00337 
+00338 
+</pre></div><hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:07 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

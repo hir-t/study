@@ -1,0 +1,2226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_implication.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_implication.c の解説</h1>ｴﾞｰﾕﾁ犲釥ﾋｴﾘ､ｹ､�ｴﾘｿｲ 
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__state_8h-source.html">flight_state.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__line_8h-source.html">flight_line.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__atpg_8h-source.html">flight_atpg.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__time_8h-source.html">flight_time.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__memory_8h-source.html">flight_memory.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__error_8h-source.html">flight_error.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>関数</h2></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a10">implication_init</a> (void)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a11">atpg_check_state9_n_f</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a12">atpg_enter_implication_list</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a13">atpg_enter_implication_list_input</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a14">atpg_enter_implication_list_output</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a15">atpg_imp_make_input_pin_number</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a16">atpg_invert_state3</a> (<a class="el" href="flight__state_8h.html#a0">STATE_3</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a17">atpg_implication_pin_num_2_pin_id</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a18">atpg_implication_pin_id_2_pin_num</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a19">atpg_update_state</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a20">atpg_enter_imp_trace</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a21">atpg_make_state</a> (<a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a22">atpg_select_implication</a> (void)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a23">atpg_make_imp_info</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a24">atpg_reverse_condition</a> (<a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a25">implication_update_input</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight_8h.html#a8">Ulong</a>, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a26">implication_update_output</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight__state_8h.html#a0">STATE_3</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a27">implication_pi</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a28">implication_one_input</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a29">implication_inv</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a30">implication_and</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a31">implication_nand</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a32">implication_or</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a33">implication_nor</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a34">implication_blk</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a35">implication_keep</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a36">implication_conflict</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a37">implication_out_state0</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a38">implication_out_state1</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a39">implication_out_stateU</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a40">implication_in0_state0</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a41">implication_in0_state1</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a42">implication_in0_stateU</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a43">implication_in1_state0</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a44">implication_in1_state1</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a45">implication_in1_stateU</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a46">implication_ino_state0</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a47">implication_ino_state1</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a48">implication_ino_stateU</a> (<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a49">atpg_get_state9_2_normal_state3</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a50">atpg_get_state9_2_failure_state3</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a51">atpg_get_state9_with_condition_2_state3</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>, <a class="el" href="flight_8h.html#a7">Uint</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a52">test_line_null</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a53">test_line_type</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a54">test_state_n_f</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a55">test_state_normal</a> (<a class="el" href="flight__state_8h.html#a1">STATE_9</a>, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a56">test_state3</a> (<a class="el" href="flight__state_8h.html#a0">STATE_3</a>, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a57">test_condition</a> (<a class="el" href="flight_8h.html#a7">Uint</a>, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a58">flight_print_mes</a> (int, int)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a59">flight_print_mes_id_type_stat</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a60">flight_print_mes_result_X</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a61">flight_print_mes_gate_state9</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a62">flight_print_mes_gate_info</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a63">flight_print_mes_gate_stat</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a64">flight_print_mes_imp_info_new</a> (<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a65">flight_print_mes_gate_state9_new</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *, <a class="el" href="flight_8h.html#a8">Ulong</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a66">implication2</a> (void)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a67">atpg_get_imp_pin_id</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *<a class="el" href="structline.html">line</a>)</td></tr>
+<tr><td colspan=2><br><h2>変数</h2></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__atpg_8h.html#a49">GENE_HEAD</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a0">Gene_head</a></td></tr>
+<tr><td nowrap align=right valign=top>int(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a1">Switch_implication</a> [FLIGHT_NUM_PRIM])(<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a2">Xor_implication_out0</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a3">Xor_implication_out1</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a4">Xor_implication_in0</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a5">Xor_implication_in1</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a6">Xnor_implication_out0</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a7">Xnor_implication_out1</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a8">Xnor_implication_in0</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void(*&nbsp;</td><td valign=bottom><a class="el" href="flight__implication_8c.html#a9">Xnor_implication_in1</a> [4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>解説</h2>
+ｴﾞｰﾕﾁ犲釥ﾋｴﾘ､ｹ､�ｴﾘｿｲ
+<p>
+ <dl compact><dt><b>作者: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>日付: </b></dt><dd>
+ 2005 / 10 / 05 initialize ( renew )</dl><hr><h2>関数の解説</h2>
+<a name="a11" doxytag="flight_implication.c::atpg_check_state9_n_f"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int atpg_check_state9_n_f </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="flight_implication.c::atpg_enter_imp_trace"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void atpg_enter_imp_trace </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_implication.c::atpg_enter_implication_list"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void atpg_enter_implication_list </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_implication.c::atpg_enter_implication_list_input"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void atpg_enter_implication_list_input </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_implication.c::atpg_enter_implication_list_output"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void atpg_enter_implication_list_output </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a67" doxytag="flight_implication.c::atpg_get_imp_pin_id"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> atpg_get_imp_pin_id </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>line</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a50" doxytag="flight_implication.c::atpg_get_state9_2_failure_state3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__state_8h.html#a0">STATE_3</a> atpg_get_state9_2_failure_state3 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a49" doxytag="flight_implication.c::atpg_get_state9_2_normal_state3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__state_8h.html#a0">STATE_3</a> atpg_get_state9_2_normal_state3 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a51" doxytag="flight_implication.c::atpg_get_state9_with_condition_2_state3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__state_8h.html#a0">STATE_3</a> atpg_get_state9_with_condition_2_state3 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="flight_implication.c::atpg_imp_make_input_pin_number"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> atpg_imp_make_input_pin_number </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="flight_implication.c::atpg_implication_pin_id_2_pin_num"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> atpg_implication_pin_id_2_pin_num </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="flight_implication.c::atpg_implication_pin_num_2_pin_id"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> atpg_implication_pin_num_2_pin_id </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="flight_implication.c::atpg_invert_state3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__state_8h.html#a0">STATE_3</a> atpg_invert_state3 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a23" doxytag="flight_implication.c::atpg_make_imp_info"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> * atpg_make_imp_info </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="flight_implication.c::atpg_make_state"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__state_8h.html#a1">STATE_9</a> atpg_make_state </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a24" doxytag="flight_implication.c::atpg_reverse_condition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a7">Uint</a> atpg_reverse_condition </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a22" doxytag="flight_implication.c::atpg_select_implication"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> * atpg_select_implication </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="flight_implication.c::atpg_update_state"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void atpg_update_state </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a58" doxytag="flight_implication.c::flight_print_mes"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a62" doxytag="flight_implication.c::flight_print_mes_gate_info"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_gate_info </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a63" doxytag="flight_implication.c::flight_print_mes_gate_stat"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_gate_stat </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a61" doxytag="flight_implication.c::flight_print_mes_gate_state9"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_gate_state9 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a65" doxytag="flight_implication.c::flight_print_mes_gate_state9_new"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_gate_state9_new </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a59" doxytag="flight_implication.c::flight_print_mes_id_type_stat"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_id_type_stat </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a64" doxytag="flight_implication.c::flight_print_mes_imp_info_new"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_imp_info_new </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a60" doxytag="flight_implication.c::flight_print_mes_result_X"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_result_X </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a66" doxytag="flight_implication.c::implication2"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication2 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a30" doxytag="flight_implication.c::implication_and"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_and </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a34" doxytag="flight_implication.c::implication_blk"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_blk </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a36" doxytag="flight_implication.c::implication_conflict"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_conflict </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a40" doxytag="flight_implication.c::implication_in0_state0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in0_state0 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a41" doxytag="flight_implication.c::implication_in0_state1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in0_state1 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a42" doxytag="flight_implication.c::implication_in0_stateU"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in0_stateU </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a43" doxytag="flight_implication.c::implication_in1_state0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in1_state0 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a44" doxytag="flight_implication.c::implication_in1_state1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in1_state1 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a45" doxytag="flight_implication.c::implication_in1_stateU"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_in1_stateU </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_implication.c::implication_init"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_init </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a46" doxytag="flight_implication.c::implication_ino_state0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_ino_state0 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a47" doxytag="flight_implication.c::implication_ino_state1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_ino_state1 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a48" doxytag="flight_implication.c::implication_ino_stateU"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_ino_stateU </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a29" doxytag="flight_implication.c::implication_inv"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_inv </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a35" doxytag="flight_implication.c::implication_keep"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_keep </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a31" doxytag="flight_implication.c::implication_nand"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_nand </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a33" doxytag="flight_implication.c::implication_nor"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_nor </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a28" doxytag="flight_implication.c::implication_one_input"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_one_input </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a32" doxytag="flight_implication.c::implication_or"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_or </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a37" doxytag="flight_implication.c::implication_out_state0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_out_state0 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a38" doxytag="flight_implication.c::implication_out_state1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_out_state1 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a39" doxytag="flight_implication.c::implication_out_stateU"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_out_stateU </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a27" doxytag="flight_implication.c::implication_pi"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int implication_pi </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a25" doxytag="flight_implication.c::implication_update_input"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_update_input </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a26" doxytag="flight_implication.c::implication_update_output"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void implication_update_output </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a57" doxytag="flight_implication.c::test_condition"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_condition </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a7">Uint</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a52" doxytag="flight_implication.c::test_line_null"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_line_null </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a53" doxytag="flight_implication.c::test_line_type"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_line_type </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a56" doxytag="flight_implication.c::test_state3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_state3 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a0">STATE_3</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a54" doxytag="flight_implication.c::test_state_n_f"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_state_n_f </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a55" doxytag="flight_implication.c::test_state_normal"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_state_normal </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__state_8h.html#a1">STATE_9</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>変数の解説</h2>
+<a name="a0" doxytag="flight_implication.c::Gene_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__atpg_8h.html#a49">GENE_HEAD</a> Gene_head
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_implication.c::Switch_implication"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int(*  Switch_implication[FLIGHT_NUM_PRIM])(<a class="el" href="flight__atpg_8h.html#a54">IMP_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_implication.c::Xnor_implication_in0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xnor_implication_in0[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_implication.c::Xnor_implication_in1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xnor_implication_in1[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_implication.c::Xnor_implication_out0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xnor_implication_out0[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_implication.c::Xnor_implication_out1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xnor_implication_out1[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_implication.c::Xor_implication_in0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xor_implication_in0[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_implication.c::Xor_implication_in1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xor_implication_in1[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_implication.c::Xor_implication_out0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xor_implication_out0[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_implication.c::Xor_implication_out1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void(*  Xor_implication_out1[4][4])(<a class="el" href="flight__atpg_8h.html#a56">IMP_RESULT_INFO</a> *)
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:08 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

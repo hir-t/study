@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_cell.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- ì¬F Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ƒƒCƒ“ƒy[ƒW</a> &nbsp; <a class="qindex" href="annotated.html">\¬</a> &nbsp; <a class="qindex" href="files.html">ƒtƒ@ƒCƒ‹ˆê——</a> &nbsp; <a class="qindex" href="functions.html">\¬ƒƒ“ƒo</a> &nbsp; <a class="qindex" href="globals.html">ƒtƒ@ƒCƒ‹ƒƒ“ƒo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_cell.h ‚Ì‰ğà</h1>CELL·Á¼°¤Ë´Ø¤¹¤ëÀßÄê. 
+<a href="#_details">[Ú×]</a>
+<p>
+
+<p>
+<a href="flight__cell_8h-source.html">ƒ\[ƒXƒR[ƒh‚ğŒ©‚éB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>\¬</h2></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcell.html">cell</a></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcell__head.html">cell_head</a></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcell__io.html">cell_io</a></td></tr>
+<tr><td colspan=2><br><h2>cell¤Î¥Ï¥Ã¥·¥å¥Æ¡¼¥Ö¥ë¤Ë´Ø¤¹¤ëÀßÄê</h2></td></tr>
+<tr><td colspan=2><dl compact><dt><b>Šo‚¦‘‚«: </b></dt><dd>
+Ì¾Á°¤ÎÊ¸»ú¿ô¤ÎÀ©¸Â¤Ï²ò½ü¤¹¤Ù¤­²İÂê</dl><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a0">CELL_HASH</a>&nbsp;&nbsp;&nbsp;999991</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em><a class="el" href="structcell__head.html">cell_head</a>ÍÑ¥Ï¥Ã¥·¥åÃÍ</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a1">CELL_NAME_SIZE</a>&nbsp;&nbsp;&nbsp;1024</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>Ì¾Á°¤ÎÊ¸»ú¿ô¤ÎºÇÂçÃÍ</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__cell_8h.html#a29">cell_flag</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a2">CELL_FLAG</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__cell_8h.html#a30">cell_type</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a3">CELL_TYPE</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcell__head.html">cell_head</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a4">CELL_HEAD</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcell.html">cell</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a5">CELL</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcell__io.html">cell_io</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a6">CELL_IO</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a29">cell_flag</a> { <a class="el" href="flight__cell_8h.html#a29a7">Fault_off</a> =  0, 
+<a class="el" href="flight__cell_8h.html#a29a8">Fault_out_on</a> =  1, 
+<a class="el" href="flight__cell_8h.html#a29a9">Fault_in_on</a> =  2, 
+<a class="el" href="flight__cell_8h.html#a29a10">Fault_in_out_on</a> =  3
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>Cell¤Î¸Î¾ã¤¬ÄêµÁ¤µ¤ì¤Æ¤¤¤ë¤«Èİ¤«¤ò¼¨¤¹¥Õ¥é¥°.</em> <a href="#a29">[Ú×]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__cell_8h.html#a30">cell_type</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__cell_8h.html#a30a11">CELL_PI</a> =  0, 
+<a class="el" href="flight__cell_8h.html#a30a12">CELL_PO</a>, 
+<a class="el" href="flight__cell_8h.html#a30a13">CELL_BR</a>, 
+<a class="el" href="flight__cell_8h.html#a30a14">CELL_INV</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__cell_8h.html#a30a15">CELL_BUF</a>, 
+<a class="el" href="flight__cell_8h.html#a30a16">CELL_AND</a>, 
+<a class="el" href="flight__cell_8h.html#a30a17">CELL_NAND</a>, 
+<a class="el" href="flight__cell_8h.html#a30a18">CELL_OR</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__cell_8h.html#a30a19">CELL_NOR</a>, 
+<a class="el" href="flight__cell_8h.html#a30a20">CELL_XOR</a>, 
+<a class="el" href="flight__cell_8h.html#a30a21">CELL_XNOR</a>, 
+<a class="el" href="flight__cell_8h.html#a30a22">CELL_SEL</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__cell_8h.html#a30a23">CELL_FF</a>, 
+<a class="el" href="flight__cell_8h.html#a30a24">CELL_BLK</a>, 
+<a class="el" href="flight__cell_8h.html#a30a25">CELL_BLKI</a>, 
+<a class="el" href="flight__cell_8h.html#a30a26">CELL_BLKO</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__cell_8h.html#a30a27">CELL_UNK</a>, 
+<a class="el" href="flight__cell_8h.html#a30a28">CELL_NUM_PRIM</a>
+<br>
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>Cell¥Õ¥©¡¼¥Ş¥Ã¥È¾å¤Î¥²¡¼¥È¥¿¥¤¥×.</em> <a href="#a30">[Ú×]</a><em></em></font><br><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>‰ğà</h2>
+CELL·Á¼°¤Ë´Ø¤¹¤ëÀßÄê.
+<p>
+ <dl compact><dt><b>Šo‚¦‘‚«: </b></dt><dd>
+ CELL·Á¼°¤Ï¥²¡¼¥È¥ì¥Ù¥ë¥Í¥Ã¥È¥ê¥¹¥È¤ÈATPGÍÑ¥Í¥Ã¥È¥ê¥¹¥È¤È¤Î´Ö¤ò¤Ä¤Ê¤°¤¿¤á¤Î¤â¤Î¤Ç¤¢¤ë¡£¥ë¡¼¥ë¥Á¥§¥Ã¥¯¤Î¼Â»Ü¤ä¥Ñ¥¿¡¼¥óÀ¸À®¤ä¸Î¾ã¥·¥ß¥å¥ì¡¼¥¿¤Î¤¿¤á¤Ë²óÏ©ÊÑ´¹¤Î¸µ¤È¤Ê¤ë¡£ ²óÏ©Ê¬»¶»ş¤Ë¤Ï¤³¤³¤«¤éÅ¸³«¤¹¤ë¤Î¤¬Àµ²ò¤Ç¤Ï¤Ê¤¤¤À¤í¤¦¤«¡©</dl><dl compact><dt><b>ìÒ: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>“ú•t: </b></dt><dd>
+ 2005 / 07 / 07 initialize</dl><hr><h2>ƒ}ƒNƒ’è‹`‚Ì‰ğà</h2>
+<a name="a0" doxytag="flight_cell.h::CELL_HASH"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define CELL_HASH&nbsp;&nbsp;&nbsp;999991
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<a class="el" href="structcell__head.html">cell_head</a>ÍÑ¥Ï¥Ã¥·¥åÃÍ
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_cell.h::CELL_NAME_SIZE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define CELL_NAME_SIZE&nbsp;&nbsp;&nbsp;1024
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Ì¾Á°¤ÎÊ¸»ú¿ô¤ÎºÇÂçÃÍ
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ‚Ì‰ğà</h2>
+<a name="a5" doxytag="flight_cell.h::CELL"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcell.html">cell</a>  CELL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_cell.h::CELL_FLAG"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__cell_8h.html#a29">cell_flag</a>  CELL_FLAG
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_cell.h::CELL_HEAD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcell__head.html">cell_head</a>  CELL_HEAD
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_cell.h::CELL_IO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcell__io.html">cell_io</a>  CELL_IO
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_cell.h::CELL_TYPE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__cell_8h.html#a30">cell_type</a>  CELL_TYPE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum ‚Ì‰ğà</h2>
+<a name="a29" doxytag="flight_cell.h::cell_flag"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum cell_flag
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Cell¤Î¸Î¾ã¤¬ÄêµÁ¤µ¤ì¤Æ¤¤¤ë¤«Èİ¤«¤ò¼¨¤¹¥Õ¥é¥°.
+<p>
+<dl compact><dt><b>Enum ’l: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a29a7" doxytag="Fault_off"></a><em>Fault_off</em></em>&nbsp;</td><td>
+ÆşÎÏ¤Ë¤â½ĞÎÏ¤Ë¤âÄêµÁ¤µ¤ì¤Æ¤¤¤Ê¤¤</td></tr>
+<tr><td valign=top><em><a name="a29a8" doxytag="Fault_out_on"></a><em>Fault_out_on</em></em>&nbsp;</td><td>
+½ĞÎÏ¤À¤±ÄêµÁ¤µ¤ì¤Æ¤¤¤ë</td></tr>
+<tr><td valign=top><em><a name="a29a9" doxytag="Fault_in_on"></a><em>Fault_in_on</em></em>&nbsp;</td><td>
+ÆşÎÏ¤À¤±ÄêµÁ¤µ¤ì¤Æ¤¤¤ë</td></tr>
+<tr><td valign=top><em><a name="a29a10" doxytag="Fault_in_out_on"></a><em>Fault_in_out_on</em></em>&nbsp;</td><td>
+ÆşÎÏ¤Ë¤â½ĞÎÏ¤Ë¤âÄêµÁ¤µ¤ì¤Æ¤¤¤ë</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a name="a30" doxytag="flight_cell.h::cell_type"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum cell_type
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Cell¥Õ¥©¡¼¥Ş¥Ã¥È¾å¤Î¥²¡¼¥È¥¿¥¤¥×.
+<p>
+<dl compact><dt><b>Enum ’l: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a30a11" doxytag="CELL_PI"></a><em>CELL_PI</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a12" doxytag="CELL_PO"></a><em>CELL_PO</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a13" doxytag="CELL_BR"></a><em>CELL_BR</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a14" doxytag="CELL_INV"></a><em>CELL_INV</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a15" doxytag="CELL_BUF"></a><em>CELL_BUF</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a16" doxytag="CELL_AND"></a><em>CELL_AND</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a17" doxytag="CELL_NAND"></a><em>CELL_NAND</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a18" doxytag="CELL_OR"></a><em>CELL_OR</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a19" doxytag="CELL_NOR"></a><em>CELL_NOR</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a20" doxytag="CELL_XOR"></a><em>CELL_XOR</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a21" doxytag="CELL_XNOR"></a><em>CELL_XNOR</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a22" doxytag="CELL_SEL"></a><em>CELL_SEL</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a23" doxytag="CELL_FF"></a><em>CELL_FF</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a24" doxytag="CELL_BLK"></a><em>CELL_BLK</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a25" doxytag="CELL_BLKI"></a><em>CELL_BLKI</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a26" doxytag="CELL_BLKO"></a><em>CELL_BLKO</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a27" doxytag="CELL_UNK"></a><em>CELL_UNK</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a30a28" doxytag="CELL_NUM_PRIM"></a><em>CELL_NUM_PRIM</em></em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHT‚É‘Î‚µ‚ÄThu Feb 16 14:41:09 2006‚É¶¬‚³‚ê‚Ü‚µ‚½B
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

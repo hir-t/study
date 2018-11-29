@@ -1,0 +1,677 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-atpg.h ÇÃâê‡}
+\label{flight__atpg_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_atpg.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-atpg.h}}
+•—•ø°º•Û¿∏¿Æ(generate)§À§´§´§Ô§Î¿ﬂƒÍ 
+
+
+\subsection*{ç$\backslash$ê¨}
+\begin{CompactItemize}
+\item 
+struct {\bf ass\_\-list}
+\begin{CompactList}\small\item\em √Õ≥‰§Í≈ˆ§∆§À¥ÿ§π§Îæ Û\item\end{CompactList}\item 
+struct {\bf btree}
+\begin{CompactList}\small\item\em •–•√•Ø•»•È•√•Ø•ƒ•Í°º§Œ•«°º•øπΩ¬§\item\end{CompactList}\item 
+struct {\bf dfront}
+\begin{CompactList}\small\item\em D•’•Ì•Û•∆•£•¢§Œ•«°º•øπΩ¬§.\item\end{CompactList}\item 
+struct {\bf dfront\_\-list}
+\begin{CompactList}\small\item\em D•’•Ì•Û•∆•£•¢§Œ•Í•π•»πΩ¬§.\item\end{CompactList}\item 
+struct {\bf gene\_\-head}
+\begin{CompactList}\small\item\em •—•ø°º•Û¿∏¿Æ§À¥ÿ§π§Îæ Û\item\end{CompactList}\item 
+struct {\bf gene\_\-info}
+\begin{CompactList}\small\item\em •—•ø°º•Û¿∏¿Æ§À¥ÿ§π§Îæ Û\item\end{CompactList}\item 
+struct {\bf imp\_\-info}
+\begin{CompactList}\small\item\em ¥ﬁ∞’¡‡∫Ó§Œ∆˛Œœ§»∑Î≤Ã\item\end{CompactList}\item 
+struct {\bf imp\_\-result\_\-info}
+\begin{CompactList}\small\item\em ¥ﬁ∞’¡‡∫Ó§À§Ë§Î∑Î≤Ã\item\end{CompactList}\item 
+struct {\bf imp\_\-trace}
+\begin{CompactList}\small\item\em ¥ﬁ∞’¡‡∫Ó§Œµ≠œø\item\end{CompactList}\item 
+struct {\bf just\_\-info}
+\begin{CompactList}\small\item\em ¿µ≈ˆ≤Ω§¨…¨Õ◊§ øÆπÊ¿˛§»§Ω§Œæı¬÷§Œæ Û\item\end{CompactList}\end{CompactItemize}
+\subsection*{Atpg\_\-head.flag§À¥ÿ§π§ÎƒÍµ¡}
+\begin{CompactItemize}
+\item 
+\#define {\bf ATPG\_\-PROPA\_\-E}\ 0x00000001
+\begin{CompactList}\small\item\em 1bitÃ‹ ≈¡»¬¥∞Œª( ON ) Ã§¥∞Œª( OFF )\item\end{CompactList}\item 
+\#define {\bf ATPG\_\-JUSTI\_\-S}\ 0x00000002
+\begin{CompactList}\small\item\em 2bitÃ‹ ¿µ≈ˆ≤Ωº¬ª‹≥´ªœ( ON ) Ã§≥´ªœ( OFF )\item\end{CompactList}\item 
+\#define {\bf ATPG\_\-UNT}\ 0x00000004
+\begin{CompactList}\small\item\em 3bitÃ‹ •∆•π•»¿∏¿Æ…‘«Ω¿≠§¢§Í ( ON ) § §∑ ( OFF )\item\end{CompactList}\end{CompactItemize}
+\subsection*{implication¥ÿøÙ§À§™§±§Îæı¬÷§ŒƒÍµ¡}
+\begin{CompactItemize}
+\item 
+\#define {\bf ALL\_\-FLAG\_\-ON}\ 0x00000000
+\item 
+\#define {\bf ALL\_\-FLAG\_\-OFF}\ 0x00000001
+\item 
+\#define {\bf ONE\_\-FLAG\_\-ON}\ 0x00000000
+\item 
+\#define {\bf ONE\_\-FLAG\_\-OFF}\ 0x00000001
+\item 
+\#define {\bf UNK\_\-FLAG\_\-ON}\ 0x00000000
+\item 
+\#define {\bf UNK\_\-FLAG\_\-OFF}\ 0x00000001
+\item 
+\#define {\bf OUT\_\-PIN\_\-NUM}\ 0x00000000
+\item 
+\#define {\bf IN0\_\-PIN\_\-NUM}\ 0x00000001
+\item 
+\#define {\bf IN1\_\-PIN\_\-NUM}\ 0x00000002
+\end{CompactItemize}
+\subsection*{btree.flag§À§™§±§Îæı¬÷§ŒƒÍµ¡}
+\begin{CompactItemize}
+\item 
+\#define {\bf ASS\_\-N\_\-0}\ 0x00000001
+\begin{CompactList}\small\item\em 1bit 1:assign normal 0 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹\item\end{CompactList}\item 
+\#define {\bf ASS\_\-N\_\-1}\ 0x00000002
+\begin{CompactList}\small\item\em 2bit 1:assign normal 1 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹\item\end{CompactList}\item 
+\#define {\bf ASS\_\-F\_\-0}\ 0x00000004
+\begin{CompactList}\small\item\em 3bit 1:assign failure 0 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹\item\end{CompactList}\item 
+\#define {\bf ASS\_\-F\_\-1}\ 0x00000008
+\begin{CompactList}\small\item\em 4bit 1:assign failure 1 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹\item\end{CompactList}\item 
+\#define {\bf ASS\_\-C\_\-N}\ 0x00000003
+\begin{CompactList}\small\item\em 1bit and 2bit normal state complite\item\end{CompactList}\item 
+\#define {\bf ASS\_\-C\_\-F}\ 0x0000000c
+\begin{CompactList}\small\item\em 3bit and 4bit failure state complite\item\end{CompactList}\end{CompactItemize}
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf ASS\_\-KEEP}\ 0x00000008
+\item 
+\#define {\bf ASS\_\-CONF}\ 0x00000010
+\item 
+\#define {\bf DRIVE\_\-CONT}\ 0x00000020
+\item 
+\#define {\bf DRIVE\_\-END}\ 0x00000040
+\item 
+\#define {\bf DRIVE\_\-IMPOS}\ 0x00000080
+\item 
+\#define {\bf DRIVE\_\-POINT}\ 0x00000100
+\item 
+\#define {\bf JUSTI\_\-END}\ 0x00000200
+\item 
+\#define {\bf JUSTI\_\-KEEP}\ 0x00000400
+\item 
+\#define {\bf JUSTI\_\-CONF}\ 0x00000800
+\item 
+\#define {\bf PROPA\_\-END}\ 0x00001000
+\item 
+\#define {\bf ASS\_\-R\_\-CONF}\ 0x00000010
+\item 
+\#define {\bf DF\_\-NOCHECK}\ 0x00000001
+\item 
+\#define {\bf DF\_\-ROOT}\ 0x00000002
+\item 
+\#define {\bf DF\_\-DEADEND}\ 0x00000004
+\item 
+\#define {\bf JUST\_\-ERROR}\ 0x00000000
+\item 
+\#define {\bf JUST\_\-NONE}\ 0x00000001
+\item 
+\#define {\bf JUST\_\-OWN}\ 0x00000002
+\item 
+\#define {\bf JUST\_\-ALL}\ 0x00000004
+\item 
+\#define {\bf JUST\_\-1IN}\ 0x00000008
+\item 
+\#define {\bf JUST\_\-1IN\_\-N}\ 0x00000010
+\item 
+\#define {\bf JUST\_\-IN0}\ 0x00000020
+\item 
+\#define {\bf JUST\_\-IN1}\ 0x00000040
+\item 
+\#define {\bf JUST\_\-IN2}\ 0x00000080
+\item 
+\#define {\bf ATPG\_\-BACK\_\-END}\ 0x00000000
+\item 
+\#define {\bf ATPG\_\-BACK\_\-CONT}\ 0x00000001
+\item 
+\#define {\bf IMP\_\-XOR}\ 0x0001
+\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf atpg\_\-check} {\bf ATPG\_\-CHECK}
+\item 
+typedef enum {\bf gene\_\-result} {\bf GENE\_\-RESULT}
+\item 
+typedef enum {\bf condition} {\bf CONDITION}
+\item 
+typedef enum {\bf imp\_\-result} {\bf IMP\_\-RESULT}
+\item 
+typedef enum {\bf f\_\-class} {\bf F\_\-CLASS}
+\item 
+typedef {\bf gene\_\-head} {\bf GENE\_\-HEAD}
+\item 
+typedef {\bf ass\_\-list} {\bf ASS\_\-LIST}
+\item 
+typedef {\bf btree} {\bf BTREE}
+\item 
+typedef {\bf dfront} {\bf DFRONT}
+\item 
+typedef {\bf dfront\_\-list} {\bf DFRONT\_\-LIST}
+\item 
+typedef {\bf imp\_\-info} {\bf IMP\_\-INFO}
+\item 
+typedef {\bf just\_\-info} {\bf JUST\_\-INFO}
+\item 
+typedef {\bf imp\_\-result\_\-info} {\bf IMP\_\-RESULT\_\-INFO}
+\item 
+typedef {\bf imp\_\-trace} {\bf IMP\_\-TRACE}
+\item 
+typedef {\bf gene\_\-info} {\bf GENE\_\-INFO}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf atpg\_\-check} \{ {\bf ATPG\_\-CONT} =  0, 
+{\bf ATPG\_\-NOFLT} =  1
+ \}
+\begin{CompactList}\small\item\em atpg\_\-check\_\-end§Œ ÷√Õ(int)\item\end{CompactList}\item 
+enum {\bf gene\_\-result} \{ {\bf NO\_\-RESULT} =  0, 
+{\bf INSERT\_\-FAIL}, 
+{\bf INSERT\_\-PASS}, 
+{\bf LIM\_\-BACK\_\-END}, 
+{\bf PROPA\_\-PASS}, 
+{\bf PROPA\_\-FAIL}, 
+{\bf PROPA\_\-FAIL\_\-DRIVE}, 
+{\bf PROPA\_\-FAIL\_\-ENTER}, 
+{\bf PROPA\_\-FAIL\_\-IMP}, 
+{\bf PROPA\_\-CONT}, 
+{\bf JUSTI\_\-PASS}, 
+{\bf JUSTI\_\-CONT}, 
+{\bf JUSTI\_\-FAIL}, 
+{\bf JUSTI\_\-FAIL\_\-ENTER}, 
+{\bf JUSTI\_\-FAIL\_\-IMP}, 
+{\bf GENE\_\-CONT}, 
+{\bf GENE\_\-END}
+ \}
+\begin{CompactList}\small\item\em generate¥ÿøÙ√Ê§Œ∑Î≤Ã§Œ§‰§ÍºË§Í§Œ¿ﬂƒÍ\item\end{CompactList}\item 
+enum {\bf condition} \{ {\bf COND\_\-FAILURE} =  1, 
+{\bf COND\_\-NORMAL} =  4, 
+{\bf COND\_\-REVERSE} =  5
+ \}
+\begin{CompactList}\small\item\em æı¬÷ ( ¿µæÔ√Õ or ∏Œæ„√Õ )§À¥ÿ§π§Î√Õ\item\end{CompactList}\item 
+enum {\bf imp\_\-result} \{ {\bf IMP\_\-KEEP} =  1, 
+{\bf IMP\_\-CONF} =  2, 
+{\bf IMP\_\-UPDA} =  4
+ \}
+\begin{CompactList}\small\item\em ¥ﬁ∞’¡‡∫Ó§Œ∑Î≤Ã\item\end{CompactList}\item 
+enum {\bf f\_\-class} \{ {\bf NO\_\-DEFINE} =  0, 
+{\bf GENE\_\-NO\_\-FAULT}, 
+{\bf GENE\_\-DET\_\-A}, 
+{\bf GENE\_\-DET\_\-S}, 
+{\bf GENE\_\-RED}, 
+{\bf GENE\_\-UNT}, 
+{\bf GENE\_\-IUN}, 
+{\bf GENE\_\-ABT}
+ \}
+\begin{CompactList}\small\item\em ATPG§À§Ë§Î∏Œæ„§Œ ¨Œ‡∑Î≤Ã§À¥ÿ§π§Î√Õ.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{âê‡}
+•—•ø°º•Û¿∏¿Æ(generate)§À§´§´§Ô§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+ {\bf flight\_\-state.h}§¨…¨Õ◊ \end{Desc}
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2006 / 02 / 10 initialize ( renew )\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_atpg.h@{flight\_\-atpg.h}!ALL_FLAG_OFF@{ALL\_\-FLAG\_\-OFF}}
+\index{ALL_FLAG_OFF@{ALL\_\-FLAG\_\-OFF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ALL\_\-FLAG\_\-OFF\ 0x00000001}\label{flight__atpg_8h_a4}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ALL_FLAG_ON@{ALL\_\-FLAG\_\-ON}}
+\index{ALL_FLAG_ON@{ALL\_\-FLAG\_\-ON}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ALL\_\-FLAG\_\-ON\ 0x00000000}\label{flight__atpg_8h_a3}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_C_F@{ASS\_\-C\_\-F}}
+\index{ASS_C_F@{ASS\_\-C\_\-F}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-C\_\-F\ 0x0000000c}\label{flight__atpg_8h_a17}
+
+
+3bit and 4bit failure state complite
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_C_N@{ASS\_\-C\_\-N}}
+\index{ASS_C_N@{ASS\_\-C\_\-N}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-C\_\-N\ 0x00000003}\label{flight__atpg_8h_a16}
+
+
+1bit and 2bit normal state complite
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_CONF@{ASS\_\-CONF}}
+\index{ASS_CONF@{ASS\_\-CONF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-CONF\ 0x00000010}\label{flight__atpg_8h_a19}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_F_0@{ASS\_\-F\_\-0}}
+\index{ASS_F_0@{ASS\_\-F\_\-0}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-F\_\-0\ 0x00000004}\label{flight__atpg_8h_a14}
+
+
+3bit 1:assign failure 0 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_F_1@{ASS\_\-F\_\-1}}
+\index{ASS_F_1@{ASS\_\-F\_\-1}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-F\_\-1\ 0x00000008}\label{flight__atpg_8h_a15}
+
+
+4bit 1:assign failure 1 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_KEEP@{ASS\_\-KEEP}}
+\index{ASS_KEEP@{ASS\_\-KEEP}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-KEEP\ 0x00000008}\label{flight__atpg_8h_a18}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_N_0@{ASS\_\-N\_\-0}}
+\index{ASS_N_0@{ASS\_\-N\_\-0}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-N\_\-0\ 0x00000001}\label{flight__atpg_8h_a12}
+
+
+1bit 1:assign normal 0 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_N_1@{ASS\_\-N\_\-1}}
+\index{ASS_N_1@{ASS\_\-N\_\-1}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-N\_\-1\ 0x00000002}\label{flight__atpg_8h_a13}
+
+
+2bit 1:assign normal 1 º¬ª‹§∫§ﬂ, 0: Ã§º¬ª‹
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_R_CONF@{ASS\_\-R\_\-CONF}}
+\index{ASS_R_CONF@{ASS\_\-R\_\-CONF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASS\_\-R\_\-CONF\ 0x00000010}\label{flight__atpg_8h_a28}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_BACK_CONT@{ATPG\_\-BACK\_\-CONT}}
+\index{ATPG_BACK_CONT@{ATPG\_\-BACK\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ATPG\_\-BACK\_\-CONT\ 0x00000001}\label{flight__atpg_8h_a42}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_BACK_END@{ATPG\_\-BACK\_\-END}}
+\index{ATPG_BACK_END@{ATPG\_\-BACK\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ATPG\_\-BACK\_\-END\ 0x00000000}\label{flight__atpg_8h_a41}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_JUSTI_S@{ATPG\_\-JUSTI\_\-S}}
+\index{ATPG_JUSTI_S@{ATPG\_\-JUSTI\_\-S}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ATPG\_\-JUSTI\_\-S\ 0x00000002}\label{flight__atpg_8h_a1}
+
+
+2bitÃ‹ ¿µ≈ˆ≤Ωº¬ª‹≥´ªœ( ON ) Ã§≥´ªœ( OFF )
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_PROPA_E@{ATPG\_\-PROPA\_\-E}}
+\index{ATPG_PROPA_E@{ATPG\_\-PROPA\_\-E}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ATPG\_\-PROPA\_\-E\ 0x00000001}\label{flight__atpg_8h_a0}
+
+
+1bitÃ‹ ≈¡»¬¥∞Œª( ON ) Ã§¥∞Œª( OFF )
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_UNT@{ATPG\_\-UNT}}
+\index{ATPG_UNT@{ATPG\_\-UNT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ATPG\_\-UNT\ 0x00000004}\label{flight__atpg_8h_a2}
+
+
+3bitÃ‹ •∆•π•»¿∏¿Æ…‘«Ω¿≠§¢§Í ( ON ) § §∑ ( OFF )
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DF_DEADEND@{DF\_\-DEADEND}}
+\index{DF_DEADEND@{DF\_\-DEADEND}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DF\_\-DEADEND\ 0x00000004}\label{flight__atpg_8h_a31}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DF_NOCHECK@{DF\_\-NOCHECK}}
+\index{DF_NOCHECK@{DF\_\-NOCHECK}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DF\_\-NOCHECK\ 0x00000001}\label{flight__atpg_8h_a29}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DF_ROOT@{DF\_\-ROOT}}
+\index{DF_ROOT@{DF\_\-ROOT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DF\_\-ROOT\ 0x00000002}\label{flight__atpg_8h_a30}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DRIVE_CONT@{DRIVE\_\-CONT}}
+\index{DRIVE_CONT@{DRIVE\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DRIVE\_\-CONT\ 0x00000020}\label{flight__atpg_8h_a20}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DRIVE_END@{DRIVE\_\-END}}
+\index{DRIVE_END@{DRIVE\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DRIVE\_\-END\ 0x00000040}\label{flight__atpg_8h_a21}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DRIVE_IMPOS@{DRIVE\_\-IMPOS}}
+\index{DRIVE_IMPOS@{DRIVE\_\-IMPOS}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DRIVE\_\-IMPOS\ 0x00000080}\label{flight__atpg_8h_a22}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DRIVE_POINT@{DRIVE\_\-POINT}}
+\index{DRIVE_POINT@{DRIVE\_\-POINT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define DRIVE\_\-POINT\ 0x00000100}\label{flight__atpg_8h_a23}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_XOR@{IMP\_\-XOR}}
+\index{IMP_XOR@{IMP\_\-XOR}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IMP\_\-XOR\ 0x0001}\label{flight__atpg_8h_a43}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IN0_PIN_NUM@{IN0\_\-PIN\_\-NUM}}
+\index{IN0_PIN_NUM@{IN0\_\-PIN\_\-NUM}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IN0\_\-PIN\_\-NUM\ 0x00000001}\label{flight__atpg_8h_a10}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IN1_PIN_NUM@{IN1\_\-PIN\_\-NUM}}
+\index{IN1_PIN_NUM@{IN1\_\-PIN\_\-NUM}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IN1\_\-PIN\_\-NUM\ 0x00000002}\label{flight__atpg_8h_a11}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_1IN@{JUST\_\-1IN}}
+\index{JUST_1IN@{JUST\_\-1IN}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-1IN\ 0x00000008}\label{flight__atpg_8h_a36}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_1IN_N@{JUST\_\-1IN\_\-N}}
+\index{JUST_1IN_N@{JUST\_\-1IN\_\-N}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-1IN\_\-N\ 0x00000010}\label{flight__atpg_8h_a37}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_ALL@{JUST\_\-ALL}}
+\index{JUST_ALL@{JUST\_\-ALL}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-ALL\ 0x00000004}\label{flight__atpg_8h_a35}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_ERROR@{JUST\_\-ERROR}}
+\index{JUST_ERROR@{JUST\_\-ERROR}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-ERROR\ 0x00000000}\label{flight__atpg_8h_a32}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_IN0@{JUST\_\-IN0}}
+\index{JUST_IN0@{JUST\_\-IN0}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-IN0\ 0x00000020}\label{flight__atpg_8h_a38}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_IN1@{JUST\_\-IN1}}
+\index{JUST_IN1@{JUST\_\-IN1}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-IN1\ 0x00000040}\label{flight__atpg_8h_a39}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_IN2@{JUST\_\-IN2}}
+\index{JUST_IN2@{JUST\_\-IN2}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-IN2\ 0x00000080}\label{flight__atpg_8h_a40}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_NONE@{JUST\_\-NONE}}
+\index{JUST_NONE@{JUST\_\-NONE}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-NONE\ 0x00000001}\label{flight__atpg_8h_a33}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_OWN@{JUST\_\-OWN}}
+\index{JUST_OWN@{JUST\_\-OWN}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUST\_\-OWN\ 0x00000002}\label{flight__atpg_8h_a34}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_CONF@{JUSTI\_\-CONF}}
+\index{JUSTI_CONF@{JUSTI\_\-CONF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTI\_\-CONF\ 0x00000800}\label{flight__atpg_8h_a26}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_END@{JUSTI\_\-END}}
+\index{JUSTI_END@{JUSTI\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTI\_\-END\ 0x00000200}\label{flight__atpg_8h_a24}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_KEEP@{JUSTI\_\-KEEP}}
+\index{JUSTI_KEEP@{JUSTI\_\-KEEP}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTI\_\-KEEP\ 0x00000400}\label{flight__atpg_8h_a25}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ONE_FLAG_OFF@{ONE\_\-FLAG\_\-OFF}}
+\index{ONE_FLAG_OFF@{ONE\_\-FLAG\_\-OFF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ONE\_\-FLAG\_\-OFF\ 0x00000001}\label{flight__atpg_8h_a6}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ONE_FLAG_ON@{ONE\_\-FLAG\_\-ON}}
+\index{ONE_FLAG_ON@{ONE\_\-FLAG\_\-ON}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ONE\_\-FLAG\_\-ON\ 0x00000000}\label{flight__atpg_8h_a5}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!OUT_PIN_NUM@{OUT\_\-PIN\_\-NUM}}
+\index{OUT_PIN_NUM@{OUT\_\-PIN\_\-NUM}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define OUT\_\-PIN\_\-NUM\ 0x00000000}\label{flight__atpg_8h_a9}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_END@{PROPA\_\-END}}
+\index{PROPA_END@{PROPA\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PROPA\_\-END\ 0x00001000}\label{flight__atpg_8h_a27}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!UNK_FLAG_OFF@{UNK\_\-FLAG\_\-OFF}}
+\index{UNK_FLAG_OFF@{UNK\_\-FLAG\_\-OFF}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define UNK\_\-FLAG\_\-OFF\ 0x00000001}\label{flight__atpg_8h_a8}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!UNK_FLAG_ON@{UNK\_\-FLAG\_\-ON}}
+\index{UNK_FLAG_ON@{UNK\_\-FLAG\_\-ON}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define UNK\_\-FLAG\_\-ON\ 0x00000000}\label{flight__atpg_8h_a7}
+
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_atpg.h@{flight\_\-atpg.h}!ASS_LIST@{ASS\_\-LIST}}
+\index{ASS_LIST@{ASS\_\-LIST}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf ass\_\-list}  ASS\_\-LIST}\label{flight__atpg_8h_a50}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_CHECK@{ATPG\_\-CHECK}}
+\index{ATPG_CHECK@{ATPG\_\-CHECK}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf atpg\_\-check}  ATPG\_\-CHECK}\label{flight__atpg_8h_a44}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!BTREE@{BTREE}}
+\index{BTREE@{BTREE}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf btree}  BTREE}\label{flight__atpg_8h_a51}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!CONDITION@{CONDITION}}
+\index{CONDITION@{CONDITION}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf condition}  CONDITION}\label{flight__atpg_8h_a46}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DFRONT@{DFRONT}}
+\index{DFRONT@{DFRONT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf dfront}  DFRONT}\label{flight__atpg_8h_a52}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!DFRONT_LIST@{DFRONT\_\-LIST}}
+\index{DFRONT_LIST@{DFRONT\_\-LIST}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf dfront\_\-list}  DFRONT\_\-LIST}\label{flight__atpg_8h_a53}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!F_CLASS@{F\_\-CLASS}}
+\index{F_CLASS@{F\_\-CLASS}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf f\_\-class}  F\_\-CLASS}\label{flight__atpg_8h_a48}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_HEAD@{GENE\_\-HEAD}}
+\index{GENE_HEAD@{GENE\_\-HEAD}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf gene\_\-head}  GENE\_\-HEAD}\label{flight__atpg_8h_a49}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_INFO@{GENE\_\-INFO}}
+\index{GENE_INFO@{GENE\_\-INFO}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf gene\_\-info}  GENE\_\-INFO}\label{flight__atpg_8h_a58}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_RESULT@{GENE\_\-RESULT}}
+\index{GENE_RESULT@{GENE\_\-RESULT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf gene\_\-result}  GENE\_\-RESULT}\label{flight__atpg_8h_a45}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_INFO@{IMP\_\-INFO}}
+\index{IMP_INFO@{IMP\_\-INFO}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf imp\_\-info}  IMP\_\-INFO}\label{flight__atpg_8h_a54}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_RESULT@{IMP\_\-RESULT}}
+\index{IMP_RESULT@{IMP\_\-RESULT}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf imp\_\-result}  IMP\_\-RESULT}\label{flight__atpg_8h_a47}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_RESULT_INFO@{IMP\_\-RESULT\_\-INFO}}
+\index{IMP_RESULT_INFO@{IMP\_\-RESULT\_\-INFO}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf imp\_\-result\_\-info}  IMP\_\-RESULT\_\-INFO}\label{flight__atpg_8h_a56}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_TRACE@{IMP\_\-TRACE}}
+\index{IMP_TRACE@{IMP\_\-TRACE}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf imp\_\-trace}  IMP\_\-TRACE}\label{flight__atpg_8h_a57}
+
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!JUST_INFO@{JUST\_\-INFO}}
+\index{JUST_INFO@{JUST\_\-INFO}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf just\_\-info}  JUST\_\-INFO}\label{flight__atpg_8h_a55}
+
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_atpg.h@{flight\_\-atpg.h}!atpg_check@{atpg\_\-check}}
+\index{atpg_check@{atpg\_\-check}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum atpg\_\-check}\label{flight__atpg_8h_a92}
+
+
+atpg\_\-check\_\-end§Œ ÷√Õ(int)
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{ATPG_CONT@{ATPG\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_CONT@{ATPG\_\-CONT}}\item[{\em 
+{\em ATPG\_\-CONT}\label{flight__atpg_8h_a92a59}
+}]ATPG∑—¬≥.\index{ATPG_NOFLT@{ATPG\_\-NOFLT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!ATPG_NOFLT@{ATPG\_\-NOFLT}}\item[{\em 
+{\em ATPG\_\-NOFLT}\label{flight__atpg_8h_a92a60}
+}]ªƒ§Í∏Œæ„§¨§ §§§Œ§«Ω™Œª\end{description}
+\end{Desc}
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!condition@{condition}}
+\index{condition@{condition}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum condition}\label{flight__atpg_8h_a94}
+
+
+æı¬÷ ( ¿µæÔ√Õ or ∏Œæ„√Õ )§À¥ÿ§π§Î√Õ
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{COND_FAILURE@{COND\_\-FAILURE}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!COND_FAILURE@{COND\_\-FAILURE}}\item[{\em 
+{\em COND\_\-FAILURE}\label{flight__atpg_8h_a94a78}
+}]∏Œæ„æı¬÷( ∏Œæ„√Õ )§Ú∞∑§¶\index{COND_NORMAL@{COND\_\-NORMAL}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!COND_NORMAL@{COND\_\-NORMAL}}\item[{\em 
+{\em COND\_\-NORMAL}\label{flight__atpg_8h_a94a79}
+}]¿µæÔæı¬÷( ¿µæÔ√Õ )§Ú∞∑§¶\index{COND_REVERSE@{COND\_\-REVERSE}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!COND_REVERSE@{COND\_\-REVERSE}}\item[{\em 
+{\em COND\_\-REVERSE}\label{flight__atpg_8h_a94a80}
+}]∫£§»»ø¬–§Œæı¬÷§À§π§Î\end{description}
+\end{Desc}
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!f_class@{f\_\-class}}
+\index{f_class@{f\_\-class}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum f\_\-class}\label{flight__atpg_8h_a96}
+
+
+ATPG§À§Ë§Î∏Œæ„§Œ ¨Œ‡∑Î≤Ã§À¥ÿ§π§Î√Õ.
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{NO_DEFINE@{NO\_\-DEFINE}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!NO_DEFINE@{NO\_\-DEFINE}}\item[{\em 
+{\em NO\_\-DEFINE}\label{flight__atpg_8h_a96a84}
+}]Ã§º¬ª‹\index{GENE_NO_FAULT@{GENE\_\-NO\_\-FAULT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_NO_FAULT@{GENE\_\-NO\_\-FAULT}}\item[{\em 
+{\em GENE\_\-NO\_\-FAULT}\label{flight__atpg_8h_a96a85}
+}]∏Œæ„§¨¡™¬Ú§«§≠§ §§\index{GENE_DET_A@{GENE\_\-DET\_\-A}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_DET_A@{GENE\_\-DET\_\-A}}\item[{\em 
+{\em GENE\_\-DET\_\-A}\label{flight__atpg_8h_a96a86}
+}]ATPG§«∏°Ω–.\index{GENE_DET_S@{GENE\_\-DET\_\-S}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_DET_S@{GENE\_\-DET\_\-S}}\item[{\em 
+{\em GENE\_\-DET\_\-S}\label{flight__atpg_8h_a96a87}
+}]∏Œæ„•∑•ﬂ•Â•Ï°º•ø§«∏°Ω–\index{GENE_RED@{GENE\_\-RED}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_RED@{GENE\_\-RED}}\item[{\em 
+{\em GENE\_\-RED}\label{flight__atpg_8h_a96a88}
+}]æÈƒπ∏Œæ„\index{GENE_UNT@{GENE\_\-UNT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_UNT@{GENE\_\-UNT}}\item[{\em 
+{\em GENE\_\-UNT}\label{flight__atpg_8h_a96a89}
+}]•∆•π•»¿∏¿Æ…‘«Ω∏Œæ„\index{GENE_IUN@{GENE\_\-IUN}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_IUN@{GENE\_\-IUN}}\item[{\em 
+{\em GENE\_\-IUN}\label{flight__atpg_8h_a96a90}
+}]ΩÈ¥¸≤Ω•∆•π•»¿∏¿Æ…‘«Ω∏Œæ„\index{GENE_ABT@{GENE\_\-ABT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_ABT@{GENE\_\-ABT}}\item[{\em 
+{\em GENE\_\-ABT}\label{flight__atpg_8h_a96a91}
+}]ATPG¬«§¡¿⁄§Í∏Œæ„.\end{description}
+\end{Desc}
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!gene_result@{gene\_\-result}}
+\index{gene_result@{gene\_\-result}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum gene\_\-result}\label{flight__atpg_8h_a93}
+
+
+generate¥ÿøÙ√Ê§Œ∑Î≤Ã§Œ§‰§ÍºË§Í§Œ¿ﬂƒÍ
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{NO_RESULT@{NO\_\-RESULT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!NO_RESULT@{NO\_\-RESULT}}\item[{\em 
+{\em NO\_\-RESULT}\label{flight__atpg_8h_a93a61}
+}]Ã§º¬ª‹\index{INSERT_FAIL@{INSERT\_\-FAIL}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!INSERT_FAIL@{INSERT\_\-FAIL}}\item[{\em 
+{\em INSERT\_\-FAIL}\label{flight__atpg_8h_a93a62}
+}]∏Œæ„¡ﬁ∆˛§Àº∫«‘§∑§ø\index{INSERT_PASS@{INSERT\_\-PASS}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!INSERT_PASS@{INSERT\_\-PASS}}\item[{\em 
+{\em INSERT\_\-PASS}\label{flight__atpg_8h_a93a63}
+}]∏Œæ„¡ﬁ∆˛§À¿Æ∏˘§∑§ø\index{LIM_BACK_END@{LIM\_\-BACK\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!LIM_BACK_END@{LIM\_\-BACK\_\-END}}\item[{\em 
+{\em LIM\_\-BACK\_\-END}\label{flight__atpg_8h_a93a64}
+}]back track§ŒæÂ∏¬§À√£§∑§ø\index{PROPA_PASS@{PROPA\_\-PASS}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_PASS@{PROPA\_\-PASS}}\item[{\em 
+{\em PROPA\_\-PASS}\label{flight__atpg_8h_a93a65}
+}]∏Œæ„≈¡»¬§À¿Æ∏˘§∑§ø\index{PROPA_FAIL@{PROPA\_\-FAIL}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_FAIL@{PROPA\_\-FAIL}}\item[{\em 
+{\em PROPA\_\-FAIL}\label{flight__atpg_8h_a93a66}
+}]∏Œæ„≈¡»¬§Àº∫«‘§∑§ø\index{PROPA_FAIL_DRIVE@{PROPA\_\-FAIL\_\-DRIVE}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_FAIL_DRIVE@{PROPA\_\-FAIL\_\-DRIVE}}\item[{\em 
+{\em PROPA\_\-FAIL\_\-DRIVE}\label{flight__atpg_8h_a93a67}
+}]∏Œæ„≈¡»¬§Àº∫«‘§∑§ø(D-Drive or X-Path)\index{PROPA_FAIL_ENTER@{PROPA\_\-FAIL\_\-ENTER}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_FAIL_ENTER@{PROPA\_\-FAIL\_\-ENTER}}\item[{\em 
+{\em PROPA\_\-FAIL\_\-ENTER}\label{flight__atpg_8h_a93a68}
+}]∏Œæ„≈¡»¬§Àº∫«‘§∑§ø(∞Ï∞’≥Ë¿∏≤Ω)\index{PROPA_FAIL_IMP@{PROPA\_\-FAIL\_\-IMP}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_FAIL_IMP@{PROPA\_\-FAIL\_\-IMP}}\item[{\em 
+{\em PROPA\_\-FAIL\_\-IMP}\label{flight__atpg_8h_a93a69}
+}]∏Œæ„≈¡»¬§Àº∫«‘§∑§ø(¥ﬁ∞’¡‡∫Ó)\index{PROPA_CONT@{PROPA\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!PROPA_CONT@{PROPA\_\-CONT}}\item[{\em 
+{\em PROPA\_\-CONT}\label{flight__atpg_8h_a93a70}
+}]∏Œæ„≈¡»¬§Ú∑—¬≥√Ê§«§¢§Î\index{JUSTI_PASS@{JUSTI\_\-PASS}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_PASS@{JUSTI\_\-PASS}}\item[{\em 
+{\em JUSTI\_\-PASS}\label{flight__atpg_8h_a93a71}
+}]¿µ≈ˆ≤Ω§À¿Æ∏˘§∑§ø\index{JUSTI_CONT@{JUSTI\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_CONT@{JUSTI\_\-CONT}}\item[{\em 
+{\em JUSTI\_\-CONT}\label{flight__atpg_8h_a93a72}
+}]¿µ≈ˆ≤Ω§Ú∑—¬≥√Ê§«§¢§Î\index{JUSTI_FAIL@{JUSTI\_\-FAIL}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_FAIL@{JUSTI\_\-FAIL}}\item[{\em 
+{\em JUSTI\_\-FAIL}\label{flight__atpg_8h_a93a73}
+}]¿µ≈ˆ≤Ω§Àº∫«‘§∑§ø\index{JUSTI_FAIL_ENTER@{JUSTI\_\-FAIL\_\-ENTER}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_FAIL_ENTER@{JUSTI\_\-FAIL\_\-ENTER}}\item[{\em 
+{\em JUSTI\_\-FAIL\_\-ENTER}\label{flight__atpg_8h_a93a74}
+}]¿µ≈ˆ≤Ω§Àº∫«‘§∑§ø(∞Ï∞’≥Ë¿∏≤Ω)\index{JUSTI_FAIL_IMP@{JUSTI\_\-FAIL\_\-IMP}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!JUSTI_FAIL_IMP@{JUSTI\_\-FAIL\_\-IMP}}\item[{\em 
+{\em JUSTI\_\-FAIL\_\-IMP}\label{flight__atpg_8h_a93a75}
+}]¿µ≈ˆ≤Ω§Àº∫«‘§∑§ø(¥ﬁ∞’¡‡∫Ó)\index{GENE_CONT@{GENE\_\-CONT}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_CONT@{GENE\_\-CONT}}\item[{\em 
+{\em GENE\_\-CONT}\label{flight__atpg_8h_a93a76}
+}]•—•ø°º•Û¿∏¿Æ§Ú∑—¬≥√Ê§«§¢§Î\index{GENE_END@{GENE\_\-END}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!GENE_END@{GENE\_\-END}}\item[{\em 
+{\em GENE\_\-END}\label{flight__atpg_8h_a93a77}
+}]•—•ø°º•Û¿∏¿Æ§¨¥∞Œª§∑§ø\end{description}
+\end{Desc}
+
+\index{flight_atpg.h@{flight\_\-atpg.h}!imp_result@{imp\_\-result}}
+\index{imp_result@{imp\_\-result}!flight_atpg.h@{flight\_\-atpg.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum imp\_\-result}\label{flight__atpg_8h_a95}
+
+
+¥ﬁ∞’¡‡∫Ó§Œ∑Î≤Ã
+
+\begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+bit§«§¢§Î…¨Õ◊§¨§ §§§œ§∫ \end{Desc}
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{IMP_KEEP@{IMP\_\-KEEP}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_KEEP@{IMP\_\-KEEP}}\item[{\em 
+{\em IMP\_\-KEEP}\label{flight__atpg_8h_a95a81}
+}]¥ﬁ∞’¡‡∫Ó§Ú√Õ§¨ ›ª˝§µ§Ï§ø(ππø∑§µ§Ï§ §´§√§ø)\index{IMP_CONF@{IMP\_\-CONF}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_CONF@{IMP\_\-CONF}}\item[{\em 
+{\em IMP\_\-CONF}\label{flight__atpg_8h_a95a82}
+}]¥ﬁ∞’¡‡∫Ó§«√Õ§¨æ◊∆Õ§¨»Ø¿∏§∑§ø\index{IMP_UPDA@{IMP\_\-UPDA}!flight_atpg.h@{flight\_\-atpg.h}}\index{flight_atpg.h@{flight\_\-atpg.h}!IMP_UPDA@{IMP\_\-UPDA}}\item[{\em 
+{\em IMP\_\-UPDA}\label{flight__atpg_8h_a95a83}
+}]¥ﬁ∞’¡‡∫Ó§«√Õ§¨ππø∑§µ§Ï§ø\end{description}
+\end{Desc}
+

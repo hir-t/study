@@ -1,0 +1,394 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-test.c ÇÃâê‡}
+\label{flight__test_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_test.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-test.c}}
+debugÕ—§À —øÙ§Œæı¬÷§Ú•¡•ß•√•Ø§π§Î∞∑§¶¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-cell.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf test\_\-line\_\-flag} (char $\ast$)
+\item 
+void {\bf flight\_\-error} (int, char $\ast$)
+\item 
+void {\bf flight\_\-error\_\-o} (int, char $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-error\_\-type} ({\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, char $\ast$)
+\item 
+void {\bf test\_\-imp\_\-trace} ({\bf IMP\_\-TRACE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-state9\_\-n\_\-f} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-type\_\-state9} ({\bf LINE} $\ast$)
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-out\_\-null} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-type} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-one\_\-type} ({\bf LINE} $\ast${\bf line}, {\bf LINE\_\-TYPE} type, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-flag\_\-justify} (char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-state9\_\-n\_\-f\_\-x} ({\bf STATE\_\-9} state9, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-state\_\-d\_\-nd} ({\bf STATE\_\-9} state9, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-state\_\-normal} ({\bf STATE\_\-3} state3, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-state\_\-failure} ({\bf Ulong} state, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-state3} ({\bf STATE\_\-3} state3, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-condition} ({\bf Uint} {\bf condition}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-flist\_\-info\_\-fault} ({\bf Ulong} info, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast${\bf ass\_\-list}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-ass\_\-list\_\-next\_\-null} ({\bf ASS\_\-LIST} $\ast${\bf ass\_\-list}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-dfront} ({\bf DFRONT} $\ast${\bf dfront}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-dfront\_\-next} ({\bf DFRONT} $\ast${\bf dfront}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-dfront\_\-next\_\-null} ({\bf DFRONT} $\ast${\bf dfront}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-flist} ({\bf FLIST} $\ast${\bf flist}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-btree\_\-null} ({\bf BTREE} $\ast${\bf btree}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-lv\_\-head\_\-null} (char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-just\_\-info\_\-null} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-just\_\-info} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-cell\_\-nul} ({\bf CELL} $\ast${\bf cell}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-null\_\-variable} (void $\ast$pointer, {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID} type\_\-id, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-cell\_\-name} (char $\ast$name, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-cell\_\-io\_\-null} ({\bf CELL\_\-IO} $\ast${\bf cell\_\-io}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-pi} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-po} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-br} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-in1} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-and\_\-nand\_\-or\_\-nor} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-blki} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-blko} ({\bf LINE} $\ast${\bf line}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-line\_\-structure\_\-all} (char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-lv\_\-pi\_\-head} ({\bf Ulong} $\ast$cnt\_\-lv, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-number\_\-equal\_\-ulong} ({\bf Ulong} n\_\-1, {\bf Ulong} n\_\-2, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf test\_\-all\_\-state\_\-xx} (void)
+\item 
+void {\bf test\_\-all\_\-line\_\-flag} (void)
+\item 
+void {\bf test\_\-state} ({\bf Ulong} stat)
+\item 
+void {\bf test\_\-line\_\-value} ({\bf Ulong} value)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head}
+\item 
+{\bf JUST\_\-INFO} $\ast$$\ast$ {\bf Lv\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+debugÕ—§À —øÙ§Œæı¬÷§Ú•¡•ß•√•Ø§π§Î∞∑§¶¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 10 / 19 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_test.c@{flight\_\-test.c}!flight_error@{flight\_\-error}}
+\index{flight_error@{flight\_\-error}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-error (int, char $\ast$)}\label{flight__test_8c_a4}
+
+
+\index{flight_test.c@{flight\_\-test.c}!flight_error_o@{flight\_\-error\_\-o}}
+\index{flight_error_o@{flight\_\-error\_\-o}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-error\_\-o (int, char $\ast$, char $\ast$)}\label{flight__test_8c_a5}
+
+
+\index{flight_test.c@{flight\_\-test.c}!flight_error_type@{flight\_\-error\_\-type}}
+\index{flight_error_type@{flight\_\-error\_\-type}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-error\_\-type ({\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, char $\ast$)}\label{flight__test_8c_a6}
+
+
+\index{flight_test.c@{flight\_\-test.c}!flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}}
+\index{flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-type\_\-state9 ({\bf LINE} $\ast$)}\label{flight__test_8c_a9}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_all_line_flag@{test\_\-all\_\-line\_\-flag}}
+\index{test_all_line_flag@{test\_\-all\_\-line\_\-flag}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-all\_\-line\_\-flag (void)}\label{flight__test_8c_a48}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_all_state_xx@{test\_\-all\_\-state\_\-xx}}
+\index{test_all_state_xx@{test\_\-all\_\-state\_\-xx}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-all\_\-state\_\-xx (void)}\label{flight__test_8c_a47}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$ {\em ass\_\-list}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a23}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_ass_list_next_null@{test\_\-ass\_\-list\_\-next\_\-null}}
+\index{test_ass_list_next_null@{test\_\-ass\_\-list\_\-next\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list\_\-next\_\-null ({\bf ASS\_\-LIST} $\ast$ {\em ass\_\-list}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a24}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_btree_null@{test\_\-btree\_\-null}}
+\index{test_btree_null@{test\_\-btree\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-btree\_\-null ({\bf BTREE} $\ast$ {\em btree}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a29}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_cell_io_null@{test\_\-cell\_\-io\_\-null}}
+\index{test_cell_io_null@{test\_\-cell\_\-io\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-cell\_\-io\_\-null ({\bf CELL\_\-IO} $\ast$ {\em cell\_\-io}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a36}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_cell_name@{test\_\-cell\_\-name}}
+\index{test_cell_name@{test\_\-cell\_\-name}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-cell\_\-name (char $\ast$ {\em name}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a35}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_cell_nul@{test\_\-cell\_\-nul}}
+\index{test_cell_nul@{test\_\-cell\_\-nul}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-cell\_\-nul ({\bf CELL} $\ast$ {\em cell}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a33}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_condition@{test\_\-condition}}
+\index{test_condition@{test\_\-condition}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-condition ({\bf Uint} {\em condition}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a21}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_dfront@{test\_\-dfront}}
+\index{test_dfront@{test\_\-dfront}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-dfront ({\bf DFRONT} $\ast$ {\em dfront}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a25}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_dfront_next@{test\_\-dfront\_\-next}}
+\index{test_dfront_next@{test\_\-dfront\_\-next}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-dfront\_\-next ({\bf DFRONT} $\ast$ {\em dfront}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a26}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_dfront_next_null@{test\_\-dfront\_\-next\_\-null}}
+\index{test_dfront_next_null@{test\_\-dfront\_\-next\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-dfront\_\-next\_\-null ({\bf DFRONT} $\ast$ {\em dfront}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a27}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_flist@{test\_\-flist}}
+\index{test_flist@{test\_\-flist}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-flist ({\bf FLIST} $\ast$ {\em flist}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a28}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_flist_info_fault@{test\_\-flist\_\-info\_\-fault}}
+\index{test_flist_info_fault@{test\_\-flist\_\-info\_\-fault}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-flist\_\-info\_\-fault ({\bf Ulong} {\em info}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a22}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_imp_trace@{test\_\-imp\_\-trace}}
+\index{test_imp_trace@{test\_\-imp\_\-trace}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-imp\_\-trace ({\bf IMP\_\-TRACE} $\ast$, char $\ast$)}\label{flight__test_8c_a7}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_just_info@{test\_\-just\_\-info}}
+\index{test_just_info@{test\_\-just\_\-info}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-just\_\-info ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a32}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_just_info_null@{test\_\-just\_\-info\_\-null}}
+\index{test_just_info_null@{test\_\-just\_\-info\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-just\_\-info\_\-null ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a31}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_flag@{test\_\-line\_\-flag}}
+\index{test_line_flag@{test\_\-line\_\-flag}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-flag (char $\ast$)}\label{flight__test_8c_a3}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_flag_justify@{test\_\-line\_\-flag\_\-justify}}
+\index{test_line_flag_justify@{test\_\-line\_\-flag\_\-justify}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-flag\_\-justify (char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a15}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a11}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a10}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_one_type@{test\_\-line\_\-one\_\-type}}
+\index{test_line_one_type@{test\_\-line\_\-one\_\-type}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-one\_\-type ({\bf LINE} $\ast$ {\em line}, {\bf LINE\_\-TYPE} {\em type}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a14}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_out_null@{test\_\-line\_\-out\_\-null}}
+\index{test_line_out_null@{test\_\-line\_\-out\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-out\_\-null ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a12}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_all@{test\_\-line\_\-structure\_\-all}}
+\index{test_line_structure_all@{test\_\-line\_\-structure\_\-all}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-all (char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a44}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_and_nand_or_nor@{test\_\-line\_\-structure\_\-and\_\-nand\_\-or\_\-nor}}
+\index{test_line_structure_and_nand_or_nor@{test\_\-line\_\-structure\_\-and\_\-nand\_\-or\_\-nor}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-and\_\-nand\_\-or\_\-nor ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a41}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_blki@{test\_\-line\_\-structure\_\-blki}}
+\index{test_line_structure_blki@{test\_\-line\_\-structure\_\-blki}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-blki ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a42}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_blko@{test\_\-line\_\-structure\_\-blko}}
+\index{test_line_structure_blko@{test\_\-line\_\-structure\_\-blko}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-blko ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a43}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_br@{test\_\-line\_\-structure\_\-br}}
+\index{test_line_structure_br@{test\_\-line\_\-structure\_\-br}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-br ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a39}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_in1@{test\_\-line\_\-structure\_\-in1}}
+\index{test_line_structure_in1@{test\_\-line\_\-structure\_\-in1}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-in1 ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a40}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_pi@{test\_\-line\_\-structure\_\-pi}}
+\index{test_line_structure_pi@{test\_\-line\_\-structure\_\-pi}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-pi ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a37}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_structure_po@{test\_\-line\_\-structure\_\-po}}
+\index{test_line_structure_po@{test\_\-line\_\-structure\_\-po}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-structure\_\-po ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a38}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_type@{test\_\-line\_\-type}}
+\index{test_line_type@{test\_\-line\_\-type}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-type ({\bf LINE} $\ast$ {\em line}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a13}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_line_value@{test\_\-line\_\-value}}
+\index{test_line_value@{test\_\-line\_\-value}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-value ({\bf Ulong} {\em value})}\label{flight__test_8c_a50}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_lv_head_null@{test\_\-lv\_\-head\_\-null}}
+\index{test_lv_head_null@{test\_\-lv\_\-head\_\-null}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-lv\_\-head\_\-null (char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a30}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_lv_pi_head@{test\_\-lv\_\-pi\_\-head}}
+\index{test_lv_pi_head@{test\_\-lv\_\-pi\_\-head}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-lv\_\-pi\_\-head ({\bf Ulong} $\ast$ {\em cnt\_\-lv}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a45}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_null_variable@{test\_\-null\_\-variable}}
+\index{test_null_variable@{test\_\-null\_\-variable}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-null\_\-variable (void $\ast$ {\em pointer}, {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID} {\em type\_\-id}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a34}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_number_equal_ulong@{test\_\-number\_\-equal\_\-ulong}}
+\index{test_number_equal_ulong@{test\_\-number\_\-equal\_\-ulong}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-number\_\-equal\_\-ulong ({\bf Ulong} {\em n\_\-1}, {\bf Ulong} {\em n\_\-2}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a46}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state@{test\_\-state}}
+\index{test_state@{test\_\-state}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state ({\bf Ulong} {\em stat})}\label{flight__test_8c_a49}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state3@{test\_\-state3}}
+\index{test_state3@{test\_\-state3}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state3 ({\bf STATE\_\-3} {\em state3}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a20}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state9_n_f@{test\_\-state9\_\-n\_\-f}}
+\index{test_state9_n_f@{test\_\-state9\_\-n\_\-f}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state9\_\-n\_\-f ({\bf STATE\_\-9}, char $\ast$)}\label{flight__test_8c_a8}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state9_n_f_x@{test\_\-state9\_\-n\_\-f\_\-x}}
+\index{test_state9_n_f_x@{test\_\-state9\_\-n\_\-f\_\-x}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state9\_\-n\_\-f\_\-x ({\bf STATE\_\-9} {\em state9}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a16}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state_d_nd@{test\_\-state\_\-d\_\-nd}}
+\index{test_state_d_nd@{test\_\-state\_\-d\_\-nd}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-d\_\-nd ({\bf STATE\_\-9} {\em state9}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a17}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state_failure@{test\_\-state\_\-failure}}
+\index{test_state_failure@{test\_\-state\_\-failure}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-failure ({\bf Ulong} {\em state}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a19}
+
+
+\index{flight_test.c@{flight\_\-test.c}!test_state_normal@{test\_\-state\_\-normal}}
+\index{test_state_normal@{test\_\-state\_\-normal}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-normal ({\bf STATE\_\-3} {\em state3}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__test_8c_a18}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_test.c@{flight\_\-test.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head}\label{flight__test_8c_a1}
+
+
+\index{flight_test.c@{flight\_\-test.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__test_8c_a0}
+
+
+\index{flight_test.c@{flight\_\-test.c}!Lv_head@{Lv\_\-head}}
+\index{Lv_head@{Lv\_\-head}!flight_test.c@{flight\_\-test.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf JUST\_\-INFO}$\ast$$\ast$ Lv\_\-head}\label{flight__test_8c_a2}
+
+

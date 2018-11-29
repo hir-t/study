@@ -1,0 +1,194 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-bench.c ÇÃâê‡}
+\label{flight__bench_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_bench.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-bench.c}}
+.bench∑¡º∞•Õ•√•»•Í•π•»∆…π˛¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$ctype.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-io.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-bench.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-cell.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf read\_\-circuit\_\-bench} (char $\ast$)
+\item 
+void {\bf cell\_\-head\_\-pi\_\-count\_\-up} (void)
+\item 
+void {\bf cell\_\-head\_\-po\_\-count\_\-up} (void)
+\item 
+void {\bf cell\_\-in\_\-count\_\-up} ({\bf CELL} $\ast$)
+\item 
+void {\bf cell\_\-out\_\-count\_\-up} ({\bf CELL} $\ast$)
+\item 
+{\bf CELL} $\ast$ {\bf cell\_\-check\_\-and\_\-make\_\-gate} (char $\ast$, {\bf CELL\_\-TYPE})
+\item 
+{\bf CELL} $\ast$ {\bf cell\_\-make\_\-new\_\-cell} (void)
+\item 
+void {\bf cell\_\-make\_\-new\_\-iolist} ({\bf CELL\_\-IO} $\ast$$\ast$, {\bf CELL} $\ast$)
+\item 
+void {\bf cell\_\-entry\_\-table} ({\bf CELL} $\ast$, {\bf Ulong})
+\item 
+void {\bf cell\_\-entry\_\-name} ({\bf CELL} $\ast$, char $\ast$)
+\item 
+FILE $\ast$ {\bf flight\_\-open} (char $\ast$, char $\ast$, char $\ast$)
+\item 
+int {\bf utility\_\-skip\_\-sentence} (FILE $\ast$)
+\item 
+int {\bf utility\_\-skip\_\-char} (FILE $\ast$, char $\ast$)
+\item 
+void {\bf utility\_\-token} (FILE $\ast$, char $\ast$, char $\ast$, {\bf Ulong})
+\item 
+void {\bf utility\_\-jump\_\-to\_\-char} (FILE $\ast$, char)
+\item 
+{\bf Ulong} {\bf utility\_\-calc\_\-string\_\-hash\_\-value} (char $\ast$, {\bf Ulong})
+\item 
+void {\bf flight\_\-error} ({\bf FLIGHT\_\-ERROR\_\-CODE}, char $\ast$)
+\begin{CompactList}\small\item\em •®•È°º•·•√•ª°º•∏§ÚΩ–Œœ§π§Î $\ast$/\item\end{CompactList}\item 
+void {\bf flight\_\-print\_\-mes\_\-bench} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-char} (int, int, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-char\_\-char} (int, int, char $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info} ({\bf CELL} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result} ({\bf CELL} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} ()
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+.bench∑¡º∞•Õ•√•»•Í•π•»∆…π˛¥ÿøÙ∑≤
+
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 11 / 29 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_bench.c@{flight\_\-bench.c}!cell_check_and_make_gate@{cell\_\-check\_\-and\_\-make\_\-gate}}
+\index{cell_check_and_make_gate@{cell\_\-check\_\-and\_\-make\_\-gate}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CELL}$\ast$ cell\_\-check\_\-and\_\-make\_\-gate (char $\ast$, {\bf CELL\_\-TYPE})}\label{flight__bench_8c_a14}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_entry_name@{cell\_\-entry\_\-name}}
+\index{cell_entry_name@{cell\_\-entry\_\-name}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-name ({\bf CELL} $\ast$, char $\ast$)}\label{flight__bench_8c_a18}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_entry_table@{cell\_\-entry\_\-table}}
+\index{cell_entry_table@{cell\_\-entry\_\-table}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-entry\_\-table ({\bf CELL} $\ast$, {\bf Ulong})}\label{flight__bench_8c_a17}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_head_pi_count_up@{cell\_\-head\_\-pi\_\-count\_\-up}}
+\index{cell_head_pi_count_up@{cell\_\-head\_\-pi\_\-count\_\-up}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-pi\_\-count\_\-up (void)}\label{flight__bench_8c_a10}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_head_po_count_up@{cell\_\-head\_\-po\_\-count\_\-up}}
+\index{cell_head_po_count_up@{cell\_\-head\_\-po\_\-count\_\-up}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-head\_\-po\_\-count\_\-up (void)}\label{flight__bench_8c_a11}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_in_count_up@{cell\_\-in\_\-count\_\-up}}
+\index{cell_in_count_up@{cell\_\-in\_\-count\_\-up}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-in\_\-count\_\-up ({\bf CELL} $\ast$)}\label{flight__bench_8c_a12}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_make_new_cell@{cell\_\-make\_\-new\_\-cell}}
+\index{cell_make_new_cell@{cell\_\-make\_\-new\_\-cell}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf CELL} $\ast$ cell\_\-make\_\-new\_\-cell (void)}\label{flight__bench_8c_a15}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_make_new_iolist@{cell\_\-make\_\-new\_\-iolist}}
+\index{cell_make_new_iolist@{cell\_\-make\_\-new\_\-iolist}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-make\_\-new\_\-iolist ({\bf CELL\_\-IO} $\ast$$\ast$, {\bf CELL} $\ast$)}\label{flight__bench_8c_a16}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!cell_out_count_up@{cell\_\-out\_\-count\_\-up}}
+\index{cell_out_count_up@{cell\_\-out\_\-count\_\-up}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cell\_\-out\_\-count\_\-up ({\bf CELL} $\ast$)}\label{flight__bench_8c_a13}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_error@{flight\_\-error}}
+\index{flight_error@{flight\_\-error}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-error ({\bf FLIGHT\_\-ERROR\_\-CODE}, char $\ast$)}\label{flight__bench_8c_a25}
+
+
+•®•È°º•·•√•ª°º•∏§ÚΩ–Œœ§π§Î $\ast$/
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_open@{flight\_\-open}}
+\index{flight_open@{flight\_\-open}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}FILE $\ast$ flight\_\-open (char $\ast$, char $\ast$, char $\ast$)}\label{flight__bench_8c_a19}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_bench@{flight\_\-print\_\-mes\_\-bench}}
+\index{flight_print_mes_bench@{flight\_\-print\_\-mes\_\-bench}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench (int, int)}\label{flight__bench_8c_a26}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_bench_char@{flight\_\-print\_\-mes\_\-bench\_\-char}}
+\index{flight_print_mes_bench_char@{flight\_\-print\_\-mes\_\-bench\_\-char}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-char (int, int, char $\ast$)}\label{flight__bench_8c_a27}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_bench_char_char@{flight\_\-print\_\-mes\_\-bench\_\-char\_\-char}}
+\index{flight_print_mes_bench_char_char@{flight\_\-print\_\-mes\_\-bench\_\-char\_\-char}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-char\_\-char (int, int, char $\ast$, char $\ast$)}\label{flight__bench_8c_a28}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_bench_fanout_info@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info}}
+\index{flight_print_mes_bench_fanout_info@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-info ({\bf CELL} $\ast$)}\label{flight__bench_8c_a29}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_bench_fanout_result@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result}}
+\index{flight_print_mes_bench_fanout_result@{flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-bench\_\-fanout\_\-result ({\bf CELL} $\ast$)}\label{flight__bench_8c_a30}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n ()}\label{flight__bench_8c_a31}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!read_circuit_bench@{read\_\-circuit\_\-bench}}
+\index{read_circuit_bench@{read\_\-circuit\_\-bench}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void read\_\-circuit\_\-bench (char $\ast$)}\label{flight__bench_8c_a0}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}}
+\index{utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} utility\_\-calc\_\-string\_\-hash\_\-value (char $\ast$, {\bf Ulong})}\label{flight__bench_8c_a24}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!utility_jump_to_char@{utility\_\-jump\_\-to\_\-char}}
+\index{utility_jump_to_char@{utility\_\-jump\_\-to\_\-char}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-jump\_\-to\_\-char (FILE $\ast$, char)}\label{flight__bench_8c_a23}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!utility_skip_char@{utility\_\-skip\_\-char}}
+\index{utility_skip_char@{utility\_\-skip\_\-char}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int utility\_\-skip\_\-char (FILE $\ast$, char $\ast$)}\label{flight__bench_8c_a21}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!utility_skip_sentence@{utility\_\-skip\_\-sentence}}
+\index{utility_skip_sentence@{utility\_\-skip\_\-sentence}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int utility\_\-skip\_\-sentence (FILE $\ast$)}\label{flight__bench_8c_a20}
+
+
+\index{flight_bench.c@{flight\_\-bench.c}!utility_token@{utility\_\-token}}
+\index{utility_token@{utility\_\-token}!flight_bench.c@{flight\_\-bench.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-token (FILE $\ast$, char $\ast$, char $\ast$, {\bf Ulong})}\label{flight__bench_8c_a22}
+
+

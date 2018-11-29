@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>/cygdrive/c/home/yosimura/Flight/include/flight_bench.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_bench.h</h1><a href="flight__bench_8h.html">解説を見る。</a><div class="fragment"><pre>00001 <span class="comment">/********************************************************************************</span>
+00002 <span class="comment"></span>
+00003 <span class="comment">                            FLIGHT</span>
+00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+00007 <span class="comment"></span>
+00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00022"></a><a class="code" href="flight__bench_8h.html#a0">00022</a> <span class="preprocessor">#define BENCH_STR_INPUT       "INPUT"    </span>
+<a name="l00023"></a><a class="code" href="flight__bench_8h.html#a1">00023</a> <span class="preprocessor">#define BENCH_STR_OUTPUT      "OUTPUT"   </span>
+<a name="l00024"></a><a class="code" href="flight__bench_8h.html#a2">00024</a> <span class="preprocessor">#define BENCH_STR_GATE_CONECT '='        </span>
+<a name="l00025"></a><a class="code" href="flight__bench_8h.html#a3">00025</a> <span class="preprocessor">#define BENCH_STR_COMMENT     '#'        </span>
+00026 <span class="preprocessor"></span>
+<a name="l00034"></a><a class="code" href="flight__bench_8h.html#a4">00034</a> <span class="preprocessor">#define BENCH_GATE_AND        "AND"     </span>
+<a name="l00035"></a><a class="code" href="flight__bench_8h.html#a5">00035</a> <span class="preprocessor">#define BENCH_GATE_NAND       "NAND"    </span>
+<a name="l00036"></a><a class="code" href="flight__bench_8h.html#a6">00036</a> <span class="preprocessor">#define BENCH_GATE_OR         "OR"      </span>
+<a name="l00037"></a><a class="code" href="flight__bench_8h.html#a7">00037</a> <span class="preprocessor">#define BENCH_GATE_NOR        "NOR"     </span>
+<a name="l00038"></a><a class="code" href="flight__bench_8h.html#a8">00038</a> <span class="preprocessor">#define BENCH_GATE_NOT        "NOT"     </span>
+<a name="l00039"></a><a class="code" href="flight__bench_8h.html#a9">00039</a> <span class="preprocessor">#define BENCH_GATE_BUF        "BUF"     </span>
+<a name="l00040"></a><a class="code" href="flight__bench_8h.html#a10">00040</a> <span class="preprocessor">#define BENCH_GATE_INV        "INV"     </span>
+<a name="l00041"></a><a class="code" href="flight__bench_8h.html#a11">00041</a> <span class="preprocessor">#define BENCH_GATE_XOR        "XOR"     </span>
+<a name="l00042"></a><a class="code" href="flight__bench_8h.html#a12">00042</a> <span class="preprocessor">#define BENCH_GATE_XNOR       "XNOR"    </span>
+00043 <span class="preprocessor"></span>
+<a name="l00047"></a><a class="code" href="flight__bench_8h.html#a13">00047</a> <span class="preprocessor">#define BENCH_NAME_SIZE 1024            </span>
+00048 <span class="preprocessor"></span>
+00049 <span class="preprocessor"></span>
+<a name="l00053"></a><a class="code" href="flight__bench_8h.html#a27">00053</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__bench_8h.html#a27">bench_cell_define</a>{
+00054         <a class="code" href="flight__bench_8h.html#a27a17">BENCH_CELL_INPUT</a> = 0,       
+00055         <a class="code" href="flight__bench_8h.html#a27a18">BENCH_CELL_OUTPUT</a>,          
+00056         <a class="code" href="flight__bench_8h.html#a27a19">BENCH_CELL_UNKNOWN</a>,         
+00057 } <a class="code" href="flight__bench_8h.html#a14">BENCH_CELL_DEFINE</a>;
+00058 
+<a name="l00063"></a><a class="code" href="flight__bench_8h.html#a28">00063</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__bench_8h.html#a28">bench_analyze_header</a>{
+00064         <a class="code" href="flight__bench_8h.html#a28a20">BENCH_COMMENT</a> = 1,         
+00065         <a class="code" href="flight__bench_8h.html#a28a21">BENCH_END</a>,                 
+00066         <a class="code" href="flight__bench_8h.html#a28a22">BENCH_INPUT</a>,               
+00067         <a class="code" href="flight__bench_8h.html#a28a23">BENCH_OUTPUT</a>,              
+00068         <a class="code" href="flight__bench_8h.html#a28a24">BENCH_GATE</a>,                
+00069 } <a class="code" href="flight__bench_8h.html#a15">BENCH_ANALYZE_HEADER</a>;
+00070 
+<a name="l00075"></a><a class="code" href="flight__bench_8h.html#a29">00075</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__bench_8h.html#a29">bench_analyze_line_end</a>{
+00076         <a class="code" href="flight__bench_8h.html#a29a25">BENCH_LINE_END</a> = 1,        
+00077         <a class="code" href="flight__bench_8h.html#a29a26">BENCH_LINE_CONTINUE</a>,       
+00078 } <a class="code" href="flight__bench_8h.html#a16">BENCH_ANALYZE_LINE_END</a>;
+00079 
+</pre></div><hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:07 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

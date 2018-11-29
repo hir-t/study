@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_memory.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_memory.h ÇÃâê‡</h1>∆∞≈™•·•‚•Í≥Œ ›§À¥ÿ§π§Î¿ﬂƒÍ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+
+<p>
+<a href="flight__memory_8h-source.html">É\Å[ÉXÉRÅ[ÉhÇå©ÇÈÅB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__memory_8h.html#a0">FLINE_MEMORY_LOG_FILE_NAME</a>&nbsp;&nbsp;&nbsp;"flight_memory.log"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>•·•‚•Í§Œ≥Œ ›æı∂∑§Úº®§π•Ì•∞•’•°•§•Î§Œ•’•°•§•ÎÃæ</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__memory_8h.html#a32">flight_memory_type_id</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__memory_8h.html#a32">flight_memory_type_id</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a2">FMT_Char</a> =  1, 
+<a class="el" href="flight__memory_8h.html#a32a3">FMT_Char_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a4">FMT_Ulong</a>, 
+<a class="el" href="flight__memory_8h.html#a32a5">FMT_Ulong_P</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a6">FMT_LINE</a>, 
+<a class="el" href="flight__memory_8h.html#a32a7">FMT_LINE_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a8">FMT_LINE_PP</a>, 
+<a class="el" href="flight__memory_8h.html#a32a9">FMT_FLIST</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a10">FMT_FLIST_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a11">FMT_LINE_STACK</a>, 
+<a class="el" href="flight__memory_8h.html#a32a12">FMT_LINE_STACK_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a13">FMT_BTREE</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a14">FMT_DFRONT</a>, 
+<a class="el" href="flight__memory_8h.html#a32a15">FMT_DFRONT_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a16">FMT_DFRONT_LIST</a>, 
+<a class="el" href="flight__memory_8h.html#a32a17">FMT_ASS_LIST</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a18">FMT_IMP_LIST</a>, 
+<a class="el" href="flight__memory_8h.html#a32a19">FMT_IMP_INFO</a>, 
+<a class="el" href="flight__memory_8h.html#a32a20">FMT_IMP_TRACE</a>, 
+<a class="el" href="flight__memory_8h.html#a32a21">FMT_JUST_INFO</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a22">FMT_JUST_INFO_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a23">FMT_CELL</a>, 
+<a class="el" href="flight__memory_8h.html#a32a24">FMT_CELL_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a25">FMT_CELL_IO</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__memory_8h.html#a32a26">FMT_EVENT_LIST</a>, 
+<a class="el" href="flight__memory_8h.html#a32a27">FMT_CC_PATTERN</a>, 
+<a class="el" href="flight__memory_8h.html#a32a28">FMT_CC_PATTERN_P</a>, 
+<a class="el" href="flight__memory_8h.html#a32a29">FMT_NUM_MEMORY_TYPE</a>
+<br>
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>≥Œ ›§π§Î•·•‚•Í∑ø§ŒID»÷πÊ°£</em> <a href="#a32">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>ä÷êî</h2></td></tr>
+<tr><td nowrap align=right valign=top>void *&nbsp;</td><td valign=bottom><a class="el" href="flight__memory_8h.html#a30">flight_malloc</a> (<a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>, int, int, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__memory_8h.html#a31">flight_free</a> (void *, <a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>, int, char *)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+∆∞≈™•·•‚•Í≥Œ ›§À¥ÿ§π§Î¿ﬂƒÍ
+<p>
+ <dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2005 / 06 / 17 initialize ( renew )</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a0" doxytag="flight_memory.h::FLINE_MEMORY_LOG_FILE_NAME"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLINE_MEMORY_LOG_FILE_NAME&nbsp;&nbsp;&nbsp;"flight_memory.log"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+•·•‚•Í§Œ≥Œ ›æı∂∑§Úº®§π•Ì•∞•’•°•§•Î§Œ•’•°•§•ÎÃæ
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ÇÃâê‡</h2>
+<a name="a1" doxytag="flight_memory.h::FLIGHT_MEMORY_TYPE_ID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__memory_8h.html#a32">flight_memory_type_id</a> FLIGHT_MEMORY_TYPE_ID
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum ÇÃâê‡</h2>
+<a name="a32" doxytag="flight_memory.h::flight_memory_type_id"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum flight_memory_type_id
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+≥Œ ›§π§Î•·•‚•Í∑ø§ŒID»÷πÊ°£
+<p>
+<dl compact><dt><b>äoÇ¶èëÇ´: </b></dt><dd>
+ •Ì•∞•’•°•§•ÎÕ—§À¬∏∫ﬂ§π§Î </dl><dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a32a2" doxytag="FMT_Char"></a><em>FMT_Char</em></em>&nbsp;</td><td>
+Char.</td></tr>
+<tr><td valign=top><em><a name="a32a3" doxytag="FMT_Char_P"></a><em>FMT_Char_P</em></em>&nbsp;</td><td>
+Char pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a4" doxytag="FMT_Ulong"></a><em>FMT_Ulong</em></em>&nbsp;</td><td>
+Unsigned long.</td></tr>
+<tr><td valign=top><em><a name="a32a5" doxytag="FMT_Ulong_P"></a><em>FMT_Ulong_P</em></em>&nbsp;</td><td>
+Unsigned long pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a6" doxytag="FMT_LINE"></a><em>FMT_LINE</em></em>&nbsp;</td><td>
+Line.</td></tr>
+<tr><td valign=top><em><a name="a32a7" doxytag="FMT_LINE_P"></a><em>FMT_LINE_P</em></em>&nbsp;</td><td>
+Line pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a8" doxytag="FMT_LINE_PP"></a><em>FMT_LINE_PP</em></em>&nbsp;</td><td>
+Line pointer's pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a9" doxytag="FMT_FLIST"></a><em>FMT_FLIST</em></em>&nbsp;</td><td>
+FLIST.</td></tr>
+<tr><td valign=top><em><a name="a32a10" doxytag="FMT_FLIST_P"></a><em>FMT_FLIST_P</em></em>&nbsp;</td><td>
+FLIST pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a11" doxytag="FMT_LINE_STACK"></a><em>FMT_LINE_STACK</em></em>&nbsp;</td><td>
+LINE_STACK.</td></tr>
+<tr><td valign=top><em><a name="a32a12" doxytag="FMT_LINE_STACK_P"></a><em>FMT_LINE_STACK_P</em></em>&nbsp;</td><td>
+LINE_STACK pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a13" doxytag="FMT_BTREE"></a><em>FMT_BTREE</em></em>&nbsp;</td><td>
+Back trace TREE.</td></tr>
+<tr><td valign=top><em><a name="a32a14" doxytag="FMT_DFRONT"></a><em>FMT_DFRONT</em></em>&nbsp;</td><td>
+D-Frontier.</td></tr>
+<tr><td valign=top><em><a name="a32a15" doxytag="FMT_DFRONT_P"></a><em>FMT_DFRONT_P</em></em>&nbsp;</td><td>
+D-Frontier pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a16" doxytag="FMT_DFRONT_LIST"></a><em>FMT_DFRONT_LIST</em></em>&nbsp;</td><td>
+D-Frontier LIST.</td></tr>
+<tr><td valign=top><em><a name="a32a17" doxytag="FMT_ASS_LIST"></a><em>FMT_ASS_LIST</em></em>&nbsp;</td><td>
+ASsign LIST.</td></tr>
+<tr><td valign=top><em><a name="a32a18" doxytag="FMT_IMP_LIST"></a><em>FMT_IMP_LIST</em></em>&nbsp;</td><td>
+IMPlication LIST.</td></tr>
+<tr><td valign=top><em><a name="a32a19" doxytag="FMT_IMP_INFO"></a><em>FMT_IMP_INFO</em></em>&nbsp;</td><td>
+IMPlication Infomation.</td></tr>
+<tr><td valign=top><em><a name="a32a20" doxytag="FMT_IMP_TRACE"></a><em>FMT_IMP_TRACE</em></em>&nbsp;</td><td>
+IMPlication Trace Infomation.</td></tr>
+<tr><td valign=top><em><a name="a32a21" doxytag="FMT_JUST_INFO"></a><em>FMT_JUST_INFO</em></em>&nbsp;</td><td>
+JUSTified Infomation.</td></tr>
+<tr><td valign=top><em><a name="a32a22" doxytag="FMT_JUST_INFO_P"></a><em>FMT_JUST_INFO_P</em></em>&nbsp;</td><td>
+JUSTified Infomation pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a23" doxytag="FMT_CELL"></a><em>FMT_CELL</em></em>&nbsp;</td><td>
+CELL.</td></tr>
+<tr><td valign=top><em><a name="a32a24" doxytag="FMT_CELL_P"></a><em>FMT_CELL_P</em></em>&nbsp;</td><td>
+CELL pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a25" doxytag="FMT_CELL_IO"></a><em>FMT_CELL_IO</em></em>&nbsp;</td><td>
+CELL_IO pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a26" doxytag="FMT_EVENT_LIST"></a><em>FMT_EVENT_LIST</em></em>&nbsp;</td><td>
+EVENT_LIST.</td></tr>
+<tr><td valign=top><em><a name="a32a27" doxytag="FMT_CC_PATTERN"></a><em>FMT_CC_PATTERN</em></em>&nbsp;</td><td>
+CC pattern.</td></tr>
+<tr><td valign=top><em><a name="a32a28" doxytag="FMT_CC_PATTERN_P"></a><em>FMT_CC_PATTERN_P</em></em>&nbsp;</td><td>
+CC pattern pointer.</td></tr>
+<tr><td valign=top><em><a name="a32a29" doxytag="FMT_NUM_MEMORY_TYPE"></a><em>FMT_NUM_MEMORY_TYPE</em></em>&nbsp;</td><td>
+nubmer of memory type</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>ä÷êîÇÃâê‡</h2>
+<a name="a31" doxytag="flight_memory.h::flight_free"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_free </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">void *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a30" doxytag="flight_memory.h::flight_malloc"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void* flight_malloc </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:10 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

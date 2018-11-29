@@ -1,0 +1,46 @@
+o        13         0 sa1 UNT 
+e         1
+o        37         1 sa1 UNT 
+e         3
+o         4         2 sa0 UNT 
+o         5         2 sa1 UNT 
+o        17         3 sa1 UNT 
+e         7
+o        41         4 sa1 UNT 
+e         9
+o        26         6 sa0 UNT 
+o        27         6 sa1 UNT 
+e        24
+e        14
+e        22
+o        32         8 sa0 UNT 
+o        33         8 sa1 UNT 
+e        44
+e        28
+e        30
+o        25         9 sa1 UNT 
+e        15
+e        12
+e         0
+e        10
+o        20        10 sa0 UNT 
+o        21        10 sa1 UNT 
+e        16
+e         6
+e        18
+o        38        11 sa0 UNT 
+o        39        11 sa1 UNT 
+e        36
+e         2
+e        34
+o        45        12 sa1 UNT 
+e        29
+e        40
+e         8
+e        42
+o        19        13 sa1 UNT 
+o        11        14 sa1 UNT 
+o        43        15 sa1 UNT 
+o        35        16 sa1 UNT 
+o        31        17 sa1 UNT 
+o        23        18 sa1 UNT 

@@ -1,0 +1,261 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-propagate.c ÇÃâê‡}
+\label{flight__propagate_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_propagate.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-propagate.c}}
+∏Œæ„≈¡»¬§À¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-RESULT} {\bf atpg\_\-propagate\_\-fault} ({\bf FLIST} $\ast$fault)
+\item 
+int {\bf atpg\_\-enter\_\-state} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+void {\bf atpg\_\-reflesh\_\-state\_\-dfront} ({\bf DFRONT} $\ast$)
+\item 
+int {\bf atpg\_\-get\_\-d\_\-state9} ({\bf STATE\_\-9})
+\item 
+int {\bf atpg\_\-back\_\-track} (void)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-get\_\-propa\_\-list} (void)
+\item 
+{\bf STATE\_\-9} {\bf atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9} ({\bf STATE\_\-3}, {\bf Uint})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3} ({\bf STATE\_\-9}, {\bf Uint})
+\item 
+void {\bf atpg\_\-startlist\_\-justified} (void)
+\item 
+int {\bf atpg\_\-drive\_\-dfront} (void)
+\item 
+void {\bf atpg\_\-imp\_\-trace\_\-2\_\-dfront} (void)
+\item 
+void {\bf atpg\_\-ent\_\-propa\_\-dfront} ()
+\item 
+int {\bf atpg\_\-back\_\-track\_\-propagate} ()
+\item 
+int {\bf atpg\_\-back\_\-track\_\-justified} ()
+\item 
+int {\bf implication2} (void)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-n\_\-f} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-normal} ({\bf STATE\_\-3}, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-d\_\-nd} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-condition} ({\bf Uint}, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-sp} (int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-state9} ({\bf STATE\_\-9})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-stat\_\-n} ({\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-condition} ({\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-state9\_\-new} ({\bf STATE\_\-9}, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-dfront\_\-condition} (void)
+\item 
+int {\bf atpg\_\-check\_\-finish\_\-propagate} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+∏Œæ„≈¡»¬§À¥ÿ§π§Î¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2004 / 12 / 13 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_back_track@{atpg\_\-back\_\-track}}
+\index{atpg_back_track@{atpg\_\-back\_\-track}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-back\_\-track (void)}\label{flight__propagate_8c_a5}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_back_track_justified@{atpg\_\-back\_\-track\_\-justified}}
+\index{atpg_back_track_justified@{atpg\_\-back\_\-track\_\-justified}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-back\_\-track\_\-justified ()}\label{flight__propagate_8c_a14}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_back_track_propagate@{atpg\_\-back\_\-track\_\-propagate}}
+\index{atpg_back_track_propagate@{atpg\_\-back\_\-track\_\-propagate}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-back\_\-track\_\-propagate ()}\label{flight__propagate_8c_a13}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_check_finish_propagate@{atpg\_\-check\_\-finish\_\-propagate}}
+\index{atpg_check_finish_propagate@{atpg\_\-check\_\-finish\_\-propagate}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-finish\_\-propagate (void)}\label{flight__propagate_8c_a31}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_drive_dfront@{atpg\_\-drive\_\-dfront}}
+\index{atpg_drive_dfront@{atpg\_\-drive\_\-dfront}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-drive\_\-dfront (void)}\label{flight__propagate_8c_a10}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_ent_propa_dfront@{atpg\_\-ent\_\-propa\_\-dfront}}
+\index{atpg_ent_propa_dfront@{atpg\_\-ent\_\-propa\_\-dfront}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-propa\_\-dfront ()}\label{flight__propagate_8c_a12}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_enter_state@{atpg\_\-enter\_\-state}}
+\index{atpg_enter_state@{atpg\_\-enter\_\-state}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-enter\_\-state ({\bf ASS\_\-LIST} $\ast$)}\label{flight__propagate_8c_a2}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}}
+\index{atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-get\_\-d\_\-state9 ({\bf STATE\_\-9})}\label{flight__propagate_8c_a4}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_get_propa_list@{atpg\_\-get\_\-propa\_\-list}}
+\index{atpg_get_propa_list@{atpg\_\-get\_\-propa\_\-list}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST} $\ast$ atpg\_\-get\_\-propa\_\-list (void)}\label{flight__propagate_8c_a6}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_get_state3_with_condition_2_state9@{atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9}}
+\index{atpg_get_state3_with_condition_2_state9@{atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-9} atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9 ({\bf STATE\_\-3}, {\bf Uint})}\label{flight__propagate_8c_a7}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}}
+\index{atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3 ({\bf STATE\_\-9}, {\bf Uint})}\label{flight__propagate_8c_a8}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}}
+\index{atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-imp\_\-trace\_\-2\_\-dfront (void)}\label{flight__propagate_8c_a11}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_propagate_fault@{atpg\_\-propagate\_\-fault}}
+\index{atpg_propagate_fault@{atpg\_\-propagate\_\-fault}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-RESULT} atpg\_\-propagate\_\-fault ({\bf FLIST} $\ast$ {\em fault})}\label{flight__propagate_8c_a1}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_reflesh_state_dfront@{atpg\_\-reflesh\_\-state\_\-dfront}}
+\index{atpg_reflesh_state_dfront@{atpg\_\-reflesh\_\-state\_\-dfront}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-reflesh\_\-state\_\-dfront ({\bf DFRONT} $\ast$)}\label{flight__propagate_8c_a3}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!atpg_startlist_justified@{atpg\_\-startlist\_\-justified}}
+\index{atpg_startlist_justified@{atpg\_\-startlist\_\-justified}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-startlist\_\-justified (void)}\label{flight__propagate_8c_a9}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__propagate_8c_a22}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_condition@{flight\_\-print\_\-mes\_\-condition}}
+\index{flight_print_mes_condition@{flight\_\-print\_\-mes\_\-condition}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-condition ({\bf Uint})}\label{flight__propagate_8c_a27}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_dfront_condition@{flight\_\-print\_\-mes\_\-dfront\_\-condition}}
+\index{flight_print_mes_dfront_condition@{flight\_\-print\_\-mes\_\-dfront\_\-condition}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-dfront\_\-condition (void)}\label{flight__propagate_8c_a30}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_id@{flight\_\-print\_\-mes\_\-id}}
+\index{flight_print_mes_id@{flight\_\-print\_\-mes\_\-id}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id ({\bf LINE} $\ast$)}\label{flight__propagate_8c_a24}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n (void)}\label{flight__propagate_8c_a29}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_sp@{flight\_\-print\_\-mes\_\-sp}}
+\index{flight_print_mes_sp@{flight\_\-print\_\-mes\_\-sp}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-sp (int)}\label{flight__propagate_8c_a23}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_stat_n@{flight\_\-print\_\-mes\_\-stat\_\-n}}
+\index{flight_print_mes_stat_n@{flight\_\-print\_\-mes\_\-stat\_\-n}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-stat\_\-n ({\bf Ulong})}\label{flight__propagate_8c_a26}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_state9@{flight\_\-print\_\-mes\_\-state9}}
+\index{flight_print_mes_state9@{flight\_\-print\_\-mes\_\-state9}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-state9 ({\bf STATE\_\-9})}\label{flight__propagate_8c_a25}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!flight_print_mes_state9_new@{flight\_\-print\_\-mes\_\-state9\_\-new}}
+\index{flight_print_mes_state9_new@{flight\_\-print\_\-mes\_\-state9\_\-new}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-state9\_\-new ({\bf STATE\_\-9}, {\bf Uint})}\label{flight__propagate_8c_a28}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!implication2@{implication2}}
+\index{implication2@{implication2}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication2 (void)}\label{flight__propagate_8c_a15}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__propagate_8c_a20}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_condition@{test\_\-condition}}
+\index{test_condition@{test\_\-condition}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-condition ({\bf Uint}, char $\ast$)}\label{flight__propagate_8c_a21}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__propagate_8c_a16}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_state_d_nd@{test\_\-state\_\-d\_\-nd}}
+\index{test_state_d_nd@{test\_\-state\_\-d\_\-nd}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-d\_\-nd ({\bf STATE\_\-9}, char $\ast$)}\label{flight__propagate_8c_a19}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_state_n_f@{test\_\-state\_\-n\_\-f}}
+\index{test_state_n_f@{test\_\-state\_\-n\_\-f}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-n\_\-f ({\bf STATE\_\-9}, char $\ast$)}\label{flight__propagate_8c_a17}
+
+
+\index{flight_propagate.c@{flight\_\-propagate.c}!test_state_normal@{test\_\-state\_\-normal}}
+\index{test_state_normal@{test\_\-state\_\-normal}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-normal ({\bf STATE\_\-3}, char $\ast$)}\label{flight__propagate_8c_a18}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_propagate.c@{flight\_\-propagate.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_propagate.c@{flight\_\-propagate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__propagate_8c_a0}
+
+

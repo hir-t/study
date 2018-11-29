@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_compact.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_compact.h ÇÃâê‡</h1>∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¿ﬂƒÍ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+
+<p>
+<a href="flight__compact_8h-source.html">É\Å[ÉXÉRÅ[ÉhÇå©ÇÈÅB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>ç\ê¨</h2></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcc__pattern.html">cc_pattern</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∞µΩÃ•–•√•’•°§À§™§±§Î•—•ø°º•Û</em> <a href="structcc__pattern.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcomp__head.html">comp_head</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∞µΩÃ•–•√•’•°§À¥ÿ§π§Îæ Û</em> <a href="structcomp__head.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structcomp__info.html">comp_info</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∆∞≈™∞µΩÃ§À¥ÿ§π§Îæ Û</em> <a href="structcomp__info.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>comp_info-&gt;result§À¥ÿ§π§ÎƒÍµ¡</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a2">COMPACT_OK</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a3">COMPACT_NG</a>&nbsp;&nbsp;&nbsp;0xffffffff</td></tr>
+<tr><td colspan=2><br><h2>comp_info-&gt;comp_mode flag§À¥ÿ§π§ÎƒÍµ¡</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a4">COMP_NO_INFO</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a5">COMP_GET</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a6">COMP_GET_ALL</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a7">COMP_INSERT</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a8">COMP_FAST</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a9">COMP_REST_X</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a0">BIT_1_ON</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>1bitÃ‹§¿§±1§«§¢§Î</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a1">COMP_BUF_SIZE</a>&nbsp;&nbsp;&nbsp;100</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∞µΩÃ•–•√•’•°§Œ•µ•§•∫ •«•’•©•Î•»√Õ</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__compact_8h.html#a16">comp_check_all_x</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a10">COMP_CHECK_ALL_X</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcomp__head.html">comp_head</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a11">COMP_HEAD</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcc__pattern.html">cc_pattern</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a12">CC_PATTERN</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structcomp__info.html">comp_info</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a13">COMP_INFO</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__compact_8h.html#a16">comp_check_all_x</a> { <a class="el" href="flight__compact_8h.html#a16a14">COMP_PAT_ALL_X</a> =  0, 
+<a class="el" href="flight__compact_8h.html#a16a15">COMP_PAT_NOT_X</a> =  1
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>•—•ø°º•Û§¨§π§Ÿ§∆X§´§Ú•¡•ß•√•Ø§π§Î</em> <a href="#a16">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¿ﬂƒÍ
+<p>
+ <dl compact><dt><b>äoÇ¶èëÇ´: </b></dt><dd>
+ <div class="fragment"><pre>
+                •—•ø°º•Û∆‚§Œæı¬÷§Œ…Ω∏Ω 2√Õ
+                0 ( = 0 )  1 ( = 1 )
+                •—•ø°º•Û∆‚§Œæı¬÷§Œ…Ω∏Ω 3√Õ
+                X ( a = 0 , b = 0 ), 0 ( a = 0 , b = 1 )  1 ( a = 1 , b = 0 )
+                </pre></div></dl><dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2006 / 01 / 14 initialize</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a0" doxytag="flight_compact.h::BIT_1_ON"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT_1_ON&nbsp;&nbsp;&nbsp;0x00000001
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+1bitÃ‹§¿§±1§«§¢§Î
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_compact.h::COMP_BUF_SIZE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_BUF_SIZE&nbsp;&nbsp;&nbsp;100
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+∞µΩÃ•–•√•’•°§Œ•µ•§•∫ •«•’•©•Î•»√Õ
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_compact.h::COMP_FAST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_FAST&nbsp;&nbsp;&nbsp;0x00000008
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_compact.h::COMP_GET"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_GET&nbsp;&nbsp;&nbsp;0x00000001
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_compact.h::COMP_GET_ALL"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_GET_ALL&nbsp;&nbsp;&nbsp;0x00000002
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_compact.h::COMP_INSERT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_INSERT&nbsp;&nbsp;&nbsp;0x00000004
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_compact.h::COMP_NO_INFO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_NO_INFO&nbsp;&nbsp;&nbsp;0x00000000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_compact.h::COMP_REST_X"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMP_REST_X&nbsp;&nbsp;&nbsp;0x00000010
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_compact.h::COMPACT_NG"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMPACT_NG&nbsp;&nbsp;&nbsp;0xffffffff
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_compact.h::COMPACT_OK"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define COMPACT_OK&nbsp;&nbsp;&nbsp;0x00000000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ÇÃâê‡</h2>
+<a name="a12" doxytag="flight_compact.h::CC_PATTERN"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcc__pattern.html">cc_pattern</a>  CC_PATTERN
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_compact.h::COMP_CHECK_ALL_X"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__compact_8h.html#a16">comp_check_all_x</a>  COMP_CHECK_ALL_X
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_compact.h::COMP_HEAD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcomp__head.html">comp_head</a>  COMP_HEAD
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_compact.h::COMP_INFO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structcomp__info.html">comp_info</a>  COMP_INFO
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum ÇÃâê‡</h2>
+<a name="a16" doxytag="flight_compact.h::comp_check_all_x"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum comp_check_all_x
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+•—•ø°º•Û§¨§π§Ÿ§∆X§´§Ú•¡•ß•√•Ø§π§Î
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a16a14" doxytag="COMP_PAT_ALL_X"></a><em>COMP_PAT_ALL_X</em></em>&nbsp;</td><td>
+§π§Ÿ§∆X§«§¢§Î</td></tr>
+<tr><td valign=top><em><a name="a16a15" doxytag="COMP_PAT_NOT_X"></a><em>COMP_PAT_NOT_X</em></em>&nbsp;</td><td>
+§π§Ÿ§∆X§«§œ§ §§</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:09 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

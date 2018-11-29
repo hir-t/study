@@ -1,0 +1,175 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-extern.c ÇÃâê‡}
+\label{flight__extern_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_extern.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-extern.c}}
+•∞•Ì°º•–•Î —øÙ§Œ¿ﬂƒÍ§»ΩÈ¥¸≤Ω 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-extern.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head} = NULL
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Pi\_\-head} = NULL
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Po\_\-head} = NULL
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf BBPi\_\-head} = NULL
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf BBPo\_\-head} = NULL
+\item 
+{\bf LINE} $\ast$$\ast$$\ast$ {\bf Lv\_\-pi\_\-head} = NULL
+\item 
+{\bf JUST\_\-INFO} $\ast$$\ast$ {\bf Lv\_\-head} = NULL
+\item 
+{\bf FLIST} $\ast$$\ast$ {\bf Flist\_\-head} = NULL
+\item 
+{\bf TIME\_\-HEAD} {\bf Time\_\-head}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\item 
+char {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-NAME} [FMT\_\-NUM\_\-MEMORY\_\-TYPE][20]
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+•∞•Ì°º•–•Î —øÙ§Œ¿ﬂƒÍ§»ΩÈ¥¸≤Ω
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2004 / 12 / 15 initialize\end{Desc}
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_extern.c@{flight\_\-extern.c}!BBPi_head@{BBPi\_\-head}}
+\index{BBPi_head@{BBPi\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ BBPi\_\-head = NULL}\label{flight__extern_8c_a3}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!BBPo_head@{BBPo\_\-head}}
+\index{BBPo_head@{BBPo\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ BBPo\_\-head = NULL}\label{flight__extern_8c_a4}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!FLIGHT_MEMORY_TYPE_NAME@{FLIGHT\_\-MEMORY\_\-TYPE\_\-NAME}}
+\index{FLIGHT_MEMORY_TYPE_NAME@{FLIGHT\_\-MEMORY\_\-TYPE\_\-NAME}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char FLIGHT\_\-MEMORY\_\-TYPE\_\-NAME[FMT\_\-NUM\_\-MEMORY\_\-TYPE][20]}\label{flight__extern_8c_a11}
+
+
+{\bf èâä˙íl:}
+
+\footnotesize\begin{verbatim} {
+        "Char",
+        "Ulong",
+        "LINE",
+        "LINE *",
+        "LINE **",
+        "FLIST",
+        "FLIST *",
+        "LINE_STACK",
+        "LINE_STACK *",
+        "BTREE",
+        "DFRONT",
+        "DFRONT *",
+        "DFRONT_LIST",
+        "ASS_LIST",
+        "IMP_LIST",
+        "IMP_INFO",
+        "IMP_TRACE",
+        "JUST_INFO",
+        "JUST_INFO *",
+        "CELL",
+        "CELL *",
+        "CELL_IO",
+        "ENENVT_LIST",
+        "CC_PATTERN",
+        "CC_PATTERN_P",
+}\end{verbatim}\normalsize 
+\index{flight_extern.c@{flight\_\-extern.c}!Flist_head@{Flist\_\-head}}
+\index{Flist_head@{Flist\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FLIST}$\ast$$\ast$ Flist\_\-head = NULL}\label{flight__extern_8c_a7}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__extern_8c_a10}
+
+
+{\bf èâä˙íl:}
+
+\footnotesize\begin{verbatim} {
+    0,          
+        ATPG_LIMIT_BACK, 
+        0,          
+        0,          
+        0,          
+        NULL,   
+        NULL,   
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+}\end{verbatim}\normalsize 
+\index{flight_extern.c@{flight\_\-extern.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head = NULL}\label{flight__extern_8c_a0}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__extern_8c_a9}
+
+
+{\bf èâä˙íl:}
+
+\footnotesize\begin{verbatim} {
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+        0,              
+    0,          
+    NULL,       
+}\end{verbatim}\normalsize 
+\index{flight_extern.c@{flight\_\-extern.c}!Lv_head@{Lv\_\-head}}
+\index{Lv_head@{Lv\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf JUST\_\-INFO}$\ast$$\ast$ Lv\_\-head = NULL}\label{flight__extern_8c_a6}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Lv_pi_head@{Lv\_\-pi\_\-head}}
+\index{Lv_pi_head@{Lv\_\-pi\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$$\ast$ Lv\_\-pi\_\-head = NULL}\label{flight__extern_8c_a5}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Pi_head@{Pi\_\-head}}
+\index{Pi_head@{Pi\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Pi\_\-head = NULL}\label{flight__extern_8c_a1}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Po_head@{Po\_\-head}}
+\index{Po_head@{Po\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Po\_\-head = NULL}\label{flight__extern_8c_a2}
+
+
+\index{flight_extern.c@{flight\_\-extern.c}!Time_head@{Time\_\-head}}
+\index{Time_head@{Time\_\-head}!flight_extern.c@{flight\_\-extern.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf TIME\_\-HEAD} Time\_\-head}\label{flight__extern_8c_a8}
+
+

@@ -1,0 +1,588 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_bench.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_bench.h ÇÃâê‡</h1>.bench I/F§À¥ÿ§π§Î¿ﬂƒÍ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+
+<p>
+<a href="flight__bench_8h-source.html">É\Å[ÉXÉRÅ[ÉhÇå©ÇÈÅB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>.bench•’•©°º•ﬁ•√•»§À¥ÿ§π§Î•≠°º•Ô°º•…</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a0">BENCH_STR_INPUT</a>&nbsp;&nbsp;&nbsp;"INPUT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>input</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a1">BENCH_STR_OUTPUT</a>&nbsp;&nbsp;&nbsp;"OUTPUT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>output</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a2">BENCH_STR_GATE_CONECT</a>&nbsp;&nbsp;&nbsp;'='</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>•≤°º•»§Œ¿‹¬≥</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a3">BENCH_STR_COMMENT</a>&nbsp;&nbsp;&nbsp;'#'</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>•≥•·•Û•»π‘</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>.bench•’•©°º•ﬁ•√•»§À§™§±§Î•≤°º•»Ãæ…Ωµ≠</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a4">BENCH_GATE_AND</a>&nbsp;&nbsp;&nbsp;"AND"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>AND•≤°º•».</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a5">BENCH_GATE_NAND</a>&nbsp;&nbsp;&nbsp;"NAND"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>NAND•≤°º•».</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a6">BENCH_GATE_OR</a>&nbsp;&nbsp;&nbsp;"OR"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>OR•≤°º•».</em> <a href="#a6"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a7">BENCH_GATE_NOR</a>&nbsp;&nbsp;&nbsp;"NOR"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>NOR•≤°º•».</em> <a href="#a7"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a8">BENCH_GATE_NOT</a>&nbsp;&nbsp;&nbsp;"NOT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>NOT•≤°º•» ( = INV•≤°º•» ).</em> <a href="#a8"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a9">BENCH_GATE_BUF</a>&nbsp;&nbsp;&nbsp;"BUF"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>BUFFER•≤°º•».</em> <a href="#a9"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a10">BENCH_GATE_INV</a>&nbsp;&nbsp;&nbsp;"INV"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>INV•≤°º•».</em> <a href="#a10"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a11">BENCH_GATE_XOR</a>&nbsp;&nbsp;&nbsp;"XOR"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>EX-OR•≤°º•».</em> <a href="#a11"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a12">BENCH_GATE_XNOR</a>&nbsp;&nbsp;&nbsp;"XNOR"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>EX-NOR•≤°º•».</em> <a href="#a12"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a13">BENCH_NAME_SIZE</a>&nbsp;&nbsp;&nbsp;1024</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>1§ƒ§ŒÃæ¡∞≈ˆ§Í§Œ∫«¬Á ∏ª˙øÙ</em> <a href="#a13"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__bench_8h.html#a27">bench_cell_define</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a14">BENCH_CELL_DEFINE</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>.bench ∑¡º∞§Œcell§Œ∑ø</em> <a href="#a14"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__bench_8h.html#a28">bench_analyze_header</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a15">BENCH_ANALYZE_HEADER</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>.bench ∑¡º∞§Œfile•ÿ•√•¿§Œ∑ø</em> <a href="#a15"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__bench_8h.html#a29">bench_analyze_line_end</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a16">BENCH_ANALYZE_LINE_END</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a27">bench_cell_define</a> { <a class="el" href="flight__bench_8h.html#a27a17">BENCH_CELL_INPUT</a> =  0, 
+<a class="el" href="flight__bench_8h.html#a27a18">BENCH_CELL_OUTPUT</a>, 
+<a class="el" href="flight__bench_8h.html#a27a19">BENCH_CELL_UNKNOWN</a>
+ }</td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a28">bench_analyze_header</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__bench_8h.html#a28a20">BENCH_COMMENT</a> =  1, 
+<a class="el" href="flight__bench_8h.html#a28a21">BENCH_END</a>, 
+<a class="el" href="flight__bench_8h.html#a28a22">BENCH_INPUT</a>, 
+<a class="el" href="flight__bench_8h.html#a28a23">BENCH_OUTPUT</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__bench_8h.html#a28a24">BENCH_GATE</a>
+<br>
+ }</td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__bench_8h.html#a29">bench_analyze_line_end</a> { <a class="el" href="flight__bench_8h.html#a29a25">BENCH_LINE_END</a> =  1, 
+<a class="el" href="flight__bench_8h.html#a29a26">BENCH_LINE_CONTINUE</a>
+ }</td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+.bench I/F§À¥ÿ§π§Î¿ﬂƒÍ
+<p>
+ <dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2005 / 07 / 07 initialize ( renew )</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a4" doxytag="flight_bench.h::BENCH_GATE_AND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_AND&nbsp;&nbsp;&nbsp;"AND"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+AND•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_bench.h::BENCH_GATE_BUF"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_BUF&nbsp;&nbsp;&nbsp;"BUF"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+BUFFER•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_bench.h::BENCH_GATE_INV"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_INV&nbsp;&nbsp;&nbsp;"INV"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+INV•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_bench.h::BENCH_GATE_NAND"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_NAND&nbsp;&nbsp;&nbsp;"NAND"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+NAND•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_bench.h::BENCH_GATE_NOR"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_NOR&nbsp;&nbsp;&nbsp;"NOR"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+NOR•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_bench.h::BENCH_GATE_NOT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_NOT&nbsp;&nbsp;&nbsp;"NOT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+NOT•≤°º•» ( = INV•≤°º•» ).
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_bench.h::BENCH_GATE_OR"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_OR&nbsp;&nbsp;&nbsp;"OR"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+OR•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_bench.h::BENCH_GATE_XNOR"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_XNOR&nbsp;&nbsp;&nbsp;"XNOR"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+EX-NOR•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_bench.h::BENCH_GATE_XOR"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_GATE_XOR&nbsp;&nbsp;&nbsp;"XOR"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+EX-OR•≤°º•».
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_bench.h::BENCH_NAME_SIZE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_NAME_SIZE&nbsp;&nbsp;&nbsp;1024
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+1§ƒ§ŒÃæ¡∞≈ˆ§Í§Œ∫«¬Á ∏ª˙øÙ
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_bench.h::BENCH_STR_COMMENT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_STR_COMMENT&nbsp;&nbsp;&nbsp;'#'
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+•≥•·•Û•»π‘
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_bench.h::BENCH_STR_GATE_CONECT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_STR_GATE_CONECT&nbsp;&nbsp;&nbsp;'='
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+•≤°º•»§Œ¿‹¬≥
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_bench.h::BENCH_STR_INPUT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_STR_INPUT&nbsp;&nbsp;&nbsp;"INPUT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+input
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_bench.h::BENCH_STR_OUTPUT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BENCH_STR_OUTPUT&nbsp;&nbsp;&nbsp;"OUTPUT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+output
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ÇÃâê‡</h2>
+<a name="a15" doxytag="flight_bench.h::BENCH_ANALYZE_HEADER"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__bench_8h.html#a28">bench_analyze_header</a>  BENCH_ANALYZE_HEADER
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+.bench ∑¡º∞§Œfile•ÿ•√•¿§Œ∑ø
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="flight_bench.h::BENCH_ANALYZE_LINE_END"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__bench_8h.html#a29">bench_analyze_line_end</a>  BENCH_ANALYZE_LINE_END
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+@breif .bench ∑¡º∞§Œπ‘Àˆ§Œ»ΩƒÍ     </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_bench.h::BENCH_CELL_DEFINE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__bench_8h.html#a27">bench_cell_define</a>  BENCH_CELL_DEFINE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+.bench ∑¡º∞§Œcell§Œ∑ø
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum ÇÃâê‡</h2>
+<a name="a28" doxytag="flight_bench.h::bench_analyze_header"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum bench_analyze_header
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a28a20" doxytag="BENCH_COMMENT"></a><em>BENCH_COMMENT</em></em>&nbsp;</td><td>
+•≥•·•Û•»π‘</td></tr>
+<tr><td valign=top><em><a name="a28a21" doxytag="BENCH_END"></a><em>BENCH_END</em></em>&nbsp;</td><td>
+•’•°•§•Î§ŒΩ™√º</td></tr>
+<tr><td valign=top><em><a name="a28a22" doxytag="BENCH_INPUT"></a><em>BENCH_INPUT</em></em>&nbsp;</td><td>
+≥∞…Ù∆˛Œœ•‘•Û</td></tr>
+<tr><td valign=top><em><a name="a28a23" doxytag="BENCH_OUTPUT"></a><em>BENCH_OUTPUT</em></em>&nbsp;</td><td>
+≥∞…ÙΩ–Œœ•‘•Û</td></tr>
+<tr><td valign=top><em><a name="a28a24" doxytag="BENCH_GATE"></a><em>BENCH_GATE</em></em>&nbsp;</td><td>
+•≤°º•»</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a name="a29" doxytag="flight_bench.h::bench_analyze_line_end"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum bench_analyze_line_end
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a29a25" doxytag="BENCH_LINE_END"></a><em>BENCH_LINE_END</em></em>&nbsp;</td><td>
+π‘Àˆ</td></tr>
+<tr><td valign=top><em><a name="a29a26" doxytag="BENCH_LINE_CONTINUE"></a><em>BENCH_LINE_CONTINUE</em></em>&nbsp;</td><td>
+π‘Àˆ§«§ §§</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a name="a27" doxytag="flight_bench.h::bench_cell_define"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum bench_cell_define
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a27a17" doxytag="BENCH_CELL_INPUT"></a><em>BENCH_CELL_INPUT</em></em>&nbsp;</td><td>
+input</td></tr>
+<tr><td valign=top><em><a name="a27a18" doxytag="BENCH_CELL_OUTPUT"></a><em>BENCH_CELL_OUTPUT</em></em>&nbsp;</td><td>
+output</td></tr>
+<tr><td valign=top><em><a name="a27a19" doxytag="BENCH_CELL_UNKNOWN"></a><em>BENCH_CELL_UNKNOWN</em></em>&nbsp;</td><td>
+§Ω§Œ¬æ</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:09 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

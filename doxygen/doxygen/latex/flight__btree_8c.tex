@@ -1,0 +1,133 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-btree.c ÇÃâê‡}
+\label{flight__btree_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_btree.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-btree.c}}
+•–•√•Ø•»•È•√•Ø¡‡∫Ó§»•–•√•Ø•»•Ï°º•π•ƒ•Í°º§À¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-state9\_\-0} ({\bf LINE} $\ast$, {\bf STATE\_\-9}, {\bf Uint})
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-btree\_\-null} ({\bf BTREE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list\_\-next\_\-null} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-just\_\-info} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info}, char $\ast$org\_\-function\_\-name)
+\item 
+void {\bf atpg\_\-ent\_\-btree} ({\bf ASS\_\-LIST} $\ast${\bf ass\_\-list})
+\item 
+void {\bf atpg\_\-init\_\-btree} (void)
+\item 
+void {\bf atpg\_\-enter\_\-imp\_\-trace} ({\bf LINE} $\ast${\bf line}, {\bf Uint} {\bf condition})
+\item 
+void {\bf atpg\_\-ent\_\-just\_\-btree} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+void {\bf atpg\_\-btree\_\-enter\_\-just\_\-flag} ({\bf JUST\_\-INFO} $\ast${\bf just\_\-info})
+\item 
+void {\bf atpg\_\-make\_\-btree} (void)
+\item 
+void {\bf atpg\_\-imp\_\-trace\_\-2\_\-btree} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+•–•√•Ø•»•È•√•Ø¡‡∫Ó§»•–•√•Ø•»•Ï°º•π•ƒ•Í°º§À¥ÿ§π§Î¥ÿøÙ∑≤
+
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 1 / 18 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_btree_enter_just_flag@{atpg\_\-btree\_\-enter\_\-just\_\-flag}}
+\index{atpg_btree_enter_just_flag@{atpg\_\-btree\_\-enter\_\-just\_\-flag}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-btree\_\-enter\_\-just\_\-flag ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__btree_8c_a11}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_ent_btree@{atpg\_\-ent\_\-btree}}
+\index{atpg_ent_btree@{atpg\_\-ent\_\-btree}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-btree ({\bf ASS\_\-LIST} $\ast$ {\em ass\_\-list})}\label{flight__btree_8c_a7}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_ent_just_btree@{atpg\_\-ent\_\-just\_\-btree}}
+\index{atpg_ent_just_btree@{atpg\_\-ent\_\-just\_\-btree}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-just\_\-btree ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info})}\label{flight__btree_8c_a10}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}}
+\index{atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-imp\_\-trace ({\bf LINE} $\ast$ {\em line}, {\bf Uint} {\em condition})}\label{flight__btree_8c_a9}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_imp_trace_2_btree@{atpg\_\-imp\_\-trace\_\-2\_\-btree}}
+\index{atpg_imp_trace_2_btree@{atpg\_\-imp\_\-trace\_\-2\_\-btree}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-imp\_\-trace\_\-2\_\-btree (void)}\label{flight__btree_8c_a13}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_init_btree@{atpg\_\-init\_\-btree}}
+\index{atpg_init_btree@{atpg\_\-init\_\-btree}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-init\_\-btree (void)}\label{flight__btree_8c_a8}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!atpg_make_btree@{atpg\_\-make\_\-btree}}
+\index{atpg_make_btree@{atpg\_\-make\_\-btree}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-make\_\-btree (void)}\label{flight__btree_8c_a12}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__btree_8c_a1}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!flight_print_mes_id_state9_0@{flight\_\-print\_\-mes\_\-id\_\-state9\_\-0}}
+\index{flight_print_mes_id_state9_0@{flight\_\-print\_\-mes\_\-id\_\-state9\_\-0}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-state9\_\-0 ({\bf LINE} $\ast$, {\bf STATE\_\-9}, {\bf Uint})}\label{flight__btree_8c_a2}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__btree_8c_a3}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!test_ass_list_next_null@{test\_\-ass\_\-list\_\-next\_\-null}}
+\index{test_ass_list_next_null@{test\_\-ass\_\-list\_\-next\_\-null}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list\_\-next\_\-null ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__btree_8c_a5}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!test_btree_null@{test\_\-btree\_\-null}}
+\index{test_btree_null@{test\_\-btree\_\-null}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-btree\_\-null ({\bf BTREE} $\ast$, char $\ast$)}\label{flight__btree_8c_a4}
+
+
+\index{flight_btree.c@{flight\_\-btree.c}!test_just_info@{test\_\-just\_\-info}}
+\index{test_just_info@{test\_\-just\_\-info}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-just\_\-info ({\bf JUST\_\-INFO} $\ast$ {\em just\_\-info}, char $\ast$ {\em org\_\-function\_\-name})}\label{flight__btree_8c_a6}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_btree.c@{flight\_\-btree.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_btree.c@{flight\_\-btree.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__btree_8c_a0}
+
+

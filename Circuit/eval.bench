@@ -1,0 +1,10 @@
+INPUT(G5gat)
+INPUT(G6gat)
+INPUT(G7gat)
+OUTPUT(G4gat)
+
+G1gat = nand(G5gat, G6gat)
+G2gat = and(G6gat, G7gat)
+G3gat = and(G7gat, G5gat)
+G4gat = or(G1gat, G2gat, G3gat)
+

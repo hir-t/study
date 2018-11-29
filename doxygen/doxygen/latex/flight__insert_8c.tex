@@ -1,0 +1,177 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-insert.c ‚Ì‰ğà}
+\label{flight__insert_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_insert.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-insert.c}}
+¸Î¾ãÁŞÆş¤Ë´Ø¤¹¤ë´Ø¿ô·² 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-RESULT} {\bf atpg\_\-insert\_\-fault} ({\bf FLIST} $\ast$)
+\item 
+{\bf ASS\_\-LIST} $\ast$ {\bf atpg\_\-enter\_\-fault} ({\bf FLIST} $\ast$)
+\item 
+void {\bf atpg\_\-init\_\-dfront} ({\bf LINE} $\ast$)
+\item 
+int {\bf atpg\_\-enter\_\-state} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+void {\bf atpg\_\-enter\_\-ass\_\-list\_\-insert\_\-fault} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+void {\bf atpg\_\-init\_\-fault\_\-propagation\_\-potential} ({\bf LINE} $\ast$)
+\item 
+int {\bf implication2} (void)
+\item 
+void {\bf atpg\_\-init\_\-btree} (void)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+void {\bf atpg\_\-imp\_\-trace\_\-2\_\-dfront} (void)
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-result\_\-state9} (int, int, {\bf STATE\_\-9})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-result\_\-line} (int, int, {\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id2} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} (void)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-flist} ({\bf FLIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-flist\_\-info\_\-fault} ({\bf Ulong}, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\end{CompactItemize}
+\subsection*{•Ï”}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\end{CompactItemize}
+
+
+\subsection{‰ğà}
+¸Î¾ãÁŞÆş¤Ë´Ø¤¹¤ë´Ø¿ô·²
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2004 / 12 / 13 initialize\end{Desc}
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_enter_ass_list_insert_fault@{atpg\_\-enter\_\-ass\_\-list\_\-insert\_\-fault}}
+\index{atpg_enter_ass_list_insert_fault@{atpg\_\-enter\_\-ass\_\-list\_\-insert\_\-fault}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-ass\_\-list\_\-insert\_\-fault ({\bf ASS\_\-LIST} $\ast$)}\label{flight__insert_8c_a5}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_enter_fault@{atpg\_\-enter\_\-fault}}
+\index{atpg_enter_fault@{atpg\_\-enter\_\-fault}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf ASS\_\-LIST} $\ast$ atpg\_\-enter\_\-fault ({\bf FLIST} $\ast$)}\label{flight__insert_8c_a2}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_enter_state@{atpg\_\-enter\_\-state}}
+\index{atpg_enter_state@{atpg\_\-enter\_\-state}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-enter\_\-state ({\bf ASS\_\-LIST} $\ast$)}\label{flight__insert_8c_a4}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__insert_8c_a9}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}}
+\index{atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-imp\_\-trace\_\-2\_\-dfront (void)}\label{flight__insert_8c_a10}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_init_btree@{atpg\_\-init\_\-btree}}
+\index{atpg_init_btree@{atpg\_\-init\_\-btree}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-init\_\-btree (void)}\label{flight__insert_8c_a8}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_init_dfront@{atpg\_\-init\_\-dfront}}
+\index{atpg_init_dfront@{atpg\_\-init\_\-dfront}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-init\_\-dfront ({\bf LINE} $\ast$)}\label{flight__insert_8c_a3}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_init_fault_propagation_potential@{atpg\_\-init\_\-fault\_\-propagation\_\-potential}}
+\index{atpg_init_fault_propagation_potential@{atpg\_\-init\_\-fault\_\-propagation\_\-potential}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-init\_\-fault\_\-propagation\_\-potential ({\bf LINE} $\ast$)}\label{flight__insert_8c_a6}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!atpg_insert_fault@{atpg\_\-insert\_\-fault}}
+\index{atpg_insert_fault@{atpg\_\-insert\_\-fault}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-RESULT} atpg\_\-insert\_\-fault ({\bf FLIST} $\ast$)}\label{flight__insert_8c_a1}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__insert_8c_a11}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!flight_print_mes_id2@{flight\_\-print\_\-mes\_\-id2}}
+\index{flight_print_mes_id2@{flight\_\-print\_\-mes\_\-id2}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id2 (void)}\label{flight__insert_8c_a14}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n (void)}\label{flight__insert_8c_a15}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!flight_print_mes_result_line@{flight\_\-print\_\-mes\_\-result\_\-line}}
+\index{flight_print_mes_result_line@{flight\_\-print\_\-mes\_\-result\_\-line}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-result\_\-line (int, int, {\bf LINE} $\ast$)}\label{flight__insert_8c_a13}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!flight_print_mes_result_state9@{flight\_\-print\_\-mes\_\-result\_\-state9}}
+\index{flight_print_mes_result_state9@{flight\_\-print\_\-mes\_\-result\_\-state9}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-result\_\-state9 (int, int, {\bf STATE\_\-9})}\label{flight__insert_8c_a12}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!implication2@{implication2}}
+\index{implication2@{implication2}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication2 (void)}\label{flight__insert_8c_a7}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__insert_8c_a19}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!test_flist@{test\_\-flist}}
+\index{test_flist@{test\_\-flist}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-flist ({\bf FLIST} $\ast$, char $\ast$)}\label{flight__insert_8c_a17}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!test_flist_info_fault@{test\_\-flist\_\-info\_\-fault}}
+\index{test_flist_info_fault@{test\_\-flist\_\-info\_\-fault}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-flist\_\-info\_\-fault ({\bf Ulong}, char $\ast$)}\label{flight__insert_8c_a18}
+
+
+\index{flight_insert.c@{flight\_\-insert.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__insert_8c_a16}
+
+
+
+
+\subsection{•Ï”‚Ì‰ğà}
+\index{flight_insert.c@{flight\_\-insert.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_insert.c@{flight\_\-insert.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__insert_8c_a0}
+
+

@@ -1,0 +1,118 @@
+\section{$\backslash$‘¢‘Ì btree ‚Ì‰ğà}
+\label{structbtree}\index{btree@{btree}}
+¥Ğ¥Ã¥¯¥È¥é¥Ã¥¯¥Ä¥ê¡¼¤Î¥Ç¡¼¥¿¹½Â¤ 
+
+
+{\tt \#include $<$flight\_\-atpg.h$>$}
+
+\subsection*{Public •Ï”}
+\begin{CompactItemize}
+\item 
+{\bf Ulong} {\bf flag}
+\begin{CompactList}\small\item\em back track tree¤Îflag\item\end{CompactList}\item 
+enum condition {\bf condition}
+\begin{CompactList}\small\item\em Àµ¾ïÃÍ or ¸Î¾ãÃÍ\item\end{CompactList}\item 
+enum {\bf state\_\-3} {\bf ass\_\-state3}
+\begin{CompactList}\small\item\em ¿®¹æÀş¤Ë³ä¤êÅö¤Æ¤¿ÃÍ\item\end{CompactList}\item 
+line $\ast$ {\bf line}
+\begin{CompactList}\small\item\em ÃÍ¤ò³ä¤êÅö¤Æ¤ë¿®¹æÀş\item\end{CompactList}\item 
+imp\_\-trace $\ast$ {\bf imp\_\-trace}
+\begin{CompactList}\small\item\em Åö³º¤Ç´Ş°ÕÁàºî¤Ç¤­¤¿¿®¹æÀş¤ÈÀµor¸Î\item\end{CompactList}\item 
+{\bf just\_\-info} $\ast$ {\bf just\_\-e}
+\begin{CompactList}\small\item\em ÅĞÏ¿¤µ¤ì¤¿ÀµÅö²½¿®¹æÀş\item\end{CompactList}\item 
+{\bf just\_\-info} $\ast$ {\bf just\_\-d}
+\begin{CompactList}\small\item\em ºï½ü¤µ¤ì¤¿ÀµÅö²½¿®¹æÀş\item\end{CompactList}\item 
+{\bf just\_\-info} $\ast$ {\bf just\_\-flag}
+\begin{CompactList}\small\item\em JUSTIFY\_\-NO, \_\-FL¤Îµ­Ï¿.\item\end{CompactList}\item 
+btree $\ast$ {\bf next}
+\begin{CompactList}\small\item\em back track tree¤Î»Ò¤Ø¤Î¥İ¥¤¥ó¥¿\item\end{CompactList}\item 
+btree $\ast$ {\bf prev}
+\begin{CompactList}\small\item\em back track tree¤Î¿Æ¤Ø¤Î¥İ¥¤¥ó¥¿\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{‰ğà}
+¥Ğ¥Ã¥¯¥È¥é¥Ã¥¯¥Ä¥ê¡¼¤Î¥Ç¡¼¥¿¹½Â¤
+
+\begin{Desc}
+\item[Šo‚¦‘‚«: ]\par
+¸½ºß¤ÏÀµÅö²½¤ÎÉôÊ¬¤À¤±»ÈÍÑ \end{Desc}
+
+
+
+
+\subsection{•Ï”‚Ì‰ğà}
+\index{btree@{btree}!ass_state3@{ass\_\-state3}}
+\index{ass_state3@{ass\_\-state3}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf state\_\-3} btree::ass\_\-state3}\label{structbtree_m2}
+
+
+¿®¹æÀş¤Ë³ä¤êÅö¤Æ¤¿ÃÍ
+
+\index{btree@{btree}!condition@{condition}}
+\index{condition@{condition}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum condition btree::condition}\label{structbtree_m1}
+
+
+Àµ¾ïÃÍ or ¸Î¾ãÃÍ
+
+\index{btree@{btree}!flag@{flag}}
+\index{flag@{flag}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} btree::flag}\label{structbtree_m0}
+
+
+back track tree¤Îflag
+
+\index{btree@{btree}!imp_trace@{imp\_\-trace}}
+\index{imp_trace@{imp\_\-trace}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct imp\_\-trace$\ast$ btree::imp\_\-trace}\label{structbtree_m4}
+
+
+Åö³º¤Ç´Ş°ÕÁàºî¤Ç¤­¤¿¿®¹æÀş¤ÈÀµor¸Î
+
+\index{btree@{btree}!just_d@{just\_\-d}}
+\index{just_d@{just\_\-d}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf just\_\-info}$\ast$ btree::just\_\-d}\label{structbtree_m6}
+
+
+ºï½ü¤µ¤ì¤¿ÀµÅö²½¿®¹æÀş
+
+\index{btree@{btree}!just_e@{just\_\-e}}
+\index{just_e@{just\_\-e}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf just\_\-info}$\ast$ btree::just\_\-e}\label{structbtree_m5}
+
+
+ÅĞÏ¿¤µ¤ì¤¿ÀµÅö²½¿®¹æÀş
+
+\index{btree@{btree}!just_flag@{just\_\-flag}}
+\index{just_flag@{just\_\-flag}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf just\_\-info}$\ast$ btree::just\_\-flag}\label{structbtree_m7}
+
+
+JUSTIFY\_\-NO, \_\-FL¤Îµ­Ï¿.
+
+\index{btree@{btree}!line@{line}}
+\index{line@{line}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct line$\ast$ btree::line}\label{structbtree_m3}
+
+
+ÃÍ¤ò³ä¤êÅö¤Æ¤ë¿®¹æÀş
+
+\index{btree@{btree}!next@{next}}
+\index{next@{next}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct btree$\ast$ btree::next}\label{structbtree_m8}
+
+
+back track tree¤Î»Ò¤Ø¤Î¥İ¥¤¥ó¥¿
+
+\index{btree@{btree}!prev@{prev}}
+\index{prev@{prev}!btree@{btree}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct btree$\ast$ btree::prev}\label{structbtree_m9}
+
+
+back track tree¤Î¿Æ¤Ø¤Î¥İ¥¤¥ó¥¿
+
+
+
+‚±‚Ì$\backslash$‘¢‘Ì‚Ì‰ğà‚ÍŸ‚Ìƒtƒ@ƒCƒ‹‚©‚ç¶¬‚³‚ê‚Ü‚µ‚½:\begin{CompactItemize}
+\item 
+/cygdrive/c/home/yosimura/Flight/include/{\bf flight\_\-atpg.h}\end{CompactItemize}

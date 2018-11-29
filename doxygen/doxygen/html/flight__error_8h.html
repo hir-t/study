@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_error.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- НьРмБF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ГБГCГУГyБ[ГW</a> &nbsp; <a class="qindex" href="annotated.html">Н\Рм</a> &nbsp; <a class="qindex" href="files.html">ГtГ@ГCГЛИъЧЧ</a> &nbsp; <a class="qindex" href="functions.html">Н\РмГБГУГo</a> &nbsp; <a class="qindex" href="globals.html">ГtГ@ГCГЛГБГУГo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_error.h В╠ЙЁРр</h1>еиещб╝╜ш═¤д╚еиещб╝есе├е╗б╝е╕д╦┤╪д╣ды└▀─ъ 
+<a href="#_details">[П┌Н╫]</a>
+<p>
+
+<p>
+<a href="flight__error_8h-source.html">Г\Б[ГXГRБ[ГhВЁМйВщБB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__error_8h.html#a47">flight_errorcode</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__error_8h.html#a47">flight_errorcode</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a1">FEC_NORMAL_END</a>, 
+<a class="el" href="flight__error_8h.html#a47a2">FEC_FILE_OPEN_ERROR</a> =  101, 
+<a class="el" href="flight__error_8h.html#a47a3">FEC_FILE_CLOSE_ERROR</a>, 
+<a class="el" href="flight__error_8h.html#a47a4">FEC_FILE_REMOVE_ERROR</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a5">FEC_FILE_FORMAT_ERROR_NOT_CHAR</a>, 
+<a class="el" href="flight__error_8h.html#a47a6">FEC_CANT_ALLOCATE_MEMORY</a>, 
+<a class="el" href="flight__error_8h.html#a47a7">FEC_BUFFER_OVER_FLOW</a>, 
+<a class="el" href="flight__error_8h.html#a47a8">FEC_COMMAND_EXE_ERROR</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a9">FEC_HASH_ERROR_CODE</a>, 
+<a class="el" href="flight__error_8h.html#a47a10">FEC_SYSTEM_ERROR_CODE</a> =  198, 
+<a class="el" href="flight__error_8h.html#a47a11">FEC_ERROR_CODE</a> =  199, 
+<a class="el" href="flight__error_8h.html#a47a12">FEC_CIRCUIT</a> =  201, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a13">FEC_CIRCUIT_NO_PI</a>, 
+<a class="el" href="flight__error_8h.html#a47a14">FEC_CIRCUIT_NO_PO</a>, 
+<a class="el" href="flight__error_8h.html#a47a15">FEC_CIRCUIT_NO_LINE</a>, 
+<a class="el" href="flight__error_8h.html#a47a16">FEC_CIRCUIT_NO_FAULT</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a17">FEC_CIRCUIT_GATE_IO</a>, 
+<a class="el" href="flight__error_8h.html#a47a18">FEC_CIRCUIT_GATE_TYPE</a>, 
+<a class="el" href="flight__error_8h.html#a47a19">FEC_PRG_ERROR</a> =  601, 
+<a class="el" href="flight__error_8h.html#a47a20">FEC_PRG_ATPG_HEAD</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a21">FEC_PRG_LV_HEAD</a>, 
+<a class="el" href="flight__error_8h.html#a47a22">FEC_PRG_LV_PI_HEAD</a>, 
+<a class="el" href="flight__error_8h.html#a47a23">FEC_PRG_JUDGE_GENE_END</a>, 
+<a class="el" href="flight__error_8h.html#a47a24">FEC_PRG_JUDGE_IMP</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a25">FEC_PRG_LINE_STAT</a>, 
+<a class="el" href="flight__error_8h.html#a47a26">FEC_PRG_LINE_TYPE</a>, 
+<a class="el" href="flight__error_8h.html#a47a27">FEC_PRG_LINE_ID</a>, 
+<a class="el" href="flight__error_8h.html#a47a28">FEC_PRG_LINE_FLAG</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a29">FEC_PRG_LINE_IN</a>, 
+<a class="el" href="flight__error_8h.html#a47a30">FEC_PRG_LINE_OUT</a>, 
+<a class="el" href="flight__error_8h.html#a47a31">FEC_PRG_CELL</a>, 
+<a class="el" href="flight__error_8h.html#a47a32">FEC_PRG_CELL_IO</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a33">FEC_PRG_JUSTIFIED</a>, 
+<a class="el" href="flight__error_8h.html#a47a34">FEC_PRG_JUST_INFO</a>, 
+<a class="el" href="flight__error_8h.html#a47a35">FEC_PRG_IMPLICATION</a>, 
+<a class="el" href="flight__error_8h.html#a47a36">FEC_PRG_DFRONT</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a37">FEC_PRG_BTREE</a>, 
+<a class="el" href="flight__error_8h.html#a47a38">FEC_PRG_BACK_TRACK</a>, 
+<a class="el" href="flight__error_8h.html#a47a39">FEC_PRG_FLIST</a>, 
+<a class="el" href="flight__error_8h.html#a47a40">FEC_PRG_ASS_LIST</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__error_8h.html#a47a41">FEC_PRG_NULL</a>, 
+<a class="el" href="flight__error_8h.html#a47a42">FEC_FSIM_VAL2_BLKI</a> =  701, 
+<a class="el" href="flight__error_8h.html#a47a43">FEC_FSIM_FAULT_FLAG</a>, 
+<a class="el" href="flight__error_8h.html#a47a44">FEC_NO_ERROR_CODE</a> =  -1
+<br>
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>еиещб╝е│б╝е╔╚╓╣ц</em> <a href="#a47">[П┌Н╫]</a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>К╓РФ</h2></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8h.html#a45">flight_error</a> (<a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>, char *)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>еиещб╝есе├е╗б╝е╕дЄ╜╨╬╧д╣ды */</em> <a href="#a45"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8h.html#a46">flight_error_o</a> (<a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>, char *, char *)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>еиещб╝есе├е╗б╝е╕дЄ╩╕╗·╬єд─днд╟╜╨╬╧д╣ды */</em> <a href="#a46"></a><em></em></font><br><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>ЙЁРр</h2>
+еиещб╝╜ш═¤д╚еиещб╝есе├е╗б╝е╕д╦┤╪д╣ды└▀─ъ
+<p>
+ <dl compact><dt><b>КoВжПСВл: </b></dt><dd>
+ </dl><dl compact><dt><b>НьО╥: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>У·Хt: </b></dt><dd>
+ 2005 / 06 / 17 initialize</dl><hr><h2>Typedef В╠ЙЁРр</h2>
+<a name="a0" doxytag="flight_error.h::FLIGHT_ERROR_CODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__error_8h.html#a47">flight_errorcode</a> FLIGHT_ERROR_CODE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum В╠ЙЁРр</h2>
+<a name="a47" doxytag="flight_error.h::flight_errorcode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum flight_errorcode
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+еиещб╝е│б╝е╔╚╓╣ц
+<p>
+<dl compact><dt><b>Enum Тl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a47a1" doxytag="FEC_NORMAL_END"></a><em>FEC_NORMAL_END</em></em>&nbsp;</td><td>
+└╡╛я</td></tr>
+<tr><td valign=top><em><a name="a47a2" doxytag="FEC_FILE_OPEN_ERROR"></a><em>FEC_FILE_OPEN_ERROR</em></em>&nbsp;</td><td>
+е╒ебедеыекб╝е╫еєеиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a3" doxytag="FEC_FILE_CLOSE_ERROR"></a><em>FEC_FILE_CLOSE_ERROR</em></em>&nbsp;</td><td>
+е╒ебедеыепеэб╝е║еиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a4" doxytag="FEC_FILE_REMOVE_ERROR"></a><em>FEC_FILE_REMOVE_ERROR</em></em>&nbsp;</td><td>
+е╒ебедеы╛├╡юеиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a5" doxytag="FEC_FILE_FORMAT_ERROR_NOT_CHAR"></a><em>FEC_FILE_FORMAT_ERROR_NOT_CHAR</em></em>&nbsp;</td><td>
+е╒ебедеые╒ейб╝е▐е├е╚ двды╩╕╗·дм┬╕║▀д╖д╩дд</td></tr>
+<tr><td valign=top><em><a name="a47a6" doxytag="FEC_CANT_ALLOCATE_MEMORY"></a><em>FEC_CANT_ALLOCATE_MEMORY</em></em>&nbsp;</td><td>
+есетеъевеэе▒б╝е╖ечеєеиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a7" doxytag="FEC_BUFFER_OVER_FLOW"></a><em>FEC_BUFFER_OVER_FLOW</em></em>&nbsp;</td><td>
+е╨е├е╒ебекб╝е╨б╝е╒еэб╝</td></tr>
+<tr><td valign=top><em><a name="a47a8" doxytag="FEC_COMMAND_EXE_ERROR"></a><em>FEC_COMMAND_EXE_ERROR</em></em>&nbsp;</td><td>
+е│е▐еєе╔╝┬╣╘еиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a9" doxytag="FEC_HASH_ERROR_CODE"></a><em>FEC_HASH_ERROR_CODE</em></em>&nbsp;</td><td>
+е╧е├е╖ех┤╪┐Ї┤╪╧веиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a10" doxytag="FEC_SYSTEM_ERROR_CODE"></a><em>FEC_SYSTEM_ERROR_CODE</em></em>&nbsp;</td><td>
+е╖е╣е╞ереиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a11" doxytag="FEC_ERROR_CODE"></a><em>FEC_ERROR_CODE</em></em>&nbsp;</td><td>
+╠д─ъ╡┴еиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a12" doxytag="FEC_CIRCUIT"></a><em>FEC_CIRCUIT</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a13" doxytag="FEC_CIRCUIT_NO_PI"></a><em>FEC_CIRCUIT_NO_PI</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ │░╔Ї╞■╬╧дм0</td></tr>
+<tr><td valign=top><em><a name="a47a14" doxytag="FEC_CIRCUIT_NO_PO"></a><em>FEC_CIRCUIT_NO_PO</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ │░╔Ї╜╨╬╧дм0</td></tr>
+<tr><td valign=top><em><a name="a47a15" doxytag="FEC_CIRCUIT_NO_LINE"></a><em>FEC_CIRCUIT_NO_LINE</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ ┐о╣ц└■дмд╩дд</td></tr>
+<tr><td valign=top><em><a name="a47a16" doxytag="FEC_CIRCUIT_NO_FAULT"></a><em>FEC_CIRCUIT_NO_FAULT</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ ATPG┬╨╛▌╕╬╛удмд╩дд</td></tr>
+<tr><td valign=top><em><a name="a47a17" doxytag="FEC_CIRCUIT_GATE_IO"></a><em>FEC_CIRCUIT_GATE_IO</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ е▓б╝е╚д╬╝я╬рд╚╞■╜╨╬╧дм░ь├╫д╖д╩дд</td></tr>
+<tr><td valign=top><em><a name="a47a18" doxytag="FEC_CIRCUIT_GATE_TYPE"></a><em>FEC_CIRCUIT_GATE_TYPE</em></em>&nbsp;</td><td>
+▓є╧йе╟б╝е┐еиещб╝ е▓б╝е╚д╬╝я╬рдм┬╕║▀д╖д╩дд</td></tr>
+<tr><td valign=top><em><a name="a47a19" doxytag="FEC_PRG_ERROR"></a><em>FEC_PRG_ERROR</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝</td></tr>
+<tr><td valign=top><em><a name="a47a20" doxytag="FEC_PRG_ATPG_HEAD"></a><em>FEC_PRG_ATPG_HEAD</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Atpg_head</td></tr>
+<tr><td valign=top><em><a name="a47a21" doxytag="FEC_PRG_LV_HEAD"></a><em>FEC_PRG_LV_HEAD</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Lv_head</td></tr>
+<tr><td valign=top><em><a name="a47a22" doxytag="FEC_PRG_LV_PI_HEAD"></a><em>FEC_PRG_LV_PI_HEAD</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Lv_pi_head</td></tr>
+<tr><td valign=top><em><a name="a47a23" doxytag="FEC_PRG_JUDGE_GENE_END"></a><em>FEC_PRG_JUDGE_GENE_END</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ judgement of generate end</td></tr>
+<tr><td valign=top><em><a name="a47a24" doxytag="FEC_PRG_JUDGE_IMP"></a><em>FEC_PRG_JUDGE_IMP</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Judge_imp</td></tr>
+<tr><td valign=top><em><a name="a47a25" doxytag="FEC_PRG_LINE_STAT"></a><em>FEC_PRG_LINE_STAT</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;stat</td></tr>
+<tr><td valign=top><em><a name="a47a26" doxytag="FEC_PRG_LINE_TYPE"></a><em>FEC_PRG_LINE_TYPE</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;type</td></tr>
+<tr><td valign=top><em><a name="a47a27" doxytag="FEC_PRG_LINE_ID"></a><em>FEC_PRG_LINE_ID</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;line_id</td></tr>
+<tr><td valign=top><em><a name="a47a28" doxytag="FEC_PRG_LINE_FLAG"></a><em>FEC_PRG_LINE_FLAG</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;flag</td></tr>
+<tr><td valign=top><em><a name="a47a29" doxytag="FEC_PRG_LINE_IN"></a><em>FEC_PRG_LINE_IN</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;n_in</td></tr>
+<tr><td valign=top><em><a name="a47a30" doxytag="FEC_PRG_LINE_OUT"></a><em>FEC_PRG_LINE_OUT</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ line-&gt;n_out</td></tr>
+<tr><td valign=top><em><a name="a47a31" doxytag="FEC_PRG_CELL"></a><em>FEC_PRG_CELL</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ cell</td></tr>
+<tr><td valign=top><em><a name="a47a32" doxytag="FEC_PRG_CELL_IO"></a><em>FEC_PRG_CELL_IO</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ cell-&gt;in/out</td></tr>
+<tr><td valign=top><em><a name="a47a33" doxytag="FEC_PRG_JUSTIFIED"></a><em>FEC_PRG_JUSTIFIED</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ justified function</td></tr>
+<tr><td valign=top><em><a name="a47a34" doxytag="FEC_PRG_JUST_INFO"></a><em>FEC_PRG_JUST_INFO</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ justified infomation</td></tr>
+<tr><td valign=top><em><a name="a47a35" doxytag="FEC_PRG_IMPLICATION"></a><em>FEC_PRG_IMPLICATION</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ dfrontier</td></tr>
+<tr><td valign=top><em><a name="a47a36" doxytag="FEC_PRG_DFRONT"></a><em>FEC_PRG_DFRONT</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ dfrontier</td></tr>
+<tr><td valign=top><em><a name="a47a37" doxytag="FEC_PRG_BTREE"></a><em>FEC_PRG_BTREE</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ btree</td></tr>
+<tr><td valign=top><em><a name="a47a38" doxytag="FEC_PRG_BACK_TRACK"></a><em>FEC_PRG_BACK_TRACK</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ back trace</td></tr>
+<tr><td valign=top><em><a name="a47a39" doxytag="FEC_PRG_FLIST"></a><em>FEC_PRG_FLIST</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Flist_head</td></tr>
+<tr><td valign=top><em><a name="a47a40" doxytag="FEC_PRG_ASS_LIST"></a><em>FEC_PRG_ASS_LIST</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ Flist_head</td></tr>
+<tr><td valign=top><em><a name="a47a41" doxytag="FEC_PRG_NULL"></a><em>FEC_PRG_NULL</em></em>&nbsp;</td><td>
+е╫еэе░ещереиещб╝ null poitner</td></tr>
+<tr><td valign=top><em><a name="a47a42" doxytag="FEC_FSIM_VAL2_BLKI"></a><em>FEC_FSIM_VAL2_BLKI</em></em>&nbsp;</td><td>
+Fsim└й╕┬еиещб╝(2├═Simд╦BLKIд╧╔╘▓─).</td></tr>
+<tr><td valign=top><em><a name="a47a43" doxytag="FEC_FSIM_FAULT_FLAG"></a><em>FEC_FSIM_FAULT_FLAG</em></em>&nbsp;</td><td>
+Fsim flagеиещб╝.</td></tr>
+<tr><td valign=top><em><a name="a47a44" doxytag="FEC_NO_ERROR_CODE"></a><em>FEC_NO_ERROR_CODE</em></em>&nbsp;</td><td>
+еиещб╝е│б╝е╔д╩д╖</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><h2>К╓РФВ╠ЙЁРр</h2>
+<a name="a45" doxytag="flight_error.h::flight_error"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+еиещб╝есе├е╗б╝е╕дЄ╜╨╬╧д╣ды */
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a46" doxytag="flight_error.h::flight_error_o"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error_o </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+еиещб╝есе├е╗б╝е╕дЄ╩╕╗·╬єд─днд╟╜╨╬╧д╣ды */
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTВ╔С╬В╡В─Thu Feb 16 14:41:09 2006В╔Р╢РмВ│ВъВ▄В╡В╜БB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

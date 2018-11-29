@@ -1,0 +1,78 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-time.c ‚Ì‰ğà}
+\label{flight__time_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_time.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-time.c}}
+½èÍı»ş´Ö¤Î·×Â¬¤Ë´Ø¤¹¤ë´Ø¿ô·² 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$sys/resource.h$>$}\par
+{\tt \#include $<$sys/time.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-io.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+\subsection*{ƒ\}ƒNƒ’è‹`}
+\begin{CompactItemize}
+\item 
+\#define {\bf TIME\_\-CONVERT}(s, us)\ ( (double) s + (double) us $\ast$ 0.000001 )
+\end{CompactItemize}
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+void {\bf utility\_\-get\_\-time} ({\bf GET\_\-TIME} $\ast$get)
+\begin{CompactList}\small\item\em ’¸½’ºß’¤Î’»ş’¹ï’¤ò’ÆÀ’¤ë\item\end{CompactList}\item 
+void {\bf utility\_\-enter\_\-start\_\-time} ({\bf PROCESS\_\-TIME} $\ast$operate)
+\begin{CompactList}\small\item\em ’»ş’¹ï’¤ò’³«’»Ï’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë\item\end{CompactList}\item 
+void {\bf utility\_\-enter\_\-end\_\-time} ({\bf PROCESS\_\-TIME} $\ast$operate)
+\begin{CompactList}\small\item\em ’»ş’¹ï’¤ò’½ª’Î»’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë\item\end{CompactList}\item 
+void {\bf utility\_\-process\_\-time\_\-init} ({\bf PROCESS\_\-TIME} $\ast$operate)
+\begin{CompactList}\small\item\em ’¼Â’¹Ô’»ş’´Ö’¤ò’½é’´ü’²½’¤¹’¤ë\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{‰ğà}
+½èÍı»ş´Ö¤Î·×Â¬¤Ë´Ø¤¹¤ë´Ø¿ô·²
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2005 / 12 / 19 initialize\end{Desc}
+
+
+\subsection{ƒ\}ƒNƒ’è‹`‚Ì‰ğà}
+\index{flight_time.c@{flight\_\-time.c}!TIME_CONVERT@{TIME\_\-CONVERT}}
+\index{TIME_CONVERT@{TIME\_\-CONVERT}!flight_time.c@{flight\_\-time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TIME\_\-CONVERT(s, us)\ ( (double) s + (double) us $\ast$ 0.000001 )}\label{flight__time_8c_a0}
+
+
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_time.c@{flight\_\-time.c}!utility_enter_end_time@{utility\_\-enter\_\-end\_\-time}}
+\index{utility_enter_end_time@{utility\_\-enter\_\-end\_\-time}!flight_time.c@{flight\_\-time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-enter\_\-end\_\-time ({\bf PROCESS\_\-TIME} $\ast$ {\em operate})}\label{flight__time_8c_a4}
+
+
+’»ş’¹ï’¤ò’½ª’Î»’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë
+
+\index{flight_time.c@{flight\_\-time.c}!utility_enter_start_time@{utility\_\-enter\_\-start\_\-time}}
+\index{utility_enter_start_time@{utility\_\-enter\_\-start\_\-time}!flight_time.c@{flight\_\-time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-enter\_\-start\_\-time ({\bf PROCESS\_\-TIME} $\ast$ {\em operate})}\label{flight__time_8c_a3}
+
+
+’»ş’¹ï’¤ò’³«’»Ï’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë
+
+\index{flight_time.c@{flight\_\-time.c}!utility_get_time@{utility\_\-get\_\-time}}
+\index{utility_get_time@{utility\_\-get\_\-time}!flight_time.c@{flight\_\-time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-get\_\-time ({\bf GET\_\-TIME} $\ast$ {\em get})}\label{flight__time_8c_a2}
+
+
+’¸½’ºß’¤Î’»ş’¹ï’¤ò’ÆÀ’¤ë
+
+\index{flight_time.c@{flight\_\-time.c}!utility_process_time_init@{utility\_\-process\_\-time\_\-init}}
+\index{utility_process_time_init@{utility\_\-process\_\-time\_\-init}!flight_time.c@{flight\_\-time.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-process\_\-time\_\-init ({\bf PROCESS\_\-TIME} $\ast$ {\em operate})}\label{flight__time_8c_a5}
+
+
+’¼Â’¹Ô’»ş’´Ö’¤ò’½é’´ü’²½’¤¹’¤ë
+

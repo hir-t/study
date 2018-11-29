@@ -1,0 +1,525 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_fsim.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_fsim.h ÇÃâê‡</h1>∏Œæ„•∑•ﬂ•Â•Ï°º•ø§À¥ÿ§π§Î¿ﬂƒÍ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+
+<p>
+<a href="flight__fsim_8h-source.html">É\Å[ÉXÉRÅ[ÉhÇå©ÇÈÅB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>ç\ê¨</h2></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structevent__list.html">event_list</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>√Õ§Ú≈¡»¬§µ§ª§Î§ø§·§Œ•§•Ÿ•Û•»§À¥ÿ§π§ÎπΩ¬§¬Œ</em> <a href="structevent__list.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structfsim__head.html">fsim_head</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∏Œæ„•∑•ﬂ•Â•Ï°º•ø•ÿ•√•¿</em> <a href="structfsim__head.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structfsim__info.html">fsim_info</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>flight_atpg§»§ŒI/FÕ—•«°º•ø</em> <a href="structfsim__info.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a0">BYTE</a>&nbsp;&nbsp;&nbsp;8</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a1">ALL_BIT_OFF</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a2">FSIM_EVENT_OFF</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a3">FSIM_EVENT_ON</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a4">STATE_X_CODE</a>&nbsp;&nbsp;&nbsp;0x00</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a5">STATE_0_CODE</a>&nbsp;&nbsp;&nbsp;0x01</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a6">STATE_1_CODE</a>&nbsp;&nbsp;&nbsp;0x02</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a7">STATE_U_CODE</a>&nbsp;&nbsp;&nbsp;0x03</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a8">STATE_0</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a9">STATE_1</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a10">PARA_V0_BIT</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a11">PARA_V1_BIT</a>&nbsp;&nbsp;&nbsp;0xffffffff</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a12">BIT0_ON</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a13">RAND_BIT</a>&nbsp;&nbsp;&nbsp;0x00100000</td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a14">NO_PROP_FAULT</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__fsim_8h.html#a24">fsim_mode</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a15">FSIM_MODE</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structfsim__head.html">fsim_head</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a16">FSIM_HEAD</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structevent__list.html">event_list</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a17">EVENT_LIST</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structfsim__info.html">fsim_info</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a18">FSIM_INFO</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__fsim_8h.html#a24">fsim_mode</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__fsim_8h.html#a24a19">FSIM_NO_INFO</a> =  0, 
+<a class="el" href="flight__fsim_8h.html#a24a20">FSIM_PPSFP</a>, 
+<a class="el" href="flight__fsim_8h.html#a24a21">FSIM_SPPFP</a>, 
+<a class="el" href="flight__fsim_8h.html#a24a22">FSIM_SPSFP</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__fsim_8h.html#a24a23">FSIM_OUTPUT</a>
+<br>
+ }</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>∏Œæ„•∑•ﬂ•Â•Ï°º•ø§Œ•‚°º•…»÷πÊ</em> <a href="#a24">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø§À¥ÿ§π§Î¿ﬂƒÍ
+<p>
+ <dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2005 / 12 / 22 initialize</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a1" doxytag="flight_fsim.h::ALL_BIT_OFF"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define ALL_BIT_OFF&nbsp;&nbsp;&nbsp;0x00000000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_fsim.h::BIT0_ON"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT0_ON&nbsp;&nbsp;&nbsp;0x00000001
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_fsim.h::BYTE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BYTE&nbsp;&nbsp;&nbsp;8
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_fsim.h::FSIM_EVENT_OFF"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FSIM_EVENT_OFF&nbsp;&nbsp;&nbsp;0
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_fsim.h::FSIM_EVENT_ON"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FSIM_EVENT_ON&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_fsim.h::NO_PROP_FAULT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define NO_PROP_FAULT&nbsp;&nbsp;&nbsp;0
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_fsim.h::PARA_V0_BIT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define PARA_V0_BIT&nbsp;&nbsp;&nbsp;0x00000000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_fsim.h::PARA_V1_BIT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define PARA_V1_BIT&nbsp;&nbsp;&nbsp;0xffffffff
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_fsim.h::RAND_BIT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define RAND_BIT&nbsp;&nbsp;&nbsp;0x00100000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_fsim.h::STATE_0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_0&nbsp;&nbsp;&nbsp;0
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_fsim.h::STATE_0_CODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_0_CODE&nbsp;&nbsp;&nbsp;0x01
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_fsim.h::STATE_1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_1&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_fsim.h::STATE_1_CODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_1_CODE&nbsp;&nbsp;&nbsp;0x02
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_fsim.h::STATE_U_CODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_U_CODE&nbsp;&nbsp;&nbsp;0x03
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_fsim.h::STATE_X_CODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define STATE_X_CODE&nbsp;&nbsp;&nbsp;0x00
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ÇÃâê‡</h2>
+<a name="a17" doxytag="flight_fsim.h::EVENT_LIST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structevent__list.html">event_list</a>  EVENT_LIST
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="flight_fsim.h::FSIM_HEAD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structfsim__head.html">fsim_head</a>  FSIM_HEAD
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="flight_fsim.h::FSIM_INFO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structfsim__info.html">fsim_info</a>  FSIM_INFO
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="flight_fsim.h::FSIM_MODE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__fsim_8h.html#a24">fsim_mode</a>  FSIM_MODE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Enum ÇÃâê‡</h2>
+<a name="a24" doxytag="flight_fsim.h::fsim_mode"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum fsim_mode
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø§Œ•‚°º•…»÷πÊ
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a24a19" doxytag="FSIM_NO_INFO"></a><em>FSIM_NO_INFO</em></em>&nbsp;</td><td>
+Ã§ƒÍµ¡(•«•’•©•Î•»∆∞∫Ó)</td></tr>
+<tr><td valign=top><em><a name="a24a20" doxytag="FSIM_PPSFP"></a><em>FSIM_PPSFP</em></em>&nbsp;</td><td>
+•—•È•Ï•Î•—•ø°º•Û•∑•Û•∞•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û</td></tr>
+<tr><td valign=top><em><a name="a24a21" doxytag="FSIM_SPPFP"></a><em>FSIM_SPPFP</em></em>&nbsp;</td><td>
+•∑•Û•∞•Î•—•ø°º•Û•—•È•Ï•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û</td></tr>
+<tr><td valign=top><em><a name="a24a22" doxytag="FSIM_SPSFP"></a><em>FSIM_SPSFP</em></em>&nbsp;</td><td>
+•∑•Û•∞•Î•—•ø°º•Û•∑•Û•∞•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û</td></tr>
+<tr><td valign=top><em><a name="a24a23" doxytag="FSIM_OUTPUT"></a><em>FSIM_OUTPUT</em></em>&nbsp;</td><td>
+generate¥∞Œª∏Âªƒ§Í•—•ø°º•Û§Ú•∑•ﬂ•Â•Ï°º•∑•Á•Û§π§Î</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:10 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

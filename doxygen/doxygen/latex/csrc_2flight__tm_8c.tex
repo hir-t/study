@@ -1,0 +1,165 @@
+\section{/export\_\-home/yosimura/Flight/csrc/flight\_\-tm.c}
+\label{csrc_2flight__tm_8c}\index{/export_home/yosimura/Flight/csrc/flight_tm.c@{/export\_\-home/yosimura/Flight/csrc/flight\_\-tm.c}}
+テスタビリティメジャに関する関数群 
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-tm.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{関数}
+\begin{CompactItemize}
+\item 
+void {\bf tm\_\-init\_\-scoap} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-calc} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-obs\_\-calc} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-calc\_\-result} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-pi} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-inv} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-in1} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-and} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-nand} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-or} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-nor} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-xor} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-tm\_\-con\_\-xnor} ({\bf LINE} $\ast$)
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-one\_\-type} ({\bf LINE} $\ast$, {\bf LINE\_\-TYPE}, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-out\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\end{CompactItemize}
+\subsection*{変数}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf LINE} $\ast$$\ast$$\ast$ {\bf Lv\_\-pi\_\-head}
+\end{CompactItemize}
+
+
+\subsection{説明}
+テスタビリティメジャに関する関数群 
+
+\begin{Desc}
+\item[作者:]Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[日付:]2004 / 12 / 06 initialize\end{Desc}
+
+
+\subsection{関数}
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_calc_result@{flight\_\-print\_\-mes\_\-tm\_\-calc\_\-result}}
+\index{flight_print_mes_tm_calc_result@{flight\_\-print\_\-mes\_\-tm\_\-calc\_\-result}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-calc\_\-result (void)}\label{csrc_2flight__tm_8c_a8}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_and@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-and}}
+\index{flight_print_mes_tm_con_and@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-and}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-and ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a12}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_calc@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-calc}}
+\index{flight_print_mes_tm_con_calc@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-calc}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-calc ({\bf Ulong}, {\bf Ulong})}\label{csrc_2flight__tm_8c_a6}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_in1@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-in1}}
+\index{flight_print_mes_tm_con_in1@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-in1}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-in1 ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a11}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_inv@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-inv}}
+\index{flight_print_mes_tm_con_inv@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-inv}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-inv ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a10}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_nand@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-nand}}
+\index{flight_print_mes_tm_con_nand@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-nand}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-nand ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a13}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_nor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-nor}}
+\index{flight_print_mes_tm_con_nor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-nor}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-nor ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a15}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_or@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-or}}
+\index{flight_print_mes_tm_con_or@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-or}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-or ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a14}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_pi@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-pi}}
+\index{flight_print_mes_tm_con_pi@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-pi}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-pi ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a9}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_xnor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-xnor}}
+\index{flight_print_mes_tm_con_xnor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-xnor}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-xnor ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a17}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_con_xor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-xor}}
+\index{flight_print_mes_tm_con_xor@{flight\_\-print\_\-mes\_\-tm\_\-con\_\-xor}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-con\_\-xor ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a16}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!flight_print_mes_tm_obs_calc@{flight\_\-print\_\-mes\_\-tm\_\-obs\_\-calc}}
+\index{flight_print_mes_tm_obs_calc@{flight\_\-print\_\-mes\_\-tm\_\-obs\_\-calc}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-tm\_\-obs\_\-calc ({\bf LINE} $\ast$)}\label{csrc_2flight__tm_8c_a7}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{csrc_2flight__tm_8c_a21}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{csrc_2flight__tm_8c_a18}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!test_line_one_type@{test\_\-line\_\-one\_\-type}}
+\index{test_line_one_type@{test\_\-line\_\-one\_\-type}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-one\_\-type ({\bf LINE} $\ast$, {\bf LINE\_\-TYPE}, char $\ast$)}\label{csrc_2flight__tm_8c_a19}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!test_line_out_null@{test\_\-line\_\-out\_\-null}}
+\index{test_line_out_null@{test\_\-line\_\-out\_\-null}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-out\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{csrc_2flight__tm_8c_a20}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!tm_init_scoap@{tm\_\-init\_\-scoap}}
+\index{tm_init_scoap@{tm\_\-init\_\-scoap}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tm\_\-init\_\-scoap (void)}\label{csrc_2flight__tm_8c_a2}
+
+
+
+
+\subsection{変数}
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} {\bf Line\_\-info}}\label{csrc_2flight__tm_8c_a0}
+
+
+\index{csrc/flight_tm.c@{csrc/flight\_\-tm.c}!Lv_pi_head@{Lv\_\-pi\_\-head}}
+\index{Lv_pi_head@{Lv\_\-pi\_\-head}!csrc/flight_tm.c@{csrc/flight\_\-tm.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$$\ast$ {\bf Lv\_\-pi\_\-head}}\label{csrc_2flight__tm_8c_a1}
+
+

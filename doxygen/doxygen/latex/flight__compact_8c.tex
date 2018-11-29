@@ -1,0 +1,192 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-compact.c ÇÃâê‡}
+\label{flight__compact_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_compact.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-compact.c}}
+∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-fsim.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-compact.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf compact\_\-get\_\-pattern\_\-with\_\-id} ({\bf CC\_\-PATTERN} $\ast$, {\bf Ulong})
+\item 
+{\bf COMP\_\-CHECK\_\-ALL\_\-X} {\bf compact\_\-check\_\-pattern\_\-all\_\-x} ({\bf CC\_\-PATTERN} $\ast$)
+\item 
+void {\bf comp\_\-env\_\-init} (void)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf Ulong} {\bf utility\_\-count\_\-0\_\-bit} ({\bf Ulong})
+\item 
+void {\bf utility\_\-renew\_\-parameter\_\-with\_\-env} (char $\ast$, {\bf Ulong} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-compact\_\-pattern} ({\bf Ulong} $\ast$, {\bf Ulong} $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-compact\_\-posibbility} ({\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n\_\-compact} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-min\_\-check} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-buf} ({\bf Ulong} buffer\_\-id, {\bf Ulong} num\_\-x\_\-state)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-pat} ({\bf Ulong} num\_\-x\_\-state)
+\item 
+void {\bf test\_\-null\_\-variable} (void $\ast$, char $\ast$)
+\item 
+void {\bf compact} ({\bf COMP\_\-INFO} $\ast${\bf comp\_\-info})
+\item 
+void {\bf compact\_\-buffer\_\-initialize} (void)
+\item 
+void {\bf pattern\_\-get\_\-from\_\-generate} ({\bf CC\_\-PATTERN} $\ast$cc\_\-pat)
+\item 
+void {\bf compact\_\-cc\_\-pat\_\-initialize} ({\bf CC\_\-PATTERN} $\ast$cc\_\-pat)
+\item 
+void {\bf compact\_\-info\_\-initialize} ({\bf COMP\_\-INFO} $\ast${\bf comp\_\-info})
+\item 
+{\bf Ulong} {\bf compact\_\-get\_\-buf\_\-size} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf FSIM\_\-HEAD} {\bf Fsim\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Pi\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2006 / 01 / 12 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_compact.c@{flight\_\-compact.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__compact_8c_a15}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!comp_env_init@{comp\_\-env\_\-init}}
+\index{comp_env_init@{comp\_\-env\_\-init}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void comp\_\-env\_\-init (void)}\label{flight__compact_8c_a14}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact@{compact}}
+\index{compact@{compact}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact ({\bf COMP\_\-INFO} $\ast$ {\em comp\_\-info})}\label{flight__compact_8c_a25}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_buffer_initialize@{compact\_\-buffer\_\-initialize}}
+\index{compact_buffer_initialize@{compact\_\-buffer\_\-initialize}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact\_\-buffer\_\-initialize (void)}\label{flight__compact_8c_a26}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_cc_pat_initialize@{compact\_\-cc\_\-pat\_\-initialize}}
+\index{compact_cc_pat_initialize@{compact\_\-cc\_\-pat\_\-initialize}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact\_\-cc\_\-pat\_\-initialize ({\bf CC\_\-PATTERN} $\ast$ {\em cc\_\-pat})}\label{flight__compact_8c_a28}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_check_pattern_all_x@{compact\_\-check\_\-pattern\_\-all\_\-x}}
+\index{compact_check_pattern_all_x@{compact\_\-check\_\-pattern\_\-all\_\-x}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf COMP\_\-CHECK\_\-ALL\_\-X} compact\_\-check\_\-pattern\_\-all\_\-x ({\bf CC\_\-PATTERN} $\ast$)}\label{flight__compact_8c_a13}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_get_buf_size@{compact\_\-get\_\-buf\_\-size}}
+\index{compact_get_buf_size@{compact\_\-get\_\-buf\_\-size}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} compact\_\-get\_\-buf\_\-size (void)}\label{flight__compact_8c_a30}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_get_pattern_with_id@{compact\_\-get\_\-pattern\_\-with\_\-id}}
+\index{compact_get_pattern_with_id@{compact\_\-get\_\-pattern\_\-with\_\-id}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact\_\-get\_\-pattern\_\-with\_\-id ({\bf CC\_\-PATTERN} $\ast$, {\bf Ulong})}\label{flight__compact_8c_a12}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!compact_info_initialize@{compact\_\-info\_\-initialize}}
+\index{compact_info_initialize@{compact\_\-info\_\-initialize}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact\_\-info\_\-initialize ({\bf COMP\_\-INFO} $\ast$ {\em comp\_\-info})}\label{flight__compact_8c_a29}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_compact_count_x_in_buf@{flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-buf}}
+\index{flight_print_mes_compact_count_x_in_buf@{flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-buf}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-buf ({\bf Ulong} {\em buffer\_\-id}, {\bf Ulong} {\em num\_\-x\_\-state})}\label{flight__compact_8c_a22}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_compact_count_x_in_pat@{flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-pat}}
+\index{flight_print_mes_compact_count_x_in_pat@{flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-pat}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-compact\_\-count\_\-x\_\-in\_\-pat ({\bf Ulong} {\em num\_\-x\_\-state})}\label{flight__compact_8c_a23}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_compact_pattern@{flight\_\-print\_\-mes\_\-compact\_\-pattern}}
+\index{flight_print_mes_compact_pattern@{flight\_\-print\_\-mes\_\-compact\_\-pattern}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-compact\_\-pattern ({\bf Ulong} $\ast$, {\bf Ulong} $\ast$, char $\ast$)}\label{flight__compact_8c_a18}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_compact_posibbility@{flight\_\-print\_\-mes\_\-compact\_\-posibbility}}
+\index{flight_print_mes_compact_posibbility@{flight\_\-print\_\-mes\_\-compact\_\-posibbility}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-compact\_\-posibbility ({\bf Ulong})}\label{flight__compact_8c_a19}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_min_check@{flight\_\-print\_\-mes\_\-min\_\-check}}
+\index{flight_print_mes_min_check@{flight\_\-print\_\-mes\_\-min\_\-check}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-min\_\-check ({\bf Ulong}, {\bf Ulong})}\label{flight__compact_8c_a21}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!flight_print_mes_n_compact@{flight\_\-print\_\-mes\_\-n\_\-compact}}
+\index{flight_print_mes_n_compact@{flight\_\-print\_\-mes\_\-n\_\-compact}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n\_\-compact (void)}\label{flight__compact_8c_a20}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!pattern_get_from_generate@{pattern\_\-get\_\-from\_\-generate}}
+\index{pattern_get_from_generate@{pattern\_\-get\_\-from\_\-generate}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pattern\_\-get\_\-from\_\-generate ({\bf CC\_\-PATTERN} $\ast$ {\em cc\_\-pat})}\label{flight__compact_8c_a27}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!test_null_variable@{test\_\-null\_\-variable}}
+\index{test_null_variable@{test\_\-null\_\-variable}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-null\_\-variable (void $\ast$, char $\ast$)}\label{flight__compact_8c_a24}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!utility_count_0_bit@{utility\_\-count\_\-0\_\-bit}}
+\index{utility_count_0_bit@{utility\_\-count\_\-0\_\-bit}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} utility\_\-count\_\-0\_\-bit ({\bf Ulong})}\label{flight__compact_8c_a16}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}}
+\index{utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-renew\_\-parameter\_\-with\_\-env (char $\ast$ {\em env}, {\bf Ulong} $\ast$ {\em parameter})}\label{flight__compact_8c_a17}
+
+
+10∑Â(10≤Ø∞ æÂ)§¢§ÎæÏπÁ ∫∏§ŒæÚ∑Ô§œ∫«ΩÈ§À'0'§¨∆˛§√§∆§§§øæÏπÁ ±¶§ŒæÚ∑Ô§œ∫«ΩÈ§À'0'§¨∆˛§√§∆§§§ §§æÏπÁ 
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_compact.c@{flight\_\-compact.c}!Fsim_head@{Fsim\_\-head}}
+\index{Fsim_head@{Fsim\_\-head}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FSIM\_\-HEAD} Fsim\_\-head}\label{flight__compact_8c_a3}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__compact_8c_a2}
+
+
+\index{flight_compact.c@{flight\_\-compact.c}!Pi_head@{Pi\_\-head}}
+\index{Pi_head@{Pi\_\-head}!flight_compact.c@{flight\_\-compact.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Pi\_\-head}\label{flight__compact_8c_a4}
+
+

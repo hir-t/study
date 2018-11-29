@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>/cygdrive/c/home/yosimura/Flight/include/flight_memory.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_memory.h</h1><a href="flight__memory_8h.html">解説を見る。</a><div class="fragment"><pre>00001 <span class="comment">/********************************************************************************</span>
+00002 <span class="comment"></span>
+00003 <span class="comment">                            FLIGHT</span>
+00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+00007 <span class="comment"></span>
+00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00018"></a><a class="code" href="flight__memory_8h.html#a0">00018</a> <span class="preprocessor">#define FLINE_MEMORY_LOG_FILE_NAME    "flight_memory.log" </span>
+00019 <span class="preprocessor"></span>
+00020 <span class="preprocessor"></span>
+<a name="l00027"></a><a class="code" href="flight__memory_8h.html#a32">00027</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__memory_8h.html#a32">flight_memory_type_id</a>
+00028 {
+00029         <a class="code" href="flight__memory_8h.html#a32a2">FMT_Char</a>                    = 1,  
+00030         <a class="code" href="flight__memory_8h.html#a32a3">FMT_Char_P</a>,                       
+00031         <a class="code" href="flight__memory_8h.html#a32a4">FMT_Ulong</a>,                        
+00032         <a class="code" href="flight__memory_8h.html#a32a5">FMT_Ulong_P</a>,                      
+00033     <a class="code" href="flight__memory_8h.html#a32a6">FMT_LINE</a>,                         
+00034     <a class="code" href="flight__memory_8h.html#a32a7">FMT_LINE_P</a>,                       
+00035     <a class="code" href="flight__memory_8h.html#a32a8">FMT_LINE_PP</a>,                      
+00036     <a class="code" href="flight__memory_8h.html#a32a9">FMT_FLIST</a>,                        
+00037     <a class="code" href="flight__memory_8h.html#a32a10">FMT_FLIST_P</a>,                      
+00038     <a class="code" href="flight__memory_8h.html#a32a11">FMT_LINE_STACK</a>,                   
+00039         <a class="code" href="flight__memory_8h.html#a32a12">FMT_LINE_STACK_P</a>,                 
+00040     <a class="code" href="flight__memory_8h.html#a32a13">FMT_BTREE</a>,                        
+00041     <a class="code" href="flight__memory_8h.html#a32a14">FMT_DFRONT</a>,                       
+00042     <a class="code" href="flight__memory_8h.html#a32a15">FMT_DFRONT_P</a>,                     
+00043         <a class="code" href="flight__memory_8h.html#a32a16">FMT_DFRONT_LIST</a>,                  
+00044     <a class="code" href="flight__memory_8h.html#a32a17">FMT_ASS_LIST</a>,                     
+00045     <a class="code" href="flight__memory_8h.html#a32a18">FMT_IMP_LIST</a>,                     
+00046         <a class="code" href="flight__memory_8h.html#a32a19">FMT_IMP_INFO</a>,                     
+00047         <a class="code" href="flight__memory_8h.html#a32a20">FMT_IMP_TRACE</a>,                    
+00048         <a class="code" href="flight__memory_8h.html#a32a21">FMT_JUST_INFO</a>,                    
+00049         <a class="code" href="flight__memory_8h.html#a32a22">FMT_JUST_INFO_P</a>,                  
+00050     <a class="code" href="flight__memory_8h.html#a32a23">FMT_CELL</a>,                         
+00051     <a class="code" href="flight__memory_8h.html#a32a24">FMT_CELL_P</a>,                       
+00052     <a class="code" href="flight__memory_8h.html#a32a25">FMT_CELL_IO</a>,                      
+00053         <a class="code" href="flight__memory_8h.html#a32a26">FMT_EVENT_LIST</a>,                   
+00054         <a class="code" href="flight__memory_8h.html#a32a27">FMT_CC_PATTERN</a>,                   
+00055         <a class="code" href="flight__memory_8h.html#a32a28">FMT_CC_PATTERN_P</a>,                 
+00056         <a class="code" href="flight__memory_8h.html#a32a29">FMT_NUM_MEMORY_TYPE</a>,              
+00057 }<a class="code" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>;
+00058 
+00059 
+00060 <span class="comment">/* function list */</span>
+00061 
+00062 <span class="keyword">extern</span> <span class="keywordtype">void</span>  *<a class="code" href="flight__memory_8c.html#a2">flight_malloc</a>( <a class="code" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">char</span> * ); <span class="comment">/* ﾆｰﾅｪ､ﾋ･皈筵熙ﾎﾊﾝ､ｹ､� */</span>
+00063 <span class="keyword">extern</span> <span class="keywordtype">void</span>  <a class="code" href="flight__memory_8c.html#a3">flight_free</a>( <span class="keywordtype">void</span> *, <a class="code" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>, <span class="keywordtype">int</span>, <span class="keywordtype">char</span> * );  <span class="comment">/* ･皈筵熙�､ｹ､� */</span>
+</pre></div><hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:07 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

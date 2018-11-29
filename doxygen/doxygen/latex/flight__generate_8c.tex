@@ -1,0 +1,171 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-generate.c ‚Ì‰ğà}
+\label{flight__generate_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_generate.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-generate.c}}
+¥Ñ¥¿¡¼¥óÀ¸À®¥Ş¥Í¡¼¥¸¥ã¤Ë´Ø¤¹¤ë´Ø¿ô·² 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-compact.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+void {\bf generate} ({\bf GENE\_\-INFO} $\ast$, char $\ast$)
+\item 
+{\bf FLIST} $\ast$ {\bf select\_\-fault} (char $\ast$)
+\item 
+int {\bf atpg\_\-insert\_\-fault} ({\bf FLIST} $\ast$)
+\item 
+int {\bf atpg\_\-check\_\-finish\_\-generate} ({\bf Ulong})
+\item 
+int {\bf atpg\_\-propagate\_\-fault} ({\bf FLIST} $\ast$fault)
+\item 
+int {\bf atpg\_\-back\_\-track} (void)
+\item 
+int {\bf atpg\_\-justified} (void)
+\item 
+void {\bf one\_\-pat\_\-output} (void)
+\item 
+int {\bf atpg\_\-untest\_\-redun} (void)
+\item 
+void {\bf pattern\_\-bridge\_\-by\_\-random} (void)
+\item 
+void {\bf pattern\_\-get\_\-from\_\-generate} ({\bf CC\_\-PATTERN} $\ast$)
+\item 
+void {\bf atpg\_\-reflesh} (void)
+\item 
+void {\bf utility\_\-renew\_\-parameter\_\-with\_\-env} (char $\ast$, {\bf Ulong} $\ast$)
+\item 
+void {\bf flight\_\-error} ({\bf FLIGHT\_\-ERROR\_\-CODE}, char $\ast$)
+\begin{CompactList}\small\item\em ¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤ò½ĞÎÏ¤¹¤ë $\ast$/\item\end{CompactList}\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-dfront\_\-t} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-atpg\_\-result\_\-all} ({\bf FLIST} $\ast$, int)
+\item 
+void {\bf gene\_\-env\_\-init} (void)
+\end{CompactItemize}
+\subsection*{•Ï”}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\end{CompactItemize}
+
+
+\subsection{‰ğà}
+¥Ñ¥¿¡¼¥óÀ¸À®¥Ş¥Í¡¼¥¸¥ã¤Ë´Ø¤¹¤ë´Ø¿ô·²
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2004 / 12 / 13 initialize\end{Desc}
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_back_track@{atpg\_\-back\_\-track}}
+\index{atpg_back_track@{atpg\_\-back\_\-track}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-back\_\-track (void)}\label{flight__generate_8c_a6}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_check_finish_generate@{atpg\_\-check\_\-finish\_\-generate}}
+\index{atpg_check_finish_generate@{atpg\_\-check\_\-finish\_\-generate}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-finish\_\-generate ({\bf Ulong})}\label{flight__generate_8c_a4}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_insert_fault@{atpg\_\-insert\_\-fault}}
+\index{atpg_insert_fault@{atpg\_\-insert\_\-fault}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-RESULT} atpg\_\-insert\_\-fault ({\bf FLIST} $\ast$)}\label{flight__generate_8c_a3}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_justified@{atpg\_\-justified}}
+\index{atpg_justified@{atpg\_\-justified}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-justified (void)}\label{flight__generate_8c_a7}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_propagate_fault@{atpg\_\-propagate\_\-fault}}
+\index{atpg_propagate_fault@{atpg\_\-propagate\_\-fault}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-RESULT} atpg\_\-propagate\_\-fault ({\bf FLIST} $\ast$ {\em fault})}\label{flight__generate_8c_a5}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_reflesh@{atpg\_\-reflesh}}
+\index{atpg_reflesh@{atpg\_\-reflesh}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-reflesh (void)}\label{flight__generate_8c_a12}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!atpg_untest_redun@{atpg\_\-untest\_\-redun}}
+\index{atpg_untest_redun@{atpg\_\-untest\_\-redun}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-untest\_\-redun (void)}\label{flight__generate_8c_a9}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!flight_error@{flight\_\-error}}
+\index{flight_error@{flight\_\-error}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-error ({\bf FLIGHT\_\-ERROR\_\-CODE}, char $\ast$)}\label{flight__generate_8c_a14}
+
+
+¥¨¥é¡¼¥á¥Ã¥»¡¼¥¸¤ò½ĞÎÏ¤¹¤ë $\ast$/
+
+\index{flight_generate.c@{flight\_\-generate.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__generate_8c_a15}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!flight_print_mes_atpg_result_all@{flight\_\-print\_\-mes\_\-atpg\_\-result\_\-all}}
+\index{flight_print_mes_atpg_result_all@{flight\_\-print\_\-mes\_\-atpg\_\-result\_\-all}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-atpg\_\-result\_\-all ({\bf FLIST} $\ast$, int)}\label{flight__generate_8c_a17}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!flight_print_mes_dfront_t@{flight\_\-print\_\-mes\_\-dfront\_\-t}}
+\index{flight_print_mes_dfront_t@{flight\_\-print\_\-mes\_\-dfront\_\-t}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-dfront\_\-t (void)}\label{flight__generate_8c_a16}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!gene_env_init@{gene\_\-env\_\-init}}
+\index{gene_env_init@{gene\_\-env\_\-init}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void gene\_\-env\_\-init (void)}\label{flight__generate_8c_a18}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!generate@{generate}}
+\index{generate@{generate}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void generate ({\bf GENE\_\-INFO} $\ast$, char $\ast$)}\label{flight__generate_8c_a1}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!one_pat_output@{one\_\-pat\_\-output}}
+\index{one_pat_output@{one\_\-pat\_\-output}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void one\_\-pat\_\-output (void)}\label{flight__generate_8c_a8}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!pattern_bridge_by_random@{pattern\_\-bridge\_\-by\_\-random}}
+\index{pattern_bridge_by_random@{pattern\_\-bridge\_\-by\_\-random}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pattern\_\-bridge\_\-by\_\-random (void)}\label{flight__generate_8c_a10}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!pattern_get_from_generate@{pattern\_\-get\_\-from\_\-generate}}
+\index{pattern_get_from_generate@{pattern\_\-get\_\-from\_\-generate}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pattern\_\-get\_\-from\_\-generate ({\bf CC\_\-PATTERN} $\ast$)}\label{flight__generate_8c_a11}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!select_fault@{select\_\-fault}}
+\index{select_fault@{select\_\-fault}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FLIST}$\ast$ select\_\-fault (char $\ast$)}\label{flight__generate_8c_a2}
+
+
+\index{flight_generate.c@{flight\_\-generate.c}!utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}}
+\index{utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-renew\_\-parameter\_\-with\_\-env (char $\ast$ {\em env}, {\bf Ulong} $\ast$ {\em parameter})}\label{flight__generate_8c_a13}
+
+
+10·å(10²¯°Ê¾å)¤¢¤ë¾ì¹ç º¸¤Î¾ò·ï¤ÏºÇ½é¤Ë'0'¤¬Æş¤Ã¤Æ¤¤¤¿¾ì¹ç ±¦¤Î¾ò·ï¤ÏºÇ½é¤Ë'0'¤¬Æş¤Ã¤Æ¤¤¤Ê¤¤¾ì¹ç 
+
+\subsection{•Ï”‚Ì‰ğà}
+\index{flight_generate.c@{flight\_\-generate.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_generate.c@{flight\_\-generate.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__generate_8c_a0}
+
+

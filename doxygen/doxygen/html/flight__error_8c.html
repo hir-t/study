@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_error.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_error.c の解説</h1>･ｨ･鬘ｼ･皈ﾃ･ｻ｡ｼ･ｸ､ﾋｴﾘ､ｹ､�ｴﾘｿｲ 
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__memory_8h-source.html">flight_memory.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__error_8h-source.html">flight_error.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>関数</h2></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8c.html#a2">flight_error</a> (<a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a> error_code, char *error_function_name)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>･ｨ･鬘ｼ･皈ﾃ･ｻ｡ｼ･ｸ､ﾐﾎﾏ､ｹ､� */</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8c.html#a3">flight_error_o</a> (int error_code, char *error_function_name, char *org_func_name)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8c.html#a4">flight_error_c</a> (<a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a> error_code, char *error_function_name, char *character)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8c.html#a5">flight_error_type</a> (<a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a> type_id, char *error_function_name)</td></tr>
+<tr><td colspan=2><br><h2>変数</h2></td></tr>
+<tr><td nowrap align=right valign=top>char&nbsp;</td><td valign=bottom><a class="el" href="flight__error_8c.html#a0">FLIGHT_MEMORY_TYPE_NAME</a> [FMT_NUM_MEMORY_TYPE][20]</td></tr>
+</table>
+<hr><a name="_details"></a><h2>解説</h2>
+･ｨ･鬘ｼ･皈ﾃ･ｻ｡ｼ･ｸ､ﾋｴﾘ､ｹ､�ｴﾘｿｲ
+<p>
+ <dl compact><dt><b>作者: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>日付: </b></dt><dd>
+ 2005 / 04 / 150 initialize</dl><hr><h2>関数の解説</h2>
+<a name="a2" doxytag="flight_error.c::flight_error"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_code</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_function_name</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+･ｨ･鬘ｼ･皈ﾃ･ｻ｡ｼ･ｸ､ﾐﾎﾏ､ｹ､� */
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_error.c::flight_error_c"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error_c </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_code</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_function_name</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>character</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_error.c::flight_error_o"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error_o </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">int&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_code</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_function_name</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>org_func_name</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_error.c::flight_error_type"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_error_type </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__memory_8h.html#a1">FLIGHT_MEMORY_TYPE_ID</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>type_id</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>error_function_name</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>変数の解説</h2>
+<a name="a0" doxytag="flight_error.c::FLIGHT_MEMORY_TYPE_NAME"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> char FLIGHT_MEMORY_TYPE_NAME[FMT_NUM_MEMORY_TYPE][20]
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:07 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

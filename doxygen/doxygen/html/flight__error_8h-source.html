@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>/cygdrive/c/home/yosimura/Flight/include/flight_error.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_error.h</h1><a href="flight__error_8h.html">解説を見る。</a><div class="fragment"><pre>00001 <span class="comment">/********************************************************************************</span>
+00002 <span class="comment"></span>
+00003 <span class="comment">                            FLIGHT</span>
+00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+00007 <span class="comment"></span>
+00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00025"></a><a class="code" href="flight__error_8h.html#a47">00025</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__error_8h.html#a47">flight_errorcode</a>
+00026 {
+00027     <a class="code" href="flight__error_8h.html#a47a1">FEC_NORMAL_END</a>,                      
+00028 
+00029     <a class="code" href="flight__error_8h.html#a47a2">FEC_FILE_OPEN_ERROR</a> = 101,           
+00030     <a class="code" href="flight__error_8h.html#a47a3">FEC_FILE_CLOSE_ERROR</a>,                
+00031     <a class="code" href="flight__error_8h.html#a47a4">FEC_FILE_REMOVE_ERROR</a>,               
+00032         <a class="code" href="flight__error_8h.html#a47a5">FEC_FILE_FORMAT_ERROR_NOT_CHAR</a>,      
+00033 
+00034     <a class="code" href="flight__error_8h.html#a47a6">FEC_CANT_ALLOCATE_MEMORY</a>,            
+00035     <a class="code" href="flight__error_8h.html#a47a7">FEC_BUFFER_OVER_FLOW</a>,                
+00036 
+00037     <a class="code" href="flight__error_8h.html#a47a8">FEC_COMMAND_EXE_ERROR</a>,                               
+00038 
+00039     <a class="code" href="flight__error_8h.html#a47a9">FEC_HASH_ERROR_CODE</a>,                 
+00040     <a class="code" href="flight__error_8h.html#a47a10">FEC_SYSTEM_ERROR_CODE</a> = 198,         
+00041     <a class="code" href="flight__error_8h.html#a47a11">FEC_ERROR_CODE</a> = 199,                
+00042 
+00043     <a class="code" href="flight__error_8h.html#a47a12">FEC_CIRCUIT</a>              = 201,       
+00044     <a class="code" href="flight__error_8h.html#a47a13">FEC_CIRCUIT_NO_PI</a>,                    
+00045     <a class="code" href="flight__error_8h.html#a47a14">FEC_CIRCUIT_NO_PO</a>,                    
+00046         <a class="code" href="flight__error_8h.html#a47a15">FEC_CIRCUIT_NO_LINE</a>,                  
+00047         <a class="code" href="flight__error_8h.html#a47a16">FEC_CIRCUIT_NO_FAULT</a>,                 
+00048         <a class="code" href="flight__error_8h.html#a47a17">FEC_CIRCUIT_GATE_IO</a>,                  
+00049         <a class="code" href="flight__error_8h.html#a47a18">FEC_CIRCUIT_GATE_TYPE</a>,                
+00050 
+00051         <a class="code" href="flight__error_8h.html#a47a19">FEC_PRG_ERROR</a>            = 601,   
+00052         <a class="code" href="flight__error_8h.html#a47a20">FEC_PRG_ATPG_HEAD</a>,                
+00053         <a class="code" href="flight__error_8h.html#a47a21">FEC_PRG_LV_HEAD</a>,                  
+00054         <a class="code" href="flight__error_8h.html#a47a22">FEC_PRG_LV_PI_HEAD</a>,               
+00055         <a class="code" href="flight__error_8h.html#a47a23">FEC_PRG_JUDGE_GENE_END</a>,           
+00056         <a class="code" href="flight__error_8h.html#a47a24">FEC_PRG_JUDGE_IMP</a>,                
+00057         <a class="code" href="flight__error_8h.html#a47a25">FEC_PRG_LINE_STAT</a>,                
+00058         <a class="code" href="flight__error_8h.html#a47a26">FEC_PRG_LINE_TYPE</a>,                
+00059         <a class="code" href="flight__error_8h.html#a47a27">FEC_PRG_LINE_ID</a>,                  
+00060         <a class="code" href="flight__error_8h.html#a47a28">FEC_PRG_LINE_FLAG</a>,                
+00061         <a class="code" href="flight__error_8h.html#a47a29">FEC_PRG_LINE_IN</a>,                  
+00062         <a class="code" href="flight__error_8h.html#a47a30">FEC_PRG_LINE_OUT</a>,                 
+00063 
+00064         <a class="code" href="flight__error_8h.html#a47a31">FEC_PRG_CELL</a>,                     
+00065         <a class="code" href="flight__error_8h.html#a47a32">FEC_PRG_CELL_IO</a>,                  
+00066 
+00067         <a class="code" href="flight__error_8h.html#a47a33">FEC_PRG_JUSTIFIED</a>,                
+00068         <a class="code" href="flight__error_8h.html#a47a34">FEC_PRG_JUST_INFO</a>,                
+00069         <a class="code" href="flight__error_8h.html#a47a35">FEC_PRG_IMPLICATION</a>,              
+00070 
+00071         <a class="code" href="flight__error_8h.html#a47a36">FEC_PRG_DFRONT</a>,                   
+00072         <a class="code" href="flight__error_8h.html#a47a37">FEC_PRG_BTREE</a>,                    
+00073         <a class="code" href="flight__error_8h.html#a47a38">FEC_PRG_BACK_TRACK</a>,               
+00074         <a class="code" href="flight__error_8h.html#a47a39">FEC_PRG_FLIST</a>,                    
+00075         <a class="code" href="flight__error_8h.html#a47a40">FEC_PRG_ASS_LIST</a>,                 
+00076         <a class="code" href="flight__error_8h.html#a47a41">FEC_PRG_NULL</a>,                     
+00077 
+00078         <a class="code" href="flight__error_8h.html#a47a42">FEC_FSIM_VAL2_BLKI</a> = 701,          
+00079         <a class="code" href="flight__error_8h.html#a47a43">FEC_FSIM_FAULT_FLAG</a>,               
+00080 
+00081     <a class="code" href="flight__error_8h.html#a47a44">FEC_NO_ERROR_CODE</a> = -1,            
+00082 }<a class="code" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>;
+00083 
+00084 <span class="comment">/* function define */</span>
+00085 <span class="keywordtype">void</span>  <a class="code" href="flight__error_8c.html#a2">flight_error</a>( <a class="code" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>, <span class="keywordtype">char</span> * );           
+00086 <span class="keywordtype">void</span>  <a class="code" href="flight__error_8h.html#a46">flight_error_o</a>( <a class="code" href="flight__error_8h.html#a0">FLIGHT_ERROR_CODE</a>, <span class="keywordtype">char</span> *, <span class="keywordtype">char</span> * ); 
+</pre></div><hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:07 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

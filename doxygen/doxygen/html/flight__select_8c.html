@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_select.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_select.c の解説</h1>ｸﾎｾ罕�･ｹ･ﾈ､ｫ､鬣ﾑ･ｿ｡ｼ･ｸﾀｮﾂﾐｾﾝｸﾎｾ网ｪﾂｹ､�ｴﾘ､ｹ､�ｴﾘｿｲ 
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &lt;stdlib.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__state_8h-source.html">flight_state.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__line_8h-source.html">flight_line.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__flist_8h-source.html">flight_flist.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__time_8h-source.html">flight_time.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__error_8h-source.html">flight_error.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>関数</h2></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__flist_8h.html#a9">FLIST</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a2">select_fault_search</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__flist_8h.html#a9">FLIST</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a3">select_fault_search_id</a> (long)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a4">test_flist</a> (<a class="el" href="flight__flist_8h.html#a9">FLIST</a> *, char *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a5">flight_print_mes</a> (<a class="el" href="flight_8h.html#a8">Ulong</a>, <a class="el" href="flight_8h.html#a8">Ulong</a>)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a6">flight_print_mes_id</a> (<a class="el" href="flight__line_8h.html#a19">LINE</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a7">flight_print_mes_n</a> ()</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a8">flight_print_mes_result_2_2</a> (<a class="el" href="flight__flist_8h.html#a9">FLIST</a> *)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__flist_8h.html#a9">FLIST</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a9">select_fault</a> (char *fault_id)</td></tr>
+<tr><td colspan=2><br><h2>変数</h2></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a16">LINE_INFO</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a0">Line_info</a></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__flist_8h.html#a9">FLIST</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__select_8c.html#a1">Flist_head</a></td></tr>
+</table>
+<hr><a name="_details"></a><h2>解説</h2>
+ｸﾎｾ罕�･ｹ･ﾈ､ｫ､鬣ﾑ･ｿ｡ｼ･ｸﾀｮﾂﾐｾﾝｸﾎｾ网ｪﾂｹ､�ｴﾘ､ｹ､�ｴﾘｿｲ
+<p>
+ <dl compact><dt><b>作者: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>日付: </b></dt><dd>
+ 2004 / 12 / 13 initialize</dl><hr><h2>関数の解説</h2>
+<a name="a5" doxytag="flight_select.c::flight_print_mes"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_select.c::flight_print_mes_id"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_id </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_select.c::flight_print_mes_n"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_n </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_select.c::flight_print_mes_result_2_2"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void flight_print_mes_result_2_2 </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__flist_8h.html#a9">FLIST</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_select.c::select_fault"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__flist_8h.html#a9">FLIST</a>* select_fault </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>fault_id</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_select.c::select_fault_search"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__flist_8h.html#a9">FLIST</a> * select_fault_search </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_select.c::select_fault_search_id"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__flist_8h.html#a9">FLIST</a> * select_fault_search_id </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">long&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_select.c::test_flist"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void test_flist </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__flist_8h.html#a9">FLIST</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>変数の解説</h2>
+<a name="a1" doxytag="flight_select.c::Flist_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__flist_8h.html#a9">FLIST</a>** Flist_head
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_select.c::Line_info"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a16">LINE_INFO</a> Line_info
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:09 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

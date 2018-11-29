@@ -1,0 +1,198 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-cell.h ÇÃâê‡}
+\label{flight__cell_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_cell.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-cell.h}}
+CELL∑¡º∞§À¥ÿ§π§Î¿ﬂƒÍ. 
+
+
+\subsection*{ç$\backslash$ê¨}
+\begin{CompactItemize}
+\item 
+struct {\bf cell}
+\item 
+struct {\bf cell\_\-head}
+\item 
+struct {\bf cell\_\-io}
+\end{CompactItemize}
+\subsection*{cell§Œ•œ•√•∑•Â•∆°º•÷•Î§À¥ÿ§π§Î¿ﬂƒÍ}
+\begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+Ãæ¡∞§Œ ∏ª˙øÙ§Œ¿©∏¬§œ≤ÚΩ¸§π§Ÿ§≠≤›¬Í\end{Desc}
+\begin{CompactItemize}
+\item 
+\#define {\bf CELL\_\-HASH}\ 999991
+\begin{CompactList}\small\item\em {\bf cell\_\-head} {\rm (p.\,\pageref{structcell__head})}Õ—•œ•√•∑•Â√Õ\item\end{CompactList}\item 
+\#define {\bf CELL\_\-NAME\_\-SIZE}\ 1024
+\begin{CompactList}\small\item\em Ãæ¡∞§Œ ∏ª˙øÙ§Œ∫«¬Á√Õ\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf cell\_\-flag} {\bf CELL\_\-FLAG}
+\item 
+typedef enum {\bf cell\_\-type} {\bf CELL\_\-TYPE}
+\item 
+typedef {\bf cell\_\-head} {\bf CELL\_\-HEAD}
+\item 
+typedef {\bf cell} {\bf CELL}
+\item 
+typedef {\bf cell\_\-io} {\bf CELL\_\-IO}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf cell\_\-flag} \{ {\bf Fault\_\-off} =  0, 
+{\bf Fault\_\-out\_\-on} =  1, 
+{\bf Fault\_\-in\_\-on} =  2, 
+{\bf Fault\_\-in\_\-out\_\-on} =  3
+ \}
+\begin{CompactList}\small\item\em Cell§Œ∏Œæ„§¨ƒÍµ¡§µ§Ï§∆§§§Î§´»›§´§Úº®§π•’•È•∞.\item\end{CompactList}\item 
+enum {\bf cell\_\-type} \{ {\bf CELL\_\-PI} =  0, 
+{\bf CELL\_\-PO}, 
+{\bf CELL\_\-BR}, 
+{\bf CELL\_\-INV}, 
+{\bf CELL\_\-BUF}, 
+{\bf CELL\_\-AND}, 
+{\bf CELL\_\-NAND}, 
+{\bf CELL\_\-OR}, 
+{\bf CELL\_\-NOR}, 
+{\bf CELL\_\-XOR}, 
+{\bf CELL\_\-XNOR}, 
+{\bf CELL\_\-SEL}, 
+{\bf CELL\_\-FF}, 
+{\bf CELL\_\-BLK}, 
+{\bf CELL\_\-BLKI}, 
+{\bf CELL\_\-BLKO}, 
+{\bf CELL\_\-UNK}, 
+{\bf CELL\_\-NUM\_\-PRIM}
+ \}
+\begin{CompactList}\small\item\em Cell•’•©°º•ﬁ•√•»æÂ§Œ•≤°º•»•ø•§•◊.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{âê‡}
+CELL∑¡º∞§À¥ÿ§π§Î¿ﬂƒÍ.
+
+ \begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+ CELL∑¡º∞§œ•≤°º•»•Ï•Ÿ•Î•Õ•√•»•Í•π•»§»ATPGÕ—•Õ•√•»•Í•π•»§»§Œ¥÷§Ú§ƒ§ §∞§ø§·§Œ§‚§Œ§«§¢§Î°£•Î°º•Î•¡•ß•√•Ø§Œº¬ª‹§‰•—•ø°º•Û¿∏¿Æ§‰∏Œæ„•∑•ﬂ•Â•Ï°º•ø§Œ§ø§·§À≤Ûœ© —¥π§Œ∏µ§»§ §Î°£ ≤Ûœ© ¨ª∂ª˛§À§œ§≥§≥§´§È≈∏≥´§π§Î§Œ§¨¿µ≤Ú§«§œ§ §§§¿§Ì§¶§´°©\end{Desc}
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 07 / 07 initialize\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_HASH@{CELL\_\-HASH}}
+\index{CELL_HASH@{CELL\_\-HASH}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CELL\_\-HASH\ 999991}\label{flight__cell_8h_a0}
+
+
+{\bf cell\_\-head} {\rm (p.\,\pageref{structcell__head})}Õ—•œ•√•∑•Â√Õ
+
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_NAME_SIZE@{CELL\_\-NAME\_\-SIZE}}
+\index{CELL_NAME_SIZE@{CELL\_\-NAME\_\-SIZE}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define CELL\_\-NAME\_\-SIZE\ 1024}\label{flight__cell_8h_a1}
+
+
+Ãæ¡∞§Œ ∏ª˙øÙ§Œ∫«¬Á√Õ
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_cell.h@{flight\_\-cell.h}!CELL@{CELL}}
+\index{CELL@{CELL}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell}  CELL}\label{flight__cell_8h_a5}
+
+
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_FLAG@{CELL\_\-FLAG}}
+\index{CELL_FLAG@{CELL\_\-FLAG}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf cell\_\-flag}  CELL\_\-FLAG}\label{flight__cell_8h_a2}
+
+
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_HEAD@{CELL\_\-HEAD}}
+\index{CELL_HEAD@{CELL\_\-HEAD}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell\_\-head}  CELL\_\-HEAD}\label{flight__cell_8h_a4}
+
+
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_IO@{CELL\_\-IO}}
+\index{CELL_IO@{CELL\_\-IO}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cell\_\-io}  CELL\_\-IO}\label{flight__cell_8h_a6}
+
+
+\index{flight_cell.h@{flight\_\-cell.h}!CELL_TYPE@{CELL\_\-TYPE}}
+\index{CELL_TYPE@{CELL\_\-TYPE}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf cell\_\-type}  CELL\_\-TYPE}\label{flight__cell_8h_a3}
+
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_cell.h@{flight\_\-cell.h}!cell_flag@{cell\_\-flag}}
+\index{cell_flag@{cell\_\-flag}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum cell\_\-flag}\label{flight__cell_8h_a29}
+
+
+Cell§Œ∏Œæ„§¨ƒÍµ¡§µ§Ï§∆§§§Î§´»›§´§Úº®§π•’•È•∞.
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{Fault_off@{Fault\_\-off}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!Fault_off@{Fault\_\-off}}\item[{\em 
+{\em Fault\_\-off}\label{flight__cell_8h_a29a7}
+}]∆˛Œœ§À§‚Ω–Œœ§À§‚ƒÍµ¡§µ§Ï§∆§§§ §§\index{Fault_out_on@{Fault\_\-out\_\-on}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!Fault_out_on@{Fault\_\-out\_\-on}}\item[{\em 
+{\em Fault\_\-out\_\-on}\label{flight__cell_8h_a29a8}
+}]Ω–Œœ§¿§±ƒÍµ¡§µ§Ï§∆§§§Î\index{Fault_in_on@{Fault\_\-in\_\-on}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!Fault_in_on@{Fault\_\-in\_\-on}}\item[{\em 
+{\em Fault\_\-in\_\-on}\label{flight__cell_8h_a29a9}
+}]∆˛Œœ§¿§±ƒÍµ¡§µ§Ï§∆§§§Î\index{Fault_in_out_on@{Fault\_\-in\_\-out\_\-on}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!Fault_in_out_on@{Fault\_\-in\_\-out\_\-on}}\item[{\em 
+{\em Fault\_\-in\_\-out\_\-on}\label{flight__cell_8h_a29a10}
+}]∆˛Œœ§À§‚Ω–Œœ§À§‚ƒÍµ¡§µ§Ï§∆§§§Î\end{description}
+\end{Desc}
+
+\index{flight_cell.h@{flight\_\-cell.h}!cell_type@{cell\_\-type}}
+\index{cell_type@{cell\_\-type}!flight_cell.h@{flight\_\-cell.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum cell\_\-type}\label{flight__cell_8h_a30}
+
+
+Cell•’•©°º•ﬁ•√•»æÂ§Œ•≤°º•»•ø•§•◊.
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{CELL_PI@{CELL\_\-PI}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_PI@{CELL\_\-PI}}\item[{\em 
+{\em CELL\_\-PI}\label{flight__cell_8h_a30a11}
+}]\index{CELL_PO@{CELL\_\-PO}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_PO@{CELL\_\-PO}}\item[{\em 
+{\em CELL\_\-PO}\label{flight__cell_8h_a30a12}
+}]\index{CELL_BR@{CELL\_\-BR}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_BR@{CELL\_\-BR}}\item[{\em 
+{\em CELL\_\-BR}\label{flight__cell_8h_a30a13}
+}]\index{CELL_INV@{CELL\_\-INV}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_INV@{CELL\_\-INV}}\item[{\em 
+{\em CELL\_\-INV}\label{flight__cell_8h_a30a14}
+}]\index{CELL_BUF@{CELL\_\-BUF}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_BUF@{CELL\_\-BUF}}\item[{\em 
+{\em CELL\_\-BUF}\label{flight__cell_8h_a30a15}
+}]\index{CELL_AND@{CELL\_\-AND}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_AND@{CELL\_\-AND}}\item[{\em 
+{\em CELL\_\-AND}\label{flight__cell_8h_a30a16}
+}]\index{CELL_NAND@{CELL\_\-NAND}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_NAND@{CELL\_\-NAND}}\item[{\em 
+{\em CELL\_\-NAND}\label{flight__cell_8h_a30a17}
+}]\index{CELL_OR@{CELL\_\-OR}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_OR@{CELL\_\-OR}}\item[{\em 
+{\em CELL\_\-OR}\label{flight__cell_8h_a30a18}
+}]\index{CELL_NOR@{CELL\_\-NOR}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_NOR@{CELL\_\-NOR}}\item[{\em 
+{\em CELL\_\-NOR}\label{flight__cell_8h_a30a19}
+}]\index{CELL_XOR@{CELL\_\-XOR}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_XOR@{CELL\_\-XOR}}\item[{\em 
+{\em CELL\_\-XOR}\label{flight__cell_8h_a30a20}
+}]\index{CELL_XNOR@{CELL\_\-XNOR}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_XNOR@{CELL\_\-XNOR}}\item[{\em 
+{\em CELL\_\-XNOR}\label{flight__cell_8h_a30a21}
+}]\index{CELL_SEL@{CELL\_\-SEL}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_SEL@{CELL\_\-SEL}}\item[{\em 
+{\em CELL\_\-SEL}\label{flight__cell_8h_a30a22}
+}]\index{CELL_FF@{CELL\_\-FF}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_FF@{CELL\_\-FF}}\item[{\em 
+{\em CELL\_\-FF}\label{flight__cell_8h_a30a23}
+}]\index{CELL_BLK@{CELL\_\-BLK}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_BLK@{CELL\_\-BLK}}\item[{\em 
+{\em CELL\_\-BLK}\label{flight__cell_8h_a30a24}
+}]\index{CELL_BLKI@{CELL\_\-BLKI}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_BLKI@{CELL\_\-BLKI}}\item[{\em 
+{\em CELL\_\-BLKI}\label{flight__cell_8h_a30a25}
+}]\index{CELL_BLKO@{CELL\_\-BLKO}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_BLKO@{CELL\_\-BLKO}}\item[{\em 
+{\em CELL\_\-BLKO}\label{flight__cell_8h_a30a26}
+}]\index{CELL_UNK@{CELL\_\-UNK}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_UNK@{CELL\_\-UNK}}\item[{\em 
+{\em CELL\_\-UNK}\label{flight__cell_8h_a30a27}
+}]\index{CELL_NUM_PRIM@{CELL\_\-NUM\_\-PRIM}!flight_cell.h@{flight\_\-cell.h}}\index{flight_cell.h@{flight\_\-cell.h}!CELL_NUM_PRIM@{CELL\_\-NUM\_\-PRIM}}\item[{\em 
+{\em CELL\_\-NUM\_\-PRIM}\label{flight__cell_8h_a30a28}
+}]\end{description}
+\end{Desc}
+

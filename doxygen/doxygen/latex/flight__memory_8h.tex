@@ -1,0 +1,172 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-memory.h ÇÃâê‡}
+\label{flight__memory_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_memory.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-memory.h}}
+∆∞≈™•·•‚•Í≥Œ ›§À¥ÿ§π§Î¿ﬂƒÍ 
+
+
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf FLINE\_\-MEMORY\_\-LOG\_\-FILE\_\-NAME}\ \char`\"{}flight\_\-memory.log\char`\"{}
+\begin{CompactList}\small\item\em •·•‚•Í§Œ≥Œ ›æı∂∑§Úº®§π•Ì•∞•’•°•§•Î§Œ•’•°•§•ÎÃæ\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf flight\_\-memory\_\-type\_\-id} {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf flight\_\-memory\_\-type\_\-id} \{ {\bf FMT\_\-Char} =  1, 
+{\bf FMT\_\-Char\_\-P}, 
+{\bf FMT\_\-Ulong}, 
+{\bf FMT\_\-Ulong\_\-P}, 
+{\bf FMT\_\-LINE}, 
+{\bf FMT\_\-LINE\_\-P}, 
+{\bf FMT\_\-LINE\_\-PP}, 
+{\bf FMT\_\-FLIST}, 
+{\bf FMT\_\-FLIST\_\-P}, 
+{\bf FMT\_\-LINE\_\-STACK}, 
+{\bf FMT\_\-LINE\_\-STACK\_\-P}, 
+{\bf FMT\_\-BTREE}, 
+{\bf FMT\_\-DFRONT}, 
+{\bf FMT\_\-DFRONT\_\-P}, 
+{\bf FMT\_\-DFRONT\_\-LIST}, 
+{\bf FMT\_\-ASS\_\-LIST}, 
+{\bf FMT\_\-IMP\_\-LIST}, 
+{\bf FMT\_\-IMP\_\-INFO}, 
+{\bf FMT\_\-IMP\_\-TRACE}, 
+{\bf FMT\_\-JUST\_\-INFO}, 
+{\bf FMT\_\-JUST\_\-INFO\_\-P}, 
+{\bf FMT\_\-CELL}, 
+{\bf FMT\_\-CELL\_\-P}, 
+{\bf FMT\_\-CELL\_\-IO}, 
+{\bf FMT\_\-EVENT\_\-LIST}, 
+{\bf FMT\_\-CC\_\-PATTERN}, 
+{\bf FMT\_\-CC\_\-PATTERN\_\-P}, 
+{\bf FMT\_\-NUM\_\-MEMORY\_\-TYPE}
+ \}
+\begin{CompactList}\small\item\em ≥Œ ›§π§Î•·•‚•Í∑ø§ŒID»÷πÊ°£\item\end{CompactList}\end{CompactItemize}
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void $\ast$ {\bf flight\_\-malloc} ({\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, int, int, char $\ast$)
+\item 
+void {\bf flight\_\-free} (void $\ast$, {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, int, char $\ast$)
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+∆∞≈™•·•‚•Í≥Œ ›§À¥ÿ§π§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 06 / 17 initialize ( renew )\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_memory.h@{flight\_\-memory.h}!FLINE_MEMORY_LOG_FILE_NAME@{FLINE\_\-MEMORY\_\-LOG\_\-FILE\_\-NAME}}
+\index{FLINE_MEMORY_LOG_FILE_NAME@{FLINE\_\-MEMORY\_\-LOG\_\-FILE\_\-NAME}!flight_memory.h@{flight\_\-memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FLINE\_\-MEMORY\_\-LOG\_\-FILE\_\-NAME\ \char`\"{}flight\_\-memory.log\char`\"{}}\label{flight__memory_8h_a0}
+
+
+•·•‚•Í§Œ≥Œ ›æı∂∑§Úº®§π•Ì•∞•’•°•§•Î§Œ•’•°•§•ÎÃæ
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_memory.h@{flight\_\-memory.h}!FLIGHT_MEMORY_TYPE_ID@{FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}}
+\index{FLIGHT_MEMORY_TYPE_ID@{FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}!flight_memory.h@{flight\_\-memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf flight\_\-memory\_\-type\_\-id} FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}\label{flight__memory_8h_a1}
+
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_memory.h@{flight\_\-memory.h}!flight_memory_type_id@{flight\_\-memory\_\-type\_\-id}}
+\index{flight_memory_type_id@{flight\_\-memory\_\-type\_\-id}!flight_memory.h@{flight\_\-memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum flight\_\-memory\_\-type\_\-id}\label{flight__memory_8h_a32}
+
+
+≥Œ ›§π§Î•·•‚•Í∑ø§ŒID»÷πÊ°£
+
+\begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+ •Ì•∞•’•°•§•ÎÕ—§À¬∏∫ﬂ§π§Î \end{Desc}
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{FMT_Char@{FMT\_\-Char}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_Char@{FMT\_\-Char}}\item[{\em 
+{\em FMT\_\-Char}\label{flight__memory_8h_a32a2}
+}]Char.\index{FMT_Char_P@{FMT\_\-Char\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_Char_P@{FMT\_\-Char\_\-P}}\item[{\em 
+{\em FMT\_\-Char\_\-P}\label{flight__memory_8h_a32a3}
+}]Char pointer.\index{FMT_Ulong@{FMT\_\-Ulong}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_Ulong@{FMT\_\-Ulong}}\item[{\em 
+{\em FMT\_\-Ulong}\label{flight__memory_8h_a32a4}
+}]Unsigned long.\index{FMT_Ulong_P@{FMT\_\-Ulong\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_Ulong_P@{FMT\_\-Ulong\_\-P}}\item[{\em 
+{\em FMT\_\-Ulong\_\-P}\label{flight__memory_8h_a32a5}
+}]Unsigned long pointer.\index{FMT_LINE@{FMT\_\-LINE}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_LINE@{FMT\_\-LINE}}\item[{\em 
+{\em FMT\_\-LINE}\label{flight__memory_8h_a32a6}
+}]Line.\index{FMT_LINE_P@{FMT\_\-LINE\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_LINE_P@{FMT\_\-LINE\_\-P}}\item[{\em 
+{\em FMT\_\-LINE\_\-P}\label{flight__memory_8h_a32a7}
+}]Line pointer.\index{FMT_LINE_PP@{FMT\_\-LINE\_\-PP}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_LINE_PP@{FMT\_\-LINE\_\-PP}}\item[{\em 
+{\em FMT\_\-LINE\_\-PP}\label{flight__memory_8h_a32a8}
+}]Line pointer's pointer.\index{FMT_FLIST@{FMT\_\-FLIST}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_FLIST@{FMT\_\-FLIST}}\item[{\em 
+{\em FMT\_\-FLIST}\label{flight__memory_8h_a32a9}
+}]FLIST.\index{FMT_FLIST_P@{FMT\_\-FLIST\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_FLIST_P@{FMT\_\-FLIST\_\-P}}\item[{\em 
+{\em FMT\_\-FLIST\_\-P}\label{flight__memory_8h_a32a10}
+}]FLIST pointer.\index{FMT_LINE_STACK@{FMT\_\-LINE\_\-STACK}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_LINE_STACK@{FMT\_\-LINE\_\-STACK}}\item[{\em 
+{\em FMT\_\-LINE\_\-STACK}\label{flight__memory_8h_a32a11}
+}]LINE\_\-STACK.\index{FMT_LINE_STACK_P@{FMT\_\-LINE\_\-STACK\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_LINE_STACK_P@{FMT\_\-LINE\_\-STACK\_\-P}}\item[{\em 
+{\em FMT\_\-LINE\_\-STACK\_\-P}\label{flight__memory_8h_a32a12}
+}]LINE\_\-STACK pointer.\index{FMT_BTREE@{FMT\_\-BTREE}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_BTREE@{FMT\_\-BTREE}}\item[{\em 
+{\em FMT\_\-BTREE}\label{flight__memory_8h_a32a13}
+}]Back trace TREE.\index{FMT_DFRONT@{FMT\_\-DFRONT}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_DFRONT@{FMT\_\-DFRONT}}\item[{\em 
+{\em FMT\_\-DFRONT}\label{flight__memory_8h_a32a14}
+}]D-Frontier.\index{FMT_DFRONT_P@{FMT\_\-DFRONT\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_DFRONT_P@{FMT\_\-DFRONT\_\-P}}\item[{\em 
+{\em FMT\_\-DFRONT\_\-P}\label{flight__memory_8h_a32a15}
+}]D-Frontier pointer.\index{FMT_DFRONT_LIST@{FMT\_\-DFRONT\_\-LIST}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_DFRONT_LIST@{FMT\_\-DFRONT\_\-LIST}}\item[{\em 
+{\em FMT\_\-DFRONT\_\-LIST}\label{flight__memory_8h_a32a16}
+}]D-Frontier LIST.\index{FMT_ASS_LIST@{FMT\_\-ASS\_\-LIST}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_ASS_LIST@{FMT\_\-ASS\_\-LIST}}\item[{\em 
+{\em FMT\_\-ASS\_\-LIST}\label{flight__memory_8h_a32a17}
+}]ASsign LIST.\index{FMT_IMP_LIST@{FMT\_\-IMP\_\-LIST}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_IMP_LIST@{FMT\_\-IMP\_\-LIST}}\item[{\em 
+{\em FMT\_\-IMP\_\-LIST}\label{flight__memory_8h_a32a18}
+}]IMPlication LIST.\index{FMT_IMP_INFO@{FMT\_\-IMP\_\-INFO}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_IMP_INFO@{FMT\_\-IMP\_\-INFO}}\item[{\em 
+{\em FMT\_\-IMP\_\-INFO}\label{flight__memory_8h_a32a19}
+}]IMPlication Infomation.\index{FMT_IMP_TRACE@{FMT\_\-IMP\_\-TRACE}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_IMP_TRACE@{FMT\_\-IMP\_\-TRACE}}\item[{\em 
+{\em FMT\_\-IMP\_\-TRACE}\label{flight__memory_8h_a32a20}
+}]IMPlication Trace Infomation.\index{FMT_JUST_INFO@{FMT\_\-JUST\_\-INFO}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_JUST_INFO@{FMT\_\-JUST\_\-INFO}}\item[{\em 
+{\em FMT\_\-JUST\_\-INFO}\label{flight__memory_8h_a32a21}
+}]JUSTified Infomation.\index{FMT_JUST_INFO_P@{FMT\_\-JUST\_\-INFO\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_JUST_INFO_P@{FMT\_\-JUST\_\-INFO\_\-P}}\item[{\em 
+{\em FMT\_\-JUST\_\-INFO\_\-P}\label{flight__memory_8h_a32a22}
+}]JUSTified Infomation pointer.\index{FMT_CELL@{FMT\_\-CELL}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_CELL@{FMT\_\-CELL}}\item[{\em 
+{\em FMT\_\-CELL}\label{flight__memory_8h_a32a23}
+}]CELL.\index{FMT_CELL_P@{FMT\_\-CELL\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_CELL_P@{FMT\_\-CELL\_\-P}}\item[{\em 
+{\em FMT\_\-CELL\_\-P}\label{flight__memory_8h_a32a24}
+}]CELL pointer.\index{FMT_CELL_IO@{FMT\_\-CELL\_\-IO}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_CELL_IO@{FMT\_\-CELL\_\-IO}}\item[{\em 
+{\em FMT\_\-CELL\_\-IO}\label{flight__memory_8h_a32a25}
+}]CELL\_\-IO pointer.\index{FMT_EVENT_LIST@{FMT\_\-EVENT\_\-LIST}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_EVENT_LIST@{FMT\_\-EVENT\_\-LIST}}\item[{\em 
+{\em FMT\_\-EVENT\_\-LIST}\label{flight__memory_8h_a32a26}
+}]EVENT\_\-LIST.\index{FMT_CC_PATTERN@{FMT\_\-CC\_\-PATTERN}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_CC_PATTERN@{FMT\_\-CC\_\-PATTERN}}\item[{\em 
+{\em FMT\_\-CC\_\-PATTERN}\label{flight__memory_8h_a32a27}
+}]CC pattern.\index{FMT_CC_PATTERN_P@{FMT\_\-CC\_\-PATTERN\_\-P}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_CC_PATTERN_P@{FMT\_\-CC\_\-PATTERN\_\-P}}\item[{\em 
+{\em FMT\_\-CC\_\-PATTERN\_\-P}\label{flight__memory_8h_a32a28}
+}]CC pattern pointer.\index{FMT_NUM_MEMORY_TYPE@{FMT\_\-NUM\_\-MEMORY\_\-TYPE}!flight_memory.h@{flight\_\-memory.h}}\index{flight_memory.h@{flight\_\-memory.h}!FMT_NUM_MEMORY_TYPE@{FMT\_\-NUM\_\-MEMORY\_\-TYPE}}\item[{\em 
+{\em FMT\_\-NUM\_\-MEMORY\_\-TYPE}\label{flight__memory_8h_a32a29}
+}]nubmer of memory type\end{description}
+\end{Desc}
+
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_memory.h@{flight\_\-memory.h}!flight_free@{flight\_\-free}}
+\index{flight_free@{flight\_\-free}!flight_memory.h@{flight\_\-memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-free (void $\ast$, {\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, int, char $\ast$)}\label{flight__memory_8h_a31}
+
+
+\index{flight_memory.h@{flight\_\-memory.h}!flight_malloc@{flight\_\-malloc}}
+\index{flight_malloc@{flight\_\-malloc}!flight_memory.h@{flight\_\-memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ flight\_\-malloc ({\bf FLIGHT\_\-MEMORY\_\-TYPE\_\-ID}, int, int, char $\ast$)}\label{flight__memory_8h_a30}
+
+

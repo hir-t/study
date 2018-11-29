@@ -1,0 +1,206 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-fsim.h ÇÃâê‡}
+\label{flight__fsim_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_fsim.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-fsim.h}}
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø§À¥ÿ§π§Î¿ﬂƒÍ 
+
+
+\subsection*{ç$\backslash$ê¨}
+\begin{CompactItemize}
+\item 
+struct {\bf event\_\-list}
+\begin{CompactList}\small\item\em √Õ§Ú≈¡»¬§µ§ª§Î§ø§·§Œ•§•Ÿ•Û•»§À¥ÿ§π§ÎπΩ¬§¬Œ\item\end{CompactList}\item 
+struct {\bf fsim\_\-head}
+\begin{CompactList}\small\item\em ∏Œæ„•∑•ﬂ•Â•Ï°º•ø•ÿ•√•¿\item\end{CompactList}\item 
+struct {\bf fsim\_\-info}
+\begin{CompactList}\small\item\em flight\_\-atpg§»§ŒI/FÕ—•«°º•ø\item\end{CompactList}\end{CompactItemize}
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf BYTE}\ 8
+\item 
+\#define {\bf ALL\_\-BIT\_\-OFF}\ 0x00000000
+\item 
+\#define {\bf FSIM\_\-EVENT\_\-OFF}\ 0
+\item 
+\#define {\bf FSIM\_\-EVENT\_\-ON}\ 1
+\item 
+\#define {\bf STATE\_\-X\_\-CODE}\ 0x00
+\item 
+\#define {\bf STATE\_\-0\_\-CODE}\ 0x01
+\item 
+\#define {\bf STATE\_\-1\_\-CODE}\ 0x02
+\item 
+\#define {\bf STATE\_\-U\_\-CODE}\ 0x03
+\item 
+\#define {\bf STATE\_\-0}\ 0
+\item 
+\#define {\bf STATE\_\-1}\ 1
+\item 
+\#define {\bf PARA\_\-V0\_\-BIT}\ 0x00000000
+\item 
+\#define {\bf PARA\_\-V1\_\-BIT}\ 0xffffffff
+\item 
+\#define {\bf BIT0\_\-ON}\ 0x00000001
+\item 
+\#define {\bf RAND\_\-BIT}\ 0x00100000
+\item 
+\#define {\bf NO\_\-PROP\_\-FAULT}\ 0
+\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf fsim\_\-mode} {\bf FSIM\_\-MODE}
+\item 
+typedef {\bf fsim\_\-head} {\bf FSIM\_\-HEAD}
+\item 
+typedef {\bf event\_\-list} {\bf EVENT\_\-LIST}
+\item 
+typedef {\bf fsim\_\-info} {\bf FSIM\_\-INFO}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf fsim\_\-mode} \{ {\bf FSIM\_\-NO\_\-INFO} =  0, 
+{\bf FSIM\_\-PPSFP}, 
+{\bf FSIM\_\-SPPFP}, 
+{\bf FSIM\_\-SPSFP}, 
+{\bf FSIM\_\-OUTPUT}
+ \}
+\begin{CompactList}\small\item\em ∏Œæ„•∑•ﬂ•Â•Ï°º•ø§Œ•‚°º•…»÷πÊ\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{âê‡}
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø§À¥ÿ§π§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 12 / 22 initialize\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_fsim.h@{flight\_\-fsim.h}!ALL_BIT_OFF@{ALL\_\-BIT\_\-OFF}}
+\index{ALL_BIT_OFF@{ALL\_\-BIT\_\-OFF}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ALL\_\-BIT\_\-OFF\ 0x00000000}\label{flight__fsim_8h_a1}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!BIT0_ON@{BIT0\_\-ON}}
+\index{BIT0_ON@{BIT0\_\-ON}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT0\_\-ON\ 0x00000001}\label{flight__fsim_8h_a12}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!BYTE@{BYTE}}
+\index{BYTE@{BYTE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BYTE\ 8}\label{flight__fsim_8h_a0}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_EVENT_OFF@{FSIM\_\-EVENT\_\-OFF}}
+\index{FSIM_EVENT_OFF@{FSIM\_\-EVENT\_\-OFF}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FSIM\_\-EVENT\_\-OFF\ 0}\label{flight__fsim_8h_a2}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_EVENT_ON@{FSIM\_\-EVENT\_\-ON}}
+\index{FSIM_EVENT_ON@{FSIM\_\-EVENT\_\-ON}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FSIM\_\-EVENT\_\-ON\ 1}\label{flight__fsim_8h_a3}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!NO_PROP_FAULT@{NO\_\-PROP\_\-FAULT}}
+\index{NO_PROP_FAULT@{NO\_\-PROP\_\-FAULT}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NO\_\-PROP\_\-FAULT\ 0}\label{flight__fsim_8h_a14}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!PARA_V0_BIT@{PARA\_\-V0\_\-BIT}}
+\index{PARA_V0_BIT@{PARA\_\-V0\_\-BIT}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PARA\_\-V0\_\-BIT\ 0x00000000}\label{flight__fsim_8h_a10}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!PARA_V1_BIT@{PARA\_\-V1\_\-BIT}}
+\index{PARA_V1_BIT@{PARA\_\-V1\_\-BIT}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PARA\_\-V1\_\-BIT\ 0xffffffff}\label{flight__fsim_8h_a11}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!RAND_BIT@{RAND\_\-BIT}}
+\index{RAND_BIT@{RAND\_\-BIT}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define RAND\_\-BIT\ 0x00100000}\label{flight__fsim_8h_a13}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_0@{STATE\_\-0}}
+\index{STATE_0@{STATE\_\-0}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-0\ 0}\label{flight__fsim_8h_a8}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_0_CODE@{STATE\_\-0\_\-CODE}}
+\index{STATE_0_CODE@{STATE\_\-0\_\-CODE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-0\_\-CODE\ 0x01}\label{flight__fsim_8h_a5}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_1@{STATE\_\-1}}
+\index{STATE_1@{STATE\_\-1}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-1\ 1}\label{flight__fsim_8h_a9}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_1_CODE@{STATE\_\-1\_\-CODE}}
+\index{STATE_1_CODE@{STATE\_\-1\_\-CODE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-1\_\-CODE\ 0x02}\label{flight__fsim_8h_a6}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_U_CODE@{STATE\_\-U\_\-CODE}}
+\index{STATE_U_CODE@{STATE\_\-U\_\-CODE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-U\_\-CODE\ 0x03}\label{flight__fsim_8h_a7}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!STATE_X_CODE@{STATE\_\-X\_\-CODE}}
+\index{STATE_X_CODE@{STATE\_\-X\_\-CODE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-X\_\-CODE\ 0x00}\label{flight__fsim_8h_a4}
+
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_fsim.h@{flight\_\-fsim.h}!EVENT_LIST@{EVENT\_\-LIST}}
+\index{EVENT_LIST@{EVENT\_\-LIST}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf event\_\-list}  EVENT\_\-LIST}\label{flight__fsim_8h_a17}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_HEAD@{FSIM\_\-HEAD}}
+\index{FSIM_HEAD@{FSIM\_\-HEAD}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf fsim\_\-head}  FSIM\_\-HEAD}\label{flight__fsim_8h_a16}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_INFO@{FSIM\_\-INFO}}
+\index{FSIM_INFO@{FSIM\_\-INFO}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf fsim\_\-info}  FSIM\_\-INFO}\label{flight__fsim_8h_a18}
+
+
+\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_MODE@{FSIM\_\-MODE}}
+\index{FSIM_MODE@{FSIM\_\-MODE}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf fsim\_\-mode}  FSIM\_\-MODE}\label{flight__fsim_8h_a15}
+
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_fsim.h@{flight\_\-fsim.h}!fsim_mode@{fsim\_\-mode}}
+\index{fsim_mode@{fsim\_\-mode}!flight_fsim.h@{flight\_\-fsim.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum fsim\_\-mode}\label{flight__fsim_8h_a24}
+
+
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø§Œ•‚°º•…»÷πÊ
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{FSIM_NO_INFO@{FSIM\_\-NO\_\-INFO}!flight_fsim.h@{flight\_\-fsim.h}}\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_NO_INFO@{FSIM\_\-NO\_\-INFO}}\item[{\em 
+{\em FSIM\_\-NO\_\-INFO}\label{flight__fsim_8h_a24a19}
+}]Ã§ƒÍµ¡(•«•’•©•Î•»∆∞∫Ó)\index{FSIM_PPSFP@{FSIM\_\-PPSFP}!flight_fsim.h@{flight\_\-fsim.h}}\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_PPSFP@{FSIM\_\-PPSFP}}\item[{\em 
+{\em FSIM\_\-PPSFP}\label{flight__fsim_8h_a24a20}
+}]•—•È•Ï•Î•—•ø°º•Û•∑•Û•∞•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û\index{FSIM_SPPFP@{FSIM\_\-SPPFP}!flight_fsim.h@{flight\_\-fsim.h}}\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_SPPFP@{FSIM\_\-SPPFP}}\item[{\em 
+{\em FSIM\_\-SPPFP}\label{flight__fsim_8h_a24a21}
+}]•∑•Û•∞•Î•—•ø°º•Û•—•È•Ï•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û\index{FSIM_SPSFP@{FSIM\_\-SPSFP}!flight_fsim.h@{flight\_\-fsim.h}}\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_SPSFP@{FSIM\_\-SPSFP}}\item[{\em 
+{\em FSIM\_\-SPSFP}\label{flight__fsim_8h_a24a22}
+}]•∑•Û•∞•Î•—•ø°º•Û•∑•Û•∞•Î•’•©°º•Î•»•◊•Ì•—•≤°º•∑•Á•Û\index{FSIM_OUTPUT@{FSIM\_\-OUTPUT}!flight_fsim.h@{flight\_\-fsim.h}}\index{flight_fsim.h@{flight\_\-fsim.h}!FSIM_OUTPUT@{FSIM\_\-OUTPUT}}\item[{\em 
+{\em FSIM\_\-OUTPUT}\label{flight__fsim_8h_a24a23}
+}]generate¥∞Œª∏Âªƒ§Í•—•ø°º•Û§Ú•∑•ﬂ•Â•Ï°º•∑•Á•Û§π§Î\end{description}
+\end{Desc}
+

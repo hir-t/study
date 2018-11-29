@@ -1,0 +1,363 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_extern.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_extern.c の解説</h1>･ｰ･悅ｼ･ﾐ･�ﾊﾑｿﾎﾀﾟﾄ熙ﾈｽ魘�ｲｽ 
+<a href="#_details">[詳細]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__state_8h-source.html">flight_state.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__line_8h-source.html">flight_line.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__extern_8h-source.html">flight_extern.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__atpg_8h-source.html">flight_atpg.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__flist_8h-source.html">flight_flist.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__time_8h-source.html">flight_time.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__memory_8h-source.html">flight_memory.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>変数</h2></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> *&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a0">Line_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a1">Pi_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a2">Po_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a3">BBPi_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a4">BBPo_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a19">LINE</a> ***&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a5">Lv_pi_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__atpg_8h.html#a55">JUST_INFO</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a6">Lv_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__flist_8h.html#a9">FLIST</a> **&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a7">Flist_head</a> = NULL</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__time_8h.html#a2">TIME_HEAD</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a8">Time_head</a></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__line_8h.html#a16">LINE_INFO</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a9">Line_info</a></td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight__atpg_8h.html#a49">GENE_HEAD</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a10">Gene_head</a></td></tr>
+<tr><td nowrap align=right valign=top>char&nbsp;</td><td valign=bottom><a class="el" href="flight__extern_8c.html#a11">FLIGHT_MEMORY_TYPE_NAME</a> [FMT_NUM_MEMORY_TYPE][20]</td></tr>
+</table>
+<hr><a name="_details"></a><h2>解説</h2>
+･ｰ･悅ｼ･ﾐ･�ﾊﾑｿﾎﾀﾟﾄ熙ﾈｽ魘�ｲｽ
+<p>
+ <dl compact><dt><b>作者: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>日付: </b></dt><dd>
+ 2004 / 12 / 15 initialize</dl><hr><h2>変数の解説</h2>
+<a name="a3" doxytag="flight_extern.c::BBPi_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>** BBPi_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_extern.c::BBPo_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>** BBPo_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_extern.c::FLIGHT_MEMORY_TYPE_NAME"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> char FLIGHT_MEMORY_TYPE_NAME[FMT_NUM_MEMORY_TYPE][20]
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<b>初期値:</b><div class="fragment"><pre> {
+        <span class="stringliteral">"Char"</span>,
+        <span class="stringliteral">"Ulong"</span>,
+        <span class="stringliteral">"LINE"</span>,
+        <span class="stringliteral">"LINE *"</span>,
+        <span class="stringliteral">"LINE **"</span>,
+        <span class="stringliteral">"FLIST"</span>,
+        <span class="stringliteral">"FLIST *"</span>,
+        <span class="stringliteral">"LINE_STACK"</span>,
+        <span class="stringliteral">"LINE_STACK *"</span>,
+        <span class="stringliteral">"BTREE"</span>,
+        <span class="stringliteral">"DFRONT"</span>,
+        <span class="stringliteral">"DFRONT *"</span>,
+        <span class="stringliteral">"DFRONT_LIST"</span>,
+        <span class="stringliteral">"ASS_LIST"</span>,
+        <span class="stringliteral">"IMP_LIST"</span>,
+        <span class="stringliteral">"IMP_INFO"</span>,
+        <span class="stringliteral">"IMP_TRACE"</span>,
+        <span class="stringliteral">"JUST_INFO"</span>,
+        <span class="stringliteral">"JUST_INFO *"</span>,
+        <span class="stringliteral">"CELL"</span>,
+        <span class="stringliteral">"CELL *"</span>,
+        <span class="stringliteral">"CELL_IO"</span>,
+        <span class="stringliteral">"ENENVT_LIST"</span>,
+        <span class="stringliteral">"CC_PATTERN"</span>,
+        <span class="stringliteral">"CC_PATTERN_P"</span>,
+}</pre></div>    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_extern.c::Flist_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__flist_8h.html#a9">FLIST</a>** Flist_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_extern.c::Gene_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__atpg_8h.html#a49">GENE_HEAD</a> Gene_head
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<b>初期値:</b><div class="fragment"><pre> {
+    0,          
+        <a class="code" href="flight__extern_8h.html#a0">ATPG_LIMIT_BACK</a>, 
+        0,          
+        0,          
+        0,          
+        NULL,   
+        NULL,   
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+    NULL,       
+}</pre></div>    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_extern.c::Line_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>* Line_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_extern.c::Line_info"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a16">LINE_INFO</a> Line_info
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<b>初期値:</b><div class="fragment"><pre> {
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+    0,          
+        0,              
+    0,          
+    NULL,       
+}</pre></div>    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_extern.c::Lv_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__atpg_8h.html#a55">JUST_INFO</a>** Lv_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_extern.c::Lv_pi_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>*** Lv_pi_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_extern.c::Pi_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>** Pi_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_extern.c::Po_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__line_8h.html#a19">LINE</a>** Po_head = NULL
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_extern.c::Time_head"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight__time_8h.html#a2">TIME_HEAD</a> Time_head
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:08 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

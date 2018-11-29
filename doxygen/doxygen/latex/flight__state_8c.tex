@@ -1,0 +1,309 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-state.c ÇÃâê‡}
+\label{flight__state_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_state.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-state.c}}
+øÆπÊ¿˛§Œæı¬÷§Ú∞∑§¶¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf atpg\_\-reflesh\_\-state} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3} ({\bf STATE\_\-9}, {\bf Uint})
+\item 
+void {\bf atpg\_\-get\_\-chara\_\-stat} ({\bf STATE\_\-3}, char $\ast$)
+\item 
+{\bf STATE\_\-9} {\bf atpg\_\-state3\_\-with\_\-condition\_\-2\_\-state9} ({\bf STATE\_\-3}, {\bf Uint})
+\item 
+int {\bf atpg\_\-check\_\-state\_\-n\_\-f} ({\bf Ulong})
+\item 
+void {\bf atpg\_\-enter\_\-implication\_\-list\_\-input} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})
+\item 
+void {\bf atpg\_\-enter\_\-implication\_\-list\_\-output} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+int {\bf atpg\_\-check\_\-ent\_\-stat} ({\bf ASS\_\-LIST} $\ast$)
+\item 
+{\bf Ulong} {\bf atpg\_\-imp\_\-make\_\-enter\_\-stat} ({\bf Ulong}, {\bf Uint})
+\item 
+void {\bf atpg\_\-enter\_\-imp\_\-trace} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+{\bf Ulong} {\bf atpg\_\-normal\_\-failure\_\-stat} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf atpg\_\-update\_\-state} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+{\bf Uint} {\bf atpg\_\-reverse\_\-condition} ({\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-pre\_\-state9} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-after\_\-state9} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-condition} ({\bf Uint})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} ()
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-type\_\-state9} ({\bf LINE} $\ast$)
+\item 
+void {\bf test\_\-state9\_\-n\_\-f} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-state9\_\-n\_\-f\_\-x} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-normal} ({\bf STATE\_\-3}, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-failure} ({\bf Ulong}, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-condition} ({\bf Uint}, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+{\bf STATE\_\-9} {\bf atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9} ({\bf STATE\_\-3} state3, {\bf Uint} {\bf condition})
+\item 
+void {\bf atpg\_\-get\_\-chara\_\-stat} ({\bf STATE\_\-3} state3, char moji[$\,$])
+\item 
+{\bf Ulong} {\bf atpg\_\-get\_\-common\_\-stat} ({\bf Ulong} state)
+\item 
+int {\bf atpg\_\-enter\_\-state} ({\bf ASS\_\-LIST} $\ast${\bf ass\_\-list})
+\item 
+{\bf Ulong} {\bf atpg\_\-get\_\-normal\_\-normal\_\-stat} ({\bf Ulong} stat)
+\item 
+{\bf Ulong} {\bf atpg\_\-get\_\-failure\_\-failure\_\-stat} ({\bf Ulong} stat)
+\item 
+int {\bf atpg\_\-get\_\-d\_\-state9} ({\bf STATE\_\-9} state9)
+\item 
+{\bf Ulong} {\bf atpg\_\-check\_\-fault\_\-stat} ({\bf Ulong} stat)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-invert\_\-state3} ({\bf STATE\_\-3} state3)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+øÆπÊ¿˛§Œæı¬÷§Ú∞∑§¶¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 01 / 19 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_state.c@{flight\_\-state.c}!atpg_check_ent_stat@{atpg\_\-check\_\-ent\_\-stat}}
+\index{atpg_check_ent_stat@{atpg\_\-check\_\-ent\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-ent\_\-stat ({\bf ASS\_\-LIST} $\ast$)}\label{flight__state_8c_a12}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_check_fault_stat@{atpg\_\-check\_\-fault\_\-stat}}
+\index{atpg_check_fault_stat@{atpg\_\-check\_\-fault\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-check\_\-fault\_\-stat ({\bf Ulong} {\em stat})}\label{flight__state_8c_a38}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_check_state_n_f@{atpg\_\-check\_\-state\_\-n\_\-f}}
+\index{atpg_check_state_n_f@{atpg\_\-check\_\-state\_\-n\_\-f}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-state\_\-n\_\-f ({\bf Ulong})}\label{flight__state_8c_a9}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}}
+\index{atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-imp\_\-trace ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__state_8c_a14}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_enter_implication_list_input@{atpg\_\-enter\_\-implication\_\-list\_\-input}}
+\index{atpg_enter_implication_list_input@{atpg\_\-enter\_\-implication\_\-list\_\-input}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-implication\_\-list\_\-input ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})}\label{flight__state_8c_a10}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_enter_implication_list_output@{atpg\_\-enter\_\-implication\_\-list\_\-output}}
+\index{atpg_enter_implication_list_output@{atpg\_\-enter\_\-implication\_\-list\_\-output}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-implication\_\-list\_\-output ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__state_8c_a11}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_enter_state@{atpg\_\-enter\_\-state}}
+\index{atpg_enter_state@{atpg\_\-enter\_\-state}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-enter\_\-state ({\bf ASS\_\-LIST} $\ast$ {\em ass\_\-list})}\label{flight__state_8c_a34}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}}
+\index{atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-get\_\-chara\_\-stat ({\bf STATE\_\-3} {\em state3}, char {\em moji}[$\,$])}\label{flight__state_8c_a32}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}}
+\index{atpg_get_chara_stat@{atpg\_\-get\_\-chara\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-get\_\-chara\_\-stat ({\bf STATE\_\-3}, char $\ast$)}\label{flight__state_8c_a7}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_common_stat@{atpg\_\-get\_\-common\_\-stat}}
+\index{atpg_get_common_stat@{atpg\_\-get\_\-common\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-get\_\-common\_\-stat ({\bf Ulong} {\em state})}\label{flight__state_8c_a33}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}}
+\index{atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-get\_\-d\_\-state9 ({\bf STATE\_\-9} {\em state9})}\label{flight__state_8c_a37}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_failure_failure_stat@{atpg\_\-get\_\-failure\_\-failure\_\-stat}}
+\index{atpg_get_failure_failure_stat@{atpg\_\-get\_\-failure\_\-failure\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-get\_\-failure\_\-failure\_\-stat ({\bf Ulong} {\em stat})}\label{flight__state_8c_a36}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_normal_normal_stat@{atpg\_\-get\_\-normal\_\-normal\_\-stat}}
+\index{atpg_get_normal_normal_stat@{atpg\_\-get\_\-normal\_\-normal\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-get\_\-normal\_\-normal\_\-stat ({\bf Ulong} {\em stat})}\label{flight__state_8c_a35}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_state3_with_condition_2_state9@{atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9}}
+\index{atpg_get_state3_with_condition_2_state9@{atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-9} atpg\_\-get\_\-state3\_\-with\_\-condition\_\-2\_\-state9 ({\bf STATE\_\-3} {\em state3}, {\bf Uint} {\em condition})}\label{flight__state_8c_a31}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}}
+\index{atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3 ({\bf STATE\_\-9})}\label{flight__state_8c_a5}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__state_8c_a4}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}}
+\index{atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3 ({\bf STATE\_\-9}, {\bf Uint})}\label{flight__state_8c_a6}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_imp_make_enter_stat@{atpg\_\-imp\_\-make\_\-enter\_\-stat}}
+\index{atpg_imp_make_enter_stat@{atpg\_\-imp\_\-make\_\-enter\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-imp\_\-make\_\-enter\_\-stat ({\bf Ulong}, {\bf Uint})}\label{flight__state_8c_a13}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_invert_state3@{atpg\_\-invert\_\-state3}}
+\index{atpg_invert_state3@{atpg\_\-invert\_\-state3}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-invert\_\-state3 ({\bf STATE\_\-3} {\em state3})}\label{flight__state_8c_a39}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_normal_failure_stat@{atpg\_\-normal\_\-failure\_\-stat}}
+\index{atpg_normal_failure_stat@{atpg\_\-normal\_\-failure\_\-stat}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-normal\_\-failure\_\-stat ({\bf Ulong}, {\bf Ulong})}\label{flight__state_8c_a15}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_reflesh_state@{atpg\_\-reflesh\_\-state}}
+\index{atpg_reflesh_state@{atpg\_\-reflesh\_\-state}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-reflesh\_\-state ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__state_8c_a3}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_reverse_condition@{atpg\_\-reverse\_\-condition}}
+\index{atpg_reverse_condition@{atpg\_\-reverse\_\-condition}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint} atpg\_\-reverse\_\-condition ({\bf Uint})}\label{flight__state_8c_a17}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_state3_with_condition_2_state9@{atpg\_\-state3\_\-with\_\-condition\_\-2\_\-state9}}
+\index{atpg_state3_with_condition_2_state9@{atpg\_\-state3\_\-with\_\-condition\_\-2\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-9} atpg\_\-state3\_\-with\_\-condition\_\-2\_\-state9 ({\bf STATE\_\-3}, {\bf Uint})}\label{flight__state_8c_a8}
+
+
+\index{flight_state.c@{flight\_\-state.c}!atpg_update_state@{atpg\_\-update\_\-state}}
+\index{atpg_update_state@{atpg\_\-update\_\-state}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-update\_\-state ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__state_8c_a16}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes ({\bf Ulong}, {\bf Ulong})}\label{flight__state_8c_a18}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes_condition@{flight\_\-print\_\-mes\_\-condition}}
+\index{flight_print_mes_condition@{flight\_\-print\_\-mes\_\-condition}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-condition ({\bf Uint})}\label{flight__state_8c_a21}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes_id_after_state9@{flight\_\-print\_\-mes\_\-id\_\-after\_\-state9}}
+\index{flight_print_mes_id_after_state9@{flight\_\-print\_\-mes\_\-id\_\-after\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-after\_\-state9 ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__state_8c_a20}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes_id_pre_state9@{flight\_\-print\_\-mes\_\-id\_\-pre\_\-state9}}
+\index{flight_print_mes_id_pre_state9@{flight\_\-print\_\-mes\_\-id\_\-pre\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-pre\_\-state9 ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__state_8c_a19}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}}
+\index{flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-type\_\-state9 ({\bf LINE} $\ast$)}\label{flight__state_8c_a23}
+
+
+\index{flight_state.c@{flight\_\-state.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n ()}\label{flight__state_8c_a22}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__state_8c_a30}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_condition@{test\_\-condition}}
+\index{test_condition@{test\_\-condition}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-condition ({\bf Uint}, char $\ast$)}\label{flight__state_8c_a29}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__state_8c_a28}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_state9_n_f@{test\_\-state9\_\-n\_\-f}}
+\index{test_state9_n_f@{test\_\-state9\_\-n\_\-f}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state9\_\-n\_\-f ({\bf STATE\_\-9}, char $\ast$)}\label{flight__state_8c_a24}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_state9_n_f_x@{test\_\-state9\_\-n\_\-f\_\-x}}
+\index{test_state9_n_f_x@{test\_\-state9\_\-n\_\-f\_\-x}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state9\_\-n\_\-f\_\-x ({\bf STATE\_\-9}, char $\ast$)}\label{flight__state_8c_a25}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_state_failure@{test\_\-state\_\-failure}}
+\index{test_state_failure@{test\_\-state\_\-failure}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-failure ({\bf Ulong}, char $\ast$)}\label{flight__state_8c_a27}
+
+
+\index{flight_state.c@{flight\_\-state.c}!test_state_normal@{test\_\-state\_\-normal}}
+\index{test_state_normal@{test\_\-state\_\-normal}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-normal ({\bf STATE\_\-3}, char $\ast$)}\label{flight__state_8c_a26}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_state.c@{flight\_\-state.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head}\label{flight__state_8c_a1}
+
+
+\index{flight_state.c@{flight\_\-state.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_state.c@{flight\_\-state.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__state_8c_a0}
+
+

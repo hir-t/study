@@ -1,0 +1,183 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-compact.h ÇÃâê‡}
+\label{flight__compact_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_compact.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-compact.h}}
+∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¿ﬂƒÍ 
+
+
+\subsection*{ç$\backslash$ê¨}
+\begin{CompactItemize}
+\item 
+struct {\bf cc\_\-pattern}
+\begin{CompactList}\small\item\em ∞µΩÃ•–•√•’•°§À§™§±§Î•—•ø°º•Û\item\end{CompactList}\item 
+struct {\bf comp\_\-head}
+\begin{CompactList}\small\item\em ∞µΩÃ•–•√•’•°§À¥ÿ§π§Îæ Û\item\end{CompactList}\item 
+struct {\bf comp\_\-info}
+\begin{CompactList}\small\item\em ∆∞≈™∞µΩÃ§À¥ÿ§π§Îæ Û\item\end{CompactList}\end{CompactItemize}
+\subsection*{comp\_\-info-$>$result§À¥ÿ§π§ÎƒÍµ¡}
+\begin{CompactItemize}
+\item 
+\#define {\bf COMPACT\_\-OK}\ 0x00000000
+\item 
+\#define {\bf COMPACT\_\-NG}\ 0xffffffff
+\end{CompactItemize}
+\subsection*{comp\_\-info-$>$comp\_\-mode flag§À¥ÿ§π§ÎƒÍµ¡}
+\begin{CompactItemize}
+\item 
+\#define {\bf COMP\_\-NO\_\-INFO}\ 0x00000000
+\item 
+\#define {\bf COMP\_\-GET}\ 0x00000001
+\item 
+\#define {\bf COMP\_\-GET\_\-ALL}\ 0x00000002
+\item 
+\#define {\bf COMP\_\-INSERT}\ 0x00000004
+\item 
+\#define {\bf COMP\_\-FAST}\ 0x00000008
+\item 
+\#define {\bf COMP\_\-REST\_\-X}\ 0x00000010
+\end{CompactItemize}
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf BIT\_\-1\_\-ON}\ 0x00000001
+\begin{CompactList}\small\item\em 1bitÃ‹§¿§±1§«§¢§Î\item\end{CompactList}\item 
+\#define {\bf COMP\_\-BUF\_\-SIZE}\ 100
+\begin{CompactList}\small\item\em ∞µΩÃ•–•√•’•°§Œ•µ•§•∫ •«•’•©•Î•»√Õ\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf comp\_\-check\_\-all\_\-x} {\bf COMP\_\-CHECK\_\-ALL\_\-X}
+\item 
+typedef {\bf comp\_\-head} {\bf COMP\_\-HEAD}
+\item 
+typedef {\bf cc\_\-pattern} {\bf CC\_\-PATTERN}
+\item 
+typedef {\bf comp\_\-info} {\bf COMP\_\-INFO}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf comp\_\-check\_\-all\_\-x} \{ {\bf COMP\_\-PAT\_\-ALL\_\-X} =  0, 
+{\bf COMP\_\-PAT\_\-NOT\_\-X} =  1
+ \}
+\begin{CompactList}\small\item\em •—•ø°º•Û§¨§π§Ÿ§∆X§´§Ú•¡•ß•√•Ø§π§Î\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{âê‡}
+∞µΩÃ•–•√•’•°§À¥ÿ§π§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+ 
+
+\footnotesize\begin{verbatim}
+                •—•ø°º•Û∆‚§Œæı¬÷§Œ…Ω∏Ω 2√Õ
+                0 ( = 0 )  1 ( = 1 )
+                •—•ø°º•Û∆‚§Œæı¬÷§Œ…Ω∏Ω 3√Õ
+                X ( a = 0 , b = 0 ), 0 ( a = 0 , b = 1 )  1 ( a = 1 , b = 0 )
+                \end{verbatim}\normalsize 
+\end{Desc}
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2006 / 01 / 14 initialize\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_compact.h@{flight\_\-compact.h}!BIT_1_ON@{BIT\_\-1\_\-ON}}
+\index{BIT_1_ON@{BIT\_\-1\_\-ON}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT\_\-1\_\-ON\ 0x00000001}\label{flight__compact_8h_a0}
+
+
+1bitÃ‹§¿§±1§«§¢§Î
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_BUF_SIZE@{COMP\_\-BUF\_\-SIZE}}
+\index{COMP_BUF_SIZE@{COMP\_\-BUF\_\-SIZE}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-BUF\_\-SIZE\ 100}\label{flight__compact_8h_a1}
+
+
+∞µΩÃ•–•√•’•°§Œ•µ•§•∫ •«•’•©•Î•»√Õ
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_FAST@{COMP\_\-FAST}}
+\index{COMP_FAST@{COMP\_\-FAST}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-FAST\ 0x00000008}\label{flight__compact_8h_a8}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_GET@{COMP\_\-GET}}
+\index{COMP_GET@{COMP\_\-GET}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-GET\ 0x00000001}\label{flight__compact_8h_a5}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_GET_ALL@{COMP\_\-GET\_\-ALL}}
+\index{COMP_GET_ALL@{COMP\_\-GET\_\-ALL}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-GET\_\-ALL\ 0x00000002}\label{flight__compact_8h_a6}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_INSERT@{COMP\_\-INSERT}}
+\index{COMP_INSERT@{COMP\_\-INSERT}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-INSERT\ 0x00000004}\label{flight__compact_8h_a7}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_NO_INFO@{COMP\_\-NO\_\-INFO}}
+\index{COMP_NO_INFO@{COMP\_\-NO\_\-INFO}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-NO\_\-INFO\ 0x00000000}\label{flight__compact_8h_a4}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_REST_X@{COMP\_\-REST\_\-X}}
+\index{COMP_REST_X@{COMP\_\-REST\_\-X}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMP\_\-REST\_\-X\ 0x00000010}\label{flight__compact_8h_a9}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMPACT_NG@{COMPACT\_\-NG}}
+\index{COMPACT_NG@{COMPACT\_\-NG}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMPACT\_\-NG\ 0xffffffff}\label{flight__compact_8h_a3}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMPACT_OK@{COMPACT\_\-OK}}
+\index{COMPACT_OK@{COMPACT\_\-OK}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define COMPACT\_\-OK\ 0x00000000}\label{flight__compact_8h_a2}
+
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_compact.h@{flight\_\-compact.h}!CC_PATTERN@{CC\_\-PATTERN}}
+\index{CC_PATTERN@{CC\_\-PATTERN}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf cc\_\-pattern}  CC\_\-PATTERN}\label{flight__compact_8h_a12}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_CHECK_ALL_X@{COMP\_\-CHECK\_\-ALL\_\-X}}
+\index{COMP_CHECK_ALL_X@{COMP\_\-CHECK\_\-ALL\_\-X}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf comp\_\-check\_\-all\_\-x}  COMP\_\-CHECK\_\-ALL\_\-X}\label{flight__compact_8h_a10}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_HEAD@{COMP\_\-HEAD}}
+\index{COMP_HEAD@{COMP\_\-HEAD}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf comp\_\-head}  COMP\_\-HEAD}\label{flight__compact_8h_a11}
+
+
+\index{flight_compact.h@{flight\_\-compact.h}!COMP_INFO@{COMP\_\-INFO}}
+\index{COMP_INFO@{COMP\_\-INFO}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf comp\_\-info}  COMP\_\-INFO}\label{flight__compact_8h_a13}
+
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_compact.h@{flight\_\-compact.h}!comp_check_all_x@{comp\_\-check\_\-all\_\-x}}
+\index{comp_check_all_x@{comp\_\-check\_\-all\_\-x}!flight_compact.h@{flight\_\-compact.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum comp\_\-check\_\-all\_\-x}\label{flight__compact_8h_a16}
+
+
+•—•ø°º•Û§¨§π§Ÿ§∆X§´§Ú•¡•ß•√•Ø§π§Î
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{COMP_PAT_ALL_X@{COMP\_\-PAT\_\-ALL\_\-X}!flight_compact.h@{flight\_\-compact.h}}\index{flight_compact.h@{flight\_\-compact.h}!COMP_PAT_ALL_X@{COMP\_\-PAT\_\-ALL\_\-X}}\item[{\em 
+{\em COMP\_\-PAT\_\-ALL\_\-X}\label{flight__compact_8h_a16a14}
+}]§π§Ÿ§∆X§«§¢§Î\index{COMP_PAT_NOT_X@{COMP\_\-PAT\_\-NOT\_\-X}!flight_compact.h@{flight\_\-compact.h}}\index{flight_compact.h@{flight\_\-compact.h}!COMP_PAT_NOT_X@{COMP\_\-PAT\_\-NOT\_\-X}}\item[{\em 
+{\em COMP\_\-PAT\_\-NOT\_\-X}\label{flight__compact_8h_a16a15}
+}]§π§Ÿ§∆X§«§œ§ §§\end{description}
+\end{Desc}
+

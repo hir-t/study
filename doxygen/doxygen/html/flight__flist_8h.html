@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_flist.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- ì¬F Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ƒƒCƒ“ƒy[ƒW</a> &nbsp; <a class="qindex" href="annotated.html">\¬</a> &nbsp; <a class="qindex" href="files.html">ƒtƒ@ƒCƒ‹ˆê——</a> &nbsp; <a class="qindex" href="functions.html">\¬ƒƒ“ƒo</a> &nbsp; <a class="qindex" href="globals.html">ƒtƒ@ƒCƒ‹ƒƒ“ƒo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_flist.h ‚Ì‰ğà</h1>¸Î¾ã¥ê¥¹¥È¤Ë´Ø¤¹¤ëÀßÄê 
+<a href="#_details">[Ú×]</a>
+<p>
+
+<p>
+<a href="flight__flist_8h-source.html">ƒ\[ƒXƒR[ƒh‚ğŒ©‚éB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>\¬</h2></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structflist.html">flist</a></td></tr>
+<tr><td colspan=2><br><h2>ƒ}ƒNƒ’è‹`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a0">FLIGHT_SA0</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>stack-at 0</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a1">FLIGHT_SA1</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>stack-at 1 (state only)</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a2">FLIGHT_DCD</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>¸Î¾ãÊ¬Îà¤¬Ì¤·èÄê( OFF ) or ·èÄê( ON )</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a3">FLIGHT_EXE</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>ATPGÌ¤¼Â»Ü ( OFF ) or ATPG¼Â»Ü¤º¤ß( ON ).</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a4">FLIGHT_DTA</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>ATPG¤Ë¤è¤Ã¤ÆÈó¸¡½Ğ ( OFF ) or ¸¡½Ğ¸Î¾ã( ON ).</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a5">FLIGHT_DTS</a>&nbsp;&nbsp;&nbsp;0x00000020</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>Fsim¤Ë¤è¤Ã¤ÆÈó¸¡½Ğ ( OFF ) or ¸¡½Ğ¸Î¾ã( ON ).</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a6">FLIGHT_RED</a>&nbsp;&nbsp;&nbsp;0x00000040</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>¥Æ¥¹¥ÈÀ¸À®ÉÔÇ½À­¤¢¤ê ( OFF) or ²óÏ©¾éÄ¹À­¤¢¤ê ( ON )</em> <a href="#a6"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a7">FLIGHT_IUT</a>&nbsp;&nbsp;&nbsp;0x00000080</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>½é´ü²½·ÏÎó¤Ë¤è¤ë±Æ¶Á¤Ê¤· ( OFF) or ±Æ¶Á¤¢¤ê ( ON )</em> <a href="#a7"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a8">FLIGHT_ABT</a>&nbsp;&nbsp;&nbsp;0x00000100</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>ÂÇ¤ÁÀÚ¤ê¸Î¾ã¤Ç¤Ê¤¤ ( OFF ) or ÂÇ¤ÁÀÚ¤ê¸Î¾ã ( ON )</em> <a href="#a8"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structflist.html">flist</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__flist_8h.html#a9">FLIST</a></td></tr>
+</table>
+<hr><a name="_details"></a><h2>‰ğà</h2>
+¸Î¾ã¥ê¥¹¥È¤Ë´Ø¤¹¤ëÀßÄê
+<p>
+ <dl compact><dt><b>ìÒ: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>“ú•t: </b></dt><dd>
+ 2006 / 02 / 09 initialize ( renew )</dl><hr><h2>ƒ}ƒNƒ’è‹`‚Ì‰ğà</h2>
+<a name="a8" doxytag="flight_flist.h::FLIGHT_ABT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_ABT&nbsp;&nbsp;&nbsp;0x00000100
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ÂÇ¤ÁÀÚ¤ê¸Î¾ã¤Ç¤Ê¤¤ ( OFF ) or ÂÇ¤ÁÀÚ¤ê¸Î¾ã ( ON )
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_flist.h::FLIGHT_DCD"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_DCD&nbsp;&nbsp;&nbsp;0x00000004
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+¸Î¾ãÊ¬Îà¤¬Ì¤·èÄê( OFF ) or ·èÄê( ON )
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_flist.h::FLIGHT_DTA"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_DTA&nbsp;&nbsp;&nbsp;0x00000010
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ATPG¤Ë¤è¤Ã¤ÆÈó¸¡½Ğ ( OFF ) or ¸¡½Ğ¸Î¾ã( ON ).
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_flist.h::FLIGHT_DTS"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_DTS&nbsp;&nbsp;&nbsp;0x00000020
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Fsim¤Ë¤è¤Ã¤ÆÈó¸¡½Ğ ( OFF ) or ¸¡½Ğ¸Î¾ã( ON ).
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_flist.h::FLIGHT_EXE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_EXE&nbsp;&nbsp;&nbsp;0x00000008
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+ATPGÌ¤¼Â»Ü ( OFF ) or ATPG¼Â»Ü¤º¤ß( ON ).
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_flist.h::FLIGHT_IUT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_IUT&nbsp;&nbsp;&nbsp;0x00000080
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+½é´ü²½·ÏÎó¤Ë¤è¤ë±Æ¶Á¤Ê¤· ( OFF) or ±Æ¶Á¤¢¤ê ( ON )
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_flist.h::FLIGHT_RED"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_RED&nbsp;&nbsp;&nbsp;0x00000040
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+¥Æ¥¹¥ÈÀ¸À®ÉÔÇ½À­¤¢¤ê ( OFF) or ²óÏ©¾éÄ¹À­¤¢¤ê ( ON )
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_flist.h::FLIGHT_SA0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_SA0&nbsp;&nbsp;&nbsp;0x00000001
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+stack-at 0
+<p>
+¸Î¾ã¤Î¾õÂÖ¤ò¼¨¤¹ ¡÷ FLIST-&gt;info     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_flist.h::FLIGHT_SA1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_SA1&nbsp;&nbsp;&nbsp;0x00000002
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+stack-at 1 (state only)
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ‚Ì‰ğà</h2>
+<a name="a9" doxytag="flight_flist.h::FLIST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structflist.html">flist</a>  FLIST
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHT‚É‘Î‚µ‚ÄThu Feb 16 14:41:10 2006‚É¶¬‚³‚ê‚Ü‚µ‚½B
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

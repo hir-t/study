@@ -1,0 +1,147 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-dfrontier.c ÇÃâê‡}
+\label{flight__dfrontier_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_dfrontier.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-dfrontier.c}}
+D•’•Ì•Û•∆•£•¢§À¥ÿ§π§Î¥ÿøÙ∑≤. 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf atpg\_\-init\_\-dfront} ({\bf LINE} $\ast$fault\_\-line)
+\item 
+void {\bf atpg\_\-reflesh\_\-state} ({\bf LINE} $\ast$, int)
+\item 
+int {\bf atpg\_\-get\_\-d\_\-state9} ({\bf STATE\_\-9})
+\item 
+int {\bf atpg\_\-make\_\-dfront} ({\bf DFRONT} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-type\_\-state9} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n} ()
+\item 
+void {\bf flight\_\-print\_\-mes\_\-result\_\-line} (int, int, {\bf LINE} $\ast$)
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-ass\_\-list} ({\bf ASS\_\-LIST} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-dfront} ({\bf DFRONT} $\ast$, char $\ast$)
+\item 
+int {\bf atpg\_\-drive\_\-dfront} (void)
+\item 
+void {\bf atpg\_\-ent\_\-propa\_\-dfront} ({\bf ASS\_\-LIST} $\ast$propa\_\-list)
+\item 
+void {\bf atpg\_\-reflesh\_\-state\_\-dfront} ({\bf DFRONT} $\ast${\bf dfront})
+\item 
+void {\bf atpg\_\-imp\_\-trace\_\-2\_\-dfront} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+D•’•Ì•Û•∆•£•¢§À¥ÿ§π§Î¥ÿøÙ∑≤.
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 01 / 20 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_drive_dfront@{atpg\_\-drive\_\-dfront}}
+\index{atpg_drive_dfront@{atpg\_\-drive\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-drive\_\-dfront (void)}\label{flight__dfrontier_8c_a12}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_ent_propa_dfront@{atpg\_\-ent\_\-propa\_\-dfront}}
+\index{atpg_ent_propa_dfront@{atpg\_\-ent\_\-propa\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-ent\_\-propa\_\-dfront ({\bf ASS\_\-LIST} $\ast$ {\em propa\_\-list})}\label{flight__dfrontier_8c_a13}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}}
+\index{atpg_get_d_state9@{atpg\_\-get\_\-d\_\-state9}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-get\_\-d\_\-state9 ({\bf STATE\_\-9})}\label{flight__dfrontier_8c_a3}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}}
+\index{atpg_imp_trace_2_dfront@{atpg\_\-imp\_\-trace\_\-2\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-imp\_\-trace\_\-2\_\-dfront (void)}\label{flight__dfrontier_8c_a15}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_init_dfront@{atpg\_\-init\_\-dfront}}
+\index{atpg_init_dfront@{atpg\_\-init\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-init\_\-dfront ({\bf LINE} $\ast$ {\em fault\_\-line})}\label{flight__dfrontier_8c_a1}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_make_dfront@{atpg\_\-make\_\-dfront}}
+\index{atpg_make_dfront@{atpg\_\-make\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-make\_\-dfront ({\bf DFRONT} $\ast$)}\label{flight__dfrontier_8c_a4}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_reflesh_state@{atpg\_\-reflesh\_\-state}}
+\index{atpg_reflesh_state@{atpg\_\-reflesh\_\-state}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-reflesh\_\-state ({\bf LINE} $\ast$, int)}\label{flight__dfrontier_8c_a2}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!atpg_reflesh_state_dfront@{atpg\_\-reflesh\_\-state\_\-dfront}}
+\index{atpg_reflesh_state_dfront@{atpg\_\-reflesh\_\-state\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-reflesh\_\-state\_\-dfront ({\bf DFRONT} $\ast$ {\em dfront})}\label{flight__dfrontier_8c_a14}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__dfrontier_8c_a6}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}}
+\index{flight_print_mes_id_type_state9@{flight\_\-print\_\-mes\_\-id\_\-type\_\-state9}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-type\_\-state9 ({\bf LINE} $\ast$)}\label{flight__dfrontier_8c_a5}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}}
+\index{flight_print_mes_n@{flight\_\-print\_\-mes\_\-n}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n ()}\label{flight__dfrontier_8c_a7}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!flight_print_mes_result_line@{flight\_\-print\_\-mes\_\-result\_\-line}}
+\index{flight_print_mes_result_line@{flight\_\-print\_\-mes\_\-result\_\-line}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-result\_\-line (int, int, {\bf LINE} $\ast$)}\label{flight__dfrontier_8c_a8}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!test_ass_list@{test\_\-ass\_\-list}}
+\index{test_ass_list@{test\_\-ass\_\-list}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-ass\_\-list ({\bf ASS\_\-LIST} $\ast$, char $\ast$)}\label{flight__dfrontier_8c_a10}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!test_dfront@{test\_\-dfront}}
+\index{test_dfront@{test\_\-dfront}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-dfront ({\bf DFRONT} $\ast$, char $\ast$)}\label{flight__dfrontier_8c_a11}
+
+
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__dfrontier_8c_a9}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_dfrontier.c@{flight\_\-dfrontier.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_dfrontier.c@{flight\_\-dfrontier.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__dfrontier_8c_a0}
+
+

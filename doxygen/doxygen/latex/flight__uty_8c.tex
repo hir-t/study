@@ -1,0 +1,236 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-uty.c ‚Ì‰ğà}
+\label{flight__uty_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_uty.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-uty.c}}
+¥æ¡¼¥Æ¥£¥ê¥Æ¥£´Ø¿ô·² 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$ctype.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-uty.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-io.h\char`\"{}}\par
+\subsection*{ƒ\}ƒNƒ’è‹`}
+\begin{CompactItemize}
+\item 
+\#define {\bf BIT4\_\-0}\ 4
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}4\char`\"{})¤ò¼¨¤¹ 0: 0000 -$>$ 4\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-1}\ 3
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 1: 0001 -$>$ 3\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-2}\ 3
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 2: 0010 -$>$ 3\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-3}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 3: 0011 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-4}\ 3
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 4: 0100 -$>$ 3\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-5}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 5: 0101 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-6}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 6: 0110 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-7}\ 1
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 7: 0111 -$>$ 1\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-8}\ 3
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 8: 1000 -$>$ 3\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-9}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 9: 1001 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-10}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 10: 1010 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-11}\ 1
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 11: 1011 -$>$ 1\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-12}\ 2
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 12: 1100 -$>$ 2\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-13}\ 1
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 13: 1101 -$>$ 1\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-14}\ 1
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 14: 1110 -$>$ 1\item\end{CompactList}\item 
+\#define {\bf BIT4\_\-15}\ 0
+\begin{CompactList}\small\item\em 2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}0\char`\"{})¤ò¼¨¤¹ 15: 1111 -$>$ 0\item\end{CompactList}\end{CompactItemize}
+\subsection*{ŠÖ”}
+\begin{CompactItemize}
+\item 
+void {\bf utility\_\-renew\_\-parameter\_\-with\_\-env} (char $\ast$, {\bf Ulong} $\ast$)
+\item 
+void {\bf utility\_\-token} (FILE $\ast$fp, char $\ast$string, char $\ast$delimiter, {\bf Ulong} string\_\-size)
+\item 
+int {\bf utility\_\-skip\_\-char} (FILE $\ast$fp, char $\ast$delimiter)
+\item 
+void {\bf utility\_\-jump\_\-to\_\-char} (FILE $\ast$fp, char delimiter)
+\item 
+int {\bf utility\_\-skip\_\-sentence} (FILE $\ast$fp)
+\item 
+{\bf Ulong} {\bf utility\_\-calc\_\-string\_\-hash\_\-value} (char $\ast$string, {\bf Ulong} hash\_\-size)
+\item 
+{\bf Ulong} {\bf utility\_\-count\_\-0\_\-bit} ({\bf Ulong} test\_\-bit)
+\item 
+{\bf FL\_\-BOOL} {\bf utility\_\-atolo} (char $\ast$ascii, {\bf Ulong} $\ast$ulong\_\-number)
+\end{CompactItemize}
+
+
+\subsection{‰ğà}
+¥æ¡¼¥Æ¥£¥ê¥Æ¥£´Ø¿ô·²
+
+ \begin{Desc}
+\item[ìÒ: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[“ú•t: ]\par
+ 2005 / 07 / 08 initial\end{Desc}
+
+
+\subsection{ƒ\}ƒNƒ’è‹`‚Ì‰ğà}
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_0@{BIT4\_\-0}}
+\index{BIT4_0@{BIT4\_\-0}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-0\ 4}\label{flight__uty_8c_a0}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}4\char`\"{})¤ò¼¨¤¹ 0: 0000 -$>$ 4
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_1@{BIT4\_\-1}}
+\index{BIT4_1@{BIT4\_\-1}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-1\ 3}\label{flight__uty_8c_a1}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 1: 0001 -$>$ 3
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_10@{BIT4\_\-10}}
+\index{BIT4_10@{BIT4\_\-10}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-10\ 2}\label{flight__uty_8c_a10}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 10: 1010 -$>$ 2
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_11@{BIT4\_\-11}}
+\index{BIT4_11@{BIT4\_\-11}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-11\ 1}\label{flight__uty_8c_a11}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 11: 1011 -$>$ 1
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_12@{BIT4\_\-12}}
+\index{BIT4_12@{BIT4\_\-12}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-12\ 2}\label{flight__uty_8c_a12}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 12: 1100 -$>$ 2
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_13@{BIT4\_\-13}}
+\index{BIT4_13@{BIT4\_\-13}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-13\ 1}\label{flight__uty_8c_a13}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 13: 1101 -$>$ 1
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_14@{BIT4\_\-14}}
+\index{BIT4_14@{BIT4\_\-14}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-14\ 1}\label{flight__uty_8c_a14}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 14: 1110 -$>$ 1
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_15@{BIT4\_\-15}}
+\index{BIT4_15@{BIT4\_\-15}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-15\ 0}\label{flight__uty_8c_a15}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}0\char`\"{})¤ò¼¨¤¹ 15: 1111 -$>$ 0
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_2@{BIT4\_\-2}}
+\index{BIT4_2@{BIT4\_\-2}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-2\ 3}\label{flight__uty_8c_a2}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 2: 0010 -$>$ 3
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_3@{BIT4\_\-3}}
+\index{BIT4_3@{BIT4\_\-3}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-3\ 2}\label{flight__uty_8c_a3}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 3: 0011 -$>$ 2
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_4@{BIT4\_\-4}}
+\index{BIT4_4@{BIT4\_\-4}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-4\ 3}\label{flight__uty_8c_a4}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 4: 0100 -$>$ 3
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_5@{BIT4\_\-5}}
+\index{BIT4_5@{BIT4\_\-5}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-5\ 2}\label{flight__uty_8c_a5}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 5: 0101 -$>$ 2
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_6@{BIT4\_\-6}}
+\index{BIT4_6@{BIT4\_\-6}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-6\ 2}\label{flight__uty_8c_a6}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 6: 0110 -$>$ 2
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_7@{BIT4\_\-7}}
+\index{BIT4_7@{BIT4\_\-7}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-7\ 1}\label{flight__uty_8c_a7}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}1\char`\"{})¤ò¼¨¤¹ 7: 0111 -$>$ 1
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_8@{BIT4\_\-8}}
+\index{BIT4_8@{BIT4\_\-8}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-8\ 3}\label{flight__uty_8c_a8}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}3\char`\"{})¤ò¼¨¤¹ 8: 1000 -$>$ 3
+
+\index{flight_uty.c@{flight\_\-uty.c}!BIT4_9@{BIT4\_\-9}}
+\index{BIT4_9@{BIT4\_\-9}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BIT4\_\-9\ 2}\label{flight__uty_8c_a9}
+
+
+2¿Ê4bitÉ½¸½¤Ë¤ª¤±¤ë0¤Î¿ô(\char`\"{}2\char`\"{})¤ò¼¨¤¹ 9: 1001 -$>$ 2
+
+
+
+\subsection{ŠÖ”‚Ì‰ğà}
+\index{flight_uty.c@{flight\_\-uty.c}!utility_atolo@{utility\_\-atolo}}
+\index{utility_atolo@{utility\_\-atolo}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FL\_\-BOOL} utility\_\-atolo (char $\ast$ {\em ascii}, {\bf Ulong} $\ast$ {\em ulong\_\-number})}\label{flight__uty_8c_a23}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}}
+\index{utility_calc_string_hash_value@{utility\_\-calc\_\-string\_\-hash\_\-value}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} utility\_\-calc\_\-string\_\-hash\_\-value (char $\ast$ {\em string}, {\bf Ulong} {\em hash\_\-size})}\label{flight__uty_8c_a21}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_count_0_bit@{utility\_\-count\_\-0\_\-bit}}
+\index{utility_count_0_bit@{utility\_\-count\_\-0\_\-bit}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} utility\_\-count\_\-0\_\-bit ({\bf Ulong} {\em test\_\-bit})}\label{flight__uty_8c_a22}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_jump_to_char@{utility\_\-jump\_\-to\_\-char}}
+\index{utility_jump_to_char@{utility\_\-jump\_\-to\_\-char}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-jump\_\-to\_\-char (FILE $\ast$ {\em fp}, char {\em delimiter})}\label{flight__uty_8c_a19}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}}
+\index{utility_renew_parameter_with_env@{utility\_\-renew\_\-parameter\_\-with\_\-env}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-renew\_\-parameter\_\-with\_\-env (char $\ast$ {\em env}, {\bf Ulong} $\ast$ {\em parameter})}\label{flight__uty_8c_a16}
+
+
+10·å(10²¯°Ê¾å)¤¢¤ë¾ì¹ç º¸¤Î¾ò·ï¤ÏºÇ½é¤Ë'0'¤¬Æş¤Ã¤Æ¤¤¤¿¾ì¹ç ±¦¤Î¾ò·ï¤ÏºÇ½é¤Ë'0'¤¬Æş¤Ã¤Æ¤¤¤Ê¤¤¾ì¹ç \index{flight_uty.c@{flight\_\-uty.c}!utility_skip_char@{utility\_\-skip\_\-char}}
+\index{utility_skip_char@{utility\_\-skip\_\-char}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int utility\_\-skip\_\-char (FILE $\ast$ {\em fp}, char $\ast$ {\em delimiter})}\label{flight__uty_8c_a18}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_skip_sentence@{utility\_\-skip\_\-sentence}}
+\index{utility_skip_sentence@{utility\_\-skip\_\-sentence}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int utility\_\-skip\_\-sentence (FILE $\ast$ {\em fp})}\label{flight__uty_8c_a20}
+
+
+\index{flight_uty.c@{flight\_\-uty.c}!utility_token@{utility\_\-token}}
+\index{utility_token@{utility\_\-token}!flight_uty.c@{flight\_\-uty.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void utility\_\-token (FILE $\ast$ {\em fp}, char $\ast$ {\em string}, char $\ast$ {\em delimiter}, {\bf Ulong} {\em string\_\-size})}\label{flight__uty_8c_a17}
+
+

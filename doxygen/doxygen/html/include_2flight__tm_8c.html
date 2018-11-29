@@ -1,0 +1,2146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-jp">
+<title>FLIGHT: /export_home/yosimura/Flight/include/flight_tm.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.4 -->
+<div class="qindex"><a class="qindex" href="index.html">メインページ</a> | <a class="qindex" href="annotated.html">構成</a> | <a class="qindex" href="dirs.html">Directories</a> | <a class="qindex" href="files.html">ファイル一覧</a> | <a class="qindex" href="functions.html">構成メンバ</a> | <a class="qindex" href="globals.html">ファイルメンバ</a></div>
+<div class="nav">
+<a class="el" href="dir_000001.html">include</a></div>
+<h1>flight_tm.c</h1>atpgにかかわる設定 <a href="#_details">[詳細]</a>
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>構成</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structatpg__head.html">atpg_head</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structline__list.html">line_list</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structass__list.html">ass_list</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structal__list.html">al_list</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbtree.html">btree</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">バックトラックツリーのデータ構造  <a href="structbtree.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdfront.html">dfront</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dフロンティアのデータ構造  <a href="structdfront.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdfront__list.html">dfront_list</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Dフロンティアのリスト構造  <a href="structdfront__list.html#_details">[詳細]</a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjust__check__cand.html">just_check_cand</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structimp__info.html">imp_info</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjust__info.html">just_info</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structimp__result.html">imp_result</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structimp__trace.html">imp_trace</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgene__info.html">gene_info</a></td></tr>
+
+<tr><td colspan="2"><br><h2>マクロ定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a0">TM_INF</a>&nbsp;&nbsp;&nbsp;0xffffffff</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a1">TM_MAX</a>&nbsp;&nbsp;&nbsp;0xfffffffe</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a2">GENE_END</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a3">GENE_CONT</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a4">ATPG_CONT</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a5">ATPG_NOFLT</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a6">ATPG_PROPA_E</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a7">ATPG_JUSTI_S</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a8">ATPG_UNT</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a9">IMP_FLG_NOTHG</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a10">IMP_FLG_FRONT</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a11">IMP_FLG_BACK</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a12">IMP_FLG_BOTH</a>&nbsp;&nbsp;&nbsp;0x00000003</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a13">STAT_N</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a14">STAT_F</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a15">STAT_R</a>&nbsp;&nbsp;&nbsp;0x00000005</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a16">ALL_FLAG_ON</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a17">ALL_FLAG_OFF</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a18">ONE_FLAG_ON</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a19">ONE_FLAG_OFF</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a20">UNK_FLAG_ON</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a21">UNK_FLAG_OFF</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a22">OUT_PIN_NUM</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a23">IN0_PIN_NUM</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a24">IN1_PIN_NUM</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a25">IMP_KEEP</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a26">IMP_CONF</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a27">IMP_UPDA</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a28">IMP_FUSI</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a29">ASS_KEEP</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a30">ASS_CONF</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a31">DRIVE_CONT</a>&nbsp;&nbsp;&nbsp;0x00000020</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a32">DRIVE_END</a>&nbsp;&nbsp;&nbsp;0x00000040</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a33">DRIVE_IMPOS</a>&nbsp;&nbsp;&nbsp;0x00000080</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a34">DRIVE_POINT</a>&nbsp;&nbsp;&nbsp;0x00000100</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a35">JUSTI_END</a>&nbsp;&nbsp;&nbsp;0x00000200</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a36">JUSTI_KEEP</a>&nbsp;&nbsp;&nbsp;0x00000400</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a37">JUSTI_CONF</a>&nbsp;&nbsp;&nbsp;0x00000800</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a38">PROPA_END</a>&nbsp;&nbsp;&nbsp;0x00001000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a39">NET_OK</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a40">NET_NG</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a41">ASS_N_0</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a42">ASS_N_1</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a43">ASS_F_0</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a44">ASS_F_1</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a45">ASS_C_N</a>&nbsp;&nbsp;&nbsp;0x00000003</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a46">ASS_C_F</a>&nbsp;&nbsp;&nbsp;0x0000000c</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a47">ASS_R_CONF</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a48">DF_NOCHECK</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a49">DF_ROOT</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a50">DF_DEADEND</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a51">JUST_ERROR</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a52">JUST_NONE</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a53">JUST_OWN</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a54">JUST_ALL</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a55">JUST_1IN</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a56">JUST_1IN_N</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a57">JUST_IN0</a>&nbsp;&nbsp;&nbsp;0x00000020</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a58">JUST_IN1</a>&nbsp;&nbsp;&nbsp;0x00000040</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a59">JUST_IN2</a>&nbsp;&nbsp;&nbsp;0x00000080</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a60">ATPG_BACK_END</a>&nbsp;&nbsp;&nbsp;0x00000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a61">ATPG_BACK_CONT</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a62">IMP_XOR</a>&nbsp;&nbsp;&nbsp;0x0001</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a63">PRT_END</a>&nbsp;&nbsp;&nbsp;0x0000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a64">PRT_CONT</a>&nbsp;&nbsp;&nbsp;0x0001</td></tr>
+
+<tr><td colspan="2"><br><h2>型定義</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structatpg__head.html">atpg_head</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a65">ATPG_HEAD</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structline__list.html">line_list</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a66">LINE_LIST</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structass__list.html">ass_list</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a67">ASS_LIST</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structal__list.html">al_list</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a68">AL_LIST</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structbtree.html">btree</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a69">BTREE</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structdfront.html">dfront</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a70">DFRONT</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structdfront__list.html">dfront_list</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a71">DFRONT_LIST</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structjust__check__cand.html">just_check_cand</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a72">JUST_CHECK_CAND</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structimp__info.html">imp_info</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a73">IMP_INFO</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structjust__info.html">just_info</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a74">JUST_INFO</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structimp__result.html">imp_result</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a75">IMP_RESULT</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structimp__trace.html">imp_trace</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a76">IMP_TRACE</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef <a class="el" href="structgene__info.html">gene_info</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a77">GENE_INFO</a></td></tr>
+
+<tr><td colspan="2"><br><h2>列挙型</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a101">GENE_RESULT</a> { <br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a101a78">NO_RESULT</a> =  0, 
+<a class="el" href="include_2flight__tm_8c.html#a101a79">INSERT_FAIL</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a80">INSERT_PASS</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a81">LIM_BACK_END</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a101a82">PROPA_PASS</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a83">PROPA_FAIL</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a84">PROPA_FAIL_DRIVE</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a85">PROPA_FAIL_ENTER</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a101a86">PROPA_FAIL_IMP</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a87">PROPA_CONT</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a88">JUSTI_PASS</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a89">JUSTI_CONT</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a101a90">JUSTI_FAIL</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a91">JUSTI_FAIL_ENTER</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a101a92">JUSTI_FAIL_IMP</a>
+<br>
+ }</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="include_2flight__tm_8c.html#a102">F_CLASS</a> { <br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a102a93">NO_DEFINE</a> =  0, 
+<a class="el" href="include_2flight__tm_8c.html#a102a94">GENE_NO_FAULT</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a102a95">GENE_DET_A</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a102a96">GENE_DET_S</a>, 
+<br>
+&nbsp;&nbsp;<a class="el" href="include_2flight__tm_8c.html#a102a97">GENE_RED</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a102a98">GENE_UNT</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a102a99">GENE_IUN</a>, 
+<a class="el" href="include_2flight__tm_8c.html#a102a100">GENE_ABT</a>
+<br>
+ }</td></tr>
+
+</table>
+<hr><a name="_details"></a><h2>説明</h2>
+atpgにかかわる設定 
+<p>
+<dl compact><dt><b>覚え書き:</b></dt><dd><a class="el" href="flight__state_8h.html">flight_state.h</a>が必要 </dd></dl>
+<dl compact><dt><b>作者:</b></dt><dd>Masayoshi Yoshimura ( FLEETS ) </dd></dl>
+<dl compact><dt><b>日付:</b></dt><dd>2006 / 02 / 10 initialize ( renew )</dd></dl>
+<hr><h2>マクロ定義</h2>
+<a class="anchor" name="a17"></a><!-- doxytag: member="flight_tm.c::ALL_FLAG_OFF" ref="a17" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ALL_FLAG_OFF&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a16"></a><!-- doxytag: member="flight_tm.c::ALL_FLAG_ON" ref="a16" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ALL_FLAG_ON&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a46"></a><!-- doxytag: member="flight_tm.c::ASS_C_F" ref="a46" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_C_F&nbsp;&nbsp;&nbsp;0x0000000c          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a45"></a><!-- doxytag: member="flight_tm.c::ASS_C_N" ref="a45" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_C_N&nbsp;&nbsp;&nbsp;0x00000003          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a30"></a><!-- doxytag: member="flight_tm.c::ASS_CONF" ref="a30" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_CONF&nbsp;&nbsp;&nbsp;0x00000010          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a43"></a><!-- doxytag: member="flight_tm.c::ASS_F_0" ref="a43" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_F_0&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a44"></a><!-- doxytag: member="flight_tm.c::ASS_F_1" ref="a44" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_F_1&nbsp;&nbsp;&nbsp;0x00000008          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a29"></a><!-- doxytag: member="flight_tm.c::ASS_KEEP" ref="a29" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_KEEP&nbsp;&nbsp;&nbsp;0x00000008          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a41"></a><!-- doxytag: member="flight_tm.c::ASS_N_0" ref="a41" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_N_0&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a42"></a><!-- doxytag: member="flight_tm.c::ASS_N_1" ref="a42" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_N_1&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a47"></a><!-- doxytag: member="flight_tm.c::ASS_R_CONF" ref="a47" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ASS_R_CONF&nbsp;&nbsp;&nbsp;0x00000010          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a61"></a><!-- doxytag: member="flight_tm.c::ATPG_BACK_CONT" ref="a61" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_BACK_CONT&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a60"></a><!-- doxytag: member="flight_tm.c::ATPG_BACK_END" ref="a60" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_BACK_END&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a4"></a><!-- doxytag: member="flight_tm.c::ATPG_CONT" ref="a4" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_CONT&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a7"></a><!-- doxytag: member="flight_tm.c::ATPG_JUSTI_S" ref="a7" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_JUSTI_S&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a5"></a><!-- doxytag: member="flight_tm.c::ATPG_NOFLT" ref="a5" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_NOFLT&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a6"></a><!-- doxytag: member="flight_tm.c::ATPG_PROPA_E" ref="a6" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_PROPA_E&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a8"></a><!-- doxytag: member="flight_tm.c::ATPG_UNT" ref="a8" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ATPG_UNT&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a50"></a><!-- doxytag: member="flight_tm.c::DF_DEADEND" ref="a50" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DF_DEADEND&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a48"></a><!-- doxytag: member="flight_tm.c::DF_NOCHECK" ref="a48" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DF_NOCHECK&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a49"></a><!-- doxytag: member="flight_tm.c::DF_ROOT" ref="a49" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DF_ROOT&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a31"></a><!-- doxytag: member="flight_tm.c::DRIVE_CONT" ref="a31" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DRIVE_CONT&nbsp;&nbsp;&nbsp;0x00000020          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a32"></a><!-- doxytag: member="flight_tm.c::DRIVE_END" ref="a32" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DRIVE_END&nbsp;&nbsp;&nbsp;0x00000040          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a33"></a><!-- doxytag: member="flight_tm.c::DRIVE_IMPOS" ref="a33" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DRIVE_IMPOS&nbsp;&nbsp;&nbsp;0x00000080          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a34"></a><!-- doxytag: member="flight_tm.c::DRIVE_POINT" ref="a34" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define DRIVE_POINT&nbsp;&nbsp;&nbsp;0x00000100          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a3"></a><!-- doxytag: member="flight_tm.c::GENE_CONT" ref="a3" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define GENE_CONT&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a2"></a><!-- doxytag: member="flight_tm.c::GENE_END" ref="a2" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define GENE_END&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a26"></a><!-- doxytag: member="flight_tm.c::IMP_CONF" ref="a26" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_CONF&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a11"></a><!-- doxytag: member="flight_tm.c::IMP_FLG_BACK" ref="a11" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_FLG_BACK&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a12"></a><!-- doxytag: member="flight_tm.c::IMP_FLG_BOTH" ref="a12" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_FLG_BOTH&nbsp;&nbsp;&nbsp;0x00000003          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a10"></a><!-- doxytag: member="flight_tm.c::IMP_FLG_FRONT" ref="a10" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_FLG_FRONT&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a9"></a><!-- doxytag: member="flight_tm.c::IMP_FLG_NOTHG" ref="a9" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_FLG_NOTHG&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a28"></a><!-- doxytag: member="flight_tm.c::IMP_FUSI" ref="a28" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_FUSI&nbsp;&nbsp;&nbsp;0x00000008          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a25"></a><!-- doxytag: member="flight_tm.c::IMP_KEEP" ref="a25" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_KEEP&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a27"></a><!-- doxytag: member="flight_tm.c::IMP_UPDA" ref="a27" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_UPDA&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a62"></a><!-- doxytag: member="flight_tm.c::IMP_XOR" ref="a62" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IMP_XOR&nbsp;&nbsp;&nbsp;0x0001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a23"></a><!-- doxytag: member="flight_tm.c::IN0_PIN_NUM" ref="a23" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IN0_PIN_NUM&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a24"></a><!-- doxytag: member="flight_tm.c::IN1_PIN_NUM" ref="a24" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define IN1_PIN_NUM&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a55"></a><!-- doxytag: member="flight_tm.c::JUST_1IN" ref="a55" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_1IN&nbsp;&nbsp;&nbsp;0x00000008          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a56"></a><!-- doxytag: member="flight_tm.c::JUST_1IN_N" ref="a56" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_1IN_N&nbsp;&nbsp;&nbsp;0x00000010          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a54"></a><!-- doxytag: member="flight_tm.c::JUST_ALL" ref="a54" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_ALL&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a51"></a><!-- doxytag: member="flight_tm.c::JUST_ERROR" ref="a51" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_ERROR&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a57"></a><!-- doxytag: member="flight_tm.c::JUST_IN0" ref="a57" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_IN0&nbsp;&nbsp;&nbsp;0x00000020          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a58"></a><!-- doxytag: member="flight_tm.c::JUST_IN1" ref="a58" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_IN1&nbsp;&nbsp;&nbsp;0x00000040          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a59"></a><!-- doxytag: member="flight_tm.c::JUST_IN2" ref="a59" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_IN2&nbsp;&nbsp;&nbsp;0x00000080          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a52"></a><!-- doxytag: member="flight_tm.c::JUST_NONE" ref="a52" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_NONE&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a53"></a><!-- doxytag: member="flight_tm.c::JUST_OWN" ref="a53" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUST_OWN&nbsp;&nbsp;&nbsp;0x00000002          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a37"></a><!-- doxytag: member="flight_tm.c::JUSTI_CONF" ref="a37" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUSTI_CONF&nbsp;&nbsp;&nbsp;0x00000800          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a35"></a><!-- doxytag: member="flight_tm.c::JUSTI_END" ref="a35" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUSTI_END&nbsp;&nbsp;&nbsp;0x00000200          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a36"></a><!-- doxytag: member="flight_tm.c::JUSTI_KEEP" ref="a36" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define JUSTI_KEEP&nbsp;&nbsp;&nbsp;0x00000400          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a40"></a><!-- doxytag: member="flight_tm.c::NET_NG" ref="a40" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define NET_NG&nbsp;&nbsp;&nbsp;0          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a39"></a><!-- doxytag: member="flight_tm.c::NET_OK" ref="a39" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define NET_OK&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a19"></a><!-- doxytag: member="flight_tm.c::ONE_FLAG_OFF" ref="a19" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ONE_FLAG_OFF&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a18"></a><!-- doxytag: member="flight_tm.c::ONE_FLAG_ON" ref="a18" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define ONE_FLAG_ON&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a22"></a><!-- doxytag: member="flight_tm.c::OUT_PIN_NUM" ref="a22" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define OUT_PIN_NUM&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a38"></a><!-- doxytag: member="flight_tm.c::PROPA_END" ref="a38" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define PROPA_END&nbsp;&nbsp;&nbsp;0x00001000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a64"></a><!-- doxytag: member="flight_tm.c::PRT_CONT" ref="a64" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define PRT_CONT&nbsp;&nbsp;&nbsp;0x0001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a63"></a><!-- doxytag: member="flight_tm.c::PRT_END" ref="a63" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define PRT_END&nbsp;&nbsp;&nbsp;0x0000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a14"></a><!-- doxytag: member="flight_tm.c::STAT_F" ref="a14" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define STAT_F&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a13"></a><!-- doxytag: member="flight_tm.c::STAT_N" ref="a13" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define STAT_N&nbsp;&nbsp;&nbsp;0x00000004          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a15"></a><!-- doxytag: member="flight_tm.c::STAT_R" ref="a15" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define STAT_R&nbsp;&nbsp;&nbsp;0x00000005          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a0"></a><!-- doxytag: member="flight_tm.c::TM_INF" ref="a0" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TM_INF&nbsp;&nbsp;&nbsp;0xffffffff          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a1"></a><!-- doxytag: member="flight_tm.c::TM_MAX" ref="a1" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define TM_MAX&nbsp;&nbsp;&nbsp;0xfffffffe          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a21"></a><!-- doxytag: member="flight_tm.c::UNK_FLAG_OFF" ref="a21" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define UNK_FLAG_OFF&nbsp;&nbsp;&nbsp;0x00000001          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a20"></a><!-- doxytag: member="flight_tm.c::UNK_FLAG_ON" ref="a20" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">#define UNK_FLAG_ON&nbsp;&nbsp;&nbsp;0x00000000          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>型定義</h2>
+<a class="anchor" name="a68"></a><!-- doxytag: member="flight_tm.c::AL_LIST" ref="a68" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structal__list.html">al_list</a>  <a class="el" href="structal__list.html">AL_LIST</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a67"></a><!-- doxytag: member="flight_tm.c::ASS_LIST" ref="a67" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structass__list.html">ass_list</a>  <a class="el" href="structass__list.html">ASS_LIST</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a65"></a><!-- doxytag: member="flight_tm.c::ATPG_HEAD" ref="a65" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structatpg__head.html">atpg_head</a>  <a class="el" href="structatpg__head.html">ATPG_HEAD</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a69"></a><!-- doxytag: member="flight_tm.c::BTREE" ref="a69" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structbtree.html">btree</a>  <a class="el" href="structbtree.html">BTREE</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a70"></a><!-- doxytag: member="flight_tm.c::DFRONT" ref="a70" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structdfront.html">dfront</a>  <a class="el" href="structdfront.html">DFRONT</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a71"></a><!-- doxytag: member="flight_tm.c::DFRONT_LIST" ref="a71" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structdfront__list.html">dfront_list</a>  <a class="el" href="structdfront__list.html">DFRONT_LIST</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a77"></a><!-- doxytag: member="flight_tm.c::GENE_INFO" ref="a77" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structgene__info.html">gene_info</a>  <a class="el" href="structgene__info.html">GENE_INFO</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a73"></a><!-- doxytag: member="flight_tm.c::IMP_INFO" ref="a73" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structimp__info.html">imp_info</a>  <a class="el" href="structimp__info.html">IMP_INFO</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a75"></a><!-- doxytag: member="flight_tm.c::IMP_RESULT" ref="a75" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structimp__result.html">imp_result</a>  <a class="el" href="structimp__result.html">IMP_RESULT</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a76"></a><!-- doxytag: member="flight_tm.c::IMP_TRACE" ref="a76" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structimp__trace.html">imp_trace</a>  <a class="el" href="structimp__trace.html">IMP_TRACE</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a72"></a><!-- doxytag: member="flight_tm.c::JUST_CHECK_CAND" ref="a72" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structjust__check__cand.html">just_check_cand</a>  <a class="el" href="structjust__check__cand.html">JUST_CHECK_CAND</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a74"></a><!-- doxytag: member="flight_tm.c::JUST_INFO" ref="a74" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structjust__info.html">just_info</a>  <a class="el" href="structjust__info.html">JUST_INFO</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a66"></a><!-- doxytag: member="flight_tm.c::LINE_LIST" ref="a66" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">typedef struct <a class="el" href="structline__list.html">line_list</a>  <a class="el" href="structline__list.html">LINE_LIST</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>列挙型</h2>
+<a class="anchor" name="a102"></a><!-- doxytag: member="flight_tm.c::F_CLASS" ref="a102" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">enum <a class="el" href="include_2flight__tm_8c.html#a102">F_CLASS</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="a102a93"></a><!-- doxytag: member="NO_DEFINE" ref="a102a93" args="" -->NO_DEFINE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a94"></a><!-- doxytag: member="GENE_NO_FAULT" ref="a102a94" args="" -->GENE_NO_FAULT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a95"></a><!-- doxytag: member="GENE_DET_A" ref="a102a95" args="" -->GENE_DET_A</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a96"></a><!-- doxytag: member="GENE_DET_S" ref="a102a96" args="" -->GENE_DET_S</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a97"></a><!-- doxytag: member="GENE_RED" ref="a102a97" args="" -->GENE_RED</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a98"></a><!-- doxytag: member="GENE_UNT" ref="a102a98" args="" -->GENE_UNT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a99"></a><!-- doxytag: member="GENE_IUN" ref="a102a99" args="" -->GENE_IUN</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a102a100"></a><!-- doxytag: member="GENE_ABT" ref="a102a100" args="" -->GENE_ABT</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a class="anchor" name="a101"></a><!-- doxytag: member="flight_tm.c::GENE_RESULT" ref="a101" args="" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">enum <a class="el" href="include_2flight__tm_8c.html#a101">GENE_RESULT</a>          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>列挙型の値: </b></dt><dd>
+<table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" name="a101a78"></a><!-- doxytag: member="NO_RESULT" ref="a101a78" args="" -->NO_RESULT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a79"></a><!-- doxytag: member="INSERT_FAIL" ref="a101a79" args="" -->INSERT_FAIL</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a80"></a><!-- doxytag: member="INSERT_PASS" ref="a101a80" args="" -->INSERT_PASS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a81"></a><!-- doxytag: member="LIM_BACK_END" ref="a101a81" args="" -->LIM_BACK_END</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a82"></a><!-- doxytag: member="PROPA_PASS" ref="a101a82" args="" -->PROPA_PASS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a83"></a><!-- doxytag: member="PROPA_FAIL" ref="a101a83" args="" -->PROPA_FAIL</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a84"></a><!-- doxytag: member="PROPA_FAIL_DRIVE" ref="a101a84" args="" -->PROPA_FAIL_DRIVE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a85"></a><!-- doxytag: member="PROPA_FAIL_ENTER" ref="a101a85" args="" -->PROPA_FAIL_ENTER</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a86"></a><!-- doxytag: member="PROPA_FAIL_IMP" ref="a101a86" args="" -->PROPA_FAIL_IMP</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a87"></a><!-- doxytag: member="PROPA_CONT" ref="a101a87" args="" -->PROPA_CONT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a88"></a><!-- doxytag: member="JUSTI_PASS" ref="a101a88" args="" -->JUSTI_PASS</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a89"></a><!-- doxytag: member="JUSTI_CONT" ref="a101a89" args="" -->JUSTI_CONT</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a90"></a><!-- doxytag: member="JUSTI_FAIL" ref="a101a90" args="" -->JUSTI_FAIL</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a91"></a><!-- doxytag: member="JUSTI_FAIL_ENTER" ref="a101a91" args="" -->JUSTI_FAIL_ENTER</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" name="a101a92"></a><!-- doxytag: member="JUSTI_FAIL_IMP" ref="a101a92" args="" -->JUSTI_FAIL_IMP</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr size="1"><address style="align: right;"><small>FLIGHTに対してFri Feb 10 19:45:37 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.4 </small></address>
+</body>
+</html>

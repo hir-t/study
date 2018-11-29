@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_time.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- ì¬F Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ƒƒCƒ“ƒy[ƒW</a> &nbsp; <a class="qindex" href="annotated.html">\¬</a> &nbsp; <a class="qindex" href="files.html">ƒtƒ@ƒCƒ‹ˆê——</a> &nbsp; <a class="qindex" href="functions.html">\¬ƒƒ“ƒo</a> &nbsp; <a class="qindex" href="globals.html">ƒtƒ@ƒCƒ‹ƒƒ“ƒo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_time.c ‚Ì‰ğà</h1>½èÍı»ş´Ö¤Î·×Â¬¤Ë´Ø¤¹¤ë´Ø¿ô·² 
+<a href="#_details">[Ú×]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &lt;sys/resource.h&gt;</code><br>
+<code>#include &lt;sys/time.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__error_8h-source.html">flight_error.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__io_8h-source.html">flight_io.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__time_8h-source.html">flight_time.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>ƒ}ƒNƒ’è‹`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__time_8c.html#a0">TIME_CONVERT</a>(s, us)&nbsp;&nbsp;&nbsp;( (double) s + (double) us * 0.000001 )</td></tr>
+<tr><td colspan=2><br><h2>ŠÖ”</h2></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__time_8c.html#a2">utility_get_time</a> (<a class="el" href="flight__time_8h.html#a0">GET_TIME</a> *get)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¸½’ºß’¤Î’»ş’¹ï’¤ò’ÆÀ’¤ë</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__time_8c.html#a3">utility_enter_start_time</a> (<a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *operate)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’»ş’¹ï’¤ò’³«’»Ï’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__time_8c.html#a4">utility_enter_end_time</a> (<a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *operate)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’»ş’¹ï’¤ò’½ª’Î»’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__time_8c.html#a5">utility_process_time_init</a> (<a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *operate)</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¼Â’¹Ô’»ş’´Ö’¤ò’½é’´ü’²½’¤¹’¤ë</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+</table>
+<hr><a name="_details"></a><h2>‰ğà</h2>
+½èÍı»ş´Ö¤Î·×Â¬¤Ë´Ø¤¹¤ë´Ø¿ô·²
+<p>
+ <dl compact><dt><b>ìÒ: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>“ú•t: </b></dt><dd>
+ 2005 / 12 / 19 initialize</dl><hr><h2>ƒ}ƒNƒ’è‹`‚Ì‰ğà</h2>
+<a name="a0" doxytag="flight_time.c::TIME_CONVERT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define TIME_CONVERT</td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">s,         <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>us&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp;          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap>&nbsp;&nbsp;&nbsp;( (double) s + (double) us * 0.000001 )
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>ŠÖ”‚Ì‰ğà</h2>
+<a name="a4" doxytag="flight_time.c::utility_enter_end_time"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_enter_end_time </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>operate</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’»ş’¹ï’¤ò’½ª’Î»’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_time.c::utility_enter_start_time"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_enter_start_time </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>operate</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’»ş’¹ï’¤ò’³«’»Ï’»ş’´Ö’¤È’¤·’¤Æ’ÅĞ’Ï¿’¤¹’¤ë
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_time.c::utility_get_time"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_get_time </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__time_8h.html#a0">GET_TIME</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>get</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¸½’ºß’¤Î’»ş’¹ï’¤ò’ÆÀ’¤ë
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_time.c::utility_process_time_init"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_process_time_init </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight__time_8h.html#a1">PROCESS_TIME</a> *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>operate</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¼Â’¹Ô’»ş’´Ö’¤ò’½é’´ü’²½’¤¹’¤ë
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHT‚É‘Î‚µ‚ÄThu Feb 16 14:41:09 2006‚É¶¬‚³‚ê‚Ü‚µ‚½B
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

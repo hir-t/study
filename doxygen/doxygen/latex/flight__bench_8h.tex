@@ -1,0 +1,260 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-bench.h ÇÃâê‡}
+\label{flight__bench_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_bench.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-bench.h}}
+.bench I/F§À¥ÿ§π§Î¿ﬂƒÍ 
+
+
+\subsection*{.bench•’•©°º•ﬁ•√•»§À¥ÿ§π§Î•≠°º•Ô°º•…}
+\begin{CompactItemize}
+\item 
+\#define {\bf BENCH\_\-STR\_\-INPUT}\ \char`\"{}INPUT\char`\"{}
+\begin{CompactList}\small\item\em input\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-STR\_\-OUTPUT}\ \char`\"{}OUTPUT\char`\"{}
+\begin{CompactList}\small\item\em output\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-STR\_\-GATE\_\-CONECT}\ '='
+\begin{CompactList}\small\item\em •≤°º•»§Œ¿‹¬≥\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-STR\_\-COMMENT}\ '\#'
+\begin{CompactList}\small\item\em •≥•·•Û•»π‘\item\end{CompactList}\end{CompactItemize}
+\subsection*{.bench•’•©°º•ﬁ•√•»§À§™§±§Î•≤°º•»Ãæ…Ωµ≠}
+\begin{CompactItemize}
+\item 
+\#define {\bf BENCH\_\-GATE\_\-AND}\ \char`\"{}AND\char`\"{}
+\begin{CompactList}\small\item\em AND•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-NAND}\ \char`\"{}NAND\char`\"{}
+\begin{CompactList}\small\item\em NAND•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-OR}\ \char`\"{}OR\char`\"{}
+\begin{CompactList}\small\item\em OR•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-NOR}\ \char`\"{}NOR\char`\"{}
+\begin{CompactList}\small\item\em NOR•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-NOT}\ \char`\"{}NOT\char`\"{}
+\begin{CompactList}\small\item\em NOT•≤°º•» ( = INV•≤°º•» ).\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-BUF}\ \char`\"{}BUF\char`\"{}
+\begin{CompactList}\small\item\em BUFFER•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-INV}\ \char`\"{}INV\char`\"{}
+\begin{CompactList}\small\item\em INV•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-XOR}\ \char`\"{}XOR\char`\"{}
+\begin{CompactList}\small\item\em EX-OR•≤°º•».\item\end{CompactList}\item 
+\#define {\bf BENCH\_\-GATE\_\-XNOR}\ \char`\"{}XNOR\char`\"{}
+\begin{CompactList}\small\item\em EX-NOR•≤°º•».\item\end{CompactList}\end{CompactItemize}
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf BENCH\_\-NAME\_\-SIZE}\ 1024
+\begin{CompactList}\small\item\em 1§ƒ§ŒÃæ¡∞≈ˆ§Í§Œ∫«¬Á ∏ª˙øÙ\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef enum {\bf bench\_\-cell\_\-define} {\bf BENCH\_\-CELL\_\-DEFINE}
+\begin{CompactList}\small\item\em .bench ∑¡º∞§Œcell§Œ∑ø\item\end{CompactList}\item 
+typedef enum {\bf bench\_\-analyze\_\-header} {\bf BENCH\_\-ANALYZE\_\-HEADER}
+\begin{CompactList}\small\item\em .bench ∑¡º∞§Œfile•ÿ•√•¿§Œ∑ø\item\end{CompactList}\item 
+typedef enum {\bf bench\_\-analyze\_\-line\_\-end} {\bf BENCH\_\-ANALYZE\_\-LINE\_\-END}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf bench\_\-cell\_\-define} \{ {\bf BENCH\_\-CELL\_\-INPUT} =  0, 
+{\bf BENCH\_\-CELL\_\-OUTPUT}, 
+{\bf BENCH\_\-CELL\_\-UNKNOWN}
+ \}
+\item 
+enum {\bf bench\_\-analyze\_\-header} \{ {\bf BENCH\_\-COMMENT} =  1, 
+{\bf BENCH\_\-END}, 
+{\bf BENCH\_\-INPUT}, 
+{\bf BENCH\_\-OUTPUT}, 
+{\bf BENCH\_\-GATE}
+ \}
+\item 
+enum {\bf bench\_\-analyze\_\-line\_\-end} \{ {\bf BENCH\_\-LINE\_\-END} =  1, 
+{\bf BENCH\_\-LINE\_\-CONTINUE}
+ \}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+.bench I/F§À¥ÿ§π§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 07 / 07 initialize ( renew )\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_AND@{BENCH\_\-GATE\_\-AND}}
+\index{BENCH_GATE_AND@{BENCH\_\-GATE\_\-AND}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-AND\ \char`\"{}AND\char`\"{}}\label{flight__bench_8h_a4}
+
+
+AND•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_BUF@{BENCH\_\-GATE\_\-BUF}}
+\index{BENCH_GATE_BUF@{BENCH\_\-GATE\_\-BUF}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-BUF\ \char`\"{}BUF\char`\"{}}\label{flight__bench_8h_a9}
+
+
+BUFFER•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_INV@{BENCH\_\-GATE\_\-INV}}
+\index{BENCH_GATE_INV@{BENCH\_\-GATE\_\-INV}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-INV\ \char`\"{}INV\char`\"{}}\label{flight__bench_8h_a10}
+
+
+INV•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_NAND@{BENCH\_\-GATE\_\-NAND}}
+\index{BENCH_GATE_NAND@{BENCH\_\-GATE\_\-NAND}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-NAND\ \char`\"{}NAND\char`\"{}}\label{flight__bench_8h_a5}
+
+
+NAND•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_NOR@{BENCH\_\-GATE\_\-NOR}}
+\index{BENCH_GATE_NOR@{BENCH\_\-GATE\_\-NOR}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-NOR\ \char`\"{}NOR\char`\"{}}\label{flight__bench_8h_a7}
+
+
+NOR•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_NOT@{BENCH\_\-GATE\_\-NOT}}
+\index{BENCH_GATE_NOT@{BENCH\_\-GATE\_\-NOT}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-NOT\ \char`\"{}NOT\char`\"{}}\label{flight__bench_8h_a8}
+
+
+NOT•≤°º•» ( = INV•≤°º•» ).
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_OR@{BENCH\_\-GATE\_\-OR}}
+\index{BENCH_GATE_OR@{BENCH\_\-GATE\_\-OR}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-OR\ \char`\"{}OR\char`\"{}}\label{flight__bench_8h_a6}
+
+
+OR•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_XNOR@{BENCH\_\-GATE\_\-XNOR}}
+\index{BENCH_GATE_XNOR@{BENCH\_\-GATE\_\-XNOR}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-XNOR\ \char`\"{}XNOR\char`\"{}}\label{flight__bench_8h_a12}
+
+
+EX-NOR•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE_XOR@{BENCH\_\-GATE\_\-XOR}}
+\index{BENCH_GATE_XOR@{BENCH\_\-GATE\_\-XOR}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-GATE\_\-XOR\ \char`\"{}XOR\char`\"{}}\label{flight__bench_8h_a11}
+
+
+EX-OR•≤°º•».
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_NAME_SIZE@{BENCH\_\-NAME\_\-SIZE}}
+\index{BENCH_NAME_SIZE@{BENCH\_\-NAME\_\-SIZE}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-NAME\_\-SIZE\ 1024}\label{flight__bench_8h_a13}
+
+
+1§ƒ§ŒÃæ¡∞≈ˆ§Í§Œ∫«¬Á ∏ª˙øÙ
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_STR_COMMENT@{BENCH\_\-STR\_\-COMMENT}}
+\index{BENCH_STR_COMMENT@{BENCH\_\-STR\_\-COMMENT}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-STR\_\-COMMENT\ '\#'}\label{flight__bench_8h_a3}
+
+
+•≥•·•Û•»π‘
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_STR_GATE_CONECT@{BENCH\_\-STR\_\-GATE\_\-CONECT}}
+\index{BENCH_STR_GATE_CONECT@{BENCH\_\-STR\_\-GATE\_\-CONECT}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-STR\_\-GATE\_\-CONECT\ '='}\label{flight__bench_8h_a2}
+
+
+•≤°º•»§Œ¿‹¬≥
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_STR_INPUT@{BENCH\_\-STR\_\-INPUT}}
+\index{BENCH_STR_INPUT@{BENCH\_\-STR\_\-INPUT}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-STR\_\-INPUT\ \char`\"{}INPUT\char`\"{}}\label{flight__bench_8h_a0}
+
+
+input
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_STR_OUTPUT@{BENCH\_\-STR\_\-OUTPUT}}
+\index{BENCH_STR_OUTPUT@{BENCH\_\-STR\_\-OUTPUT}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BENCH\_\-STR\_\-OUTPUT\ \char`\"{}OUTPUT\char`\"{}}\label{flight__bench_8h_a1}
+
+
+output
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_ANALYZE_HEADER@{BENCH\_\-ANALYZE\_\-HEADER}}
+\index{BENCH_ANALYZE_HEADER@{BENCH\_\-ANALYZE\_\-HEADER}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf bench\_\-analyze\_\-header}  BENCH\_\-ANALYZE\_\-HEADER}\label{flight__bench_8h_a15}
+
+
+.bench ∑¡º∞§Œfile•ÿ•√•¿§Œ∑ø
+
+\index{flight_bench.h@{flight\_\-bench.h}!BENCH_ANALYZE_LINE_END@{BENCH\_\-ANALYZE\_\-LINE\_\-END}}
+\index{BENCH_ANALYZE_LINE_END@{BENCH\_\-ANALYZE\_\-LINE\_\-END}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf bench\_\-analyze\_\-line\_\-end}  BENCH\_\-ANALYZE\_\-LINE\_\-END}\label{flight__bench_8h_a16}
+
+
+@breif .bench ∑¡º∞§Œπ‘Àˆ§Œ»ΩƒÍ \index{flight_bench.h@{flight\_\-bench.h}!BENCH_CELL_DEFINE@{BENCH\_\-CELL\_\-DEFINE}}
+\index{BENCH_CELL_DEFINE@{BENCH\_\-CELL\_\-DEFINE}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf bench\_\-cell\_\-define}  BENCH\_\-CELL\_\-DEFINE}\label{flight__bench_8h_a14}
+
+
+.bench ∑¡º∞§Œcell§Œ∑ø
+
+
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_bench.h@{flight\_\-bench.h}!bench_analyze_header@{bench\_\-analyze\_\-header}}
+\index{bench_analyze_header@{bench\_\-analyze\_\-header}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum bench\_\-analyze\_\-header}\label{flight__bench_8h_a28}
+
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{BENCH_COMMENT@{BENCH\_\-COMMENT}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_COMMENT@{BENCH\_\-COMMENT}}\item[{\em 
+{\em BENCH\_\-COMMENT}\label{flight__bench_8h_a28a20}
+}]•≥•·•Û•»π‘\index{BENCH_END@{BENCH\_\-END}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_END@{BENCH\_\-END}}\item[{\em 
+{\em BENCH\_\-END}\label{flight__bench_8h_a28a21}
+}]•’•°•§•Î§ŒΩ™√º\index{BENCH_INPUT@{BENCH\_\-INPUT}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_INPUT@{BENCH\_\-INPUT}}\item[{\em 
+{\em BENCH\_\-INPUT}\label{flight__bench_8h_a28a22}
+}]≥∞…Ù∆˛Œœ•‘•Û\index{BENCH_OUTPUT@{BENCH\_\-OUTPUT}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_OUTPUT@{BENCH\_\-OUTPUT}}\item[{\em 
+{\em BENCH\_\-OUTPUT}\label{flight__bench_8h_a28a23}
+}]≥∞…ÙΩ–Œœ•‘•Û\index{BENCH_GATE@{BENCH\_\-GATE}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_GATE@{BENCH\_\-GATE}}\item[{\em 
+{\em BENCH\_\-GATE}\label{flight__bench_8h_a28a24}
+}]•≤°º•»\end{description}
+\end{Desc}
+
+\index{flight_bench.h@{flight\_\-bench.h}!bench_analyze_line_end@{bench\_\-analyze\_\-line\_\-end}}
+\index{bench_analyze_line_end@{bench\_\-analyze\_\-line\_\-end}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum bench\_\-analyze\_\-line\_\-end}\label{flight__bench_8h_a29}
+
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{BENCH_LINE_END@{BENCH\_\-LINE\_\-END}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_LINE_END@{BENCH\_\-LINE\_\-END}}\item[{\em 
+{\em BENCH\_\-LINE\_\-END}\label{flight__bench_8h_a29a25}
+}]π‘Àˆ\index{BENCH_LINE_CONTINUE@{BENCH\_\-LINE\_\-CONTINUE}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_LINE_CONTINUE@{BENCH\_\-LINE\_\-CONTINUE}}\item[{\em 
+{\em BENCH\_\-LINE\_\-CONTINUE}\label{flight__bench_8h_a29a26}
+}]π‘Àˆ§«§ §§\end{description}
+\end{Desc}
+
+\index{flight_bench.h@{flight\_\-bench.h}!bench_cell_define@{bench\_\-cell\_\-define}}
+\index{bench_cell_define@{bench\_\-cell\_\-define}!flight_bench.h@{flight\_\-bench.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum bench\_\-cell\_\-define}\label{flight__bench_8h_a27}
+
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{BENCH_CELL_INPUT@{BENCH\_\-CELL\_\-INPUT}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_CELL_INPUT@{BENCH\_\-CELL\_\-INPUT}}\item[{\em 
+{\em BENCH\_\-CELL\_\-INPUT}\label{flight__bench_8h_a27a17}
+}]input\index{BENCH_CELL_OUTPUT@{BENCH\_\-CELL\_\-OUTPUT}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_CELL_OUTPUT@{BENCH\_\-CELL\_\-OUTPUT}}\item[{\em 
+{\em BENCH\_\-CELL\_\-OUTPUT}\label{flight__bench_8h_a27a18}
+}]output\index{BENCH_CELL_UNKNOWN@{BENCH\_\-CELL\_\-UNKNOWN}!flight_bench.h@{flight\_\-bench.h}}\index{flight_bench.h@{flight\_\-bench.h}!BENCH_CELL_UNKNOWN@{BENCH\_\-CELL\_\-UNKNOWN}}\item[{\em 
+{\em BENCH\_\-CELL\_\-UNKNOWN}\label{flight__bench_8h_a27a19}
+}]§Ω§Œ¬æ\end{description}
+\end{Desc}
+

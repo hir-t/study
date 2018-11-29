@@ -1,0 +1,759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_uty.c File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/csrc/flight_uty.c ÇÃâê‡</h1>•Ê°º•∆•£•Í•∆•£¥ÿøÙ∑≤ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+<code>#include &lt;stdio.h&gt;</code><br>
+<code>#include &lt;string.h&gt;</code><br>
+<code>#include &lt;stdlib.h&gt;</code><br>
+<code>#include &lt;ctype.h&gt;</code><br>
+<code>#include "<a class="el" href="flight_8h-source.html">flight.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__uty_8h-source.html">flight_uty.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__error_8h-source.html">flight_error.h</a>"</code><br>
+<code>#include "<a class="el" href="flight__io_8h-source.html">flight_io.h</a>"</code><br>
+<table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a0">BIT4_0</a>&nbsp;&nbsp;&nbsp;4</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("4")§Úº®§π 0: 0000 -&gt; 4</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a1">BIT4_1</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 1: 0001 -&gt; 3</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a2">BIT4_2</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 2: 0010 -&gt; 3</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a3">BIT4_3</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 3: 0011 -&gt; 2</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a4">BIT4_4</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 4: 0100 -&gt; 3</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a5">BIT4_5</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 5: 0101 -&gt; 2</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a6">BIT4_6</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 6: 0110 -&gt; 2</em> <a href="#a6"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a7">BIT4_7</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 7: 0111 -&gt; 1</em> <a href="#a7"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a8">BIT4_8</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 8: 1000 -&gt; 3</em> <a href="#a8"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a9">BIT4_9</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 9: 1001 -&gt; 2</em> <a href="#a9"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a10">BIT4_10</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 10: 1010 -&gt; 2</em> <a href="#a10"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a11">BIT4_11</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 11: 1011 -&gt; 1</em> <a href="#a11"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a12">BIT4_12</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 12: 1100 -&gt; 2</em> <a href="#a12"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a13">BIT4_13</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 13: 1101 -&gt; 1</em> <a href="#a13"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a14">BIT4_14</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 14: 1110 -&gt; 1</em> <a href="#a14"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a15">BIT4_15</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("0")§Úº®§π 15: 1111 -&gt; 0</em> <a href="#a15"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>ä÷êî</h2></td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a16">utility_renew_parameter_with_env</a> (char *, <a class="el" href="flight_8h.html#a8">Ulong</a> *)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a17">utility_token</a> (FILE *fp, char *string, char *delimiter, <a class="el" href="flight_8h.html#a8">Ulong</a> string_size)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a18">utility_skip_char</a> (FILE *fp, char *delimiter)</td></tr>
+<tr><td nowrap align=right valign=top>void&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a19">utility_jump_to_char</a> (FILE *fp, char delimiter)</td></tr>
+<tr><td nowrap align=right valign=top>int&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a20">utility_skip_sentence</a> (FILE *fp)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a21">utility_calc_string_hash_value</a> (char *string, <a class="el" href="flight_8h.html#a8">Ulong</a> hash_size)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a22">utility_count_0_bit</a> (<a class="el" href="flight_8h.html#a8">Ulong</a> test_bit)</td></tr>
+<tr><td nowrap align=right valign=top><a class="el" href="flight_8h.html#a11">FL_BOOL</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__uty_8c.html#a23">utility_atolo</a> (char *ascii, <a class="el" href="flight_8h.html#a8">Ulong</a> *ulong_number)</td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+•Ê°º•∆•£•Í•∆•£¥ÿøÙ∑≤
+<p>
+ <dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2005 / 07 / 08 initial</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a0" doxytag="flight_uty.c::BIT4_0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_0&nbsp;&nbsp;&nbsp;4
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("4")§Úº®§π 0: 0000 -&gt; 4
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_uty.c::BIT4_1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_1&nbsp;&nbsp;&nbsp;3
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 1: 0001 -&gt; 3
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_uty.c::BIT4_10"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_10&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 10: 1010 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_uty.c::BIT4_11"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_11&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 11: 1011 -&gt; 1
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_uty.c::BIT4_12"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_12&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 12: 1100 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_uty.c::BIT4_13"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_13&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 13: 1101 -&gt; 1
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_uty.c::BIT4_14"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_14&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 14: 1110 -&gt; 1
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="flight_uty.c::BIT4_15"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_15&nbsp;&nbsp;&nbsp;0
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("0")§Úº®§π 15: 1111 -&gt; 0
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_uty.c::BIT4_2"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_2&nbsp;&nbsp;&nbsp;3
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 2: 0010 -&gt; 3
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_uty.c::BIT4_3"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_3&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 3: 0011 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_uty.c::BIT4_4"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_4&nbsp;&nbsp;&nbsp;3
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 4: 0100 -&gt; 3
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_uty.c::BIT4_5"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_5&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 5: 0101 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_uty.c::BIT4_6"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_6&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 6: 0110 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_uty.c::BIT4_7"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_7&nbsp;&nbsp;&nbsp;1
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("1")§Úº®§π 7: 0111 -&gt; 1
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_uty.c::BIT4_8"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_8&nbsp;&nbsp;&nbsp;3
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("3")§Úº®§π 8: 1000 -&gt; 3
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_uty.c::BIT4_9"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BIT4_9&nbsp;&nbsp;&nbsp;2
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2ø 4bit…Ω∏Ω§À§™§±§Î0§ŒøÙ("2")§Úº®§π 9: 1001 -&gt; 2
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>ä÷êîÇÃâê‡</h2>
+<a name="a23" doxytag="flight_uty.c::utility_atolo"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a11">FL_BOOL</a> utility_atolo </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>ascii</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>ulong_number</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="flight_uty.c::utility_calc_string_hash_value"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> utility_calc_string_hash_value </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>string</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>hash_size</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a22" doxytag="flight_uty.c::utility_count_0_bit"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> <a class="el" href="flight_8h.html#a8">Ulong</a> utility_count_0_bit </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top"><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>test_bit</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a19" doxytag="flight_uty.c::utility_jump_to_char"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_jump_to_char </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">FILE *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>delimiter</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="flight_uty.c::utility_renew_parameter_with_env"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_renew_parameter_with_env </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>env</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a> *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>parameter</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+10∑Â(10≤Ø∞ æÂ)§¢§ÎæÏπÁ ∫∏§ŒæÚ∑Ô§œ∫«ΩÈ§À'0'§¨∆˛§√§∆§§§øæÏπÁ ±¶§ŒæÚ∑Ô§œ∫«ΩÈ§À'0'§¨∆˛§√§∆§§§ §§æÏπÁ     </td>
+  </tr>
+</table>
+<a name="a18" doxytag="flight_uty.c::utility_skip_char"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int utility_skip_char </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">FILE *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>delimiter</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="flight_uty.c::utility_skip_sentence"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> int utility_skip_sentence </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">FILE *&nbsp;</td>
+          <td class="mdname1" valign="top" nowrap>&nbsp; <em>fp</em>          </td>
+          <td class="md" valign="top">)&nbsp;</td>
+          <td class="md" nowrap></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a17" doxytag="flight_uty.c::utility_token"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> void utility_token </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">FILE *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>fp</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>string</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap>char *&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>delimiter</em>, </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td class="md" nowrap><a class="el" href="flight_8h.html#a8">Ulong</a>&nbsp;</td>
+          <td class="mdname" nowrap>&nbsp; <em>string_size</em></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"></td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:09 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

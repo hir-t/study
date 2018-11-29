@@ -1,0 +1,263 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-fsim.c ÇÃâê‡}
+\label{flight__fsim_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_fsim.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-fsim.c}}
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-fsim.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-flist.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-compact.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf fsim\_\-ppsfp\_\-val2} ({\bf FSIM\_\-INFO} $\ast$)
+\item 
+void {\bf pattern\_\-bridge\_\-by\_\-random} (void)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+void {\bf compact\_\-get\_\-pattern\_\-with\_\-id} ({\bf CC\_\-PATTERN} $\ast$, {\bf Ulong})
+\item 
+{\bf Ulong} {\bf compact\_\-get\_\-buf\_\-size} (void)
+\item 
+{\bf COMP\_\-CHECK\_\-ALL\_\-X} {\bf compact\_\-check\_\-pattern\_\-all\_\-x} ({\bf CC\_\-PATTERN} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-logic\_\-sim\_\-val2\_\-line} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-state} ({\bf Ulong}, {\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-end\_\-state} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-enter\_\-line} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-cannot\_\-enter\_\-line} ({\bf LINE} $\ast$, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-exec\_\-line} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-not\_\-detect} ({\bf LINE} $\ast$, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-detect} ({\bf LINE} $\ast$, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-not\_\-insert} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-input\_\-pattern} ({\bf Ulong}, {\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-start} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-fsim\_\-end} (void)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-compact\_\-pattern} ({\bf Ulong} $\ast$, {\bf Ulong} $\ast$, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-n\_\-compact} (void)
+\item 
+void {\bf test\_\-line\_\-in\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-value} ({\bf Ulong}, char $\ast$)
+\item 
+void {\bf fsim} ({\bf FSIM\_\-INFO} $\ast${\bf fsim\_\-info})
+\item 
+void {\bf flight\_\-fsim\_\-random} (char $\ast$num\_\-fault\_\-sim, char $\ast$nokori)
+\item 
+void {\bf fsim\_\-initialize} (void)
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf FSIM\_\-HEAD} {\bf Fsim\_\-head}
+\item 
+char $\ast$$\ast$ {\bf Tp\_\-head}
+\item 
+{\bf EVENT\_\-LIST} $\ast$ {\bf Event\_\-list\_\-head}
+\item 
+{\bf LINE\_\-INFO} {\bf Line\_\-info}
+\item 
+{\bf LINE} $\ast$ {\bf Line\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$ {\bf Pi\_\-head}
+\item 
+{\bf LINE} $\ast$$\ast$$\ast$ {\bf Lv\_\-pi\_\-head}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+∏Œæ„•∑•ﬂ•Â•Ï°º•ø¥ÿ§π§Î¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 12 / 22 initialize\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_fsim.c@{flight\_\-fsim.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__fsim_8c_a40}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!compact_check_pattern_all_x@{compact\_\-check\_\-pattern\_\-all\_\-x}}
+\index{compact_check_pattern_all_x@{compact\_\-check\_\-pattern\_\-all\_\-x}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf COMP\_\-CHECK\_\-ALL\_\-X} compact\_\-check\_\-pattern\_\-all\_\-x ({\bf CC\_\-PATTERN} $\ast$)}\label{flight__fsim_8c_a43}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!compact_get_buf_size@{compact\_\-get\_\-buf\_\-size}}
+\index{compact_get_buf_size@{compact\_\-get\_\-buf\_\-size}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} compact\_\-get\_\-buf\_\-size (void)}\label{flight__fsim_8c_a42}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!compact_get_pattern_with_id@{compact\_\-get\_\-pattern\_\-with\_\-id}}
+\index{compact_get_pattern_with_id@{compact\_\-get\_\-pattern\_\-with\_\-id}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void compact\_\-get\_\-pattern\_\-with\_\-id ({\bf CC\_\-PATTERN} $\ast$, {\bf Ulong})}\label{flight__fsim_8c_a41}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_fsim_random@{flight\_\-fsim\_\-random}}
+\index{flight_fsim_random@{flight\_\-fsim\_\-random}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-fsim\_\-random (char $\ast$ {\em num\_\-fault\_\-sim}, char $\ast$ {\em nokori})}\label{flight__fsim_8c_a61}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_compact_pattern@{flight\_\-print\_\-mes\_\-compact\_\-pattern}}
+\index{flight_print_mes_compact_pattern@{flight\_\-print\_\-mes\_\-compact\_\-pattern}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-compact\_\-pattern ({\bf Ulong} $\ast$, {\bf Ulong} $\ast$, char $\ast$)}\label{flight__fsim_8c_a56}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_cannot_enter_line@{flight\_\-print\_\-mes\_\-fsim\_\-cannot\_\-enter\_\-line}}
+\index{flight_print_mes_fsim_cannot_enter_line@{flight\_\-print\_\-mes\_\-fsim\_\-cannot\_\-enter\_\-line}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-cannot\_\-enter\_\-line ({\bf LINE} $\ast$, {\bf Ulong})}\label{flight__fsim_8c_a48}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_detect@{flight\_\-print\_\-mes\_\-fsim\_\-detect}}
+\index{flight_print_mes_fsim_detect@{flight\_\-print\_\-mes\_\-fsim\_\-detect}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-detect ({\bf LINE} $\ast$, {\bf Ulong})}\label{flight__fsim_8c_a51}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_end@{flight\_\-print\_\-mes\_\-fsim\_\-end}}
+\index{flight_print_mes_fsim_end@{flight\_\-print\_\-mes\_\-fsim\_\-end}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-end (void)}\label{flight__fsim_8c_a55}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_end_state@{flight\_\-print\_\-mes\_\-fsim\_\-end\_\-state}}
+\index{flight_print_mes_fsim_end_state@{flight\_\-print\_\-mes\_\-fsim\_\-end\_\-state}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-end\_\-state ({\bf Ulong}, {\bf Ulong})}\label{flight__fsim_8c_a46}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_enter_line@{flight\_\-print\_\-mes\_\-fsim\_\-enter\_\-line}}
+\index{flight_print_mes_fsim_enter_line@{flight\_\-print\_\-mes\_\-fsim\_\-enter\_\-line}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-enter\_\-line ({\bf LINE} $\ast$)}\label{flight__fsim_8c_a47}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_exec_line@{flight\_\-print\_\-mes\_\-fsim\_\-exec\_\-line}}
+\index{flight_print_mes_fsim_exec_line@{flight\_\-print\_\-mes\_\-fsim\_\-exec\_\-line}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-exec\_\-line ({\bf LINE} $\ast$)}\label{flight__fsim_8c_a49}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_input_pattern@{flight\_\-print\_\-mes\_\-fsim\_\-input\_\-pattern}}
+\index{flight_print_mes_fsim_input_pattern@{flight\_\-print\_\-mes\_\-fsim\_\-input\_\-pattern}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-input\_\-pattern ({\bf Ulong}, {\bf Ulong})}\label{flight__fsim_8c_a53}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_not_detect@{flight\_\-print\_\-mes\_\-fsim\_\-not\_\-detect}}
+\index{flight_print_mes_fsim_not_detect@{flight\_\-print\_\-mes\_\-fsim\_\-not\_\-detect}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-not\_\-detect ({\bf LINE} $\ast$, {\bf Ulong})}\label{flight__fsim_8c_a50}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_not_insert@{flight\_\-print\_\-mes\_\-fsim\_\-not\_\-insert}}
+\index{flight_print_mes_fsim_not_insert@{flight\_\-print\_\-mes\_\-fsim\_\-not\_\-insert}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-not\_\-insert ({\bf LINE} $\ast$)}\label{flight__fsim_8c_a52}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_start@{flight\_\-print\_\-mes\_\-fsim\_\-start}}
+\index{flight_print_mes_fsim_start@{flight\_\-print\_\-mes\_\-fsim\_\-start}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-start (void)}\label{flight__fsim_8c_a54}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_fsim_state@{flight\_\-print\_\-mes\_\-fsim\_\-state}}
+\index{flight_print_mes_fsim_state@{flight\_\-print\_\-mes\_\-fsim\_\-state}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-fsim\_\-state ({\bf Ulong}, {\bf Ulong}, {\bf Ulong})}\label{flight__fsim_8c_a45}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_logic_sim_val2_line@{flight\_\-print\_\-mes\_\-logic\_\-sim\_\-val2\_\-line}}
+\index{flight_print_mes_logic_sim_val2_line@{flight\_\-print\_\-mes\_\-logic\_\-sim\_\-val2\_\-line}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-logic\_\-sim\_\-val2\_\-line ({\bf LINE} $\ast$)}\label{flight__fsim_8c_a44}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!flight_print_mes_n_compact@{flight\_\-print\_\-mes\_\-n\_\-compact}}
+\index{flight_print_mes_n_compact@{flight\_\-print\_\-mes\_\-n\_\-compact}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-n\_\-compact (void)}\label{flight__fsim_8c_a57}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!fsim@{fsim}}
+\index{fsim@{fsim}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fsim ({\bf FSIM\_\-INFO} $\ast$ {\em fsim\_\-info})}\label{flight__fsim_8c_a60}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!fsim_initialize@{fsim\_\-initialize}}
+\index{fsim_initialize@{fsim\_\-initialize}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fsim\_\-initialize (void)}\label{flight__fsim_8c_a62}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!fsim_ppsfp_val2@{fsim\_\-ppsfp\_\-val2}}
+\index{fsim_ppsfp_val2@{fsim\_\-ppsfp\_\-val2}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fsim\_\-ppsfp\_\-val2 ({\bf FSIM\_\-INFO} $\ast$)}\label{flight__fsim_8c_a11}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!pattern_bridge_by_random@{pattern\_\-bridge\_\-by\_\-random}}
+\index{pattern_bridge_by_random@{pattern\_\-bridge\_\-by\_\-random}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pattern\_\-bridge\_\-by\_\-random (void)}\label{flight__fsim_8c_a39}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!test_line_in_null@{test\_\-line\_\-in\_\-null}}
+\index{test_line_in_null@{test\_\-line\_\-in\_\-null}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-in\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__fsim_8c_a58}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!test_line_value@{test\_\-line\_\-value}}
+\index{test_line_value@{test\_\-line\_\-value}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-value ({\bf Ulong}, char $\ast$)}\label{flight__fsim_8c_a59}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_fsim.c@{flight\_\-fsim.c}!Event_list_head@{Event\_\-list\_\-head}}
+\index{Event_list_head@{Event\_\-list\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf EVENT\_\-LIST}$\ast$ Event\_\-list\_\-head}\label{flight__fsim_8c_a2}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Fsim_head@{Fsim\_\-head}}
+\index{Fsim_head@{Fsim\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FSIM\_\-HEAD} Fsim\_\-head}\label{flight__fsim_8c_a0}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Line_head@{Line\_\-head}}
+\index{Line_head@{Line\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$ Line\_\-head}\label{flight__fsim_8c_a4}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Line_info@{Line\_\-info}}
+\index{Line_info@{Line\_\-info}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE\_\-INFO} Line\_\-info}\label{flight__fsim_8c_a3}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Lv_pi_head@{Lv\_\-pi\_\-head}}
+\index{Lv_pi_head@{Lv\_\-pi\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$$\ast$ Lv\_\-pi\_\-head}\label{flight__fsim_8c_a6}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Pi_head@{Pi\_\-head}}
+\index{Pi_head@{Pi\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf LINE}$\ast$$\ast$ Pi\_\-head}\label{flight__fsim_8c_a5}
+
+
+\index{flight_fsim.c@{flight\_\-fsim.c}!Tp_head@{Tp\_\-head}}
+\index{Tp_head@{Tp\_\-head}!flight_fsim.c@{flight\_\-fsim.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ Tp\_\-head}\label{flight__fsim_8c_a1}
+
+

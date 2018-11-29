@@ -1,0 +1,127 @@
+******************************************************************
+                              TOPGUN                              
+                                                                  
+                All Right Reversed, Copyright                     
+           (C) Yoshimura Lab.,Kyoto Sangyo University             
+******************************************************************
+ENV : TOPGUN_LIM_BACK 100
+ENV : TOPGUN_COM_BUF_SIZE 31
+BEN bench net type analyze start
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+BEN header -> comment line
+PI
+BEN header -> input
+BEN PI info G1gat
+BEN gate table  G1gat
+BEN make new cell G1gat
+PI
+BEN header -> input
+BEN PI info G2gat
+BEN gate table  G2gat
+BEN make new cell G2gat
+PI
+BEN header -> input
+BEN PI info G3gat
+BEN gate table  G3gat
+BEN make new cell G3gat
+PI
+BEN header -> input
+BEN PI info G6gat
+BEN gate table  G6gat
+BEN make new cell G6gat
+PI
+BEN header -> input
+BEN PI info G7gat
+BEN gate table  G7gat
+BEN make new cell G7gat
+PO
+BEN header -> output
+BEN PO input gate G22gat
+BEN gate table  G22gat
+BEN make new cell G22gat
+BEN make new cell G22gat_PO
+BEN make new po gate G22gat_PO
+PO
+BEN header -> output
+BEN PO input gate G23gat
+BEN gate table  G23gat
+BEN make new cell G23gat
+BEN make new cell G23gat_PO
+BEN make new po gate G23gat_PO
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G10gat
+BEN make new cell G10gat
+BEN connect gateBEN gate table  G1gat
+BEN gate table  G3gat
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G11gat
+BEN make new cell G11gat
+BEN connect gateBEN gate table  G3gat
+BEN gate table  G6gat
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G16gat
+BEN make new cell G16gat
+BEN connect gateBEN gate table  G2gat
+BEN gate table  G11gat
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G19gat
+BEN make new cell G19gat
+BEN connect gateBEN gate table  G11gat
+BEN gate table  G7gat
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G22gat
+BEN connect gateBEN gate table  G10gat
+BEN gate table  G16gat
+GATES
+BEN header -> gate
+BEN gate type  nand
+BEN gate table  G23gat
+BEN connect gateBEN gate table  G16gat
+BEN gate table  G19gat
+BEN header -> end of file
+**************************************************************
+id_count : 13
+pi_count : 5
+po_count : 2
+??????????????????????????????????????????????????????????????
+              name   : id   :  type : in(name) : out(name)
+**************************************************************
+               G1gat :      0 :    PI : 0 : 1 G10gat                G2gat :      1 :    PI : 0 : 1 G16gat                G3gat :      2 :    PI : 0 : 2 G11gat G10gat                G6gat :      3 :    PI : 0 : 1 G11gat                G7gat :      4 :    PI : 0 : 1 G19gat               G10gat :      9 :  NAND : 2 G3gat G1gat : 1 G22gat               G11gat :     10 :  NAND : 2 G6gat G3gat : 2 G19gat G16gat               G22gat :      5 :  NAND : 2 G16gat G10gat : 1 G22gat_PO               G23gat :      7 :  NAND : 2 G19gat G16gat : 1 G23gat_PO               G16gat :     11 :  NAND : 2 G11gat G2gat : 2 G23gat G22gat               G19gat :     12 :  NAND : 2 G7gat G11gat : 1 G23gat            G22gat_PO :      6 :    PO : 1 G22gat : 0            G23gat_PO :      8 :    PO : 1 G23gat : 0 **************************************************************
+BEN insert fanout on stem G3gat
+BEN 1 G11gat
+BEN 2 G10gat
+BEN branch name G3gat_0 -> G3gat
+BEN make new cell G3gat_0
+BEN branch connect G3gat -> G11gat
+BEN branch name G3gat_1 -> G3gat
+BEN make new cell G3gat_1
+BEN branch connect G3gat -> G10gat
+BEN result of insert fanout G3gat
+BEN 1 G3gat_0 -> G11gat
+BEN 2 G3gat_1 -> G10gat

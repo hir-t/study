@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_line.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- çÏê¨ÅF Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ÉÅÉCÉìÉyÅ[ÉW</a> &nbsp; <a class="qindex" href="annotated.html">ç\ê¨</a> &nbsp; <a class="qindex" href="files.html">ÉtÉ@ÉCÉãàÍóó</a> &nbsp; <a class="qindex" href="functions.html">ç\ê¨ÉÅÉìÉo</a> &nbsp; <a class="qindex" href="globals.html">ÉtÉ@ÉCÉãÉÅÉìÉo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_line.h ÇÃâê‡</h1>øÆπÊ¿˛(Line)§À¥ÿ§π§Î¿ﬂƒÍ 
+<a href="#_details">[è⁄ç◊]</a>
+<p>
+
+<p>
+<a href="flight__line_8h-source.html">É\Å[ÉXÉRÅ[ÉhÇå©ÇÈÅB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>ç\ê¨</h2></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structline.html">line</a></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structline__info.html">line_info</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>≤Ûœ©§ŒøÆπÊ¿˛•Ï•Ÿ•Î§À¬–§π§Îæ Û§Ú§‚§ƒ</em> <a href="structline__info.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structline__list.html">line_list</a></td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>øÆπÊ¿˛(line)§«¡– ˝∏˛•Í•π•»§ÚÕ—§§§Î§ø§·§ŒπΩ¬§¬Œ</em> <a href="structline__list.html#_details">[è⁄ç◊]</a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>struct &nbsp;</td><td valign=bottom><a class="el" href="structline__stack.html">line_stack</a></td></tr>
+<tr><td colspan=2><br><h2>É}ÉNÉçíËã`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a0">LINE_SA0</a>&nbsp;&nbsp;&nbsp;0x00000001</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>1bit stack-at 0</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a1">LINE_SA1</a>&nbsp;&nbsp;&nbsp;0x00000002</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>2bit stack-at 1 */</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a2">LINE_CHK</a>&nbsp;&nbsp;&nbsp;0x00000004</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>3bit function flag 1</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a3">LINE_FLT</a>&nbsp;&nbsp;&nbsp;0x00000008</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>4bit fault flag</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a4">IMP_FRONT</a>&nbsp;&nbsp;&nbsp;0x00000010</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>5bit front implication flag</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a5">IMP_BACK</a>&nbsp;&nbsp;&nbsp;0x00000020</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>6bit back implication flag</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a6">JUSTIFY</a>&nbsp;&nbsp;&nbsp;0x00000040</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>7bit justify flag</em> <a href="#a6"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a7">JUSTIFY_F</a>&nbsp;&nbsp;&nbsp;0x00000080</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>8bit justify finish flag</em> <a href="#a7"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a8">JUSTIFY_NO</a>&nbsp;&nbsp;&nbsp;0x00000100</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>9bit justify normal state</em> <a href="#a8"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a9">JUSTIFY_FL</a>&nbsp;&nbsp;&nbsp;0x00000200</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>10bit justify failure state</em> <a href="#a9"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a10">BOUND_D</a>&nbsp;&nbsp;&nbsp;0x00000400</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>11bit bound D tree</em> <a href="#a10"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a11">FP_PATH</a>&nbsp;&nbsp;&nbsp;0x00000800</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>12bit Fault Propagation Path</em> <a href="#a11"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a12">FP_IAP</a>&nbsp;&nbsp;&nbsp;0x00001000</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>13bit Fault Propagate Potential(IAP)</em> <a href="#a12"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a13">FV_ASS</a>&nbsp;&nbsp;&nbsp;0x00002000</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>14bit Fault Values ASSignable</em> <a href="#a13"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a14">IMP_FRONT_C</a>&nbsp;&nbsp;&nbsp;0x00000018</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>4 &amp; 5 bit enter implication check</em> <a href="#a14"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a15">IMP_BACK_C</a>&nbsp;&nbsp;&nbsp;0x00000028</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>4 &amp; 6 bit enter implication check</em> <a href="#a15"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>Typedef</h2></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structline__info.html">line_info</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a16">LINE_INFO</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__line_8h.html#a39">fsim_flt</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a17">FSIM_FLT</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef enum <a class="el" href="flight__line_8h.html#a40">line_type</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a18">LINE_TYPE</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structline.html">line</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a19">LINE</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structline__stack.html">line_stack</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a20">LINE_STACK</a></td></tr>
+<tr><td nowrap align=right valign=top>typedef <a class="el" href="structline__list.html">line_list</a>&nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a21">LINE_LIST</a></td></tr>
+<tr><td colspan=2><br><h2>Enum</h2></td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a39">fsim_flt</a> { <a class="el" href="flight__line_8h.html#a39a22">FSIM_SA0</a> =  0, 
+<a class="el" href="flight__line_8h.html#a39a23">FSIM_SA1</a> =  1
+ }</td></tr>
+<tr><td nowrap align=right valign=top>enum &nbsp;</td><td valign=bottom><a class="el" href="flight__line_8h.html#a40">line_type</a> { <br>
+&nbsp;&nbsp;<a class="el" href="flight__line_8h.html#a40a24">FLIGHT_PI</a> =  0, 
+<a class="el" href="flight__line_8h.html#a40a25">FLIGHT_PO</a> =  1, 
+<a class="el" href="flight__line_8h.html#a40a26">FLIGHT_BR</a> =  2, 
+<a class="el" href="flight__line_8h.html#a40a27">FLIGHT_INV</a> =  3, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__line_8h.html#a40a28">FLIGHT_BUF</a> =  4, 
+<a class="el" href="flight__line_8h.html#a40a29">FLIGHT_AND</a> =  5, 
+<a class="el" href="flight__line_8h.html#a40a30">FLIGHT_NAND</a> =  6, 
+<a class="el" href="flight__line_8h.html#a40a31">FLIGHT_OR</a> =  7, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__line_8h.html#a40a32">FLIGHT_NOR</a> =  8, 
+<a class="el" href="flight__line_8h.html#a40a33">FLIGHT_XOR</a> =  9, 
+<a class="el" href="flight__line_8h.html#a40a34">FLIGHT_XNOR</a> =  10, 
+<a class="el" href="flight__line_8h.html#a40a35">FLIGHT_BLKI</a> =  11, 
+<br>
+&nbsp;&nbsp;<a class="el" href="flight__line_8h.html#a40a36">FLIGHT_BLKO</a> =  12, 
+<a class="el" href="flight__line_8h.html#a40a37">FLIGHT_UNK</a> =  13, 
+<a class="el" href="flight__line_8h.html#a40a38">FLIGHT_NUM_PRIM</a>
+<br>
+ }</td></tr>
+</table>
+<hr><a name="_details"></a><h2>âê‡</h2>
+øÆπÊ¿˛(Line)§À¥ÿ§π§Î¿ﬂƒÍ
+<p>
+ <dl compact><dt><b>äoÇ¶èëÇ´: </b></dt><dd>
+ <a class="el" href="flight__state_8h.html">flight_state.h</a>§¨…¨Õ◊</dl><dl compact><dt><b>çÏé“: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>ì˙ït: </b></dt><dd>
+ 2006 / 02 / 10 initialize ( renew )</dl><hr><h2>É}ÉNÉçíËã`ÇÃâê‡</h2>
+<a name="a10" doxytag="flight_line.h::BOUND_D"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define BOUND_D&nbsp;&nbsp;&nbsp;0x00000400
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+11bit bound D tree
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_line.h::FP_IAP"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FP_IAP&nbsp;&nbsp;&nbsp;0x00001000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+13bit Fault Propagate Potential(IAP)
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_line.h::FP_PATH"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FP_PATH&nbsp;&nbsp;&nbsp;0x00000800
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+12bit Fault Propagation Path
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_line.h::FV_ASS"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FV_ASS&nbsp;&nbsp;&nbsp;0x00002000
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+14bit Fault Values ASSignable
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_line.h::IMP_BACK"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define IMP_BACK&nbsp;&nbsp;&nbsp;0x00000020
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+6bit back implication flag
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a15" doxytag="flight_line.h::IMP_BACK_C"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define IMP_BACK_C&nbsp;&nbsp;&nbsp;0x00000028
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+4 &amp; 6 bit enter implication check
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_line.h::IMP_FRONT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define IMP_FRONT&nbsp;&nbsp;&nbsp;0x00000010
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+5bit front implication flag
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_line.h::IMP_FRONT_C"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define IMP_FRONT_C&nbsp;&nbsp;&nbsp;0x00000018
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+4 &amp; 5 bit enter implication check
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_line.h::JUSTIFY"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define JUSTIFY&nbsp;&nbsp;&nbsp;0x00000040
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+7bit justify flag
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_line.h::JUSTIFY_F"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define JUSTIFY_F&nbsp;&nbsp;&nbsp;0x00000080
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+8bit justify finish flag
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_line.h::JUSTIFY_FL"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define JUSTIFY_FL&nbsp;&nbsp;&nbsp;0x00000200
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+10bit justify failure state
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_line.h::JUSTIFY_NO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define JUSTIFY_NO&nbsp;&nbsp;&nbsp;0x00000100
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+9bit justify normal state
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_line.h::LINE_CHK"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define LINE_CHK&nbsp;&nbsp;&nbsp;0x00000004
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+3bit function flag 1
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_line.h::LINE_FLT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define LINE_FLT&nbsp;&nbsp;&nbsp;0x00000008
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+4bit fault flag
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_line.h::LINE_SA0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define LINE_SA0&nbsp;&nbsp;&nbsp;0x00000001
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+1bit stack-at 0
+<p>
+LINE-&gt;flagÕ—§Œdefine     </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_line.h::LINE_SA1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define LINE_SA1&nbsp;&nbsp;&nbsp;0x00000002
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+2bit stack-at 1 */
+<p>
+    </td>
+  </tr>
+</table>
+<hr><h2>Typedef ÇÃâê‡</h2>
+<a name="a17" doxytag="flight_line.h::FSIM_FLT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__line_8h.html#a39">fsim_flt</a>  FSIM_FLT
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+line-&gt;flist[]§Œ≈∫ª˙§»§∑§∆Õ—§§§Î     </td>
+  </tr>
+</table>
+<a name="a19" doxytag="flight_line.h::LINE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structline.html">line</a>  LINE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a16" doxytag="flight_line.h::LINE_INFO"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structline__info.html">line_info</a>  LINE_INFO
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a21" doxytag="flight_line.h::LINE_LIST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structline__list.html">line_list</a>  LINE_LIST
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a20" doxytag="flight_line.h::LINE_STACK"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef struct <a class="el" href="structline__stack.html">line_stack</a>  LINE_STACK
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a18" doxytag="flight_line.h::LINE_TYPE"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> typedef enum <a class="el" href="flight__line_8h.html#a40">line_type</a>  LINE_TYPE
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+line-&gt;type§«Õ—§§§ÎøÆπÊ¿˛§Œ•≤°º•»∑ø     </td>
+  </tr>
+</table>
+<hr><h2>Enum ÇÃâê‡</h2>
+<a name="a39" doxytag="flight_line.h::fsim_flt"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum fsim_flt
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a39a22" doxytag="FSIM_SA0"></a><em>FSIM_SA0</em></em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign=top><em><a name="a39a23" doxytag="FSIM_SA1"></a><em>FSIM_SA1</em></em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<a name="a40" doxytag="flight_line.h::line_type"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> enum line_type
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+<dl compact><dt><b>Enum íl: </b></dt><dd>
+<table border=0 cellspacing=2 cellpadding=0>
+<tr><td valign=top><em><a name="a40a24" doxytag="FLIGHT_PI"></a><em>FLIGHT_PI</em></em>&nbsp;</td><td>
+≥∞…Ù∆˛Œœ</td></tr>
+<tr><td valign=top><em><a name="a40a25" doxytag="FLIGHT_PO"></a><em>FLIGHT_PO</em></em>&nbsp;</td><td>
+≥∞…ÙΩ–Œœ</td></tr>
+<tr><td valign=top><em><a name="a40a26" doxytag="FLIGHT_BR"></a><em>FLIGHT_BR</em></em>&nbsp;</td><td>
+•’•°•Û•¢•¶•»•÷•È•Û•¡</td></tr>
+<tr><td valign=top><em><a name="a40a27" doxytag="FLIGHT_INV"></a><em>FLIGHT_INV</em></em>&nbsp;</td><td>
+•§•Û•–°º•ø</td></tr>
+<tr><td valign=top><em><a name="a40a28" doxytag="FLIGHT_BUF"></a><em>FLIGHT_BUF</em></em>&nbsp;</td><td>
+•–•√•’•°</td></tr>
+<tr><td valign=top><em><a name="a40a29" doxytag="FLIGHT_AND"></a><em>FLIGHT_AND</em></em>&nbsp;</td><td>
+•¢•Û•…</td></tr>
+<tr><td valign=top><em><a name="a40a30" doxytag="FLIGHT_NAND"></a><em>FLIGHT_NAND</em></em>&nbsp;</td><td>
+• •Û•…</td></tr>
+<tr><td valign=top><em><a name="a40a31" doxytag="FLIGHT_OR"></a><em>FLIGHT_OR</em></em>&nbsp;</td><td>
+•™•¢</td></tr>
+<tr><td valign=top><em><a name="a40a32" doxytag="FLIGHT_NOR"></a><em>FLIGHT_NOR</em></em>&nbsp;</td><td>
+•Œ•¢</td></tr>
+<tr><td valign=top><em><a name="a40a33" doxytag="FLIGHT_XOR"></a><em>FLIGHT_XOR</em></em>&nbsp;</td><td>
+•§•Ø•Î°º•∑•÷•™•¢</td></tr>
+<tr><td valign=top><em><a name="a40a34" doxytag="FLIGHT_XNOR"></a><em>FLIGHT_XNOR</em></em>&nbsp;</td><td>
+•§•Ø•Î°º•∑•÷•Œ•¢</td></tr>
+<tr><td valign=top><em><a name="a40a35" doxytag="FLIGHT_BLKI"></a><em>FLIGHT_BLKI</em></em>&nbsp;</td><td>
+…‘ƒÍ∆˛Œœ</td></tr>
+<tr><td valign=top><em><a name="a40a36" doxytag="FLIGHT_BLKO"></a><em>FLIGHT_BLKO</em></em>&nbsp;</td><td>
+…‘ƒÍΩ–Œœ</td></tr>
+<tr><td valign=top><em><a name="a40a37" doxytag="FLIGHT_UNK"></a><em>FLIGHT_UNK</em></em>&nbsp;</td><td>
+Ã§≥ŒƒÍ∑ø</td></tr>
+<tr><td valign=top><em><a name="a40a38" doxytag="FLIGHT_NUM_PRIM"></a><em>FLIGHT_NUM_PRIM</em></em>&nbsp;</td><td>
+∑ø§ŒøÙ</td></tr>
+</table>
+</dl>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHTÇ…ëŒÇµÇƒThu Feb 16 14:41:10 2006Ç…ê∂ê¨Ç≥ÇÍÇ‹ÇµÇΩÅB
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

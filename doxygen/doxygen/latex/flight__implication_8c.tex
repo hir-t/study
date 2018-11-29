@@ -1,0 +1,512 @@
+\section{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-implication.c ÇÃâê‡}
+\label{flight__implication_8c}\index{/cygdrive/c/home/yosimura/Flight/csrc/flight_implication.c@{/cygdrive/c/home/yosimura/Flight/csrc/flight\_\-implication.c}}
+¥ﬁ∞’¡‡∫Ó§À¥ÿ§π§Î¥ÿøÙ∑≤ 
+
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include \char`\"{}flight.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-state.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-line.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-atpg.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-time.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-memory.h\char`\"{}}\par
+{\tt \#include \char`\"{}flight\_\-error.h\char`\"{}}\par
+\subsection*{ä÷êî}
+\begin{CompactItemize}
+\item 
+void {\bf implication\_\-init} (void)
+\item 
+int {\bf atpg\_\-check\_\-state9\_\-n\_\-f} ({\bf STATE\_\-9})
+\item 
+void {\bf atpg\_\-enter\_\-implication\_\-list} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+void {\bf atpg\_\-enter\_\-implication\_\-list\_\-input} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})
+\item 
+void {\bf atpg\_\-enter\_\-implication\_\-list\_\-output} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+{\bf Ulong} {\bf atpg\_\-imp\_\-make\_\-input\_\-pin\_\-number} ({\bf Ulong})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-invert\_\-state3} ({\bf STATE\_\-3})
+\item 
+{\bf Ulong} {\bf atpg\_\-implication\_\-pin\_\-num\_\-2\_\-pin\_\-id} ({\bf Ulong})
+\item 
+{\bf Ulong} {\bf atpg\_\-implication\_\-pin\_\-id\_\-2\_\-pin\_\-num} ({\bf Ulong})
+\item 
+void {\bf atpg\_\-update\_\-state} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+void {\bf atpg\_\-enter\_\-imp\_\-trace} ({\bf LINE} $\ast$, {\bf Uint})
+\item 
+{\bf STATE\_\-9} {\bf atpg\_\-make\_\-state} ({\bf STATE\_\-3}, {\bf Uint})
+\item 
+{\bf IMP\_\-INFO} $\ast$ {\bf atpg\_\-select\_\-implication} (void)
+\item 
+{\bf IMP\_\-INFO} $\ast$ {\bf atpg\_\-make\_\-imp\_\-info} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})
+\item 
+{\bf Uint} {\bf atpg\_\-reverse\_\-condition} ({\bf Uint})
+\item 
+void {\bf implication\_\-update\_\-input} ({\bf LINE} $\ast$, {\bf Ulong}, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+void {\bf implication\_\-update\_\-output} ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})
+\item 
+int {\bf implication\_\-pi} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-one\_\-input} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-inv} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-and} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-nand} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-or} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-nor} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+int {\bf implication\_\-blk} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-keep} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-conflict} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-out\_\-state0} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-out\_\-state1} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-out\_\-state\-U} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in0\_\-state0} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in0\_\-state1} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in0\_\-state\-U} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in1\_\-state0} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in1\_\-state1} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-in1\_\-state\-U} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-ino\_\-state0} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-ino\_\-state1} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void {\bf implication\_\-ino\_\-state\-U} ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3} ({\bf STATE\_\-9})
+\item 
+{\bf STATE\_\-3} {\bf atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3} ({\bf STATE\_\-9}, {\bf Uint})
+\item 
+void {\bf test\_\-line\_\-null} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-line\_\-type} ({\bf LINE} $\ast$, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-n\_\-f} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-state\_\-normal} ({\bf STATE\_\-9}, char $\ast$)
+\item 
+void {\bf test\_\-state3} ({\bf STATE\_\-3}, char $\ast$)
+\item 
+void {\bf test\_\-condition} ({\bf Uint}, char $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes} (int, int)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-id\_\-type\_\-stat} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-result\_\-X} ({\bf Ulong})
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-state9} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-info} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-stat} ({\bf LINE} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-imp\_\-info\_\-new} ({\bf IMP\_\-INFO} $\ast$)
+\item 
+void {\bf flight\_\-print\_\-mes\_\-gate\_\-state9\_\-new} ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Ulong}, {\bf Ulong})
+\item 
+int {\bf implication2} (void)
+\item 
+{\bf Ulong} {\bf atpg\_\-get\_\-imp\_\-pin\_\-id} ({\bf LINE} $\ast${\bf line})
+\end{CompactItemize}
+\subsection*{ïœêî}
+\begin{CompactItemize}
+\item 
+{\bf GENE\_\-HEAD} {\bf Gene\_\-head}
+\item 
+int($\ast$ {\bf Switch\_\-implication} [FLIGHT\_\-NUM\_\-PRIM])({\bf IMP\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xor\_\-implication\_\-out0} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xor\_\-implication\_\-out1} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xor\_\-implication\_\-in0} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xor\_\-implication\_\-in1} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xnor\_\-implication\_\-out0} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xnor\_\-implication\_\-out1} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xnor\_\-implication\_\-in0} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\item 
+void($\ast$ {\bf Xnor\_\-implication\_\-in1} [4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+¥ﬁ∞’¡‡∫Ó§À¥ÿ§π§Î¥ÿøÙ∑≤
+
+ \begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2005 / 10 / 05 initialize ( renew )\end{Desc}
+
+
+\subsection{ä÷êîÇÃâê‡}
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_check_state9_n_f@{atpg\_\-check\_\-state9\_\-n\_\-f}}
+\index{atpg_check_state9_n_f@{atpg\_\-check\_\-state9\_\-n\_\-f}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atpg\_\-check\_\-state9\_\-n\_\-f ({\bf STATE\_\-9})}\label{flight__implication_8c_a11}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}}
+\index{atpg_enter_imp_trace@{atpg\_\-enter\_\-imp\_\-trace}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-imp\_\-trace ({\bf LINE} $\ast$, {\bf Uint})}\label{flight__implication_8c_a20}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_enter_implication_list@{atpg\_\-enter\_\-implication\_\-list}}
+\index{atpg_enter_implication_list@{atpg\_\-enter\_\-implication\_\-list}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-implication\_\-list ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a12}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_enter_implication_list_input@{atpg\_\-enter\_\-implication\_\-list\_\-input}}
+\index{atpg_enter_implication_list_input@{atpg\_\-enter\_\-implication\_\-list\_\-input}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-implication\_\-list\_\-input ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})}\label{flight__implication_8c_a13}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_enter_implication_list_output@{atpg\_\-enter\_\-implication\_\-list\_\-output}}
+\index{atpg_enter_implication_list_output@{atpg\_\-enter\_\-implication\_\-list\_\-output}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-enter\_\-implication\_\-list\_\-output ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__implication_8c_a14}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_get_imp_pin_id@{atpg\_\-get\_\-imp\_\-pin\_\-id}}
+\index{atpg_get_imp_pin_id@{atpg\_\-get\_\-imp\_\-pin\_\-id}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-get\_\-imp\_\-pin\_\-id ({\bf LINE} $\ast$ {\em line})}\label{flight__implication_8c_a67}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}}
+\index{atpg_get_state9_2_failure_state3@{atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-failure\_\-state3 ({\bf STATE\_\-9})}\label{flight__implication_8c_a50}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}}
+\index{atpg_get_state9_2_normal_state3@{atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-2\_\-normal\_\-state3 ({\bf STATE\_\-9})}\label{flight__implication_8c_a49}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}}
+\index{atpg_get_state9_with_condition_2_state3@{atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-get\_\-state9\_\-with\_\-condition\_\-2\_\-state3 ({\bf STATE\_\-9}, {\bf Uint})}\label{flight__implication_8c_a51}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_imp_make_input_pin_number@{atpg\_\-imp\_\-make\_\-input\_\-pin\_\-number}}
+\index{atpg_imp_make_input_pin_number@{atpg\_\-imp\_\-make\_\-input\_\-pin\_\-number}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-imp\_\-make\_\-input\_\-pin\_\-number ({\bf Ulong})}\label{flight__implication_8c_a15}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_implication_pin_id_2_pin_num@{atpg\_\-implication\_\-pin\_\-id\_\-2\_\-pin\_\-num}}
+\index{atpg_implication_pin_id_2_pin_num@{atpg\_\-implication\_\-pin\_\-id\_\-2\_\-pin\_\-num}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-implication\_\-pin\_\-id\_\-2\_\-pin\_\-num ({\bf Ulong})}\label{flight__implication_8c_a18}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_implication_pin_num_2_pin_id@{atpg\_\-implication\_\-pin\_\-num\_\-2\_\-pin\_\-id}}
+\index{atpg_implication_pin_num_2_pin_id@{atpg\_\-implication\_\-pin\_\-num\_\-2\_\-pin\_\-id}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Ulong} atpg\_\-implication\_\-pin\_\-num\_\-2\_\-pin\_\-id ({\bf Ulong})}\label{flight__implication_8c_a17}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_invert_state3@{atpg\_\-invert\_\-state3}}
+\index{atpg_invert_state3@{atpg\_\-invert\_\-state3}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-3} atpg\_\-invert\_\-state3 ({\bf STATE\_\-3})}\label{flight__implication_8c_a16}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_make_imp_info@{atpg\_\-make\_\-imp\_\-info}}
+\index{atpg_make_imp_info@{atpg\_\-make\_\-imp\_\-info}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf IMP\_\-INFO} $\ast$ atpg\_\-make\_\-imp\_\-info ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint}, {\bf Ulong})}\label{flight__implication_8c_a23}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_make_state@{atpg\_\-make\_\-state}}
+\index{atpg_make_state@{atpg\_\-make\_\-state}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf STATE\_\-9} atpg\_\-make\_\-state ({\bf STATE\_\-3}, {\bf Uint})}\label{flight__implication_8c_a21}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_reverse_condition@{atpg\_\-reverse\_\-condition}}
+\index{atpg_reverse_condition@{atpg\_\-reverse\_\-condition}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint} atpg\_\-reverse\_\-condition ({\bf Uint})}\label{flight__implication_8c_a24}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_select_implication@{atpg\_\-select\_\-implication}}
+\index{atpg_select_implication@{atpg\_\-select\_\-implication}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf IMP\_\-INFO} $\ast$ atpg\_\-select\_\-implication (void)}\label{flight__implication_8c_a22}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!atpg_update_state@{atpg\_\-update\_\-state}}
+\index{atpg_update_state@{atpg\_\-update\_\-state}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void atpg\_\-update\_\-state ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__implication_8c_a19}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes@{flight\_\-print\_\-mes}}
+\index{flight_print_mes@{flight\_\-print\_\-mes}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes (int, int)}\label{flight__implication_8c_a58}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_gate_info@{flight\_\-print\_\-mes\_\-gate\_\-info}}
+\index{flight_print_mes_gate_info@{flight\_\-print\_\-mes\_\-gate\_\-info}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-info ({\bf LINE} $\ast$)}\label{flight__implication_8c_a62}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_gate_stat@{flight\_\-print\_\-mes\_\-gate\_\-stat}}
+\index{flight_print_mes_gate_stat@{flight\_\-print\_\-mes\_\-gate\_\-stat}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-stat ({\bf LINE} $\ast$)}\label{flight__implication_8c_a63}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_gate_state9@{flight\_\-print\_\-mes\_\-gate\_\-state9}}
+\index{flight_print_mes_gate_state9@{flight\_\-print\_\-mes\_\-gate\_\-state9}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-state9 ({\bf LINE} $\ast$)}\label{flight__implication_8c_a61}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_gate_state9_new@{flight\_\-print\_\-mes\_\-gate\_\-state9\_\-new}}
+\index{flight_print_mes_gate_state9_new@{flight\_\-print\_\-mes\_\-gate\_\-state9\_\-new}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-gate\_\-state9\_\-new ({\bf LINE} $\ast$, {\bf Ulong}, {\bf Ulong}, {\bf Ulong})}\label{flight__implication_8c_a65}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_id_type_stat@{flight\_\-print\_\-mes\_\-id\_\-type\_\-stat}}
+\index{flight_print_mes_id_type_stat@{flight\_\-print\_\-mes\_\-id\_\-type\_\-stat}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-id\_\-type\_\-stat ({\bf LINE} $\ast$)}\label{flight__implication_8c_a59}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_imp_info_new@{flight\_\-print\_\-mes\_\-imp\_\-info\_\-new}}
+\index{flight_print_mes_imp_info_new@{flight\_\-print\_\-mes\_\-imp\_\-info\_\-new}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-imp\_\-info\_\-new ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a64}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!flight_print_mes_result_X@{flight\_\-print\_\-mes\_\-result\_\-X}}
+\index{flight_print_mes_result_X@{flight\_\-print\_\-mes\_\-result\_\-X}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void flight\_\-print\_\-mes\_\-result\_\-X ({\bf Ulong})}\label{flight__implication_8c_a60}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication2@{implication2}}
+\index{implication2@{implication2}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication2 (void)}\label{flight__implication_8c_a66}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_and@{implication\_\-and}}
+\index{implication_and@{implication\_\-and}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-and ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a30}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_blk@{implication\_\-blk}}
+\index{implication_blk@{implication\_\-blk}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-blk ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a34}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_conflict@{implication\_\-conflict}}
+\index{implication_conflict@{implication\_\-conflict}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-conflict ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a36}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in0_state0@{implication\_\-in0\_\-state0}}
+\index{implication_in0_state0@{implication\_\-in0\_\-state0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in0\_\-state0 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a40}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in0_state1@{implication\_\-in0\_\-state1}}
+\index{implication_in0_state1@{implication\_\-in0\_\-state1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in0\_\-state1 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a41}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in0_stateU@{implication\_\-in0\_\-stateU}}
+\index{implication_in0_stateU@{implication\_\-in0\_\-stateU}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in0\_\-state\-U ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a42}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in1_state0@{implication\_\-in1\_\-state0}}
+\index{implication_in1_state0@{implication\_\-in1\_\-state0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in1\_\-state0 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a43}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in1_state1@{implication\_\-in1\_\-state1}}
+\index{implication_in1_state1@{implication\_\-in1\_\-state1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in1\_\-state1 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a44}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_in1_stateU@{implication\_\-in1\_\-stateU}}
+\index{implication_in1_stateU@{implication\_\-in1\_\-stateU}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-in1\_\-state\-U ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a45}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_init@{implication\_\-init}}
+\index{implication_init@{implication\_\-init}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-init (void)}\label{flight__implication_8c_a10}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_ino_state0@{implication\_\-ino\_\-state0}}
+\index{implication_ino_state0@{implication\_\-ino\_\-state0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-ino\_\-state0 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a46}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_ino_state1@{implication\_\-ino\_\-state1}}
+\index{implication_ino_state1@{implication\_\-ino\_\-state1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-ino\_\-state1 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a47}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_ino_stateU@{implication\_\-ino\_\-stateU}}
+\index{implication_ino_stateU@{implication\_\-ino\_\-stateU}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-ino\_\-state\-U ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a48}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_inv@{implication\_\-inv}}
+\index{implication_inv@{implication\_\-inv}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-inv ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a29}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_keep@{implication\_\-keep}}
+\index{implication_keep@{implication\_\-keep}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-keep ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a35}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_nand@{implication\_\-nand}}
+\index{implication_nand@{implication\_\-nand}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-nand ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a31}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_nor@{implication\_\-nor}}
+\index{implication_nor@{implication\_\-nor}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-nor ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a33}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_one_input@{implication\_\-one\_\-input}}
+\index{implication_one_input@{implication\_\-one\_\-input}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-one\_\-input ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a28}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_or@{implication\_\-or}}
+\index{implication_or@{implication\_\-or}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-or ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a32}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_out_state0@{implication\_\-out\_\-state0}}
+\index{implication_out_state0@{implication\_\-out\_\-state0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-out\_\-state0 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a37}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_out_state1@{implication\_\-out\_\-state1}}
+\index{implication_out_state1@{implication\_\-out\_\-state1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-out\_\-state1 ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a38}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_out_stateU@{implication\_\-out\_\-stateU}}
+\index{implication_out_stateU@{implication\_\-out\_\-stateU}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-out\_\-state\-U ({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a39}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_pi@{implication\_\-pi}}
+\index{implication_pi@{implication\_\-pi}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int implication\_\-pi ({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a27}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_update_input@{implication\_\-update\_\-input}}
+\index{implication_update_input@{implication\_\-update\_\-input}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-update\_\-input ({\bf LINE} $\ast$, {\bf Ulong}, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__implication_8c_a25}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!implication_update_output@{implication\_\-update\_\-output}}
+\index{implication_update_output@{implication\_\-update\_\-output}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void implication\_\-update\_\-output ({\bf LINE} $\ast$, {\bf STATE\_\-3}, {\bf Uint})}\label{flight__implication_8c_a26}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_condition@{test\_\-condition}}
+\index{test_condition@{test\_\-condition}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-condition ({\bf Uint}, char $\ast$)}\label{flight__implication_8c_a57}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_line_null@{test\_\-line\_\-null}}
+\index{test_line_null@{test\_\-line\_\-null}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-null ({\bf LINE} $\ast$, char $\ast$)}\label{flight__implication_8c_a52}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_line_type@{test\_\-line\_\-type}}
+\index{test_line_type@{test\_\-line\_\-type}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-line\_\-type ({\bf LINE} $\ast$, char $\ast$)}\label{flight__implication_8c_a53}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_state3@{test\_\-state3}}
+\index{test_state3@{test\_\-state3}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state3 ({\bf STATE\_\-3}, char $\ast$)}\label{flight__implication_8c_a56}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_state_n_f@{test\_\-state\_\-n\_\-f}}
+\index{test_state_n_f@{test\_\-state\_\-n\_\-f}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-n\_\-f ({\bf STATE\_\-9}, char $\ast$)}\label{flight__implication_8c_a54}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!test_state_normal@{test\_\-state\_\-normal}}
+\index{test_state_normal@{test\_\-state\_\-normal}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void test\_\-state\_\-normal ({\bf STATE\_\-9}, char $\ast$)}\label{flight__implication_8c_a55}
+
+
+
+
+\subsection{ïœêîÇÃâê‡}
+\index{flight_implication.c@{flight\_\-implication.c}!Gene_head@{Gene\_\-head}}
+\index{Gene_head@{Gene\_\-head}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf GENE\_\-HEAD} Gene\_\-head}\label{flight__implication_8c_a0}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Switch_implication@{Switch\_\-implication}}
+\index{Switch_implication@{Switch\_\-implication}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int($\ast$  Switch\_\-implication[FLIGHT\_\-NUM\_\-PRIM])({\bf IMP\_\-INFO} $\ast$)}\label{flight__implication_8c_a1}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xnor_implication_in0@{Xnor\_\-implication\_\-in0}}
+\index{Xnor_implication_in0@{Xnor\_\-implication\_\-in0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xnor\_\-implication\_\-in0[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a8}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xnor_implication_in1@{Xnor\_\-implication\_\-in1}}
+\index{Xnor_implication_in1@{Xnor\_\-implication\_\-in1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xnor\_\-implication\_\-in1[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a9}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xnor_implication_out0@{Xnor\_\-implication\_\-out0}}
+\index{Xnor_implication_out0@{Xnor\_\-implication\_\-out0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xnor\_\-implication\_\-out0[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a6}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xnor_implication_out1@{Xnor\_\-implication\_\-out1}}
+\index{Xnor_implication_out1@{Xnor\_\-implication\_\-out1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xnor\_\-implication\_\-out1[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a7}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xor_implication_in0@{Xor\_\-implication\_\-in0}}
+\index{Xor_implication_in0@{Xor\_\-implication\_\-in0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xor\_\-implication\_\-in0[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a4}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xor_implication_in1@{Xor\_\-implication\_\-in1}}
+\index{Xor_implication_in1@{Xor\_\-implication\_\-in1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xor\_\-implication\_\-in1[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a5}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xor_implication_out0@{Xor\_\-implication\_\-out0}}
+\index{Xor_implication_out0@{Xor\_\-implication\_\-out0}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xor\_\-implication\_\-out0[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a2}
+
+
+\index{flight_implication.c@{flight\_\-implication.c}!Xor_implication_out1@{Xor\_\-implication\_\-out1}}
+\index{Xor_implication_out1@{Xor\_\-implication\_\-out1}!flight_implication.c@{flight\_\-implication.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$  Xor\_\-implication\_\-out1[4][4])({\bf IMP\_\-RESULT\_\-INFO} $\ast$)}\label{flight__implication_8c_a3}
+
+

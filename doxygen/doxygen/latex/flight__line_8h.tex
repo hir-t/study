@@ -1,0 +1,311 @@
+\section{/cygdrive/c/home/yosimura/Flight/include/flight\_\-line.h ÇÃâê‡}
+\label{flight__line_8h}\index{/cygdrive/c/home/yosimura/Flight/include/flight_line.h@{/cygdrive/c/home/yosimura/Flight/include/flight\_\-line.h}}
+øÆπÊ¿˛(Line)§À¥ÿ§π§Î¿ﬂƒÍ 
+
+
+\subsection*{ç$\backslash$ê¨}
+\begin{CompactItemize}
+\item 
+struct {\bf line}
+\item 
+struct {\bf line\_\-info}
+\begin{CompactList}\small\item\em ≤Ûœ©§ŒøÆπÊ¿˛•Ï•Ÿ•Î§À¬–§π§Îæ Û§Ú§‚§ƒ\item\end{CompactList}\item 
+struct {\bf line\_\-list}
+\begin{CompactList}\small\item\em øÆπÊ¿˛(line)§«¡– ˝∏˛•Í•π•»§ÚÕ—§§§Î§ø§·§ŒπΩ¬§¬Œ\item\end{CompactList}\item 
+struct {\bf line\_\-stack}
+\end{CompactItemize}
+\subsection*{É\}ÉNÉçíËã`}
+\begin{CompactItemize}
+\item 
+\#define {\bf LINE\_\-SA0}\ 0x00000001
+\begin{CompactList}\small\item\em 1bit stack-at 0\item\end{CompactList}\item 
+\#define {\bf LINE\_\-SA1}\ 0x00000002
+\begin{CompactList}\small\item\em 2bit stack-at 1 $\ast$/\item\end{CompactList}\item 
+\#define {\bf LINE\_\-CHK}\ 0x00000004
+\begin{CompactList}\small\item\em 3bit function flag 1\item\end{CompactList}\item 
+\#define {\bf LINE\_\-FLT}\ 0x00000008
+\begin{CompactList}\small\item\em 4bit fault flag\item\end{CompactList}\item 
+\#define {\bf IMP\_\-FRONT}\ 0x00000010
+\begin{CompactList}\small\item\em 5bit front implication flag\item\end{CompactList}\item 
+\#define {\bf IMP\_\-BACK}\ 0x00000020
+\begin{CompactList}\small\item\em 6bit back implication flag\item\end{CompactList}\item 
+\#define {\bf JUSTIFY}\ 0x00000040
+\begin{CompactList}\small\item\em 7bit justify flag\item\end{CompactList}\item 
+\#define {\bf JUSTIFY\_\-F}\ 0x00000080
+\begin{CompactList}\small\item\em 8bit justify finish flag\item\end{CompactList}\item 
+\#define {\bf JUSTIFY\_\-NO}\ 0x00000100
+\begin{CompactList}\small\item\em 9bit justify normal state\item\end{CompactList}\item 
+\#define {\bf JUSTIFY\_\-FL}\ 0x00000200
+\begin{CompactList}\small\item\em 10bit justify failure state\item\end{CompactList}\item 
+\#define {\bf BOUND\_\-D}\ 0x00000400
+\begin{CompactList}\small\item\em 11bit bound D tree\item\end{CompactList}\item 
+\#define {\bf FP\_\-PATH}\ 0x00000800
+\begin{CompactList}\small\item\em 12bit Fault Propagation Path\item\end{CompactList}\item 
+\#define {\bf FP\_\-IAP}\ 0x00001000
+\begin{CompactList}\small\item\em 13bit Fault Propagate Potential(IAP)\item\end{CompactList}\item 
+\#define {\bf FV\_\-ASS}\ 0x00002000
+\begin{CompactList}\small\item\em 14bit Fault Values ASSignable\item\end{CompactList}\item 
+\#define {\bf IMP\_\-FRONT\_\-C}\ 0x00000018
+\begin{CompactList}\small\item\em 4 \& 5 bit enter implication check\item\end{CompactList}\item 
+\#define {\bf IMP\_\-BACK\_\-C}\ 0x00000028
+\begin{CompactList}\small\item\em 4 \& 6 bit enter implication check\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedef}
+\begin{CompactItemize}
+\item 
+typedef {\bf line\_\-info} {\bf LINE\_\-INFO}
+\item 
+typedef enum {\bf fsim\_\-flt} {\bf FSIM\_\-FLT}
+\item 
+typedef enum {\bf line\_\-type} {\bf LINE\_\-TYPE}
+\item 
+typedef {\bf line} {\bf LINE}
+\item 
+typedef {\bf line\_\-stack} {\bf LINE\_\-STACK}
+\item 
+typedef {\bf line\_\-list} {\bf LINE\_\-LIST}
+\end{CompactItemize}
+\subsection*{Enum}
+\begin{CompactItemize}
+\item 
+enum {\bf fsim\_\-flt} \{ {\bf FSIM\_\-SA0} =  0, 
+{\bf FSIM\_\-SA1} =  1
+ \}
+\item 
+enum {\bf line\_\-type} \{ {\bf FLIGHT\_\-PI} =  0, 
+{\bf FLIGHT\_\-PO} =  1, 
+{\bf FLIGHT\_\-BR} =  2, 
+{\bf FLIGHT\_\-INV} =  3, 
+{\bf FLIGHT\_\-BUF} =  4, 
+{\bf FLIGHT\_\-AND} =  5, 
+{\bf FLIGHT\_\-NAND} =  6, 
+{\bf FLIGHT\_\-OR} =  7, 
+{\bf FLIGHT\_\-NOR} =  8, 
+{\bf FLIGHT\_\-XOR} =  9, 
+{\bf FLIGHT\_\-XNOR} =  10, 
+{\bf FLIGHT\_\-BLKI} =  11, 
+{\bf FLIGHT\_\-BLKO} =  12, 
+{\bf FLIGHT\_\-UNK} =  13, 
+{\bf FLIGHT\_\-NUM\_\-PRIM}
+ \}
+\end{CompactItemize}
+
+
+\subsection{âê‡}
+øÆπÊ¿˛(Line)§À¥ÿ§π§Î¿ﬂƒÍ
+
+ \begin{Desc}
+\item[äoÇ¶èëÇ´: ]\par
+ {\bf flight\_\-state.h}§¨…¨Õ◊\end{Desc}
+\begin{Desc}
+\item[çÏé“: ]\par
+ Masayoshi Yoshimura ( FLEETS ) \end{Desc}
+\begin{Desc}
+\item[ì˙ït: ]\par
+ 2006 / 02 / 10 initialize ( renew )\end{Desc}
+
+
+\subsection{É\}ÉNÉçíËã`ÇÃâê‡}
+\index{flight_line.h@{flight\_\-line.h}!BOUND_D@{BOUND\_\-D}}
+\index{BOUND_D@{BOUND\_\-D}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BOUND\_\-D\ 0x00000400}\label{flight__line_8h_a10}
+
+
+11bit bound D tree
+
+\index{flight_line.h@{flight\_\-line.h}!FP_IAP@{FP\_\-IAP}}
+\index{FP_IAP@{FP\_\-IAP}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FP\_\-IAP\ 0x00001000}\label{flight__line_8h_a12}
+
+
+13bit Fault Propagate Potential(IAP)
+
+\index{flight_line.h@{flight\_\-line.h}!FP_PATH@{FP\_\-PATH}}
+\index{FP_PATH@{FP\_\-PATH}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FP\_\-PATH\ 0x00000800}\label{flight__line_8h_a11}
+
+
+12bit Fault Propagation Path
+
+\index{flight_line.h@{flight\_\-line.h}!FV_ASS@{FV\_\-ASS}}
+\index{FV_ASS@{FV\_\-ASS}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FV\_\-ASS\ 0x00002000}\label{flight__line_8h_a13}
+
+
+14bit Fault Values ASSignable
+
+\index{flight_line.h@{flight\_\-line.h}!IMP_BACK@{IMP\_\-BACK}}
+\index{IMP_BACK@{IMP\_\-BACK}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IMP\_\-BACK\ 0x00000020}\label{flight__line_8h_a5}
+
+
+6bit back implication flag
+
+\index{flight_line.h@{flight\_\-line.h}!IMP_BACK_C@{IMP\_\-BACK\_\-C}}
+\index{IMP_BACK_C@{IMP\_\-BACK\_\-C}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IMP\_\-BACK\_\-C\ 0x00000028}\label{flight__line_8h_a15}
+
+
+4 \& 6 bit enter implication check
+
+\index{flight_line.h@{flight\_\-line.h}!IMP_FRONT@{IMP\_\-FRONT}}
+\index{IMP_FRONT@{IMP\_\-FRONT}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IMP\_\-FRONT\ 0x00000010}\label{flight__line_8h_a4}
+
+
+5bit front implication flag
+
+\index{flight_line.h@{flight\_\-line.h}!IMP_FRONT_C@{IMP\_\-FRONT\_\-C}}
+\index{IMP_FRONT_C@{IMP\_\-FRONT\_\-C}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IMP\_\-FRONT\_\-C\ 0x00000018}\label{flight__line_8h_a14}
+
+
+4 \& 5 bit enter implication check
+
+\index{flight_line.h@{flight\_\-line.h}!JUSTIFY@{JUSTIFY}}
+\index{JUSTIFY@{JUSTIFY}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTIFY\ 0x00000040}\label{flight__line_8h_a6}
+
+
+7bit justify flag
+
+\index{flight_line.h@{flight\_\-line.h}!JUSTIFY_F@{JUSTIFY\_\-F}}
+\index{JUSTIFY_F@{JUSTIFY\_\-F}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTIFY\_\-F\ 0x00000080}\label{flight__line_8h_a7}
+
+
+8bit justify finish flag
+
+\index{flight_line.h@{flight\_\-line.h}!JUSTIFY_FL@{JUSTIFY\_\-FL}}
+\index{JUSTIFY_FL@{JUSTIFY\_\-FL}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTIFY\_\-FL\ 0x00000200}\label{flight__line_8h_a9}
+
+
+10bit justify failure state
+
+\index{flight_line.h@{flight\_\-line.h}!JUSTIFY_NO@{JUSTIFY\_\-NO}}
+\index{JUSTIFY_NO@{JUSTIFY\_\-NO}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define JUSTIFY\_\-NO\ 0x00000100}\label{flight__line_8h_a8}
+
+
+9bit justify normal state
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_CHK@{LINE\_\-CHK}}
+\index{LINE_CHK@{LINE\_\-CHK}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LINE\_\-CHK\ 0x00000004}\label{flight__line_8h_a2}
+
+
+3bit function flag 1
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_FLT@{LINE\_\-FLT}}
+\index{LINE_FLT@{LINE\_\-FLT}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LINE\_\-FLT\ 0x00000008}\label{flight__line_8h_a3}
+
+
+4bit fault flag
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_SA0@{LINE\_\-SA0}}
+\index{LINE_SA0@{LINE\_\-SA0}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LINE\_\-SA0\ 0x00000001}\label{flight__line_8h_a0}
+
+
+1bit stack-at 0
+
+LINE-$>$flagÕ—§Œdefine \index{flight_line.h@{flight\_\-line.h}!LINE_SA1@{LINE\_\-SA1}}
+\index{LINE_SA1@{LINE\_\-SA1}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LINE\_\-SA1\ 0x00000002}\label{flight__line_8h_a1}
+
+
+2bit stack-at 1 $\ast$/
+
+
+
+\subsection{Typedef ÇÃâê‡}
+\index{flight_line.h@{flight\_\-line.h}!FSIM_FLT@{FSIM\_\-FLT}}
+\index{FSIM_FLT@{FSIM\_\-FLT}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf fsim\_\-flt}  FSIM\_\-FLT}\label{flight__line_8h_a17}
+
+
+line-$>$flist[]§Œ≈∫ª˙§»§∑§∆Õ—§§§Î \index{flight_line.h@{flight\_\-line.h}!LINE@{LINE}}
+\index{LINE@{LINE}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf line}  LINE}\label{flight__line_8h_a19}
+
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_INFO@{LINE\_\-INFO}}
+\index{LINE_INFO@{LINE\_\-INFO}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf line\_\-info}  LINE\_\-INFO}\label{flight__line_8h_a16}
+
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_LIST@{LINE\_\-LIST}}
+\index{LINE_LIST@{LINE\_\-LIST}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf line\_\-list}  LINE\_\-LIST}\label{flight__line_8h_a21}
+
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_STACK@{LINE\_\-STACK}}
+\index{LINE_STACK@{LINE\_\-STACK}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf line\_\-stack}  LINE\_\-STACK}\label{flight__line_8h_a20}
+
+
+\index{flight_line.h@{flight\_\-line.h}!LINE_TYPE@{LINE\_\-TYPE}}
+\index{LINE_TYPE@{LINE\_\-TYPE}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf line\_\-type}  LINE\_\-TYPE}\label{flight__line_8h_a18}
+
+
+line-$>$type§«Õ—§§§ÎøÆπÊ¿˛§Œ•≤°º•»∑ø 
+
+\subsection{Enum ÇÃâê‡}
+\index{flight_line.h@{flight\_\-line.h}!fsim_flt@{fsim\_\-flt}}
+\index{fsim_flt@{fsim\_\-flt}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum fsim\_\-flt}\label{flight__line_8h_a39}
+
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{FSIM_SA0@{FSIM\_\-SA0}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FSIM_SA0@{FSIM\_\-SA0}}\item[{\em 
+{\em FSIM\_\-SA0}\label{flight__line_8h_a39a22}
+}]\index{FSIM_SA1@{FSIM\_\-SA1}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FSIM_SA1@{FSIM\_\-SA1}}\item[{\em 
+{\em FSIM\_\-SA1}\label{flight__line_8h_a39a23}
+}]\end{description}
+\end{Desc}
+
+\index{flight_line.h@{flight\_\-line.h}!line_type@{line\_\-type}}
+\index{line_type@{line\_\-type}!flight_line.h@{flight\_\-line.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum line\_\-type}\label{flight__line_8h_a40}
+
+
+\begin{Desc}
+\item[Enum íl: ]\par
+\begin{description}
+\index{FLIGHT_PI@{FLIGHT\_\-PI}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_PI@{FLIGHT\_\-PI}}\item[{\em 
+{\em FLIGHT\_\-PI}\label{flight__line_8h_a40a24}
+}]≥∞…Ù∆˛Œœ\index{FLIGHT_PO@{FLIGHT\_\-PO}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_PO@{FLIGHT\_\-PO}}\item[{\em 
+{\em FLIGHT\_\-PO}\label{flight__line_8h_a40a25}
+}]≥∞…ÙΩ–Œœ\index{FLIGHT_BR@{FLIGHT\_\-BR}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_BR@{FLIGHT\_\-BR}}\item[{\em 
+{\em FLIGHT\_\-BR}\label{flight__line_8h_a40a26}
+}]•’•°•Û•¢•¶•»•÷•È•Û•¡\index{FLIGHT_INV@{FLIGHT\_\-INV}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_INV@{FLIGHT\_\-INV}}\item[{\em 
+{\em FLIGHT\_\-INV}\label{flight__line_8h_a40a27}
+}]•§•Û•–°º•ø\index{FLIGHT_BUF@{FLIGHT\_\-BUF}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_BUF@{FLIGHT\_\-BUF}}\item[{\em 
+{\em FLIGHT\_\-BUF}\label{flight__line_8h_a40a28}
+}]•–•√•’•°\index{FLIGHT_AND@{FLIGHT\_\-AND}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_AND@{FLIGHT\_\-AND}}\item[{\em 
+{\em FLIGHT\_\-AND}\label{flight__line_8h_a40a29}
+}]•¢•Û•…\index{FLIGHT_NAND@{FLIGHT\_\-NAND}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_NAND@{FLIGHT\_\-NAND}}\item[{\em 
+{\em FLIGHT\_\-NAND}\label{flight__line_8h_a40a30}
+}]• •Û•…\index{FLIGHT_OR@{FLIGHT\_\-OR}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_OR@{FLIGHT\_\-OR}}\item[{\em 
+{\em FLIGHT\_\-OR}\label{flight__line_8h_a40a31}
+}]•™•¢\index{FLIGHT_NOR@{FLIGHT\_\-NOR}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_NOR@{FLIGHT\_\-NOR}}\item[{\em 
+{\em FLIGHT\_\-NOR}\label{flight__line_8h_a40a32}
+}]•Œ•¢\index{FLIGHT_XOR@{FLIGHT\_\-XOR}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_XOR@{FLIGHT\_\-XOR}}\item[{\em 
+{\em FLIGHT\_\-XOR}\label{flight__line_8h_a40a33}
+}]•§•Ø•Î°º•∑•÷•™•¢\index{FLIGHT_XNOR@{FLIGHT\_\-XNOR}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_XNOR@{FLIGHT\_\-XNOR}}\item[{\em 
+{\em FLIGHT\_\-XNOR}\label{flight__line_8h_a40a34}
+}]•§•Ø•Î°º•∑•÷•Œ•¢\index{FLIGHT_BLKI@{FLIGHT\_\-BLKI}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_BLKI@{FLIGHT\_\-BLKI}}\item[{\em 
+{\em FLIGHT\_\-BLKI}\label{flight__line_8h_a40a35}
+}]…‘ƒÍ∆˛Œœ\index{FLIGHT_BLKO@{FLIGHT\_\-BLKO}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_BLKO@{FLIGHT\_\-BLKO}}\item[{\em 
+{\em FLIGHT\_\-BLKO}\label{flight__line_8h_a40a36}
+}]…‘ƒÍΩ–Œœ\index{FLIGHT_UNK@{FLIGHT\_\-UNK}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_UNK@{FLIGHT\_\-UNK}}\item[{\em 
+{\em FLIGHT\_\-UNK}\label{flight__line_8h_a40a37}
+}]Ã§≥ŒƒÍ∑ø\index{FLIGHT_NUM_PRIM@{FLIGHT\_\-NUM\_\-PRIM}!flight_line.h@{flight\_\-line.h}}\index{flight_line.h@{flight\_\-line.h}!FLIGHT_NUM_PRIM@{FLIGHT\_\-NUM\_\-PRIM}}\item[{\em 
+{\em FLIGHT\_\-NUM\_\-PRIM}\label{flight__line_8h_a40a38}
+}]∑ø§ŒøÙ\end{description}
+\end{Desc}
+

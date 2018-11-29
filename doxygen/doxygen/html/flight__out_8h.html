@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>flight_out.h File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- ì¬F Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">ƒƒCƒ“ƒy[ƒW</a> &nbsp; <a class="qindex" href="annotated.html">\¬</a> &nbsp; <a class="qindex" href="files.html">ƒtƒ@ƒCƒ‹ˆê——</a> &nbsp; <a class="qindex" href="functions.html">\¬ƒƒ“ƒo</a> &nbsp; <a class="qindex" href="globals.html">ƒtƒ@ƒCƒ‹ƒƒ“ƒo</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_out.h ‚Ì‰ğà</h1>’¥Õ’¥¡’¥¤’¥ë’½Ğ’ÎÏ’¤Ë’´Ø’¤¹’¤ë’Àß’Äê 
+<a href="#_details">[Ú×]</a>
+<p>
+
+<p>
+<a href="flight__out_8h-source.html">ƒ\[ƒXƒR[ƒh‚ğŒ©‚éB</a><table border=0 cellpadding=0 cellspacing=0>
+<tr><td></td></tr>
+<tr><td colspan=2><br><h2>’¸Î’¾ã’Ê¬’Îà’¥Õ’¥¡’¥¤’¥ë’¤Î’¥Õ’¥¡’¥¤’¥ë’Ì¾</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a0">FLIGHT_OUTFILE_FAULT</a>&nbsp;&nbsp;&nbsp;".fault"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¸Î’¾ã’Á´’Éô</em> <a href="#a0"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a1">FLIGHT_OUTFILE_DET</a>&nbsp;&nbsp;&nbsp;".det"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¸¡’½Ğ’¸Î’¾ã</em> <a href="#a1"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a2">FLIGHT_OUTFILE_REDUN</a>&nbsp;&nbsp;&nbsp;".redundant"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¾é’Ä¹’¸Î’¾ã</em> <a href="#a2"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a3">FLIGHT_OUTFILE_UNTEST</a>&nbsp;&nbsp;&nbsp;".untestable"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã</em> <a href="#a3"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a4">FLIGHT_OUTFILE_INITUNT</a>&nbsp;&nbsp;&nbsp;".init_untestable"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’½é’´ü’²½’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã</em> <a href="#a4"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a5">FLIGHT_OUTFILE_ABORT</a>&nbsp;&nbsp;&nbsp;".abort"’¡¡</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’Ê¬’Îà’È½’Äê’ÂÇ’¤Á’ÀÚ’¤ê’¸Î’¾ã</em> <a href="#a5"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>’À¸’À®’¤·’¤¿’¥Ñ’¥¿’¡¼’¥ó’¤Î’¥Õ’¥¡’¥¤’¥ë’Ì¾</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a6">FLIGHT_OUTFILE_ONEPAT</a>&nbsp;&nbsp;&nbsp;".onepat"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’ÁÈ’¹ç’¤»’²ó’Ï©’¥Ñ’¥¿’¡¼’¥ó</em> <a href="#a6"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>flight’Æâ’¤ÎID’¤È’¥Í’¥Ã’¥È’¥ê’¥¹’¥È’Ãæ’¤Î’Ì¾’Á°’¤È’¤Î’¥¤’¥ó’¥Ç’¥Ã’¥¯’¥¹</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a7">FLIGHT_OUTFILE_NAMEID</a>&nbsp;&nbsp;&nbsp;".nameid"</td></tr>
+<tr><td colspan=2><br><h2>’¸Ä’¡¹’¤Î’¸Î’¾ã’¤Ë’ÂĞ’¤¹’¤ë’¸Î’¾ã’Ê¬’Îà</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a9">FLIGHT_OUT_SA0</a>&nbsp;&nbsp;&nbsp;"sa0"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>0’½Ì’Âà’¸Î’¾ã</em> <a href="#a9"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a10">FLIGHT_OUT_SA1</a>&nbsp;&nbsp;&nbsp;"sa1"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>1’½Ì’Âà’¸Î’¾ã</em> <a href="#a10"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a11">FLIGHT_OUT_DET</a>&nbsp;&nbsp;&nbsp;"DET"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¸¡’½Ğ’¸Î’¾ã</em> <a href="#a11"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a12">FLIGHT_OUT_REDUN</a>&nbsp;&nbsp;&nbsp;"RED"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¾é’Ä¹’¸Î’¾ã</em> <a href="#a12"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a13">FLIGHT_OUT_UNTEST</a>&nbsp;&nbsp;&nbsp;"UNT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã</em> <a href="#a13"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a14">FLIGHT_OUT_INITUNT</a>&nbsp;&nbsp;&nbsp;"IUT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’½é’´ü’²½’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã</em> <a href="#a14"></a><em></em></font><br><br></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a15">FLIGHT_OUT_ABORT</a>&nbsp;&nbsp;&nbsp;"ABT"</td></tr>
+<tr><td>&nbsp;</td><td><font size=-1><em>’ÂÇ’¤Á’ÀÚ’¤ê’¸Î’¾ã</em> <a href="#a15"></a><em></em></font><br><br></td></tr>
+<tr><td colspan=2><br><h2>ƒ}ƒNƒ’è‹`</h2></td></tr>
+<tr><td nowrap align=right valign=top>#define&nbsp;</td><td valign=bottom><a class="el" href="flight__out_8h.html#a8">FLIGHT_OUTFILE_CIRCUIT</a>&nbsp;&nbsp;&nbsp;"kairo"</td></tr>
+</table>
+<hr><a name="_details"></a><h2>‰ğà</h2>
+’¥Õ’¥¡’¥¤’¥ë’½Ğ’ÎÏ’¤Ë’´Ø’¤¹’¤ë’Àß’Äê
+<p>
+ <dl compact><dt><b>ìÒ: </b></dt><dd>
+ Masayoshi Yoshimura ( FLEETS ) </dl><dl compact><dt><b>“ú•t: </b></dt><dd>
+ 2005 / 05 / 11 initialize</dl><hr><h2>ƒ}ƒNƒ’è‹`‚Ì‰ğà</h2>
+<a name="a15" doxytag="flight_out.h::FLIGHT_OUT_ABORT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_ABORT&nbsp;&nbsp;&nbsp;"ABT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’ÂÇ’¤Á’ÀÚ’¤ê’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a11" doxytag="flight_out.h::FLIGHT_OUT_DET"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_DET&nbsp;&nbsp;&nbsp;"DET"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¸¡’½Ğ’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a14" doxytag="flight_out.h::FLIGHT_OUT_INITUNT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_INITUNT&nbsp;&nbsp;&nbsp;"IUT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’½é’´ü’²½’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a12" doxytag="flight_out.h::FLIGHT_OUT_REDUN"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_REDUN&nbsp;&nbsp;&nbsp;"RED"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¾é’Ä¹’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a9" doxytag="flight_out.h::FLIGHT_OUT_SA0"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_SA0&nbsp;&nbsp;&nbsp;"sa0"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+0’½Ì’Âà’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a10" doxytag="flight_out.h::FLIGHT_OUT_SA1"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_SA1&nbsp;&nbsp;&nbsp;"sa1"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+1’½Ì’Âà’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a13" doxytag="flight_out.h::FLIGHT_OUT_UNTEST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUT_UNTEST&nbsp;&nbsp;&nbsp;"UNT"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a5" doxytag="flight_out.h::FLIGHT_OUTFILE_ABORT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_ABORT&nbsp;&nbsp;&nbsp;".abort"’¡¡
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’Ê¬’Îà’È½’Äê’ÂÇ’¤Á’ÀÚ’¤ê’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a8" doxytag="flight_out.h::FLIGHT_OUTFILE_CIRCUIT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_CIRCUIT&nbsp;&nbsp;&nbsp;"kairo"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a1" doxytag="flight_out.h::FLIGHT_OUTFILE_DET"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_DET&nbsp;&nbsp;&nbsp;".det"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¸¡’½Ğ’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a0" doxytag="flight_out.h::FLIGHT_OUTFILE_FAULT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_FAULT&nbsp;&nbsp;&nbsp;".fault"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¸Î’¾ã’Á´’Éô
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a4" doxytag="flight_out.h::FLIGHT_OUTFILE_INITUNT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_INITUNT&nbsp;&nbsp;&nbsp;".init_untestable"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’½é’´ü’²½’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a7" doxytag="flight_out.h::FLIGHT_OUTFILE_NAMEID"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_NAMEID&nbsp;&nbsp;&nbsp;".nameid"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a6" doxytag="flight_out.h::FLIGHT_OUTFILE_ONEPAT"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_ONEPAT&nbsp;&nbsp;&nbsp;".onepat"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’ÁÈ’¹ç’¤»’²ó’Ï©’¥Ñ’¥¿’¡¼’¥ó
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a2" doxytag="flight_out.h::FLIGHT_OUTFILE_REDUN"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_REDUN&nbsp;&nbsp;&nbsp;".redundant"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¾é’Ä¹’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<a name="a3" doxytag="flight_out.h::FLIGHT_OUTFILE_UNTEST"></a><p>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr>
+    <td class="md">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top"> #define FLIGHT_OUTFILE_UNTEST&nbsp;&nbsp;&nbsp;".untestable"
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing=5 cellpadding=0 border=0>
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+’¥Æ’¥¹’¥È’À¸’À®’ÉÔ’Ç½’¸Î’¾ã
+<p>
+    </td>
+  </tr>
+</table>
+<hr><address style="align: right;"><small>FLIGHT‚É‘Î‚µ‚ÄThu Feb 16 14:41:10 2006‚É¶¬‚³‚ê‚Ü‚µ‚½B
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

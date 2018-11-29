@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>/cygdrive/c/home/yosimura/Flight/include/flight_line.h Source File</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.2.18 -->
+<center>
+<a class="qindex" href="index.html">メインページ</a> &nbsp; <a class="qindex" href="annotated.html">構成</a> &nbsp; <a class="qindex" href="files.html">ファイル一覧</a> &nbsp; <a class="qindex" href="functions.html">構成メンバ</a> &nbsp; <a class="qindex" href="globals.html">ファイルメンバ</a> &nbsp; </center>
+<hr><h1>/cygdrive/c/home/yosimura/Flight/include/flight_line.h</h1><a href="flight__line_8h.html">解説を見る。</a><div class="fragment"><pre>00001 <span class="comment">/********************************************************************************</span>
+00002 <span class="comment"></span>
+00003 <span class="comment">                            FLIGHT</span>
+00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+00007 <span class="comment"></span>
+00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00026"></a><a class="code" href="flight__line_8h.html#a0">00026</a> <span class="preprocessor">#define LINE_SA0        0x00000001      </span>
+<a name="l00027"></a><a class="code" href="flight__line_8h.html#a1">00027</a> <span class="preprocessor">#define LINE_SA1        0x00000002      </span>
+<a name="l00028"></a><a class="code" href="flight__line_8h.html#a2">00028</a> <span class="preprocessor">#define LINE_CHK        0x00000004      </span>
+<a name="l00029"></a><a class="code" href="flight__line_8h.html#a3">00029</a> <span class="preprocessor">#define LINE_FLT        0x00000008      </span>
+<a name="l00030"></a><a class="code" href="flight__line_8h.html#a4">00030</a> <span class="preprocessor">#define IMP_FRONT       0x00000010      </span>
+<a name="l00031"></a><a class="code" href="flight__line_8h.html#a5">00031</a> <span class="preprocessor">#define IMP_BACK        0x00000020      </span>
+<a name="l00032"></a><a class="code" href="flight__line_8h.html#a6">00032</a> <span class="preprocessor">#define JUSTIFY         0x00000040      </span>
+<a name="l00033"></a><a class="code" href="flight__line_8h.html#a7">00033</a> <span class="preprocessor">#define JUSTIFY_F       0x00000080      </span>
+<a name="l00034"></a><a class="code" href="flight__line_8h.html#a8">00034</a> <span class="preprocessor">#define JUSTIFY_NO      0x00000100      </span>
+<a name="l00035"></a><a class="code" href="flight__line_8h.html#a9">00035</a> <span class="preprocessor">#define JUSTIFY_FL      0x00000200      </span>
+<a name="l00036"></a><a class="code" href="flight__line_8h.html#a10">00036</a> <span class="preprocessor">#define BOUND_D         0x00000400      </span>
+<a name="l00037"></a><a class="code" href="flight__line_8h.html#a11">00037</a> <span class="preprocessor">#define FP_PATH         0x00000800      </span>
+<a name="l00038"></a><a class="code" href="flight__line_8h.html#a12">00038</a> <span class="preprocessor">#define FP_IAP      0x00001000  </span>
+<a name="l00039"></a><a class="code" href="flight__line_8h.html#a13">00039</a> <span class="preprocessor">#define FV_ASS      0x00002000  </span>
+00040 <span class="preprocessor"></span>
+<a name="l00041"></a><a class="code" href="flight__line_8h.html#a14">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define IMP_FRONT_C     0x00000018      </span>
+<a name="l00042"></a><a class="code" href="flight__line_8h.html#a15">00042</a> <span class="preprocessor">#define IMP_BACK_C      0x00000028      </span>
+00043 <span class="preprocessor"></span>
+00044 <span class="preprocessor"></span>
+<a name="l00049"></a><a class="code" href="structline__info.html">00049</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structline__info.html">line_info</a>
+00050 {
+<a name="l00051"></a><a class="code" href="structline__info.html#m0">00051</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m0">n_line</a>;         
+<a name="l00052"></a><a class="code" href="structline__info.html#m1">00052</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m1">n_pi</a>;           
+<a name="l00053"></a><a class="code" href="structline__info.html#m2">00053</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m2">n_po</a>;           
+<a name="l00054"></a><a class="code" href="structline__info.html#m3">00054</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m3">n_bbpi</a>;         
+<a name="l00055"></a><a class="code" href="structline__info.html#m4">00055</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m4">n_bbpo</a>;         
+<a name="l00056"></a><a class="code" href="structline__info.html#m5">00056</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m5">n_fault</a>;        
+<a name="l00057"></a><a class="code" href="structline__info.html#m6">00057</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m6">n_fault_atpg</a>; 
+<a name="l00058"></a><a class="code" href="structline__info.html#m7">00058</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>   <a class="code" href="structline__info.html#m7">n_fault_atpg_count</a>;     
+<a name="l00059"></a><a class="code" href="structline__info.html#m8">00059</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       <a class="code" href="structline__info.html#m8">max_lv_pi</a>;      
+<a name="l00060"></a><a class="code" href="structline__info.html#m9">00060</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>       *<a class="code" href="structline__info.html#m9">n_lv_pi</a>;       
+00061 } <a class="code" href="structline__info.html">LINE_INFO</a>;
+00062 
+00063 
+<a name="l00068"></a><a class="code" href="flight__line_8h.html#a39">00068</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__line_8h.html#a39">fsim_flt</a>{
+00069         <a class="code" href="flight__line_8h.html#a39a22">FSIM_SA0</a> = 0,
+00070         <a class="code" href="flight__line_8h.html#a39a23">FSIM_SA1</a> = 1,
+00071 } <a class="code" href="flight__line_8h.html#a17">FSIM_FLT</a>;
+00072 
+<a name="l00077"></a><a class="code" href="flight__line_8h.html#a40">00077</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__line_8h.html#a40">line_type</a>
+00078 {
+00079         <a class="code" href="flight__line_8h.html#a40a24">FLIGHT_PI</a>   = 0,        
+00080         <a class="code" href="flight__line_8h.html#a40a25">FLIGHT_PO</a>   = 1,        
+00081         <a class="code" href="flight__line_8h.html#a40a26">FLIGHT_BR</a>   = 2,        
+00082         <a class="code" href="flight__line_8h.html#a40a27">FLIGHT_INV</a>  = 3,        
+00083         <a class="code" href="flight__line_8h.html#a40a28">FLIGHT_BUF</a>  = 4,        
+00084         <a class="code" href="flight__line_8h.html#a40a29">FLIGHT_AND</a>  = 5,        
+00085         <a class="code" href="flight__line_8h.html#a40a30">FLIGHT_NAND</a> = 6,        
+00086         <a class="code" href="flight__line_8h.html#a40a31">FLIGHT_OR</a>   = 7,        
+00087         <a class="code" href="flight__line_8h.html#a40a32">FLIGHT_NOR</a>  = 8,        
+00088         <a class="code" href="flight__line_8h.html#a40a33">FLIGHT_XOR</a>  = 9,        
+00089         <a class="code" href="flight__line_8h.html#a40a34">FLIGHT_XNOR</a> = 10,       
+00090         <a class="code" href="flight__line_8h.html#a40a35">FLIGHT_BLKI</a> = 11,       
+00091         <a class="code" href="flight__line_8h.html#a40a36">FLIGHT_BLKO</a> = 12,       
+00092         <a class="code" href="flight__line_8h.html#a40a37">FLIGHT_UNK</a>  = 13,       
+00093         <a class="code" href="flight__line_8h.html#a40a38">FLIGHT_NUM_PRIM</a>,    
+00094 } <a class="code" href="flight__line_8h.html#a18">LINE_TYPE</a>;
+00095 
+00096 
+<a name="l00101"></a><a class="code" href="structline.html">00101</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structline.html">line</a>
+00102 {
+<a name="l00103"></a><a class="code" href="structline.html#m0">00103</a>     <span class="keyword">enum</span> <a class="code" href="flight__line_8h.html#a40">line_type</a>      <a class="code" href="structline.html#m0">type</a>;           
+<a name="l00104"></a><a class="code" href="structline.html#m1">00104</a>     <span class="keyword">enum</span> <a class="code" href="flight__state_8h.html#a29">state_9</a>    <a class="code" href="structline.html#m1">state9</a>;             
+<a name="l00105"></a><a class="code" href="structline.html#m2">00105</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m2">line_id</a>;    
+<a name="l00106"></a><a class="code" href="structline.html#m3">00106</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m3">n_in</a>;               
+<a name="l00107"></a><a class="code" href="structline.html#m4">00107</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m4">n_out</a>;              
+<a name="l00108"></a><a class="code" href="structline.html#m5">00108</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>     **in;       
+<a name="l00109"></a><a class="code" href="structline.html#m6">00109</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>     **out;      
+<a name="l00110"></a><a class="code" href="structline.html#m7">00110</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m7">flag</a>;               
+<a name="l00111"></a><a class="code" href="structline.html#m8">00111</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m8">lv_pi</a>;              
+<a name="l00112"></a><a class="code" href="structline.html#m9">00112</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m9">tm_co</a>;              
+<a name="l00113"></a><a class="code" href="structline.html#m10">00113</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m10">tm_c0</a>;              
+<a name="l00114"></a><a class="code" href="structline.html#m11">00114</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m11">tm_c1</a>;      
+<a name="l00115"></a><a class="code" href="structline.html#m12">00115</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m12">tm_bb_co</a>;   
+<a name="l00116"></a><a class="code" href="structline.html#m13">00116</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m13">tm_bb_c0</a>;   
+<a name="l00117"></a><a class="code" href="structline.html#m14">00117</a>     <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m14">tm_bb_c1</a>;   
+<a name="l00118"></a><a class="code" href="structline.html#m15">00118</a>     <span class="keyword">struct </span><a class="code" href="structflist.html">flist</a>    *flist[2];  
+00119 
+<a name="l00120"></a><a class="code" href="structline.html#m16">00120</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m16">fault_set_flag</a>;
+<a name="l00121"></a><a class="code" href="structline.html#m17">00121</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m17">fprop_flag</a>;
+<a name="l00122"></a><a class="code" href="structline.html#m18">00122</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m18">mp_flag</a>;
+<a name="l00123"></a><a class="code" href="structline.html#m19">00123</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m19">n_val0</a>;
+<a name="l00124"></a><a class="code" href="structline.html#m20">00124</a>         <a class="code" href="flight_8h.html#a8">Ulong</a>           <a class="code" href="structline.html#m20">f_val0</a>;
+<a name="l00125"></a><a class="code" href="structline.html#m21">00125</a>         <span class="keyword">struct </span><a class="code" href="structline.html">line</a>     *event_line;
+00126 } <a class="code" href="structline.html">LINE</a>;
+00127 
+<a name="l00132"></a><a class="code" href="structline__stack.html">00132</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structline__stack.html">line_stack</a>
+00133 {
+<a name="l00134"></a><a class="code" href="structline__stack.html#m0">00134</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>             *line;  
+<a name="l00135"></a><a class="code" href="structline__stack.html#m1">00135</a>     <span class="keyword">struct </span><a class="code" href="structline__stack.html">line_stack</a>   *next;  
+00136 } <a class="code" href="structline__stack.html">LINE_STACK</a>;
+00137 
+<a name="l00142"></a><a class="code" href="structline__list.html">00142</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structline__list.html">line_list</a>
+00143 {
+<a name="l00144"></a><a class="code" href="structline__list.html#m0">00144</a>     <span class="keyword">struct </span><a class="code" href="structline.html">line</a>                 *line;  
+<a name="l00145"></a><a class="code" href="structline__list.html#m1">00145</a>     <span class="keyword">struct </span><a class="code" href="structline__list.html">line_list</a>    *prev;  
+<a name="l00146"></a><a class="code" href="structline__list.html#m2">00146</a>     <span class="keyword">struct </span><a class="code" href="structline__list.html">line_list</a>    *next;  
+00147 } <a class="code" href="structline__list.html">LINE_LIST</a>;
+00148 
+</pre></div><hr><address style="align: right;"><small>FLIGHTに対してThu Feb 16 14:41:07 2006に生成されました。
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border=0 
+width=110 height=53></a>1.2.18 </small></address>
+</body>
+</html>

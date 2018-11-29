@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=euc-jp">
+<title>FLIGHT: /export_home/yosimura/Flight/include/flight_edif.h ソースファイル</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.4.4 -->
+<div class="qindex"><a class="qindex" href="index.html">メインページ</a> | <a class="qindex" href="annotated.html">構成</a> | <a class="qindex" href="dirs.html">Directories</a> | <a class="qindex" href="files.html">ファイル一覧</a> | <a class="qindex" href="functions.html">構成メンバ</a> | <a class="qindex" href="globals.html">ファイルメンバ</a></div>
+<div class="nav">
+<a class="el" href="dir_000001.html">include</a></div>
+<h1>flight_edif.h</h1><a href="flight__edif_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/********************************************************************************</span>
+<a name="l00002"></a>00002 <span class="comment"></span>
+<a name="l00003"></a>00003 <span class="comment">                            FLIGHT</span>
+<a name="l00004"></a>00004 <span class="comment">           FLeets InteGrated Hyper Test system</span>
+<a name="l00005"></a>00005 <span class="comment">  All Right Reversed, Copyright (C) FLEETS</span>
+<a name="l00006"></a>00006 <span class="comment">                (Fukuoka Laboratory for Emergin &amp; Enableing Technology for SoC)</span>
+<a name="l00007"></a>00007 <span class="comment"></span>
+<a name="l00008"></a>00008 <span class="comment">*********************************************************************************/</span>
+<a name="l00009"></a>00009 <span class="comment">/*</span>
+<a name="l00010"></a>00010 <span class="comment"> * &gt;&gt; Function &lt;&lt;</span>
+<a name="l00011"></a>00011 <span class="comment"> *              FLIGHT read circuit for edif</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> * &gt;&gt; Extern   &lt;&lt;</span>
+<a name="l00014"></a>00014 <span class="comment"> *      NONE</span>
+<a name="l00015"></a>00015 <span class="comment"> *</span>
+<a name="l00016"></a>00016 <span class="comment"> * &gt;&gt; Staic    &lt;&lt;</span>
+<a name="l00017"></a>00017 <span class="comment"> *      NONE</span>
+<a name="l00018"></a>00018 <span class="comment"> *</span>
+<a name="l00019"></a>00019 <span class="comment"> * &gt;&gt; Author   &lt;&lt;</span>
+<a name="l00020"></a>00020 <span class="comment"> *      Masayoshi Yoshimura (FLEETS)</span>
+<a name="l00021"></a>00021 <span class="comment"> *</span>
+<a name="l00022"></a>00022 <span class="comment"> * &gt;&gt; Date       Ver    nakami    Author              &lt;&lt;</span>
+<a name="l00023"></a>00023 <span class="comment"> *       2005/ 7/ 7  0.00   initial   M.Yoshimura(FLEETS)</span>
+<a name="l00024"></a>00024 <span class="comment"> */</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a><a class="code" href="flight__edif_8h.html#a0">00026</a> <span class="preprocessor">#define CELL_SIZE 999991</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a><a class="code" href="flight__edif_8h.html#a1">00028</a> <span class="preprocessor">#define CELL_NAME_SIZE 1024</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span>
+<a name="l00030"></a>00030 <span class="comment">/* edif define type */</span>
+<a name="l00031"></a><a class="code" href="flight__edif_8h.html#a2">00031</a> <span class="preprocessor">#define EDIF_STR_INPUT       "INPUT"</span>
+<a name="l00032"></a><a class="code" href="flight__edif_8h.html#a3">00032</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_STR_OUTPUT      "OUTPUT"</span>
+<a name="l00033"></a><a class="code" href="flight__edif_8h.html#a4">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_STR_GATE_CONECT '='</span>
+<a name="l00034"></a><a class="code" href="flight__edif_8h.html#a5">00034</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_STR_COMMENT     '#'</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span>
+<a name="l00036"></a>00036 <span class="comment">/* edif gate type */</span>
+<a name="l00037"></a><a class="code" href="flight__edif_8h.html#a6">00037</a> <span class="preprocessor">#define EDIF_GATE_AND        "AND"</span>
+<a name="l00038"></a><a class="code" href="flight__edif_8h.html#a7">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_NAND       "NAND"</span>
+<a name="l00039"></a><a class="code" href="flight__edif_8h.html#a8">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_OR         "OR"</span>
+<a name="l00040"></a><a class="code" href="flight__edif_8h.html#a9">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_NOR        "NOR"</span>
+<a name="l00041"></a><a class="code" href="flight__edif_8h.html#a10">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_NOT        "NOT"</span>
+<a name="l00042"></a><a class="code" href="flight__edif_8h.html#a11">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_BUF        "BUF"</span>
+<a name="l00043"></a><a class="code" href="flight__edif_8h.html#a12">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_INV        "INV"</span>
+<a name="l00044"></a><a class="code" href="flight__edif_8h.html#a13">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_XOR        "XOR"</span>
+<a name="l00045"></a><a class="code" href="flight__edif_8h.html#a14">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define EDIF_GATE_XNOR       "XNOR"</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00047"></a>00047 <span class="comment">/* edif cell define */</span>
+<a name="l00048"></a><a class="code" href="flight__edif_8h.html#a31">00048</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__edif_8h.html#a31">edif_cell_define</a>{
+<a name="l00049"></a>00049         <a class="code" href="flight__edif_8h.html#a31a21">EDIF_CELL_INPUT</a>,           <span class="comment">/* unknwon            */</span>
+<a name="l00050"></a>00050         <a class="code" href="flight__edif_8h.html#a31a22">EDIF_CELL_OUTPUT</a>,           <span class="comment">/* unknwon            */</span>
+<a name="l00051"></a>00051         <a class="code" href="flight__edif_8h.html#a31a23">EDIF_CELL_UNKNOWN</a>,         <span class="comment">/* unknwon            */</span>
+<a name="l00052"></a>00052 } <a class="code" href="flight__edif_8h.html#a15">EDIF_CELL_DEFINE</a>;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="comment">/* edif file header analyze result */</span>
+<a name="l00055"></a><a class="code" href="flight__edif_8h.html#a32">00055</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__edif_8h.html#a32">edif_analyze_header</a>{
+<a name="l00056"></a>00056         <a class="code" href="flight__edif_8h.html#a32a24">EDIF_COMMENT</a> = 1,         <span class="comment">/* comment line       */</span>
+<a name="l00057"></a>00057         <a class="code" href="flight__edif_8h.html#a32a25">EDIF_END</a>,                 <span class="comment">/* end of file        */</span>
+<a name="l00058"></a>00058         <a class="code" href="flight__edif_8h.html#a32a26">EDIF_INPUT</a>,               <span class="comment">/* primary input pin  */</span>
+<a name="l00059"></a>00059         <a class="code" href="flight__edif_8h.html#a32a27">EDIF_OUTPUT</a>,              <span class="comment">/* primary output pin */</span>
+<a name="l00060"></a>00060         <a class="code" href="flight__edif_8h.html#a32a28">EDIF_GATE</a>,                <span class="comment">/* gate               */</span>
+<a name="l00061"></a>00061 } <a class="code" href="flight__edif_8h.html#a16">EDIF_ANALYZE_HEADER</a>;
+<a name="l00062"></a>00062 
+<a name="l00063"></a><a class="code" href="flight__edif_8h.html#a33">00063</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="flight__edif_8h.html#a33">edif_analyze_line_end</a>{
+<a name="l00064"></a>00064         <a class="code" href="flight__edif_8h.html#a33a29">EDIF_LINE_END</a> = 1,        <span class="comment">/* line end           */</span>
+<a name="l00065"></a>00065         <a class="code" href="flight__edif_8h.html#a33a30">EDIF_LINE_CONTINUE</a>,       <span class="comment">/* cotinue            */</span>
+<a name="l00066"></a>00066 } <a class="code" href="flight__edif_8h.html#a17">EDIF_ANALYZE_LINE_END</a>;
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068 
+<a name="l00069"></a>00069 <span class="comment">/* cell header */</span>
+<a name="l00070"></a>00070 <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcell__head.html">cell_head</a>
+<a name="l00071"></a>00071 {
+<a name="l00072"></a><a class="code" href="structcell__head.html#o6">00072</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>       <a class="code" href="structcell__head.html#o0">n_id</a>;           <span class="comment">/* number of lines */</span>
+<a name="l00073"></a><a class="code" href="structcell__head.html#o7">00073</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>       <a class="code" href="structcell__head.html#o1">n_pi</a>;           <span class="comment">/* number of PI */</span>
+<a name="l00074"></a><a class="code" href="structcell__head.html#o8">00074</a>     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>       <a class="code" href="structcell__head.html#o2">n_po</a>;           <span class="comment">/* number of PO */</span>
+<a name="l00075"></a><a class="code" href="structcell__head.html#o9">00075</a>     <span class="keyword">struct </span><a class="code" href="structcell.html">cell</a>     **<a class="code" href="structcell.html">cell</a>;     <span class="comment">/* cells */</span>
+<a name="l00076"></a>00076 } <a class="code" href="structcell__head.html">CELL_HEAD</a>;
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078 <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcell.html">cell</a> {
+<a name="l00079"></a><a class="code" href="structcell.html#o9">00079</a>         <span class="keywordtype">char</span>                    *<a class="code" href="structcell.html#o0">name</a>;                                  <span class="comment">/*      信号線名                */</span>
+<a name="l00080"></a><a class="code" href="structcell.html#o10">00080</a>         <span class="keywordtype">int</span>                             <a class="code" href="structcell.html#o1">id</a>;                                             <span class="comment">/*  信号線ID            */</span>
+<a name="l00081"></a><a class="code" href="structcell.html#o11">00081</a>         <span class="keywordtype">int</span>                             <a class="code" href="structcell.html#o3">type</a>;                                   <span class="comment">/*      ゲートタイプ    */</span>
+<a name="l00082"></a><a class="code" href="structcell.html#o12">00082</a>         <span class="keywordtype">int</span>                             <a class="code" href="structcell.html#o4">n_in</a>;                                   <span class="comment">/*  入力線数            */</span>
+<a name="l00083"></a><a class="code" href="structcell.html#o13">00083</a>         <span class="keywordtype">int</span>                             <a class="code" href="structcell.html#o5">n_out</a>;                                  <span class="comment">/*      出力線数                */</span>
+<a name="l00084"></a><a class="code" href="structcell.html#o14">00084</a>         <span class="keyword">struct </span><a class="code" href="structcell__io.html">cell_io</a>  *<a class="code" href="structcell.html#o6">in</a>;                                    <span class="comment">/*      入力信号線              */</span>
+<a name="l00085"></a><a class="code" href="structcell.html#o15">00085</a>         <span class="keyword">struct </span><a class="code" href="structcell__io.html">cell_io</a>  *<a class="code" href="structcell.html#o7">out</a>;                                   <span class="comment">/*      出力信号線              */</span>
+<a name="l00086"></a><a class="code" href="structcell.html#o16">00086</a>     <span class="keyword">struct </span><a class="code" href="structcell.html">cell</a>     *<a class="code" href="structcell.html#o8">next</a>;                                      <span class="comment">/*                                      */</span>
+<a name="l00087"></a>00087 } <a class="code" href="structcell.html">CELL</a>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcell__io.html">cell_io</a> {
+<a name="l00090"></a><a class="code" href="structcell__io.html#o2">00090</a>         <span class="keyword">struct </span><a class="code" href="structcell.html">cell</a>    *<a class="code" href="structcell.html">cell</a>;                                   <span class="comment">/*      接続信号線              */</span>
+<a name="l00091"></a><a class="code" href="structcell__io.html#o3">00091</a>         <span class="keyword">struct </span><a class="code" href="structcell__io.html">cell_io</a> *<a class="code" href="structcell__io.html#o1">next</a>;
+<a name="l00092"></a>00092 } <a class="code" href="structcell__io.html">CELL_IO</a>;
+</pre></div><hr size="1"><address style="align: right;"><small>FLIGHTに対してFri Feb 10 21:16:37 2006に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.4 </small></address>
+</body>
+</html>
