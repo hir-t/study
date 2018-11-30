@@ -11,7 +11,7 @@ void makeCycle(){
 	extern LINE *Line_head;
 	LINE *Logic_level[Line_info.n_line];
 	LINE *line;
-	int loops = 1; //作成するループの数
+	int loops = 2; //作成するループの数
 	int length = 3; //作成するループの長さ
 
 	/*	ID順にレベルやタイプを取得 */
@@ -37,6 +37,7 @@ void makeCycle(){
 				temp[i] = Logic_level[j-1];
 				Logic_level[j-1] = Logic_level[j];
 				Logic_level[j] = temp[i];
+
 			}
 		}
 	}
@@ -44,22 +45,47 @@ void makeCycle(){
 	/*printf("----------ソート後-----------\n");
 	for(int i = 0;i<Line_info.n_line;i++){
 		printf("ID:%lu,入力レベル:%lu,TYPE:%u\n",Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
-	}
-	*/
+	}*/
+
 
 	/* ここからループを作る */
 	int N = 0;
 	while(N < loops){
 		//for(int M = 0 M < length; M++){
 			int num = rand() % Line_info.n_line + 1; //ランダムに選択するゲート番号を選ぶ(信この値は号線なども含む)
-			while(num < 2 && 10 < num){ //ゲート以外の場合
+			while((Logic_level[num]->type < 2 && 10 < Logic_level[num]->type) && (num < line->n_in - length)){ //ゲート以外の場合
 				num = rand() % Line_info.n_line + 1; //選択し直す
 			}
-			printf("ID1:%lu,ID2:%lu\n",Logic_level[num]->line_id,Logic_level[num+length]->line_id);
+			line = &(Line_head[num]);
+		for (int j = 0; j < line->n_out; j++){
+			printf("selectedID:%lu,selectedTYPE:%u,outID:%lu,outTYPE:%u\n",Logic_level[num]->line_id,Logic_level[num]->type,line->out[j]->line_id,line->out[j]->type);
+			printf("outID:%lu,outTYPE:%uout2ID:%lu,out2TYPE:%u\n",line->out[j]->line_id,line->out[j]->type,line->out[j]->out[j]->line_id,line->out[j]->out[j]->type);
+		}
 			N++;
 		//}
 	}
 
 
-	
+
 }
+
+/**********************************************
+**************TYPE一覧*************************
+*
+*    TOPGUN_PI   = 0,	//!< 外部入力
+*    TOPGUN_PO   = 1,	//!< 外部出力
+*    TOPGUN_BR   = 2,	//!< ファンアウトブランチ
+*    TOPGUN_INV  = 3,	//!< インバータ
+*    TOPGUN_BUF  = 4,	//!< バッファ
+*    TOPGUN_AND  = 5,	//!< アンド
+*    TOPGUN_NAND = 6,	//!< ナンド
+*    TOPGUN_OR   = 7,	//!< オア
+*    TOPGUN_NOR  = 8,	//!< ノア
+*    TOPGUN_XOR  = 9,	//!< イクルーシブオア
+*    TOPGUN_XNOR = 10,	//!< イクルーシブノア
+*    TOPGUN_BLKI = 11,	//!< 不定入力
+*    TOPGUN_BLKO = 12,	//!< 不定出力
+*    TOPGUN_UNK  = 13,	//!< 未確定型
+*    TOPGUN_NUM_PRIM,    //!< 型の数
+*
+*/
