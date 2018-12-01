@@ -4,7 +4,7 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
-void dfs(){
+void TopologicalSort(){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 	LINE *Logic_level[Line_info.n_line];
@@ -40,3 +40,4 @@ void dfs(){
 	for(int i = 0;i<Line_info.n_line;i++){
 		printf("ID:%lu,入力レベル:%lu,TYPE:%u\n",Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
 	}*/
+}
