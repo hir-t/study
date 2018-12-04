@@ -20,60 +20,61 @@ void eval(){
 	//printf("----------ソート前-----------\n");
 	for(int i = 0;i<Line_info.n_line;i++){
 		line = &(Line_head[i]);
-
-		if(line->n_in == 1){			//入力数が1のとき
-			if(line->type==3){//inv
-				printf("%lu %lu",line->in[0]->line_id,line->out[0]->line_id);				//a + c
-				printf("-%lu -%lu",line->in[0]->line_id,line->out[0]->line_id);			//-a+ -c
+		//入力数が1のとき
+		//input:a output:b
+		if(line->n_in == 1){
+			if(line->type==3){															// INVゲートの時
+				printf("%lu %lu 0",line->in[0]->line_id,line->out[0]->line_id);			//a + c
+				printf("-%lu -%lu 0",line->in[0]->line_id,line->out[0]->line_id);		//-a+ -c
 			}
-			if(line->type==4){		//buf
-				printf("-%lu %lu",line->in[0]->line_id,line->out[0]->line_id);			//-a + c
-				printf("%lu -%lu",line->in[0]->line_id,line->out[0]->line_id);			//a+ -c
+			if(line->type==4){															//BUFゲートの時
+				printf("-%lu %lu 0",line->in[0]->line_id,line->out[0]->line_id);		//-a + c
+				printf("%lu -%lu 0",line->in[0]->line_id,line->out[0]->line_id);		//a+ -c
 			}
 		}
-
-		if(line->n_in == 2){			//入力数が2のとき
-			if(line->type==5){			//and
-					printf("-%lu %lu\n", line->out[0]->line_id,line->in[0]->line_id); 								//-c + a
-					printf("-%lu %lu\n", line->out[0]->line_id,line->in[1]->line_id); 								//-c + b
-					printf("-%lu -%lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //-a + -b + c
+		//入力数が2のとき
+		//intput1:a,input2:b,output:c
+		if(line->n_in == 2){
+			if(line->type==5){																							//ANDゲートの時
+					printf("-%lu %lu 0\n", line->out[0]->line_id,line->in[0]->line_id); 								//-c + a
+					printf("-%lu %lu 0\n", line->out[0]->line_id,line->in[1]->line_id); 								//-c + b
+					printf("-%lu -%lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);		//-a + -b + c
 				}
 
-				if(line->type==6){		//nand
-					printf("%lu %lu\n", line->out[0]->line_id,line->in[0]->line_id);								//
-					printf("%lu %lu\n", line->out[0]->line_id,line->in[1]->line_id);
-					printf("-%lu -%lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);
+				if(line->type==6){																						//NANDゲートの時
+					printf("%lu %lu 0\n", line->out[0]->line_id,line->in[0]->line_id);									//c + a
+					printf("%lu %lu 0\n", line->out[0]->line_id,line->in[1]->line_id);									//c + b
+					printf("-%lu -%lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);		//-a + -b + -c
 				}
 
-				if(line->type==7){		//or
-					printf("%lu -%lu\n", line->out[0]->line_id,line->in[0]->line_id);
-					printf("%lu -%lu\n", line->out[0]->line_id,line->in[1]->line_id);
-					printf("%lu %lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);
+				if(line->type==7){																						//ORゲートの時
+					printf("%lu -%lu 0\n", line->out[0]->line_id,line->in[0]->line_id);									//c + -a
+					printf("%lu -%lu 0\n", line->out[0]->line_id,line->in[1]->line_id);									//c + -b
+					printf("%lu %lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);		//a + b + -c
 				}
 
-				if(line->type==8){		//nor
-					printf("-%lu -%lu\n", line->out[0]->line_id,line->in[0]->line_id);
-					printf("-%lu -%lu\n", line->out[0]->line_id,line->in[1]->line_id);
-					printf("%lu %lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);
+				if(line->type==8){																						//NORゲートの時
+					printf("-%lu -%lu 0\n", line->out[0]->line_id,line->in[0]->line_id);								//-c + -a
+					printf("-%lu -%lu 0\n", line->out[0]->line_id,line->in[1]->line_id);								//-c + -b
+					printf("%lu %lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);			//a + b + c
 				}
 
-				if(line->type==9){		//xor
-					printf("%-lu %lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //-a + b + c
-					printf("%lu -%lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //a + -b + c
-					printf("%-lu -%lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //-a + -b + -c
-					printf("%lu %lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //a + b + -c
+				if(line->type==9){																						//XORゲートの時
+					printf("%-lu %lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   		//-a + b + c
+					printf("%lu -%lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   		//a + -b + c
+					printf("%-lu -%lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id); 		//-a + -b + -c
+					printf("%lu %lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   		//a + b + -c
 				}
 
-				if(line->type==10){	//xnor
-					printf("%-lu %lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //-a + b + -c
-					printf("%lu -%lu -%lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //a + -b + -c
-					printf("%-lu -%lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //-a + -b + c
-					printf("%lu %lu %lu\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   //a + b + c
+				if(line->type==10){																						//XNORゲートの時
+					printf("%-lu %lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   	//-a + b + -c
+					printf("%lu -%lu -%lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   	//a + -b + -c
+					printf("%-lu -%lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   	//-a + -b + c
+					printf("%lu %lu %lu 0\n", line->in[0]->line_id,line->in[1]->line_id,line->out[0]->line_id);   		//a + b + c
 				}
 				printf("\n");
 			}
 		}
-		//printf("ID:%lu,入力レベル:%lu,TYPE:%u\n", Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
 
 	}
 
