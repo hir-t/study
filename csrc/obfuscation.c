@@ -12,8 +12,8 @@ void obfuscation(){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 
-	int length = 1; //作成するループの長さ
-	int loops = 2; //作成するループの数
+	int length = 3; //作成するループの長さ
+	int loops = 1; //作成するループの数
 	int M = 0;    //長さ(深さ)を数える
 	int N = 0;	  //ループの数を数える
 	int num[loops]; //ループの初期ノードid
