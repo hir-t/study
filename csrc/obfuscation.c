@@ -1,5 +1,6 @@
 //複数のループ作成の場合、ループ部分だけを書き足したい
 //今はループを増やすたびに全部を書き直してる
+//while(N<length)に入れるのは作成するループ部分だけ
 
 #include <stdio.h>
 #include <stdlib.h> //exit()ÍÑ
@@ -90,7 +91,7 @@ void obfuscation(){
 	}
 
 	/***** ファイルの内容を書き込んでいく　*****/
-	for(N = 0; N < loops; N++){
+	N = 0;
 		for(int i = 0;i<Line_info.n_line;i++)
 		{
 			line = &(Line_head[i]);
@@ -161,6 +162,7 @@ void obfuscation(){
 				}
 				fprintf(out_fp,"-%lu %lu 0\n",line->out[0]->line_id,start[N]->in[0]->line_id);		//-a + c
 				fprintf(out_fp,"%lu -%lu 0\n",line->out[0]->line_id,start[N]->in[0]->line_id);		//a + -c
+				N++;
 			}
 
 			//入力数が1のとき
@@ -231,7 +233,6 @@ void obfuscation(){
 				}
 			}
 		}
-	}
 }
 
 /**********************************************
