@@ -31,12 +31,12 @@ void makeBench(){
 		data[i]->level  = line->lv_pi; //ここをポインタに
 		data[i]->line_id  = line->line_id;
 		data[i]->type = line->type;
-		//printf("ID:%lu,入力レベル:%lu,TYPE:%u\n", Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
-
+		//printf("ID:%lu,入力レベル:%lu,TYPE:%u\n", data[i]->line_id,data[i]->level,data[i]->type);
 	}
+
 	int M = 0;
 	int num = 10;
-	/* ファイルの内容を書き込んでいく　*/
+	/* ループの開始地点と折り返し地点を決める　*/
 	start = data[num];
 	//startID = start->line_id;
 	printf("startID:%lu,startTYPE:%u\n",start->line_id,start->type);
