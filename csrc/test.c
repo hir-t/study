@@ -4,7 +4,7 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
-LINE *dfs2(int M ,int length,int loops,LINE *start);
+LINE *dfs2(int M ,int loops,int length,LINE *start);
 
 void test(){
 	extern LINE_INFO Line_info;
@@ -39,7 +39,7 @@ void test(){
 	for (int i = 0; i < loops; i++)
 	{
 		//num[N] = rand() % Line_info.n_line; //ランダムに選択するゲート番号を選ぶ(この値は信号線なども含む)
-		num[i] = 11;
+		num[i] = 10;
 		start[i] = data[num[i]];
 		while((start[i]->type < 3 && 10 < start[i]->type)){ //ゲート以外の場合																									//(num < line->n_in - length)は修正の必要あり
 			num[i] = rand() % Line_info.n_line; //選択し直す
@@ -50,7 +50,7 @@ void test(){
 
 	for(int i = 0; i < loops; i++){
 		printf("aaa\n");
-		end[i] = dfs2(M,length,loops,start[i]);
+		end[i] = dfs2(M,loops,length,start[i]);
 		printf("endID:%lu,endTYPE:%u\n",end[i]->line_id,end[i]->type);
 	}
 
