@@ -4,44 +4,50 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
+#include <global.h>
 //int M = 0;    //長さ(深さ)を数える
+int entries;
+int discovery;
 
-LINE *dfs2(int M,int loops,int length,LINE *start){
+LINE *dfs2(int entry,int M,int loops,int length,LINE *start){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 
-	//int length = 3; //作成するループの長さ
-	//int loops = 1; //作成するループの数
-	//int N = 0;	  //ループの数を数える
-	//int num[loops]; //ループの初期ノードid
-	//int nextID = 0; //次に訪れるゲートのid
-	//int prevID = 0; //nextの前に訪れたゲートid
-
+	entries = entry;
 	LINE *now;
-	//LINE *line;
-	//LINE *path[loops][length];
 	now = start;
+
 	printf("nowID:%lu,nowTYPE:%u\n",now->line_id,now->type);
-	if(now->flag != 1){
+
+	if(now->flag != 1){	//現在のゲートが未訪問なら
 		now->flag = 1;
 		if(2<now->type && now->type<11){
 			M++; //深さをカウント
 		}
 	}
 
-	printf("M:%d\n", M);
-	if(M == length){
+	//printf("M:%d\n", M);
+	if(M == length && entries > 0){
+		printf("endID:%lu,endTYPE:%u\n",now->line_id,now->type);
+		printf("---dfs has finished.---\n");
+		discovery = 1;
 		return now;
 	}
 	else{
 		for(int a = 0; a < now->n_out; a++){
 			now = now->out[a];
+			printf("nextID:%lu,nextTYPE:%u\n",now->line_id,now->type);
+			if(now->n_in > 1){ //深さ2以上でかつエントリポイントが複数
+				//printf("OK\n");
+				entries++;
+				printf("ID:%lu,entries:%d\n",now->line_id,entries);
+			}
 			if(now->flag != 1){
-				now = dfs2(M,loops,length,now);
+				now = dfs2(entries,M,loops,length,now);
+				return now;
 			}
 		}
 	}
-
-
+	printf("dfs hasn't finished.\n");
 	return now;
 }
