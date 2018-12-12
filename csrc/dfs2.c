@@ -6,7 +6,7 @@
 #include <topgunLine.h>
 //int M = 0;    //長さ(深さ)を数える
 
-LINE *dfs2(int M,int length,int loops,LINE *start){
+LINE *dfs2(int M,int loops,int length,LINE *start){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 
@@ -37,7 +37,7 @@ LINE *dfs2(int M,int length,int loops,LINE *start){
 		for(int a = 0; a < now->n_out; a++){
 			now = now->out[a];
 			if(now->flag != 1){
-				now = dfs2(M,length,loops,now);
+				now = dfs2(M,loops,length,now);
 			}
 		}
 	}
