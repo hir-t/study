@@ -7,6 +7,7 @@
 #include <topgunLine.h>
 #include <global.h>
 LINE *dfs2(int entry,int M ,int loops,int length,LINE *start);
+int shuffle(int[],int);
 
 void test(){
 	extern LINE_INFO Line_info;
@@ -14,7 +15,7 @@ void test(){
 
 	int entry = 0;
 	int length = 2; //作成するループの長さ
-	int loops = 1; //作成するループの数
+	int loops = 2; //作成するループの数
 	int M = 0;    //長さ(深さ)を数える
 	int num = 0; //ループの初期ノードid
 	int gate = 0;
@@ -57,6 +58,9 @@ void test(){
 	}
 	printf("The number of gate is %d\n",gate);
 
+	Ulong size = sizeof data / sizeof data[0] ;
+	printf("size:%lu\n",size);
+
 	/**** ゲートだけをまとめた配列を作成する ****/
 	int gateId[gate];
 	int n = 0;		//ゲート数をカウント
@@ -72,37 +76,38 @@ void test(){
 			break;
 		}
 	}
-	/*
-	//ゲートの確認
-	for(int i = 0;i<gate;i++){
-		printf("GATE:%d\n",gateId[i]);
-	}*/
-
 
 	/***** ループの開始地点と折り返し地点を決める *****/
-	//int  N = 0;		//作成するループ数を数える
-	/*shuffle(gateId,gate);
-	 for(int i=0;i<gate;i++){
+	int  N = 0;		//作成するループ数を数える
+	shuffle(gateId,gate);
+	 /*for(int i=0;i<gate;i++){
         printf("%d,",gateId[i]);
     }*/
-	//for (int i = 0; i < loops; i++)
 	//while((N != loops && entries < 1) || (N != loops && discovery !=1))
-	while(discovery != loops && entries < 1)
+	int ran = 0;
+	while(discovery < loops && entries < 1)
+	//while(discovery < loops)
 	{
 		srand( (int)time(NULL) );	//乱数SEED設定
 		printf("--------------TAKE%d--------------\n",N);
+		printf("%d\n", discovery);
 		M = 0;
-		//num = 4;
-		num = rand() % gate; //ランダムに選択するゲート番号を選ぶ(この値は信号線なども含む)
+		num = gateId[ran];
+		//num = rand() % gate; //ランダムに選択するゲート番号を選ぶ(この値は信号線なども含む)
 		//printf("num:%d\n",gateId[num]);
 		//num[i] = 10;
-		start[N] = data[gateId[num]];
+		//start[N] = data[gateId[num]];
+		start[N] = data[num];
 
 		printf("START_ID%d:%lu\n",N,start[N]->line_id);
 
 		end[N] = dfs2(entry,M,loops,length,start[N]);
 		printf("END_ID:%lu\n",end[N]->line_id);
-
+		if(flag2 ==1){
+			N++;
+			entries = 0;
+		}
+		printf("N:%d\n",N);
 		//printf("endID:%lu,endTYPE:%u\n",end[i]->line_id,end[i]->type);
 /*		if(entries < 1 || discovery != 1){ //複数のエントリポイントが見つからなかった場合、または経路が短かった場合
 			i = i-1;	 //もう一度探索し直すために、カウント変数を減らす
@@ -113,14 +118,22 @@ void test(){
 			printf("!!!! ERROR !!!!\n");
 			break;
 		}
-		N++;
+		//N++;
+		ran++;
 	}
 
 
 
-	N = 0; //Nを初期化する
-	Ulong c1 = 100;
-	Ulong c2 = 200;
+	int N2 = 0; //N2を初期化,ループ数用変数2
+	for(int i = 0; i<loops; i++){
+		printf("START%d:%lu\n",N2,start[i]->line_id);
+		printf("END%d:%lu\n",N2,end[i]->line_id);
+		N2++;
+	}
+	N = 0;
+	Ulong add = 1;			//muxの信号線に使用
+	//Ulong c1 = size + add;
+	//Ulong c2 = size + add + 1; //c1 + 1
 	/*	ID順にレベルやタイプを取得 */
 	for(int i = 0;i<Line_info.n_line;i++){
 		line = &(Line_head[i]);
@@ -177,29 +190,32 @@ void test(){
 					fprintf(out_fp,"%lu %lu %lu 0\n", line->out[0]->line_id,line->in[0]->line_id,line->in[1]->line_id);   		//z + a + b
 				}
 			}
+				Ulong c1 = size + add;		//muxの入力s
+				//Ulong c2 = size + add + 1;	//muxの出力z c1 + 1
 				printf("aa\n");
 				fprintf(out_fp,"mux\n");
-				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//-z + a + b
-				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//-z + a + s
-				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,start[N]->in[0]->line_id,c1);			//-z + b + -s
-				fprintf(out_fp,"%lu %lu %lu 0\n", c2,start[N]->in[0]->line_id,c1);			//z + -b + -s
-				fprintf(out_fp,"%lu %lu %lu 0\n", c2,end[N]->out[0]->line_id,c1);			//z + -a + s
-				fprintf(out_fp,"%lu %lu %lu 0\n", c2,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//z + -a + -b
-				/*mux->n_in = 3;
-				mux->n_out = 1;
-				mux->in[0]->line_id = end[N]->out[0]->line_id;		//a
-				mux->in[1]->line_id = start[N]->in[0]->line_id;		//b
-				mux->in[2]->line_id = Line_info.n_line + 1;			//s
-				mux->out[0]->line_id = Line_info.n_line + 2;		//z
-				//MUXをはさむ
-				fprintf(out_fp,"aaaaaaaaa\n");
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[0]->line_id,mux->in[1]->line_id);			//-z + a + b
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[0]->line_id,mux->in[2]->line_id);			//-z + a + s
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[1]->line_id,mux->in[2]->line_id);			//-z + b + -s
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[1]->line_id,mux->in[2]->line_id);			//z + -b + -s
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[0]->line_id,mux->in[2]->line_id);			//z + -a + s
-				fprintf(out_fp,"-%lu %lu %lu 0\n", mux->out[0]->line_id,mux->in[0]->line_id,mux->in[1]->line_id);			//z + -a + -b
-*/
+				printf("ii\n");
+				fprintf(out_fp,"-%lu %lu %lu 0\n", start[N]->in[0]->line_id,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//-z + a + b
+				printf("uu\n");
+				fprintf(out_fp,"-%lu %lu %lu 0\n", start[N]->in[0]->line_id,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//-z + a + s
+				printf("ee\n");
+				fprintf(out_fp,"-%lu %lu %lu 0\n", start[N]->in[0]->line_id,start[N]->in[0]->line_id,c1);								//-z + b + -s
+				printf("oo\n");
+				fprintf(out_fp,"%lu %lu %lu 0\n", start[N]->in[0]->line_id,start[N]->in[0]->line_id,c1);								//z + -b + -s
+				printf("ka\n");
+				fprintf(out_fp,"%lu %lu %lu 0\n", start[N]->in[0]->line_id,end[N]->out[0]->line_id,c1);									//z + -a + s
+				printf("ki\n");
+				fprintf(out_fp,"%lu %lu %lu 0\n", start[N]->in[0]->line_id,end[N]->out[0]->line_id,start[N]->in[0]->line_id);			//z + -a + -s
+				printf("ku\n");
+				N++;
+				add++;
+				//add = add + 2;
+				/*
+				* end[N]->out[0]->line_id	:	muxの入力a
+				* start[N]->in[0]->line_id	:	muxの入力b
+				* c1						:	muxの入力s
+				* start[N]->in[0]->line_id	:	muzの出力z(c2にするかも？)
+				*/
 		}
 		else{
 			if(line->n_in == 1){
