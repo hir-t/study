@@ -1,3 +1,4 @@
+/* 信号線の番号とその入出力数、入出力からのレベルを出力*/
 #include <stdio.h>
 #include <stdlib.h> //exit()ÍÑ
 #include <string.h>
@@ -23,6 +24,7 @@ void n_line_out(){
 		printf("n_out:%lu\n",line->n_out);
 		printf("入力レベル:%lu\n",line->lv_pi);
 		printf("出力レベル:%lu\n",line->lv_po);
+		printf("i:%d\n",i);
 	}
 	printf("-------------------------\n");
 
