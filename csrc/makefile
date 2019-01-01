@@ -59,6 +59,15 @@ OBJS	=	\
 		n_line_out.o \
 		line_point.o \
 		simulate2.o \
+		TopologicalSort.o \
+		eval.o \
+		dfs.o \
+		test.o \
+		dfs2.o \
+		shuffle.o \
+		obfuscation.o \
+		makeBench.o \
+		makeCnf.o \
 		topgunUty.o \
 		topgunTime.o \
 		topgunTest.o
