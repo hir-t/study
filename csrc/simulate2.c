@@ -1,3 +1,5 @@
+/* 論理シミュレーションを行う */
+/* 入力パターンのテキストファイルを用意する	*/
 #include <stdio.h>
 #include <stdlib.h> //exit()ÍÑ
 #include <string.h>
@@ -23,7 +25,7 @@ void simulate2(){
 
 	}
 
-	/*	取得したものをレベル順にソート */
+	/***	取得したものをレベル順にソート ***/
 	LINE *temp[Line_info.n_line]; //バブルソート用
 
 	for(int i = 0;i<Line_info.n_line;i++){
@@ -36,12 +38,13 @@ void simulate2(){
 			}
 		}
 	}
+
 	/*printf("----------ソート後-----------\n");
 	for(int i = 0;i<Line_info.n_line;i++){
 		printf("ID:%lu,入力レベル:%lu,TYPE:%u\n",Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
-	}*/
-
-	/*シミュレーション*/
+	}
+*/
+	/*** シミュレーション ***/
 	int Num_of_Input = 0; //入力数
 
 	for (int i = 0; i < Line_info.n_line;i++){
@@ -213,26 +216,4 @@ void simulate2(){
   		}
 	}
 }
-
-
-/**********************************************
-**************TYPE一覧*************************
-*
-*    TOPGUN_PI   = 0,	//!< 外部入力
-*    TOPGUN_PO   = 1,	//!< 外部出力
-*    TOPGUN_BR   = 2,	//!< ファンアウトブランチ
-*    TOPGUN_INV  = 3,	//!< インバータ
-*    TOPGUN_BUF  = 4,	//!< バッファ
-*    TOPGUN_AND  = 5,	//!< アンド
-*    TOPGUN_NAND = 6,	//!< ナンド
-*    TOPGUN_OR   = 7,	//!< オア
-*    TOPGUN_NOR  = 8,	//!< ノア
-*    TOPGUN_XOR  = 9,	//!< イクルーシブオア
-*    TOPGUN_XNOR = 10,	//!< イクルーシブノア
-*    TOPGUN_BLKI = 11,	//!< 不定入力
-*    TOPGUN_BLKO = 12,	//!< 不定出力
-*    TOPGUN_UNK  = 13,	//!< 未確定型
-*    TOPGUN_NUM_PRIM,    //!< 型の数
-*
-************************************************/
 
