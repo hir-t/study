@@ -17,6 +17,7 @@
 #include "topgun.h"
 #include "topgunTime.h"
 #include "topgunError.h"
+#include "topgunLine.h"
 
 /* topgun_init.c */
 void topgun_init();
@@ -38,6 +39,12 @@ void helloworld(void);
 void n_line_out(void);
 void line_point(void);
 void simulate2(void);
+//void makeCycle(void);
+void dfs(void);
+void makeBench(void);
+void eval(void);
+void obfuscation(void);
+void test(void);
 //void info_line_structure();
 
 /********************************************************************************
@@ -126,7 +133,11 @@ int main
     //n_line_out();
     //line_point();
     //getLevelandSort();
-    simulate2();
+    //eval();
+    //test();
+    obfuscation();
+    //simulate2();
+    //makeBench();
     /*
     printf("*****************\n");
     info_line_structure();
