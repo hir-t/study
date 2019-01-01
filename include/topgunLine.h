@@ -119,12 +119,17 @@ typedef struct line
     Ulong               n_out;		//!< 信号線の出力数
     struct line         **in;       //!< 入力信号線へのポインタ
     struct line         **out;      //!< 出力信号線へのポインタ
+    struct line         **prev;
     struct learn_list   *imp_0;     //!< 0に含意された時に一緒に含意されるもの
     struct learn_list   *imp_1;     //!< 1に含意された時に一緒に含意されるもの
     Ulong               flag;		//!< フラグ
     Ulong               lv_pi;      //!< 入力からの信号線段数
     Ulong               lv_po;      //!< 出力からの信号線段数
     Ulong               level;
+
+    struct line         *st;        //経路の始点へのポインタ
+    Ulong               endflg;     //経路の折り返し地点を示すフラグ
+    Ulong               rtflg;      //経路を示すフラグ
 
     Ulong               imp_id_n;   //!< 正常値が含意された値割当て番号
     Ulong               imp_id_f;   //!< 故障値が含意された値割当て番号
