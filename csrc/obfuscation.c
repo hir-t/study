@@ -8,9 +8,9 @@
 #include <global.h>
 LINE *dfs2(int entry,int N,int M ,int loops,int length,LINE *start,LINE *route[loops][length]);		//ループ作成の経路を探す
 int shuffle(int[],int[],int);										//乱数生成用関数
-//void makeCnf(FILE*,LINE *start,LINE *end,Ulong,int);				//cnf記述用関数
+//void makeCnf(FILE*,LINE *data,LINE *r,Ulong c1,Ulong c2,Ulong variables,Ulong clauses);				//cnf記述用関数
 void TopologicalSort(int,int,LINE *[],LINE *[]);
-int countClauses(void);
+Ulong countClauses(void);
 
 void obfuscation(){
 	extern LINE_INFO Line_info;
@@ -77,10 +77,6 @@ void obfuscation(){
 		{
 			gateId[n] = line->line_id;
 			randId[n] = line->line_id;
-			if (line->type==1)
-			{
-				printf("ID:%lu,type:%u\n", line->line_id,line->type);
-			}
 			n++;
 		}
 		if(gate == n){
@@ -117,6 +113,7 @@ void obfuscation(){
 		//printf("********************************\n");
 
 		if(flag2 == 1){			//経路が見つかった時
+			//経路として選択済みにする
 			for (int m = 0; m < length; m++)
 			{
 				//route[N][m]->selected = 1;
@@ -146,8 +143,6 @@ void obfuscation(){
 			printf("route[%d][%d]-ID:%lu,n_out%lu\n",i,j,route[i][j]->line_id,route[i][j]->n_out);
 		}
 	}*/
-
-	//取得した経路に含まれないゲートを集める
 
 	LINE *routeNode[loops*length];			//レベル順に経路内のゲートをまとめる
 	int k = 0;
@@ -190,9 +185,10 @@ void obfuscation(){
 	TopologicalSort(loops,length,routeNode,data);	//経路内のノードをレベル順にソート
 
 	//ソート後出力
-	k = 0;
 	//printf("--ソート後--\n");
-/*	while(k < loops*length){
+/*
+	//k = 0;
+	while(k < loops*length){
 	printf("ID:%lu,LV.%lu,flg:%lu,rtcnt:%lu,nextID%lu\n",routeNode[k]->line_id,routeNode[k]->level,routeNode[k]->endflg,routeNode[k]->rtcnt,routeNode[k]->next->line_id);
 		k++;
 	}*/
@@ -207,8 +203,8 @@ void obfuscation(){
 	}*/
 
 	//追加するmuxの数と、それに伴って増加する信号線の数を数える
-	int m_node 	 =  loops;			//MUXの追加によって増えるノードの数
-	int m_num 	 =  0;				//1ループに追加するMUXの総数(折り返し地点以外)を数える
+	Ulong m_node 	 =  loops;			//MUXの追加によって増えるノードの数
+	Ulong m_num 	 =  0;				//1ループに追加するMUXの総数(折り返し地点以外)を数える
 	Ulong m_edge =  loops*2;		//MUXの追加によって増えるエッジの数
 	//int loop_m[loops];			//1ループに追加するMUXの総数(折り返し地点以外)
 
@@ -220,7 +216,7 @@ void obfuscation(){
 			{
 				m_node = m_node + 2;					//MUXを2つ増やすため
 				m_num = m_num + 2;						//MUXを2つ増やすため
-				m_edge = m_edge + 4;					//入力sが2つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)
+				m_edge = m_edge + 4;					//入力sが2つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)->本来は下の式が正しいはずだが,こうするとc1908.benchのcnfの変数の数が正しくなる
 				//m_edge = m_edge + 3;					//入力sが1つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)
 			}
 			else{										//経路のファンアウトが1以外(2で考えるがそれ以上の場合もある)のとき
@@ -287,13 +283,13 @@ void obfuscation(){
 	Ulong c2	 = Line_info.n_line + 2;		//muxの入力zに与えるID
 	int count = 0;
 
-	int variables  = Line_info.n_line + m_edge;						//MUXを追加した後の回路全体の信号線数(命題変数の数)
-	int m_clauses = m_node*6;		//muxの節数が6なため
-	printf("m_clauses:%d\n", m_clauses);
-	int clauses = countClauses() + m_clauses;
-	printf("evClauses:%d\n", countClauses());
-
-	fprintf(out_fp,"p cnf %d %d\n",variables,clauses);
+	Ulong variables  = Line_info.n_line + m_edge;						//MUXを追加した後の回路全体の信号線数(命題変数の数)
+	Ulong m_clauses = m_node*6;		//muxの節数が6なため
+	printf("m_clauses:%lu\n", m_clauses);
+	Ulong clauses = countClauses() + m_clauses;
+	printf("evClauses:%lu\n", countClauses());
+	//makeCnf(out_fp,data,g,c1,c2,variables,clauses);
+	fprintf(out_fp,"p cnf %lu %lu\n",variables,clauses);
 	for(int i = 0;i<Line_info.n_line;i++){
 		//printf("%d.ID:%lu,入力レベル:%lu,TYPE:%u,n_in:%lu,n_out:%lu\n", i,data[i]->line_id,data[i]->level,data[i]->type,data[i]->n_in,data[i]->n_out);
 
@@ -832,7 +828,7 @@ void obfuscation(){
 									data[i]->in[5]->line_id+1,data[i]->in[6]->line_id+1);
 				}
 
-				else if(line->type==10){																								//XNORゲートの時
+				else if(data[i]->type==10){																								//XNORゲートの時
 					//printf("7-xnor\n");
 					fprintf(out_fp,"-%lu -%lu %lu %lu %lu %lu %lu %lu 0\n",													   	//-z + -a + b + c + d + e + f + g
 									data[i]->out[0]->line_id+1,data[i]->in[0]->line_id+1,
@@ -1234,18 +1230,18 @@ void obfuscation(){
 				}
 			}
 
-			/*** 折り返し地点から開始地点へフェードバック(muxを挟む) ***/
-			//*経路の折り返し地点の時
-			//*フィードバックのためのMUXを追加
+			//折り返し地点から開始地点へフェードバック(muxを挟む)
+			//経路の折り返し地点の時
+			//フィードバックのためのMUXを追加
 			if(data[i]->endflg == 1)
 			{
 				//printf("mux-end\n");
-				/*printf("start:%lu\n",start[N]->line_id);
-				printf("end:%lu\n",end[N]->line_id);
-				printf("in1:%lu",start[N]->in[0]->line_id);
+				//printf("start:%lu\n",start[N]->line_id);
+				//printf("end:%lu\n",end[N]->line_id);
+				//printf("in1:%lu",start[N]->in[0]->line_id);
 				//printf("in2:%lu",data[i]->in[1]->line_id);
-				printf("out1:%lu\n",end[N]->out[0]->line_id);*/
-				//fprintf(out_fp,"mux\n");
+				//printf("out1:%lu\n",end[N]->out[0]->line_id);
+				fprintf(out_fp,"c muxEND\n");
 				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,data[i]->st->in[0]->line_id+1);		//-z + a + b
 				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);									//-z + a + s
 				fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,data[i]->st->in[0]->line_id+1,c1);								//-z + b + -s
@@ -1263,15 +1259,16 @@ void obfuscation(){
 				//ファンアウト数が1のときMUXを2つ追加
 				if(data[i]->n_out == 1){
 					//printf("2-muxes\n");
+					fprintf(out_fp,"c 2-muxes\n");
 					for (int j = 0; j < 2; j++)
 					{
-						//fprintf(out_fp,"mux\n");
 						//printf("St.in1:%lu",start[N]->in[0]->line_id);
 						//printf("in2:%lu",data[i]->in[1]->line_id);
 						//printf("%d\n", j);
 						//printf("rand[%d]ID:%lu,outID%lu\n",g,r[g]->line_id,r[g]->out[0]->line_id);
 						//printf("rand[%d]ID:%lu,TYPE:%u\n",g,r[g]->line_id,r[g]->type);
 						//printf("outID:%lu\n",r[g]->out[0]->line_id);
+						//fprintf(out_fp,"mux\n");
 						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);	//-z + a + b
 						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);						//-z + a + s
 						fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);							//-z + b + -s
@@ -1287,10 +1284,10 @@ void obfuscation(){
 				//ファンアウト数が1以上の時MUXを1つ追加+1
 				else if(data[i]->n_out > 1){
 					//printf("1-mux\n");
-					//fprintf(out_fp,"mux\n");
 					//printf("rand[%d]ID:%lu,outID%lu\n",g,r[g]->line_id,r[g]->out[0]->line_id);
 					//printf("rand[%d]ID:%lu,TYPE:%u\n",g,r[g]->line_id,r[g]->type);
 					//printf("outID:%lu\n",r[g]->out[0]->line_id);
+					fprintf(out_fp,"c 1-mux\n");
 					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);		//-z + a + b
 					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);							//-z + a + s
 					fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);								//-z + b + -s
@@ -1304,12 +1301,12 @@ void obfuscation(){
 				}
 			}
 			count++;
-				/*
-				* end[N]->out[0]->line_id	:	muxの入力a
-				* start[N]->in[0]->line_id	:	muxの入力b
-				* c1						:	muxの入力s
-				* start[N]->out[0]->line_id	:	muzの出力z(c2にするかも？)
-				*/
+				//
+				// end[N]->out[0]->line_id	:	muxの入力a
+				// start[N]->in[0]->line_id	:	muxの入力b
+				// c1						:	muxの入力s
+				// start[N]->out[0]->line_id	:	muzの出力z(c2にするかも？)
+				//
 
 		}
 		else{																								//経路でない時
@@ -1833,7 +1830,7 @@ void obfuscation(){
 									data[i]->in[5]->line_id+1,data[i]->in[6]->line_id+1);
 				}
 
-				else if(line->type==10){																								//XNORゲートの時
+				else if(data[i]->type==10){																								//XNORゲートの時
 					//printf("7-xnor\n");
 					fprintf(out_fp,"-%lu -%lu %lu %lu %lu %lu %lu %lu 0\n",													   	//-z + -a + b + c + d + e + f + g
 									data[i]->out[0]->line_id+1,data[i]->in[0]->line_id+1,
@@ -2237,10 +2234,10 @@ void obfuscation(){
 		}
 	}
 	printf("count:%d\n",count);
-	printf("m_node:%d\n",m_node);
-	printf("m_num:%d\n",m_num);
-	printf("g:%d\n",g);
+	printf("m_node:%lu\n",m_node);
+	printf("m_num:%lu\n",m_num);
 	printf("m_edge:%lu\n",m_edge);
+	printf("g:%d\n",g);
 	printf("size:%lu\n",size);
 }
 
