@@ -112,32 +112,40 @@ typedef enum line_type
 */
 typedef struct line
 {
-    enum line_type	    type;		//!< 信号線のゲート型
-    enum state_9        state9;		//!< 信号線の状態を9値( 正常値/故障値 )を示す
-    Ulong               line_id;	//!< 信号線のID
-    Ulong               n_in;		//!< 信号線の入力数
-    Ulong               n_out;		//!< 信号線の出力数
+    enum line_type	    type;		    //!< 信号線のゲート型
+    enum state_9        state9;		  //!< 信号線の状態を9値( 正常値/故障値 )を示す
+    Ulong               line_id;	  //!< 信号線のID
+    Ulong               n_in;		    //!< 信号線の入力数
+    Ulong               n_out;	   	//!< 信号線の出力数
     struct line         **in;       //!< 入力信号線へのポインタ
     struct line         **out;      //!< 出力信号線へのポインタ
-    struct line         **prev;
+    struct line         *prev;      //経路内の信号線の前へのポインタ
+    Ulong               p_cnt;      //prevの要素数
+    struct line         *next;      //経路内の信号線の次へのポインタ
+    Ulong               n_cnt;      //nextの要素数
+    struct line         *nextgt;    //次のゲートへのポインタ
     struct learn_list   *imp_0;     //!< 0に含意された時に一緒に含意されるもの
     struct learn_list   *imp_1;     //!< 1に含意された時に一緒に含意されるもの
-    Ulong               flag;		//!< フラグ
+    Ulong               flag;		    //!< フラグ
     Ulong               lv_pi;      //!< 入力からの信号線段数
     Ulong               lv_po;      //!< 出力からの信号線段数
     Ulong               level;
 
     struct line         *st;        //経路の始点へのポインタ
+    Ulong               stflg;      //経路の開始地点を示すフラグ
     Ulong               endflg;     //経路の折り返し地点を示すフラグ
+    //Ulong               selected;   //経路を示すフラグ(経路として選ばれるゲートの重複回避用)
     Ulong               rtflg;      //経路を示すフラグ
+    Ulong               rtcnt;      //ゲートが経路に何回使われたか数える(これも重複チェック用)
+    Ulong               dbflg;      //何個のゲートが重複したか数えるために使用。カウントしたら1にする
 
     Ulong               imp_id_n;   //!< 正常値が含意された値割当て番号
     Ulong               imp_id_f;   //!< 故障値が含意された値割当て番号
 
-    Ulong           	cnt_propa;	//!< 故障伝搬回数
+    Ulong           	cnt_propa;	  //!< 故障伝搬回数
 
-    Ulong           	tm_co;		//!< テスタビリティメジャ 0可制御性
-    Ulong           	tm_c0;		//!< テスタビリティメジャ 1可制御性
+    Ulong           	tm_co;	  	//!< テスタビリティメジャ 0可制御性
+    Ulong           	tm_c0;	  	//!< テスタビリティメジャ 1可制御性
     Ulong           	tm_c1;      //!< テスタビリティメジャ 可観測性
     Ulong           	tm_bb_co;   //!< テスタビリティメジャ 故障挿入時の0可制御性
     Ulong           	tm_bb_c0;   //!< テスタビリティメジャ 故障挿入時の1可制御性
@@ -151,7 +159,7 @@ typedef struct line
     Ulong           	n_val_b; /* 3値用 */
     Ulong           	f_val_a;
     Ulong           	f_val_b; /* 3値用 */
-    struct line         *event_line;
+    struct line       *event_line;
 
     Ulong             value; //シミュレート用論理値
 
