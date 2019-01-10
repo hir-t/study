@@ -5,6 +5,7 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
+int countClauses(void);
 void eval(){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
@@ -25,7 +26,6 @@ void eval(){
 	  }
 
 	  int gate = 0;								//回路内のゲート数
-	  Ulong edge  = Line_info.n_line + 1;		//回路内の信号線数
 
 	 for(int i = 0;i<Line_info.n_line;i++){
 	 	line = &(Line_head[i]);
@@ -33,8 +33,9 @@ void eval(){
 			gate++;
 		}
 	 }
-
-	fprintf(out_fp,"p cnf %lu %d\n",edge,gate);
+	int variables = Line_info.n_line;			//命題変数の数(信号線数)
+	int clauses = countClauses();				//節数(cnfファイルの行数)
+	fprintf(out_fp,"p cnf %d %d\n",variables,clauses);
 	/*	ID順にレベルやタイプを取得 */
 	for(int i = 0;i<Line_info.n_line;i++){
 		line = &(Line_head[i]);

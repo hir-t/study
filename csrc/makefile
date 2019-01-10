@@ -61,13 +61,15 @@ OBJS	=	\
 		simulate2.o \
 		TopologicalSort.o \
 		eval.o \
-		dfs.o \
 		test.o \
 		dfs2.o \
 		shuffle.o \
 		obfuscation.o \
+		countClauses.o \
 		makeBench.o \
 		makeCnf.o \
+		makeNext.o \
+		makePrev.o \
 		topgunUty.o \
 		topgunTime.o \
 		topgunTest.o

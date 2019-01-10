@@ -21,7 +21,8 @@ LINE *dfs2(int entry,int N,int M,int loops,int length,LINE *start,LINE *route[lo
 	flag2 = 0;
 	//printf("nowID:%lu,nowTYPE:%u\n",now->line_id,now->type);
 
-	if(now->flag != 1){	//現在のゲートが未訪問なら
+	//if(now->flag != 1 &&now->rtflg != 1){	//現在のゲートが未訪問で、他の経路でも使用されていなければ
+	if(now->flag != 1){	//現在のゲートが未訪問
 		now->flag = 1;
 		if(2<now->type && now->type<11){
 			route[N][M] = now;
@@ -34,11 +35,11 @@ LINE *dfs2(int entry,int N,int M,int loops,int length,LINE *start,LINE *route[lo
 	//printf("M:%d\n", M);
 	if(M == length && entries > 0){				//経路が見つかったとき
 		//printf("endID:%lu,endTYPE:%u\n",now->line_id,now->type);
-		printf("*******dfs has finished.********\n");
+		//printf("*******dfs has finished.********\n");
 		discovery++;
 		flag2 = 1;
-		printf("discovery:%d\n",discovery);
-		printf("entries:%d\n",entries);
+		//printf("discovery:%d\n",discovery);
+		//printf("entries:%d\n",entries);
 		return now;
 	}
 	else{
@@ -57,9 +58,9 @@ LINE *dfs2(int entry,int N,int M,int loops,int length,LINE *start,LINE *route[lo
 			}
 		}
 	}
-	printf("******dfs hasn't finished.*******\n");
-	printf("discovery:%d\n",discovery);
-	printf("N:%d\n",N);
+	//printf("******dfs hasn't finished.*******\n");
+	//printf("discovery:%d\n",discovery);
+	//printf("N:%d\n",N);
 	entries = 0;
 	return now;
 }
