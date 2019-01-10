@@ -8,12 +8,19 @@
 #include <global.h>
 //void makeNext(LINE *[],int,int);
 //makeNext(routeNode,loops,length);
-void makeNext(LINE *routeNode[],int loops,int length){
+void makeNext(LINE *routeNode[],int loops,int length,LINE *dbgate[]){
+	//int num = 0;
 	for (int i = 0; i < loops*length; i++)
 	{
 		LINE *now = routeNode[i];
+/*		if (now->rtcnt > 1)
+		{
+			dbgate[num] = now;
+			printf("---%d,dbID:%lu---\n", num,dbgate[num]->line_id);
+			num++;
+		}*/
 		if (i % loops ==0) printf("\n");
-		printf("nowID:%lu,type:%u\n",now->line_id,now->type);
+		printf("nowID:%lu,type:%u,cnt:%lu\n",now->line_id,now->type,now->rtcnt);
 		for (int j = 0; j < now->n_out; j++)
 		{
 			printf("now_out%lu,type%u\n", now->out[j]->line_id,now->out[j]->type);

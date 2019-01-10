@@ -10,6 +10,8 @@ LINE *dfs2(int entry,int N,int M ,int loops,int length,LINE *start,LINE *route[l
 int shuffle(int[],int[],int);										//乱数生成用関数
 //void makeCnf(FILE*,LINE *data,LINE *r,Ulong c1,Ulong c2,Ulong variables,Ulong clauses);				//cnf記述用関数
 void TopologicalSort(int,int,LINE *[],LINE *[]);
+void makePrev(LINE *[],int,int,LINE *[]);
+void makeNext(LINE *[],int,int,LINE *[]);
 Ulong countClauses(void);
 
 void obfuscation(){
@@ -107,6 +109,7 @@ void obfuscation(){
 		end[N] = dfs2(entry,N,M,loops,length,start[N],route);
 		end[N]->endflg = 1;
 		end[N]->st = start[N];
+		start[N] -> stflg = 1;
 		//printf("START_ID%d:%lu\n",N,start[N]->line_id);
 		//printf("END_ID:%lu\n",end[N]->line_id);
 		//printf("ST_ID:%lu\n",end[N]->st->line_id);
@@ -140,33 +143,67 @@ void obfuscation(){
 	{
 		for (int j = 0; j < length; j++)
 		{
-			printf("route[%d][%d]-ID:%lu,n_out%lu\n",i,j,route[i][j]->line_id,route[i][j]->n_out);
+			printf("route[%d][%d]-ID:%lu,n_in:%lu,n_out:%lu,type:%u,end:%lu\n",i,j,route[i][j]->line_id,route[i][j]->n_in,route[i][j]->n_out,route[i][j]->type,route[i][j]->endflg);
 		}
-	}*/
-
+	}
+*/
 	LINE *routeNode[loops*length];			//レベル順に経路内のゲートをまとめる
-	int k = 0;
+	//int k = 0;
 	N = M = 0;
-	while(k < loops*length){
+	for(int k = 0;k < loops*length;k++){
 
 		routeNode[k] = route[N][M];
-		//printf("route[%d][%d]:%lu\n",N,M,route[N][M]->line_id);
+		//printf("route[%d][%d]:%lu\n",N,M,routeNode[k]->line_id);
 		int id = routeNode[k]->line_id;
-		//data[id]->rtflg = 1;
-		data[id]->rtcnt += 1;
+		data[id]->rtflg = 1;
+		data[id]->rtcnt += 1;		//経路に含まれた数をカウント(経路間のダブりをチェック)
 		if(M < length){
-			data[id]->next = route[N][M+1];
+			data[id]->nextgt = route[N][M+1];
 			M++;
 		}
 		if(M == length)
 		{
-			data[id]->next = route[N][M];
+			//data[id]->next = route[N][M];
 			N++;
 			M = 0;
 		}
-		k++;
+		//k++;
 	}
 
+	int doubling = 0; //回路間でダブったゲートの数を数える
+	for(int k = 0;k < loops*length;k++){
+		if(routeNode[k]->rtcnt > 1){
+			//if (routeNode[k]->dbflg == 0)
+		//	{
+		//	printf("ダブったID:%lu\n", routeNode[k]->line_id);
+			doubling++;
+		//	routeNode[k]->dbflg =1;
+		//	}
+
+		}
+	}
+	printf("doubling:%d\n",doubling);
+
+	//これまでは経路内のゲートのみの繋がりを取得していたため、
+	//ゲート間にあるブランチも繋がりに追加する
+	LINE *dbgate[doubling];
+	makePrev(routeNode,loops,length,dbgate);		//経路内ゲートの直前の信号線を得る
+	makeNext(routeNode,loops,length,dbgate);		//経路内ゲートの直後の信号線を得る
+
+	//つながりを確認
+	for (int i = 0; i < loops*length; i++)
+	{
+		if (i>0)
+		{
+			printf("%d,nowID:%lu,prevID:%lu,prevType:%u,cnt:%lu\n", i,routeNode[i]->line_id,routeNode[i]->prev->line_id,routeNode[i]->prev->type,routeNode[i]->rtcnt);
+		}
+			printf("%d,nowID:%lu,nextID:%lu,next2ID:%lu,nextType:%u,cnt:%lu\n", i,routeNode[i]->line_id,routeNode[i]->next->line_id,routeNode[i]->next->next->line_id,routeNode[i]->next->type,routeNode[i]->rtcnt);
+			if (routeNode[i]->endflg == 1) printf("\n");
+	}
+/*	for (int i = 0; i < doubling; i++)
+	{
+		printf("ID:%lu,nextID:%lu\n", dbgate[i]->line_id, dbgate[i]->next->line_id);
+	}*/
 /*	for (int i = 0; i < Line_info.n_line; i++)
 	{
 		if (data[i]->rtflg==1)
@@ -281,10 +318,10 @@ void obfuscation(){
 	g = 0;
 	Ulong c1	 = Line_info.n_line + 1;		//muxの入力sに与えるID(cnf内で)
 	Ulong c2	 = Line_info.n_line + 2;		//muxの入力zに与えるID
-	int count = 0;
+	int count = 0;								//endflg=1以外の経路のゲートを数える
 
-	Ulong variables  = Line_info.n_line + m_edge;						//MUXを追加した後の回路全体の信号線数(命題変数の数)
-	Ulong m_clauses = m_node*6;		//muxの節数が6なため
+	Ulong variables  = Line_info.n_line + m_edge;		//MUXを追加した後の回路全体の信号線数(命題変数の数)
+	Ulong m_clauses = m_node*6;					//muxの節数が6なため
 	printf("m_clauses:%lu\n", m_clauses);
 	Ulong clauses = countClauses() + m_clauses;
 	printf("evClauses:%lu\n", countClauses());
@@ -1242,12 +1279,12 @@ void obfuscation(){
 				//printf("in2:%lu",data[i]->in[1]->line_id);
 				//printf("out1:%lu\n",end[N]->out[0]->line_id);
 				fprintf(out_fp,"c muxEND\n");
-				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,data[i]->st->in[0]->line_id+1);		//-z + a + b
-				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);									//-z + a + s
-				fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,data[i]->st->in[0]->line_id+1,c1);								//-z + b + -s
-				fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->st->in[0]->line_id+1,c1);								//z + -b + -s
-				fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);									//z + -a + s
-				fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->out[0]->line_id+1,data[i]->st->in[0]->line_id+1);		//z + -a + -b
+				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,data[i]->nextgt->prev->line_id+1);			//-z + a + b
+				fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);								//-z + a + s
+				fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);								//-z + b + -s
+				fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);								//z + -b + -s
+				fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);								//z + -a + s
+				fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->out[0]->line_id+1,data[i]->nextgt->prev->line_id+1);		//z + -a + -b
 				//printf("c1:%lu,c2:%lu\n", c1,c2);
 				c1+=2;
 				c2+=2;
@@ -1269,12 +1306,12 @@ void obfuscation(){
 						//printf("rand[%d]ID:%lu,TYPE:%u\n",g,r[g]->line_id,r[g]->type);
 						//printf("outID:%lu\n",r[g]->out[0]->line_id);
 						//fprintf(out_fp,"mux\n");
-						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);	//-z + a + b
-						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);						//-z + a + s
+						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,r[g]->out[0]->line_id+1);	//-z + a + b
+						fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);							//-z + a + s
 						fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);							//-z + b + -s
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);							//z + -b + -s
-						fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);						//z + -a + s
-						fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);	//z + -a + -b
+						fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);							//z + -a + s
+						fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->nextgt->prev->line_id+1,r[g]->out[0]->line_id+1);	//z + -a + -b
 						//printf("c1:%lu,c2:%lu\n", c1,c2);
 						g++;
 						c2+=2;
@@ -1288,12 +1325,12 @@ void obfuscation(){
 					//printf("rand[%d]ID:%lu,TYPE:%u\n",g,r[g]->line_id,r[g]->type);
 					//printf("outID:%lu\n",r[g]->out[0]->line_id);
 					fprintf(out_fp,"c 1-mux\n");
-					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);		//-z + a + b
-					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);							//-z + a + s
+					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,r[g]->out[0]->line_id+1);		//-z + a + b
+					fprintf(out_fp,"-%lu %lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);							//-z + a + s
 					fprintf(out_fp,"-%lu %lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);								//-z + b + -s
 					fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,r[g]->out[0]->line_id+1,c1);								//z + -b + -s
-					fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->out[0]->line_id+1,c1);							//z + -a + s
-					fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->out[0]->line_id+1,r[g]->out[0]->line_id+1);		//z + -a + -b
+					fprintf(out_fp,"%lu -%lu %lu 0\n", c2,data[i]->nextgt->prev->line_id+1,c1);							//z + -a + s
+					fprintf(out_fp,"%lu -%lu -%lu 0\n", c2,data[i]->nextgt->prev->line_id+1,r[g]->out[0]->line_id+1);		//z + -a + -b
 					//printf("c1:%lu,c2:%lu\n", c1,c2);
 					g++;
 					c1+=2;
@@ -2233,12 +2270,12 @@ void obfuscation(){
 			}
 		}
 	}
-	printf("count:%d\n",count);
-	printf("m_node:%lu\n",m_node);
-	printf("m_num:%lu\n",m_num);
-	printf("m_edge:%lu\n",m_edge);
-	printf("g:%d\n",g);
-	printf("size:%lu\n",size);
+	//printf("count:%d\n",count);
+	//printf("m_node:%lu\n",m_node);
+	//printf("m_num:%lu\n",m_num);
+	//printf("m_edge:%lu\n",m_edge);
+	//printf("g:%d\n",g);
+	//printf("size:%lu\n",size);
 }
 
 /*
