@@ -20,7 +20,7 @@ void obfuscation(){
 	extern LINE *Line_head;
 
 	int length = 6;		//作成するループの長さ
-	int loops = 6;		//作成するループの数
+	int loops = 8;		//作成するループの数
 	int M = 0;			//長さ(深さ)を数える
 	int num = 0;		//ループの初期ノードid
 	int gate = 0;		//回路内のゲート数

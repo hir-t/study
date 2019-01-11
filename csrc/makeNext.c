@@ -5,60 +5,29 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
-#include <global.h>
 //void makeNext(LINE *[],int,int);
 //makeNext(routeNode,loops,length);
-void makeNext(LINE *routeNode[],int loops,int length,LINE *dbgate[]){
-	//int num = 0;
-	for (int i = 0; i < loops*length; i++)
+void makeNext(LINE *routeNode2[],LINE *data[],LINE *start[],LINE *end[],int element){
+	extern LINE_INFO Line_info;
+	extern LINE *Line_head;
+
+	int N = 0;
+	for (int i = 0; i < element; i++)
 	{
-		LINE *now = routeNode[i];
-/*		if (now->rtcnt > 1)
+		for (int j = 0; j < Line_info.n_line; j++)
 		{
-			dbgate[num] = now;
-			printf("---%d,dbID:%lu---\n", num,dbgate[num]->line_id);
-			num++;
-		}*/
-		if (i % loops ==0) printf("\n");
-		printf("nowID:%lu,type:%u,cnt:%lu\n",now->line_id,now->type,now->rtcnt);
-		for (int j = 0; j < now->n_out; j++)
-		{
-			printf("now_out%lu,type%u\n", now->out[j]->line_id,now->out[j]->type);
-			if(now->endflg == 1){
-				//正確には違う。stのinにすべき
-				now->next = now->st->in[0];
-				now->next->next = now->st;
-				printf("nextID:%lu,type:%u\n",now->next->line_id,now->next->type);
-				break;
+			if (end[N]->line_id == data[j]->line_id)
+			{
+				data[j]->next = start[N]->in[0];
+				N++;
 			}
-			else if (now->out[j]->type == 2){
-				LINE *now2 = now->out[j];
-				for (int k = 0; k < now2->n_out; k++)
-				{
-					if (now2->out[k]->line_id == routeNode[i+1]->line_id)
-					{
-						now->next = now2;
-						printf("nextID:%lu,type:%u\n",now->next->line_id,now->next->type);
-						now2->next = routeNode[i+1];
-						printf("2nextID:%lu,type:%u\n",now2->next->line_id,now2->next->type);
-						break;
-					}
-				}
+			else if (data[j]->line_id == routeNode2[i]->line_id)
+			{
+				data[j]->next = routeNode2[i+1];
 			}
-			//else{
-				else if (now->out[j]->line_id == routeNode[i+1]->line_id)
-				{
-					now->next = routeNode[i+1];
-					printf("nextID:%lu,type:%u\n",now->next->line_id,now->next->type);
-					break;
-				}
-			//}
 		}
 	}
-/*	for (int i = 0; i < loops*length; i++)
-	{
-		printf("%d,nowID:%lu,nextID:%lu,nextTYPE:%u\n", i,routeNode[i]->line_id,routeNode[i]->next->line_id,routeNode[i]->next->type);
-	}*/
+
 }
 
 /*

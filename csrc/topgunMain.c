@@ -133,11 +133,9 @@ int main
     //n_line_out();
     //line_point();
     //getLevelandSort();
-    //eval();
-    //test();
+    eval();
     obfuscation();
     //simulate2();
-    //makeBench();
     /*
     printf("*****************\n");
     info_line_structure();

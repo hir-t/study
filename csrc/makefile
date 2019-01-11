@@ -62,6 +62,7 @@ OBJS	=	\
 		TopologicalSort.o \
 		eval.o \
 		test.o \
+		dfs.o \
 		dfs2.o \
 		shuffle.o \
 		obfuscation.o \

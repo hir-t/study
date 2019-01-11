@@ -8,22 +8,32 @@
 #include <global.h>
 //void makeNext(LINE *[],int,int);
 //makeNext(routeNode,loops,length);
-void makePrev(LINE *routeNode[],int loops,int length,LINE *dbgate[]){
+void makePrev(LINE *routeNode[],int loops,int length,LINE *pr[]){
+	int num = 0;
 	for (int i = 1; i < loops*length; i++)
 	{
 		LINE *now = routeNode[i];
 		LINE *pass = routeNode[i-1];
 		if (i % loops ==0) printf("\n");
-		printf("passID:%lu,type:%u\n",pass->line_id,pass->type);
-		printf("nowID:%lu,type:%u\n",now->line_id,now->type);
+		//printf("passID:%lu,type:%u\n",pass->line_id,pass->type);
+		//printf("nowID:%lu,type:%u\n",now->line_id,now->type);
 
 		for (int j = 0; j < now->n_in; j++)
 		{
 
 			if(now->stflg == 1){
-				now->prev = now->in[0];
-				now->prev->prev = now->in[0];
-				printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
+				if (now->rtcnt > 1)
+				{
+					now->prev = pr[num] = now->in[0];
+					pr[num]->prev = now->in[0];
+					num++;
+				}
+				else
+				{
+					now->prev = now->in[0];
+					now->prev->prev = now->in[0];
+				}
+				//printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
 				break;
 			}
 
@@ -34,10 +44,19 @@ void makePrev(LINE *routeNode[],int loops,int length,LINE *dbgate[]){
 				{
 					if (now2->in[k]->line_id == pass->line_id)
 					{
-						now->prev = now2;
-						printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
-						now2->prev = pass;
-						printf("2prevID:%lu,type:%u\n",now2->prev->line_id,now2->prev->type);
+						if (now->rtcnt > 1)
+						{
+							now->prev = pr[num] = now2;
+							pr[num]->prev = pass;
+							num++;
+						}
+						else
+						{
+							now->prev = now2;
+							now2->prev = pass;
+						}
+						//printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
+						//printf("2prevID:%lu,type:%u\n",now2->prev->line_id,now2->prev->type);
 						break;
 					}
 				}
@@ -45,8 +64,13 @@ void makePrev(LINE *routeNode[],int loops,int length,LINE *dbgate[]){
 			else{
 				if(now->in[j]->line_id == pass->line_id)
 				{
-					now->prev = pass;
-					printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
+					if (now->rtcnt > 1){
+						now->prev = pr[num] = pass;
+						num++;
+					}
+					else now->prev = pass;
+
+					//printf("prevID:%lu,type:%u\n",now->prev->line_id,now->prev->type);
 					break;
 				}
 			}
