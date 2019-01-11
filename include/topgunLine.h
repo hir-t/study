@@ -134,10 +134,10 @@ typedef struct line
     struct line         *st;        //経路の始点へのポインタ
     Ulong               stflg;      //経路の開始地点を示すフラグ
     Ulong               endflg;     //経路の折り返し地点を示すフラグ
-    //Ulong               selected;   //経路を示すフラグ(経路として選ばれるゲートの重複回避用)
+    Ulong               l_num;      //ブラントを含めた経路の長さを格納
     Ulong               rtflg;      //経路を示すフラグ
     Ulong               rtcnt;      //ゲートが経路に何回使われたか数える(これも重複チェック用)
-    Ulong               dbflg;      //何個のゲートが重複したか数えるために使用。カウントしたら1にする
+    //Ulong               dbflg;      //何個のゲートが重複したか数えるために使用。カウントしたら1にする
 
     Ulong               imp_id_n;   //!< 正常値が含意された値割当て番号
     Ulong               imp_id_f;   //!< 故障値が含意された値割当て番号
