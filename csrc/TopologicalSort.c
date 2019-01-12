@@ -1,42 +1,45 @@
-#include <stdio.h>
-#include <stdlib.h> //exit()ÍÑ
-#include <string.h>
-
+/* 取得した経路内のノードをレベル順にソートする*/
 #include <topgun.h>
 #include <topgunLine.h>
-void dfs(){
+void TopologicalSort(int loops, int length,int element,LINE *routeNode[],LINE *routeNode2[],LINE *data[]){
 	extern LINE_INFO Line_info;
-	extern LINE *Line_head;
-	LINE *Logic_level[Line_info.n_line];
-	LINE *line;
 
-	/*	ID順にレベルやタイプを取得 */
-	//printf("----------ソート前-----------\n");
-	for(int i = 0;i<Line_info.n_line;i++){
-		line = &(Line_head[i]);
-		Logic_level[i] = line;
-		Logic_level[i]->level  = line->lv_pi; //ここをポインタに
-		Logic_level[i]->line_id  = line->line_id;
-		Logic_level[i]->type = line->type;
+	/*	経路内のノードをレベル順にソート */
+	LINE *temp[loops*length]; //バブルソート用
+	for(int i = 0;i<loops*length;i++){
+		for (int j = 1; j < loops*length;j++){
+			if (routeNode[j-1]->level > routeNode[j]->level){
 
-		//printf("ID:%lu,入力レベル:%lu,TYPE:%u\n", Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
-
-	}
-
-	/*	取得したものをレベル順にソート */
-	LINE *temp[Line_info.n_line]; //バブルソート用
-
-	for(int i = 0;i<Line_info.n_line;i++){
-		for (int j = 1; j < Line_info.n_line;j++){
-			if (Logic_level[j-1]->level > Logic_level[j]->level){
-
-				temp[i] = Logic_level[j-1];
-				Logic_level[j-1] = Logic_level[j];
-				Logic_level[j] = temp[i];
+				temp[i] = routeNode[j-1];
+				routeNode[j-1] = routeNode[j];
+				routeNode[j] = temp[i];
 			}
 		}
 	}
-	/*printf("----------ソート後-----------\n");
+
+	/*	経路内のノード(ブランチ含む)をレベル順にソート */
+	LINE *temp2[element]; //バブルソート用
+	for(int i = 0;i<element;i++){
+		for (int j = 1; j < element;j++){
+			if (routeNode2[j-1]->level > routeNode2[j]->level){
+
+				temp2[i] = routeNode2[j-1];
+				routeNode2[j-1] = routeNode2[j];
+				routeNode2[j] = temp2[i];
+			}
+		}
+	}
+
+	/* 回路内の全信号線をレベル順にソート*/
+	LINE *temp3[Line_info.n_line]; //バブルソート用
 	for(int i = 0;i<Line_info.n_line;i++){
-		printf("ID:%lu,入力レベル:%lu,TYPE:%u\n",Logic_level[i]->line_id,Logic_level[i]->level,Logic_level[i]->type);
-	}*/
+		for (int j = 1; j < Line_info.n_line;j++){
+			if (data[j-1]->level > data[j]->level){
+
+				temp3[i] = data[j-1];
+				data[j-1] = data[j];
+				data[j] = temp3[i];
+			}
+		}
+	}
+}
