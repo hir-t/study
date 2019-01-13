@@ -20,7 +20,7 @@ void obfuscation(){
 	extern LINE *Line_head;
 
 	int length = 6;		//作成するループの長さ
-	int loops = 6;		//作成するループの数
+	int loops = 8;		//作成するループの数
 	int M = 0;			//長さ(深さ)を数える
 	int num = 0;		//ループの初期ノードid
 	int gate = 0;		//回路内のゲート数
@@ -245,7 +245,7 @@ void obfuscation(){
 	//追加するmuxの数と、それに伴って増加する信号線の数を数える
 	Ulong m_node 	 =  loops;			//MUXの追加によって増えるノードの数
 	Ulong m_num 	 =  0;				//1ループに追加するMUXの総数(折り返し地点以外)を数える
-	Ulong m_edge =  loops;		//MUXの追加によって増えるエッジの数
+	Ulong m_edge =  loops*2;		//MUXの追加によって増えるエッジの数
 	//int loop_m[loops];			//1ループに追加するMUXの総数(折り返し地点以外)
 
 /*	for (int i = 0; i < loops*length; i++)
@@ -279,7 +279,7 @@ void obfuscation(){
 					m_num = m_num + 2;						//MUXを2つ増やすため
 					//m_edge = m_edge + 4;					//入力sが2つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)->下の式の方が正しい気がするけど、変数の数は
 					//m_edge = m_edge + 3;					//入力sが1つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)
-					m_edge = m_edge + 1;					//キー入力sが1つ増えるため
+					m_edge = m_edge + 2;					//キー入力sが1つ増えるため
 				}
 				else{										//経路のファンアウトが1以外(2で考えるがそれ以上の場合もある)のとき
 					m_node = m_node + 1;					//MUXが1つ
@@ -349,7 +349,8 @@ void obfuscation(){
 	g = 0;
 	N = 0;
 	Ulong s	 = Line_info.n_line + 2;		//muxの入力sに与えるID(cnf内で)
-	//Ulong z	 = Line_info.n_line + 2;		//muxの入力zに与えるID
+	//Ulong z	 = Line_info.n_line + 3;		//muxの入力zに与えるID
+	int count = 0;
 
 	fprintf(out_fp,"p cnf %lu %lu\n",variables,clauses);
 	for (int i = 0; i < loops; i++)
@@ -382,6 +383,7 @@ void obfuscation(){
 					s+=1;
 					//z+=2;
 					N++;
+					count+=6;
 					break;
 				}
 
@@ -407,6 +409,7 @@ void obfuscation(){
 						//printf("c1:%lu,c2:%lu\n", c1,c2);
 						g++;
 						b = r[g]->out[0]->line_id+1;
+						//z+=2;
 						z = r[g]->out[0]->line_id+1;		//2個目の出力zはランダムゲートの出力
 						fprintf(out_fp,"-%lu %lu %lu 0\n", 	z,a,b);				//-z + a + b
 						fprintf(out_fp,"-%lu %lu %lu 0\n", 	z,a,s);				//-z + a + s
@@ -417,6 +420,7 @@ void obfuscation(){
 						g++;
 						//z+=2;
 						s+=1;	//追加した2つのMUXはキービットsを共有するため、ここでカウントする
+						count+=12;
 					}
 					//ファンアウト数が1以上の時MUXを1つ追加+1
 					else if(rt->n_out > 1){
@@ -438,11 +442,13 @@ void obfuscation(){
 						g++;
 						s+=1;
 						//z+=2;
+						count+=6;
 					}
 				}
 			}
 		}
 	}
+	printf("count:%d\n",count);
 
 	//通常のcnf変換
 	for(int i = 0;i<Line_info.n_line;i++){
@@ -594,7 +600,6 @@ void obfuscation(){
 														data[i]->in[1]->line_id+1,data[i]->in[2]->line_id+1);   					//z + a + b + c
 			}
 		}
-
 		//入力数が4のとき
 		//intput:a,b,c,d
 		//output:z
