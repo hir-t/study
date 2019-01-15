@@ -6,13 +6,51 @@
 #include <topgun.h>
 #include <topgunLine.h>
 int countClauses(void);
-void eval(){
+
+/* topgun_output.c */
+FILE *topgun_open ( char *, char *, char * ); /* fileを開く */
+
+/* topgunCell.c */
+void topgun_close( FILE *, char * );
+
+
+void eval( char *benchName ){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 	//LINE *Logic_level[Line_info.n_line];
 	LINE *line;
 
-	char out_fn[128]; //出力ファイル名を入れるchar型配列
+	/* 出力ファイル設定 */
+	FILE *out_fp; //出力ファイル・ポインタ
+	FILE *fpCNF;
+    FILE *fpCNFSTART;
+    FILE *fpCNFEND;
+    FILE *fpPIINFO;
+    FILE *fpPOINFO;
+
+    char outputCNFFileName[100];
+    char outputCNFStartFileName[100];
+    char outputCNFEndFileName[100];
+    char outputPIInfoFileName[100];
+    char outputPOInfoFileName[100];
+
+    char *funcName = "eval"; // 関数名 
+
+    //printf("Open file %s\n", benchName);
+
+    sprintf(outputCNFFileName, "%s_ev.cnf", benchName);
+    sprintf(outputCNFStartFileName, "%s_ev.cnf.start", benchName);
+    sprintf(outputCNFEndFileName, "%s_ev.cnf.end", benchName);
+    sprintf(outputPIInfoFileName, "%s.piCnfInfo", benchName);
+    sprintf(outputPOInfoFileName, "%s.poCnfInfo", benchName);
+
+    out_fp = fpCNF = topgun_open( outputCNFFileName, "w", funcName );
+    fpCNFSTART = topgun_open( outputCNFStartFileName, "w", funcName );
+    fpCNFEND = topgun_open( outputCNFEndFileName, "w", funcName );
+    fpPIINFO = topgun_open( outputPIInfoFileName, "w", funcName );
+    fpPOINFO = topgun_open( outputPOInfoFileName, "w", funcName );
+
+	/*char out_fn[128]; //出力ファイル名を入れるchar型配列
 	char filename[128];
 	FILE *out_fp; //出力ファイル・ポインタ
 	printf("Input the name of Eval output file name 'filename'_ev.cnf: ");
@@ -23,9 +61,9 @@ void eval(){
 	  if(out_fp == NULL){
 	    printf("ERROR\n");
 	    exit(1);
-	  }
+	  }*/
 
-	  int gate = 0;								//回路内のゲート数
+	 int gate = 0;								//回路内のゲート数
 
 	 for(int i = 0;i<Line_info.n_line;i++){
 	 	line = &(Line_head[i]);
@@ -33,9 +71,13 @@ void eval(){
 			gate++;
 		}
 	 }
-	int variables = Line_info.n_line;			//命題変数の数(信号線数)
-	int clauses = countClauses();				//節数(cnfファイルの行数)
-	fprintf(out_fp,"p cnf %d %d\n",variables,clauses);
+
+	Ulong variables = Line_info.n_line;			//命題変数の数(信号線数)
+	Ulong clauses = countClauses();				//節数(cnfファイルの行数)
+	fprintf(out_fp,"p cnf %lu %lu\n",variables,clauses);
+	fprintf(fpCNFSTART,"1\n");
+    topgun_close(fpCNFSTART, funcName);
+
 	/*	ID順にレベルやタイプを取得 */
 	for(int i = 0;i<Line_info.n_line;i++){
 		line = &(Line_head[i]);
@@ -909,6 +951,31 @@ void eval(){
 			}
 		}
 	}
+	topgun_close(fpCNF, funcName);
+
+    fprintf(fpCNFEND,"%lu\n",variables-1);
+    topgun_close(fpCNFEND, funcName);
+
+
+
+    for(Ulong i = 0; i < Line_info.n_line; i++){ 
+		line = &Line_head[i];
+		switch ( line->type )
+		{
+			case TOPGUN_PI:
+		    	fprintf(fpPIINFO,"%lu\n", line->line_id + 1);
+		    	break;
+			case TOPGUN_PO:
+		    	fprintf(fpPOINFO,"%lu\n", line->line_id + 1);
+		    	break;
+			default:
+		    	break;
+		}
+    }
+
+
+    topgun_close(fpPIINFO, funcName);
+    topgun_close(fpPOINFO, funcName);
 }
 
 /**********************************************
