@@ -47,7 +47,7 @@ int main( int argv, char *argc[] ){
 		printf("File End %s\n", argc[2]);
 		return 1;
 	    }
-	
+
 	    if ( value < 0 ) {
 		tmp = -1 * value;
 	    }
@@ -66,4 +66,4 @@ int main( int argv, char *argc[] ){
     fclose (fpOUT);
     return 0;
 }
-    
+

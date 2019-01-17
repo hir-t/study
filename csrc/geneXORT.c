@@ -1,24 +1,24 @@
 // LISTの要素が4の場合
 // LIST_1 + in1 - 1 +---+ xor =
 // -----------------+ X | last+1 +---+
-//                  | O +--------+   | or = 
+//                  | O +--------+   | or =
 // -----------------+ R |        | O | last+5 +---+
 // LIST_1 + in2 - 1 +---+        | R +--------+   |
 // LIST_2 + in1 - 1 +---+ xor =  |   |        | O |
-// -----------------+ X | last+2 |   |        | R | 
+// -----------------+ X | last+2 |   |        | R |
 //                  | O +--------+   |        |   | or =
 // -----------------+ R |        +---+        |   | last+7
-// LIST_2 + in2 - 1 +---+                     |   +-------- 
+// LIST_2 + in2 - 1 +---+                     |   +--------
 // LIST_3 + in1 - 1 +---+ xor =               |   |
 // -----------------+ X | last+3 +---+        |   |
 //                  | O +--------+   | or =   |   |
 // -----------------+ R |        | O | last+6 |   |
 // LIST_3 + in2 - 1 +---+        | R +--------+   |
-// LIST_4 + in1 - 1 +---+ xor =  |   |        +---+ 
+// LIST_4 + in1 - 1 +---+ xor =  |   |        +---+
 // -----------------+ X | last+4 |   |
 //                  | O +--------+   |
-// -----------------+ R |        +---+ 
-// LIST_4 + in2 - 1 +---+        
+// -----------------+ R |        +---+
+// LIST_4 + in2 - 1 +---+
 // last
 
 #include <stdio.h>
@@ -27,24 +27,24 @@
 
 int main( int argv, char *argc[] ){
 
-    FILE *fpLIST;
-    FILE *fpIN1;
-    FILE *fpIN2;
-    FILE *fpLAST;
-    FILE *fpOUT;
+    FILE *fpLIST;   //argc[1]:入力(外部入力リスト)
+    FILE *fpIN1;    //argc[2]:入力
+    FILE *fpIN2;    //argc[3]:入力
+    FILE *fpLAST;   //argc[4]:入力
+    FILE *fpOUT;    //argc[5]:出力
     FILE *fpOUTSTART;
     FILE *fpOUTEND;
 
-    int literal;
-    int in1;    
-    int in2;    
-    int last;   
-    int xorIn1;    
-    int xorIn2;    
-    int xor;   
-    int orIn1;    
-    int orIn2;    
-    int or;   
+    int literal;    //外部入力を入れる変数
+    int in1;        //argc[2]の内容 c1_obf.cnf.start
+    int in2;        //argc[3]の内容 c2_obf.cnf.start
+    int last;       //argc[4]の内容 br.cnf.end
+    int xorIn1;     //xorの入力1
+    int xorIn2;     //xorの入力2
+    int xor;        //xorの出力
+    int orIn1;      //orの入力1
+    int orIn2;      //orの入力2
+    int or;         //orの出力
 
     char result[10];
     char firstLine[100];
@@ -89,14 +89,14 @@ int main( int argv, char *argc[] ){
 
 
     fscanf( fpIN1, "%d", &in1 );
-    fclose ( fpIN1 ); 
+    fclose ( fpIN1 );
 
     fscanf( fpIN2, "%d", &in2 );
-    fclose ( fpIN2 ); 
+    fclose ( fpIN2 );
 
     fscanf( fpLAST, "%d", &last );
-    fclose ( fpLAST ); 
-    
+    fclose ( fpLAST );
+
     fpOUT = fopen( argc[5], "w");
 
     xor = last;
@@ -105,26 +105,29 @@ int main( int argv, char *argc[] ){
     sprintf( outputFileName, "%s.start", argc[5]);
     fpOUTSTART = fopen( outputFileName, "w" );
     fprintf( fpOUTSTART, "%d", xor+1 );
-    fclose ( fpOUTSTART ); 
+    fclose ( fpOUTSTART );
 
     //　xorのCNFを作っていく
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) {
 
-	xor++;
+    	xor++;
 
-	xorIn1 = literal + in1 - 1;
-	xorIn2 = literal + in2 - 1;
+        xorIn1 = literal + in1 - 1;
+        xorIn2 = literal + in2 - 1;
 
-	// xor in1 in2
-	//  0   0   0
-	//  1   0   1
-	//  1   1   0
-	//  0   1   1
+    	/*xorIn1 = literal + in1 + 1;
+    	xorIn2 = literal + in2 + 1;*/
 
-	fprintf( fpOUT, "-%d -%d -%d 0\n", xor, xorIn1, xorIn2);
-	fprintf( fpOUT, "%d %d -%d 0\n", xor, xorIn1, xorIn2);
-	fprintf( fpOUT, "%d -%d %d 0\n", xor, xorIn1, xorIn2);
-	fprintf( fpOUT, "-%d %d %d 0\n", xor, xorIn1, xorIn2);
+    	// xor in1 in2
+    	//  0   0   0
+    	//  1   0   1
+    	//  1   1   0
+    	//  0   1   1
+
+    	fprintf( fpOUT, "-%d -%d -%d 0\n", xor, xorIn1, xorIn2);
+    	fprintf( fpOUT, "%d %d -%d 0\n", xor, xorIn1, xorIn2);
+    	fprintf( fpOUT, "%d -%d %d 0\n", xor, xorIn1, xorIn2);
+    	fprintf( fpOUT, "-%d %d %d 0\n", xor, xorIn1, xorIn2);
     }
 
     or    = xor + 1;
@@ -133,26 +136,27 @@ int main( int argv, char *argc[] ){
 
     //　or-TreeのCNFを作っていく
     while( or != orIn2 ){
-	
-	// or  in1 in2
-	//  0   0   0
-	//  1   0   1
-	//  1   1   0
-	//  1   1   1
-	
-	fprintf( fpOUT, "%d -%d 0\n", or, orIn1);
-	fprintf( fpOUT, "%d -%d 0\n", or, orIn2);
-	fprintf( fpOUT, "-%d %d %d 0\n", or, orIn1, orIn2);
-	
-	or    += 1;
-	orIn1 += 2;
-	orIn2 += 2;
+
+    	// or  in1 in2
+    	//  0   0   0
+    	//  1   0   1
+    	//  1   1   0
+    	//  1   1   1
+
+    	fprintf( fpOUT, "%d -%d 0\n", or, orIn1);
+    	fprintf( fpOUT, "%d -%d 0\n", or, orIn2);
+    	fprintf( fpOUT, "-%d %d %d 0\n", or, orIn1, orIn2);
+
+    	or    += 1;
+    	orIn1 += 2;
+    	orIn2 += 2;
     }
-    last = or - 1; //最後の1つは作ってないので
+
+    last = or - 1; //最後の1つは作ってないので-1する
     // ORツリーの頂点を1にするため
     fprintf( fpOUT, "%d 0\n", last );
 
-    sprintf( outputFileName, "%s.end", argc[5]);
+    sprintf( outputFileName, "%s.end", argc[5]);    //xort.end
     fpOUTEND = fopen( outputFileName, "w" );
     fprintf(fpOUTEND,"%d\n", last );
 
@@ -161,4 +165,4 @@ int main( int argv, char *argc[] ){
     fclose (fpOUTEND);
     return 0;
 }
-    
+

@@ -6,7 +6,7 @@
 
 #include <topgun.h>
 #include <topgunLine.h>
-void simulate2(){
+void simulate2(char *fileName){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
 	LINE *Logic_level[Line_info.n_line];
@@ -62,15 +62,24 @@ void simulate2(){
 	/* テストファイルを読み込む*/
 	char in_fn[128]; //入力ファイル名を入れるchar型配列
 	FILE *in_fp; //入力ファイル・ポインタ
-	printf("Input test file name : ");
-	scanf("%s",in_fn); //ファイル名をchar型配列fnへ入力
+	sprintf(in_fn, "%s", fileName);
 
-	in_fp = fopen(in_fn,"r"); //読み出しモードでファイルを開く
+	// ファイルを開く
+    in_fp= fopen( in_fn, "r");
+    if ( in_fp == NULL ) {
+        printf("File Open Error %s\n", fileName);
+        exit(0);
+    }
+
+	/*printf("Input test file name : ");
+	scanf("%s",in_fn); //ファイル名をchar型配列fnへ入力*/
+
+	/*in_fp = fopen(in_fn,"r"); //読み出しモードでファイルを開く
 	if(in_fp == NULL){ //fopenに失敗した場合
 		printf("The file %s is not exist.\n", in_fn); //失敗した旨を出力
 		printf("Input test file name : ");
 		scanf("%s",in_fn); //ファイル名をchar型配列fnへ入力
-	}
+	}*/
 
 	int data;
 	int bit = 0;

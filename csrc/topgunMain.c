@@ -38,12 +38,12 @@ void topgun_print_mes_process_time_all( void );
 void helloworld(void);
 void n_line_out(void);
 void line_point(void);
-void simulate2(void);
 //void makeCycle(void);
 void dfs(void);
 void makeBench(void);
-void eval(void);
-void obfuscation(void);
+void eval(char *);
+void obfuscation(char *);
+void simulate2(char *);
 void test(void);
 //void info_line_structure();
 
@@ -133,9 +133,9 @@ int main
     //n_line_out();
     //line_point();
     //getLevelandSort();
-    eval();
-    obfuscation();
-    //simulate2();
+    eval( argv[ 2 ] );
+    obfuscation( argv[ 2 ] );
+    //simulate2( argv[ 3 ] );
     /*
     printf("*****************\n");
     info_line_structure();

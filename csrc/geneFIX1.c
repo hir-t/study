@@ -4,11 +4,11 @@
 
 int main( int argv, char *argc[] ){
 
-    FILE *fpLIST;
-    FILE *fpIN1;
-    FILE *fpIN2;
-    FILE *fpLAST;
-    FILE *fpOUT;
+    FILE *fpLIST;       //argc[1] = compareInput.info
+    FILE *fpIN1;        //argc[2]
+    FILE *fpIN2;        //argc[3]
+    FILE *fpLAST;       //不使用?
+    FILE *fpOUT;        //argc[4]:出力用
     FILE *fpOUTSTART;
     FILE *fpOUTEND;
 
@@ -54,21 +54,20 @@ int main( int argv, char *argc[] ){
     }
 
     fscanf( fpIN1, "%d", &in1 );
-    fclose ( fpIN1 ); 
+    fclose ( fpIN1 );
 
     fscanf( fpIN2, "%d", &in2 );
-    fclose ( fpIN2 ); 
+    fclose ( fpIN2 );
 
     fpOUT = fopen( argc[4], "w");
 
     //　branchのCNFを作っていく
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) {
+    	line1 = literal + in1 - 1;
+    	line2 = literal + in2 - 1;
 
-	line1 = literal + in1 - 1;
-	line2 = literal + in2 - 1;
-
-	fprintf(fpOUT, "%d 0\n", line1); 
-	fprintf(fpOUT, "%d 0\n", line2); 
+    	fprintf(fpOUT, "%d 0\n", line1);
+    	fprintf(fpOUT, "%d 0\n", line2);
     }
 
 
@@ -76,4 +75,4 @@ int main( int argv, char *argc[] ){
     fclose (fpOUT);
     return 0;
 }
-    
+

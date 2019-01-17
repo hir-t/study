@@ -48,7 +48,7 @@ LINE *dfs(int entry,int N,int M,int loops,int length,LINE *start,LINE *route[loo
 			now = now->out[a];
 			//route[M] = now;
 			//printf("nextID:%lu,nextTYPE:%u\n",now->line_id,now->type);
-			if(now->n_in > 1){ //深さ2以上でかつエントリポイントが複数
+			if(now->n_in > 1 && 0 < M && M < length){ //深さ2以上でかつエントリポイントが複数
 				//printf("OK\n");
 				entries++;
 				//printf("ID:%lu,entries:%d\n",now->line_id,entries);

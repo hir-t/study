@@ -1,14 +1,15 @@
+/* satのために複製した回路を繋ぐブランチの生成 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main( int argv, char *argc[] ){
 
-    FILE *fpLIST;
-    FILE *fpIN1;
-    FILE *fpIN2;
-    FILE *fpLAST;
-    FILE *fpOUT;
+    FILE *fpLIST;       //argc[1]:$3 = nomalInput.info
+    FILE *fpIN1;        //argc[2]:c1_obf.cnf.start
+    FILE *fpIN2;        //argc[3]:c2_obf.cnf.start
+    FILE *fpLAST;       //argc[4]:c2_obf.cnf.end
+    FILE *fpOUT;        //argc[5]:argc[5](=br).startで出力
     FILE *fpOUTSTART;
     FILE *fpOUTEND;
 
@@ -63,41 +64,43 @@ int main( int argv, char *argc[] ){
 
 
     fscanf( fpIN1, "%d", &in1 );
-    fclose ( fpIN1 ); 
+    fclose ( fpIN1 );
 
     fscanf( fpIN2, "%d", &in2 );
-    fclose ( fpIN2 ); 
+    fclose ( fpIN2 );
 
     fscanf( fpLAST, "%d", &last );
-    fclose ( fpLAST ); 
-    
+    fclose ( fpLAST );
+
     fpOUT = fopen( argc[5], "w");
 
-    stem = last + 1;
+    stem = last + 1;            //難読化回路2のmax + 1
 
     // branchのstartファイルを作成
     sprintf( outputFileName, "%s.start", argc[5]);
     fpOUTSTART = fopen( outputFileName, "w" );
     fprintf( fpOUTSTART, "%d", stem );
-    fclose ( fpOUTSTART ); 
+    fclose ( fpOUTSTART );
 
     //　branchのCNFを作っていく
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) {
 
-	br1 = literal + in1 - 1;
-	br2 = literal + in2 - 1;
+    	br1 = literal + in1 - 1;   //外部入力リスト + 難読化回路1の最小ID
+    	br2 = literal + in2 - 1;   //外部入力リスト + 難読化回路2の最小ID(難読化回路1.end + 1)
 
-	fprintf(fpOUT, "%d -%d 0\n", stem, br1); 
- 	fprintf(fpOUT, "-%d %d 0\n", stem, br1); 
-	fprintf(fpOUT, "%d -%d 0\n", stem, br2); 
- 	fprintf(fpOUT, "-%d %d 0\n", stem, br2); 
+        //cnfに変換
+    	fprintf(fpOUT, "%d -%d 0\n", stem, br1);
+     	fprintf(fpOUT, "-%d %d 0\n", stem, br1);
+    	fprintf(fpOUT, "%d -%d 0\n", stem, br2);
+     	fprintf(fpOUT, "-%d %d 0\n", stem, br2);
 
-	stem++;
+    	stem++;
     }
 
 
-    sprintf( outputFileName, "%s.end", argc[5]);
+    sprintf( outputFileName, "%s.end", argc[5]);    //br.end
     fpOUTEND = fopen( outputFileName, "w" );
+    //fprintf(fpOUTEND,"%d\n",stem + 1);
     fprintf(fpOUTEND,"%d\n",stem - 1);
 
     fclose (fpLIST);
@@ -105,4 +108,4 @@ int main( int argv, char *argc[] ){
     fclose (fpOUTEND);
     return 0;
 }
-    
+

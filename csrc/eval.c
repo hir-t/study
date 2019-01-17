@@ -1,4 +1,4 @@
-
+/* 元の回路(Eval)をcnfに変換する */
 #include <stdio.h>
 #include <stdlib.h> //exit()ÍÑ
 #include <string.h>
@@ -23,10 +23,10 @@ void eval( char *benchName ){
 	/* 出力ファイル設定 */
 	FILE *out_fp; //出力ファイル・ポインタ
 	FILE *fpCNF;
-    FILE *fpCNFSTART;
-    FILE *fpCNFEND;
-    FILE *fpPIINFO;
-    FILE *fpPOINFO;
+    FILE *fpCNFSTART;	//1を入れる
+    FILE *fpCNFEND;		//
+    FILE *fpPIINFO;		//外部入力をまとめる
+    FILE *fpPOINFO;		//外部出力をまとめる
 
     char outputCNFFileName[100];
     char outputCNFStartFileName[100];
@@ -38,9 +38,9 @@ void eval( char *benchName ){
 
     //printf("Open file %s\n", benchName);
 
-    sprintf(outputCNFFileName, "%s_ev.cnf", benchName);
-    sprintf(outputCNFStartFileName, "%s_ev.cnf.start", benchName);
-    sprintf(outputCNFEndFileName, "%s_ev.cnf.end", benchName);
+    sprintf(outputCNFFileName, "%s.cnf", benchName);
+    sprintf(outputCNFStartFileName, "%s.cnf.start", benchName);
+    sprintf(outputCNFEndFileName, "%s.cnf.end", benchName);
     sprintf(outputPIInfoFileName, "%s.piCnfInfo", benchName);
     sprintf(outputPOInfoFileName, "%s.poCnfInfo", benchName);
 
@@ -953,7 +953,8 @@ void eval( char *benchName ){
 	}
 	topgun_close(fpCNF, funcName);
 
-    fprintf(fpCNFEND,"%lu\n",variables-1);
+    //fprintf(fpCNFEND,"%lu\n",variables-1); //信号線数-1を入力
+    fprintf(fpCNFEND,"%lu\n",variables+1); //信号線数+1を入力(これが正しい_)
     topgun_close(fpCNFEND, funcName);
 
 
@@ -963,10 +964,10 @@ void eval( char *benchName ){
 		switch ( line->type )
 		{
 			case TOPGUN_PI:
-		    	fprintf(fpPIINFO,"%lu\n", line->line_id + 1);
+		    	fprintf(fpPIINFO,"%lu\n", line->line_id + 1);	//信号線のtypeが外部入力のものを書き込む
 		    	break;
 			case TOPGUN_PO:
-		    	fprintf(fpPOINFO,"%lu\n", line->line_id + 1);
+		    	fprintf(fpPOINFO,"%lu\n", line->line_id + 1);	//信号線のtypeが外部出力のものを書き込む
 		    	break;
 			default:
 		    	break;
