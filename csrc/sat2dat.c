@@ -26,13 +26,15 @@ int main(int argv, char *argc[] ){
 
     fscanf(fpSAT, "%s", result );
 
-    fprintf( fpRESULT, "%s\n", result); //f1.cnf.out(satの結果)を書き込む
+    fprintf( fpRESULT, "%s\n", result); //f1.cnf.out(satの結果,１行目)を書き込む
 
     if ( strcmp(result, "SAT") != 0 ) {
         printf("UNSAT\n");
         return 0;
     }
 
+    //2行目以下(信号線の値)を書き込む
+    // > *.datとしているため、.datに書き込まれる
     while ( fscanf(fpSAT, "%d", &literal ) != EOF ) {
         printf("%d\n", literal);
     }

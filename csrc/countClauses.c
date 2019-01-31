@@ -22,6 +22,14 @@ Ulong countClauses(void){
 		{
 			switch(line->type)
 			{
+				//PO
+				case 1:
+					clauses = clauses+2;
+					break;
+				//Branch
+				case 2:
+					clauses = clauses+2;
+					break;
 				//INV
 				case 3:
 					clauses = clauses+2;

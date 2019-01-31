@@ -4,9 +4,9 @@
 
 int main( int argv, char *argc[] ){
 
-    FILE *fpLIST;
-    FILE *fpCNFOUT;
-    FILE *fpOUT;
+    FILE *fpLIST;   //argc[1]:eval.piCnfInfo
+    FILE *fpCNFOUT; //argc[2]:f$cnt.cnf.out.dat
+    FILE *fpOUT;    //argc[3]:eval.$cnt.pifix.cnf
 
     int literal; //固定するcnfのid
     int value; //satの結果の値の絶対値
@@ -34,31 +34,32 @@ int main( int argv, char *argc[] ){
         printf("File Open Error %s\n", argc[2]);
         return 1;
     }
-
+    //eval.$cnt.pifix.cnf
     fpOUT = fopen( argc[3], "w");
 
-
+    //literal = eval.piCnfInfo
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) { 
 
 	//printf("literal %d\n", literal);
-	do {
+	   do {
+                //value = f$cnt.cnf.out.dat(SATの結果)
+    	    if ( fscanf( fpCNFOUT, "%d", &value ) == EOF ) {
+    		  printf("File End %s\n", argc[2]);
+    		  return 1;
+    	    }
+            //literalは全て正の数で,valueはそうではないため,比較用に正の数に変換してtmpに格納する
+    	    if ( value < 0 ) {
+    		  tmp = -1 * value;   //負の数(=0)のとき正の数にする
+    	    }
+    	    else {
+    		  tmp = value;        //正の数(=1)のときは変えない
+    	    }
+    	    //printf("value %d tmp %d\n", value, tmp);
 
-	    if ( fscanf( fpCNFOUT, "%d", &value ) == EOF ) {
-		printf("File End %s\n", argc[2]);
-		return 1;
-	    }
-
-	    if ( value < 0 ) {
-		tmp = -1 * value;
-	    }
-	    else {
-		tmp = value;
-	    } 
-	    //printf("value %d tmp %d\n", value, tmp);
-
-	} while (literal != tmp ); 
-
-	fprintf(fpOUT, "%d 0\n", value); 
+    	} while (literal != tmp );     //evalの入力 = |SATの出力|になったらdo-whileを抜ける
+        //ループを抜けてSATの結果を書き込む
+        //satの結果、evalの入力線に与える数値(負=0,正=1)を出力ファイルへ書き込んでいく。
+	   fprintf(fpOUT, "%d 0\n", value); 
     }
 
     fclose (fpLIST);

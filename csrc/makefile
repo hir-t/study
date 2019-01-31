@@ -65,11 +65,11 @@ OBJS	=	\
 		dfs.o \
 		dfs2.o \
 		shuffle.o \
+		sort.o \
 		obfuscation.o \
 		countClauses.o \
 		makeBench.o \
 		makeCnf.o \
-		makeNext.o \
 		makePrev.o \
 		topgunUty.o \
 		topgunTime.o \

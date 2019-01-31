@@ -12,6 +12,7 @@ int main( int argv, char *argc[] ){
     FILE *fpOUT;        //argc[5]:argc[5](=br).startで出力
     FILE *fpOUTSTART;
     FILE *fpOUTEND;
+    FILE *fpOUTKEY;
 
     int literal; //読み込んだリテラルの値
     int in1;    //             br1 = ( LIST + in1 - 1 )
@@ -62,25 +63,31 @@ int main( int argv, char *argc[] ){
         return 1;
     }
 
-
+    //c1の最小ID
     fscanf( fpIN1, "%d", &in1 );
     fclose ( fpIN1 );
 
+    //c2の最小ID
     fscanf( fpIN2, "%d", &in2 );
     fclose ( fpIN2 );
 
+    //c2の最大ID(全体のMAX)
     fscanf( fpLAST, "%d", &last );
     fclose ( fpLAST );
 
+    //出力ファイル
     fpOUT = fopen( argc[5], "w");
 
-    stem = last + 1;            //難読化回路2のmax + 1
+    stem = last + 1;            //c2のmax + 1
 
     // branchのstartファイルを作成
     sprintf( outputFileName, "%s.start", argc[5]);
     fpOUTSTART = fopen( outputFileName, "w" );
     fprintf( fpOUTSTART, "%d", stem );
     fclose ( fpOUTSTART );
+
+    sprintf( outputFileName, "%s.brIn", argc[5]);
+    fpOUTKEY = fopen( outputFileName, "w" );
 
     //　branchのCNFを作っていく
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) {
@@ -89,10 +96,18 @@ int main( int argv, char *argc[] ){
     	br2 = literal + in2 - 1;   //外部入力リスト + 難読化回路2の最小ID(難読化回路1.end + 1)
 
         //cnfに変換
-    	fprintf(fpOUT, "%d -%d 0\n", stem, br1);
-     	fprintf(fpOUT, "-%d %d 0\n", stem, br1);
-    	fprintf(fpOUT, "%d -%d 0\n", stem, br2);
+     	/*fprintf(fpOUT, "-%d %d 0\n", stem, br1);
+        fprintf(fpOUT, "%d -%d 0\n", stem, br1);
      	fprintf(fpOUT, "-%d %d 0\n", stem, br2);
+        fprintf(fpOUT, "%d -%d 0\n", stem, br2);*/
+
+        fprintf(fpOUT, "-%d %d 0\n", br1, stem);
+        fprintf(fpOUT, "%d -%d 0\n", br1, stem);
+        fprintf(fpOUT, "-%d %d 0\n", br2, stem);
+        fprintf(fpOUT, "%d -%d 0\n", br2, stem);
+
+        fprintf(fpOUTKEY, "-%d %d 0\n", br2, stem);
+        fprintf(fpOUTKEY, "%d -%d 0\n", br2, stem);
 
     	stem++;
     }
@@ -100,7 +115,6 @@ int main( int argv, char *argc[] ){
 
     sprintf( outputFileName, "%s.end", argc[5]);    //br.end
     fpOUTEND = fopen( outputFileName, "w" );
-    //fprintf(fpOUTEND,"%d\n",stem + 1);
     fprintf(fpOUTEND,"%d\n",stem - 1);
 
     fclose (fpLIST);

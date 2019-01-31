@@ -27,10 +27,10 @@
 
 int main( int argv, char *argc[] ){
 
-    FILE *fpLIST;   //argc[1]:入力(外部入力リスト)
-    FILE *fpIN1;    //argc[2]:入力
-    FILE *fpIN2;    //argc[3]:入力
-    FILE *fpLAST;   //argc[4]:入力
+    FILE *fpLIST;   //argc[1]:入力(外部出力リスト)
+    FILE *fpIN1;    //argc[2]:入力(i.start)
+    FILE *fpIN2;    //argc[3]:入力(i+1.start)
+    FILE *fpLAST;   //argc[4]:入力(br.cnf.end：ここまでの最大ID)
     FILE *fpOUT;    //argc[5]:出力
     FILE *fpOUTSTART;
     FILE *fpOUTEND;
@@ -87,13 +87,15 @@ int main( int argv, char *argc[] ){
         return 1;
     }
 
-
+    //１つ目のファイルの最小の信号線
     fscanf( fpIN1, "%d", &in1 );
     fclose ( fpIN1 );
 
+    //2つ目のファイルの最小の信号線(=１つ目のファイルの最大の信号線+1)
     fscanf( fpIN2, "%d", &in2 );
     fclose ( fpIN2 );
 
+    //最大の信号線ID
     fscanf( fpLAST, "%d", &last );
     fclose ( fpLAST );
 
@@ -110,13 +112,10 @@ int main( int argv, char *argc[] ){
     //　xorのCNFを作っていく
     while ( fscanf( fpLIST, "%d", &literal ) != EOF ) {
 
-    	xor++;
+    	xor++;                          //出力:初期値はlast(=ここまでの最大の値を持つ信号線)
 
-        xorIn1 = literal + in1 - 1;
-        xorIn2 = literal + in2 - 1;
-
-    	/*xorIn1 = literal + in1 + 1;
-    	xorIn2 = literal + in2 + 1;*/
+        xorIn1 = literal + in1 - 1;     //literal(外部出力) + c1の最小ID - 1
+        xorIn2 = literal + in2 - 1;     //literal(外部出力) + c2の最小ID - 1
 
     	// xor in1 in2
     	//  0   0   0
@@ -124,15 +123,16 @@ int main( int argv, char *argc[] ){
     	//  1   1   0
     	//  0   1   1
 
-    	fprintf( fpOUT, "-%d -%d -%d 0\n", xor, xorIn1, xorIn2);
-    	fprintf( fpOUT, "%d %d -%d 0\n", xor, xorIn1, xorIn2);
-    	fprintf( fpOUT, "%d -%d %d 0\n", xor, xorIn1, xorIn2);
-    	fprintf( fpOUT, "-%d %d %d 0\n", xor, xorIn1, xorIn2);
+        fprintf( fpOUT, "%d -%d %d 0\n", xor, xorIn1, xorIn2);      //z + -a + b
+    	fprintf( fpOUT, "%d %d -%d 0\n", xor, xorIn1, xorIn2);      //z + a + -b
+        fprintf( fpOUT, "-%d -%d -%d 0\n", xor, xorIn1, xorIn2);    //-z + -a + -b
+    	fprintf( fpOUT, "-%d %d %d 0\n", xor, xorIn1, xorIn2);      //-z + a + b
+
     }
 
-    or    = xor + 1;
-    orIn1 = last + 1;
-    orIn2 = last + 2;
+    or    = xor + 1;    //出力を更新
+    orIn1 = last + 1;   //上で作ったXORの出力を入力にする
+    orIn2 = last + 2;   //
 
     //　or-TreeのCNFを作っていく
     while( or != orIn2 ){
@@ -143,9 +143,9 @@ int main( int argv, char *argc[] ){
     	//  1   1   0
     	//  1   1   1
 
-    	fprintf( fpOUT, "%d -%d 0\n", or, orIn1);
-    	fprintf( fpOUT, "%d -%d 0\n", or, orIn2);
-    	fprintf( fpOUT, "-%d %d %d 0\n", or, orIn1, orIn2);
+    	fprintf( fpOUT, "%d -%d 0\n", or, orIn1);              //z + -a
+    	fprintf( fpOUT, "%d -%d 0\n", or, orIn2);              //z + -b
+    	fprintf( fpOUT, "-%d %d %d 0\n", or, orIn1, orIn2);    //-z + a + b
 
     	or    += 1;
     	orIn1 += 2;

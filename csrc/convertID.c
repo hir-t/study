@@ -3,10 +3,10 @@
 #include <string.h>
 
 int main( int argv, char *argc[] ){
-
-    FILE *fpGOLD;
-    FILE *fpTMP;
-    FILE *fpOUT;
+// ../exp/convertID c1_obf.poCnfInfo eval.$cnt.pofix.cnf.tmp eval.$cnt.pofix.cnf
+    FILE *fpGOLD; //c1_obf.poCnfInfo
+    FILE *fpTMP;  //eval.$cnt.pofix.cnf.tmp
+    FILE *fpOUT;  //出力用:eval.$cnt.pofix.cnf
 
     int gold;   //固定するcnfのid
     int tmp; //satの結果の値の絶対値
@@ -37,18 +37,19 @@ int main( int argv, char *argc[] ){
 
     fpOUT = fopen( argc[3], "w");
 
-
-    while ( fscanf( fpGOLD, "%d", &gold ) != EOF ) { 
-
-	if ( fscanf( fpTMP, "%d %d", &tmp, &end ) == EOF ) {
-	    printf("File End %s\n", argc[2]);
-	    return 1;
-	}
-	
-	if ( tmp < 0 ) {
-	    gold = -1 * gold;
-	}
-	fprintf(fpOUT, "%d 0\n", gold); 
+    //gold:c1_obf.poCnfInfo
+    while ( fscanf( fpGOLD, "%d", &gold ) != EOF ) {
+        //printf("gold:%d\n", gold);
+        //eval.$cnt.pofix.cnf.tmp temp:１つ目=出力線, end:0
+    	if ( fscanf( fpTMP, "%d %d", &tmp, &end ) == EOF ) {
+    	    printf("File End %s\n", argc[2]);
+    	    return 1;
+    	}
+        //tmpが0以下のとき、goldを反転させる
+    	if ( tmp < 0 ) {
+    	    gold = -1 * gold;
+    	}
+    	fprintf(fpOUT, "%d 0\n", gold);
     }
 
     fclose (fpGOLD);
@@ -56,4 +57,4 @@ int main( int argv, char *argc[] ){
     fclose (fpOUT);
     return 0;
 }
-    
+

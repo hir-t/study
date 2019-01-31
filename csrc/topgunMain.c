@@ -133,9 +133,9 @@ int main
     //n_line_out();
     //line_point();
     //getLevelandSort();
-    eval( argv[ 2 ] );
+    eval( argv[ 3 ] );
     obfuscation( argv[ 2 ] );
-    //simulate2( argv[ 3 ] );
+    //simulate2( argv[ 4 ] );
     /*
     printf("*****************\n");
     info_line_structure();
