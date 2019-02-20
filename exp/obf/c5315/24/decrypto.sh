@@ -432,7 +432,7 @@ do
     echo ""
 
     echo "copyCnf c1.cnf tstxort2$cnt.cnf.end c1$cnt.cnf.tmp" 1>&2
-    ../exp/copyCnf c1.cnf tstxort2$cnt.cnf.end c1$cnt.cnf.tmp
+    ./copyCnf c1.cnf tstxort2$cnt.cnf.end c1$cnt.cnf.tmp
 
      echo "End c1$cnt.cnf.end $(cat c1$cnt.cnf.tmp.end)"
 
