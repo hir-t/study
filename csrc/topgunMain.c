@@ -42,7 +42,8 @@ void line_point(void);
 void dfs(void);
 void makeBench(void);
 void eval(char *);
-void obfuscation(char *);
+void obfuscation(char *,char *,char *);
+void sequence(char *,char *,char *);
 void simulate2(char *);
 void test(void);
 //void info_line_structure();
@@ -77,7 +78,7 @@ void test(void);
 int main
 (
  int  argc,      /* コマンド引数の個数 */
- char *argv[]    /* コマンド引数の文字列 */
+ char *argv[]   /* コマンド引数の文字列 */
 ){
     int      result; /* atpg実行結果 */
 	
@@ -134,12 +135,9 @@ int main
     //line_point();
     //getLevelandSort();
     eval( argv[ 3 ] );
-    obfuscation( argv[ 2 ] );
+    //obfuscation( argv[ 2 ], argv[ 4 ], argv[ 5 ] );
+    sequence( argv[ 2 ], argv[ 4 ], argv[ 5 ] );
     //simulate2( argv[ 4 ] );
-    /*
-    printf("*****************\n");
-    info_line_structure();
-	*/
     return( 0 ); /* normal finish */
 }
 
