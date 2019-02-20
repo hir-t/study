@@ -1,6 +1,7 @@
 # 引数はベンチマーク回路のみ
 # topugunでEvalとCのCNFを引数で与えた回路から生成する。
-# 先行研究Cyclic obfuscation の方
+# 先行研究を変更
+# 経路の終点から経路内の現ゲートへ向けて信号線をループさせる
 echo "*** Decryption Shell @ Yoshimura Lab ***"
 
 if [ $# -ne 3 ]; then
@@ -18,8 +19,8 @@ echo ""
 
 #topgunに難読化するベンチマークを与える
 
-echo "obfuscation $1 c1 eval $2 $3" 1>&2
-./obfuscation $1 c1 eval $2 $3
+echo "sequence $1 c1 eval $2 $3" 1>&2
+./sequence $1 c1 eval $2 $3
 
 echo "End c1.cnf.end $(cat c1.cnf.end)"
 
