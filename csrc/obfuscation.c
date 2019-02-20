@@ -22,11 +22,11 @@ FILE *topgun_open ( char *, char *, char * ); /* fileを開く */
 /* topgunCell.c */
 void topgun_close( FILE *, char * );
 
-void obfuscation(char *benchName){
+void obfuscation(char *benchName,char* LOOPS, char* LENGTH){
 	extern LINE_INFO Line_info;
 	extern LINE *Line_head;
-	int loops = 1;		//作成するループの数
-	int length = 2;		//作成するループの長さ
+	int loops = atoi(LOOPS);		//作成するループの数
+	int length = atoi(LENGTH);		//作成するループの長さ
 	int M = 0;			//長さ(深さ)を数える
 	int num = 0;		//ループの初期ノードid
 	int gate = 0;		//回路内のゲート数
@@ -47,7 +47,7 @@ void obfuscation(char *benchName){
     FILE *fpCNFSTART;
     FILE *fpCNFEND;
     FILE *fpKEYINFO;
-    FILE *fpMUXOUT;
+   // FILE *fpMUXOUT;
     FILE *fpPIINFO;
     FILE *fpPOINFO;
 
@@ -55,7 +55,7 @@ void obfuscation(char *benchName){
     char outputCNFStartFileName[100];
     char outputCNFEndFileName[100];
     char outputKEYINFOFileName[100];
-    char outputMUXOUTFileName[100];
+    //char outputMUXOUTFileName[100];
    	char outputPIInfoFileName[100];
    	char outputPOInfoFileName[100];
 
@@ -67,7 +67,7 @@ void obfuscation(char *benchName){
     sprintf(outputCNFStartFileName, "%s.cnf.start", benchName);
     sprintf(outputCNFEndFileName, "%s.cnf.end", benchName);
     sprintf(outputKEYINFOFileName, "%s.keyInfo", benchName);
-    sprintf(outputMUXOUTFileName, "%s.muxOutInfo", benchName);
+    //sprintf(outputMUXOUTFileName, "%s.muxOutInfo", benchName);
    	sprintf(outputPIInfoFileName, "%s.piCnfInfo", benchName);
     sprintf(outputPOInfoFileName, "%s.poCnfInfo", benchName);
 
@@ -75,23 +75,9 @@ void obfuscation(char *benchName){
     fpCNFSTART = topgun_open( outputCNFStartFileName, "w", funcName );
     fpCNFEND = topgun_open( outputCNFEndFileName, "w", funcName );
     fpKEYINFO = topgun_open( outputKEYINFOFileName, "w", funcName );
-    fpMUXOUT = topgun_open( outputMUXOUTFileName, "w", funcName );
+    //fpMUXOUT = topgun_open( outputMUXOUTFileName, "w", funcName );
     fpPIINFO = topgun_open( outputPIInfoFileName, "w", funcName );
     fpPOINFO = topgun_open( outputPOInfoFileName, "w", funcName );
-
-/*	char out_fn[128]; //出力ファイル名を入れるchar型配列
-	char filename[128];
-	FILE *out_fp; //出力ファイル・ポインタ
-	printf("Input the name of Obfuscated output file name 'filename'_obf.cnf: ");
-	scanf("%s",out_fn);
-
-	sprintf(filename,"%s_obf.cnf",out_fn);
-	out_fp = fopen(filename,"w");
-	if(out_fp == NULL){
-		printf("ERROR\n");
-		exit(1);
-	}
-*/
 
 	/*	ID順にレベルやタイプを取得 */
 	for(int i = 0;i<Line_info.n_line;i++){
@@ -200,7 +186,7 @@ void obfuscation(char *benchName){
 	}
 
 
-	//取得した経路を出力
+	//取得した経路を出力(ブランチなしのゲートのみ)
 /*	for (int i = 0; i < loops; i++)
 	{
 		for (int j = 0; j < length; j++)
@@ -209,6 +195,7 @@ void obfuscation(char *benchName){
 		}
 	}
 */
+	//取得した経路を出力(ブランチも含める)
 	for (int i = 0; i < loops; i++)
 	{
 		for (int j = 0; j < length*2; j++)
@@ -234,7 +221,7 @@ void obfuscation(char *benchName){
 		//data[id]->rtflg = 1;
 		data[id]->rtcnt += 1;		//経路に含まれた数をカウント(経路間のダブりをチェック)
 		if(M < length){
-			data[id]->nextgt = route[N][M+1];	//使わんかも
+			//data[id]->nextgt = route[N][M+1];	//使わんかも
 			M++;
 		}
 		if(M == length)
@@ -244,77 +231,10 @@ void obfuscation(char *benchName){
 		}
 	}
 
-/*	N = M = 0;
-	for(int k = 0;k < loops*length*2;k++){
-
-		routeNode2[k] = route2[N][M];
-		//printf("route2[%d][%d]:%lu\n",N,M,route[N][M]->line_id);
-		int id = routeNode2[k]->line_id;
-		data[id]->rtflg = 1;
-		if(route2[N][M]->line_id==end[N]->line_id)
-		{
-			//data[id]->next = route[N][M];
-			N++;
-			M = 0;
-			if(N == loops) break;
-		}
-		else M++;
-	}
-
-	int element = sizeof(routeNode2)/sizeof(routeNode2[0]);
-	printf("element:%d\n",element);*/
-
-	//makeNext(routeNode2,data,start,end,element);
-
-	//ソート前出力
-	//printf("---ソート前---\n");
-/*	for(int k = 0; k < loops*length; k++){
-		printf("前ID:%lu,LV.%lu\n",routeNode[k]->line_id,routeNode[k]->level);
-	}*/
-
-/*	for(int k = 0;k < element; k++){
-		printf("%d,2ID:%lu,LV.%lu,TYPE:%u,cnt:%lu\n",k,routeNode2[k]->line_id,routeNode2[k]->level,routeNode2[k]->type,routeNode2[k]->rtcnt);
-	}
-*/
-	//TopologicalSort(loops,length,element,routeNode,routeNode2,data);	//経路内のノードをレベル順にソート
-
-	//ソート後出力
-	//printf("--ソート後--\n");
-/*	for(int k = 0; k < loops*length; k++){
-		printf("後ID:%lu,LV.%lu\n",routeNode[k]->line_id,routeNode[k]->level);
-	}*/
-
-/*	for(int k = 0;k < element; k++){
-		printf("%d,ID:%lu,LV.%lu,TYPE:%u,cnt:%lu\n",k,routeNode2[k]->line_id,routeNode2[k]->level,routeNode2[k]->type,routeNode2[k]->rtcnt);
-	}*/
-
-
 	//追加するmuxの数と、それに伴って増加する信号線の数を数える
 	Ulong m_node 	 =  loops;			//MUXの追加によって増えるノードの数
 	Ulong m_num 	 =  0;				//1ループに追加するMUXの総数(折り返し地点以外)を数える
 	Ulong m_edge =  loops*6;		//MUXの追加によって増えるエッジの数
-	//int loop_m[loops];			//1ループに追加するMUXの総数(折り返し地点以外)
-
-/*	for (int i = 0; i < loops*length; i++)
-	{
-		//endflgの条件文は変更の必要あり
-		//route[][]でM=lengthのとき
-		if (routeNode[i]->endflg == 0)
-		{
-			if (routeNode[i]->n_out==1)					//経路のファンアウトが1のとき
-			{
-				m_node = m_node + 2;					//MUXを2つ増やすため
-				m_num = m_num + 2;						//MUXを2つ増やすため
-				m_edge = m_edge + 4;					//入力sが2つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)->本来は下の式が正しいはずだが,こうするとc1908.benchのcnfの変数の数が正しくなる
-				//m_edge = m_edge + 3;					//入力sが1つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)
-			}
-			else{										//経路のファンアウトが1以外(2で考えるがそれ以上の場合もある)のとき
-				m_node = m_node + 1;					//MUXが1つ
-				m_num = m_num + 1;						//MUXを1つ増やすため
-				m_edge = m_edge + 2;					//s,zが1つ
-			}
-		}
-	}*/
 
 	for (int i = 0; i < loops; i++)
 	{
@@ -325,14 +245,11 @@ void obfuscation(char *benchName){
 					m_node = m_node + 2;					//MUXを2つ増やすため
 					m_num = m_num + 2;						//MUXを2つ増やすため
 					m_edge = m_edge + 4;					//入力sが2つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)->下の式の方が正しい気がするけど、変数の数は
-					//m_edge = m_edge + 3;					//入力sが1つ,出力zが2つ増えるため(2つのMUXの入力s,は同じ)
-					//m_edge = m_edge + 1;					//キー入力sが1つ増えるため
 				}
 				else{										//経路のファンアウトが1以外(2で考えるがそれ以上の場合もある)のとき
 					m_node = m_node + 1;					//MUXが1つ
 					m_num = m_num + 1;						//MUXを1つ増やすため
 					m_edge = m_edge + 2;					//s,zが1つ
-					//m_edge = m_edge + 1;					//sが1つ
 				}
 			}
 	}
@@ -347,11 +264,11 @@ void obfuscation(char *benchName){
 	{
 		for (int j = 0; j < gate; j++)
 		{
-			//srand( (int)time(NULL) );	//乱数SEED設定
 			num = randId[j];								//numにランダムなゲートのIDを代入
 
-			if (1<data[num]->type && data[num]->type<11 && data[num]->rtflg!=1)	//c7552のとき、ランダムなゲートとして外部出力の信号線が選択されることがあるためそれを無理やつ回避するためのtype
+			if (data[num]->lv_po > 2 && data[num]->rtflg!=1)	//c7552のとき、ランダムなゲートとして外部出力の信号線が選択されることがあるためそれを無理やつ回避するためのtype
 			{												//randG[]作成の際にも回避しているが、なぜか含まれる場合がある
+															//出力数1と制限するのは、1と複数の場合で信号線のつなぎ変えが異なってややこしいため。
 				r[i] = data[num];							//ランダムなゲートr[i]はdata[num]とする
 
 			//ランダムゲートがループの視点、折り返し地点、でなく、フラグが1でない(ランダムゲートとして選択されていない)とき
@@ -403,13 +320,13 @@ void obfuscation(char *benchName){
 		for (int j = 0; j < length*2; j++)
 		{
 			LINE *rt = route2[i][j];
-			printf("ID:%lu,TYPE:%u\n",rt->line_id,rt->type);
+			//printf("ID:%lu,TYPE:%u\n",rt->line_id,rt->type);
 			if(2<rt->type&&rt->type<11){
 				//経路の折り返し地点の時
 				//フィードバックのためのMUXを追加
 				if(rt->line_id == end[N]->line_id)
 				{
-					printf("END\n");
+					//printf("END\n");
 					Ulong a = start[N]->in[0]->line_id+1;		//MUXの入力a
 					Ulong b = end[N]->line_id+1;				//MUXの入力bにするためにブランチを作る。そのブランチの入力aとなる。
 					aList[k] = a;
@@ -443,7 +360,7 @@ void obfuscation(char *benchName){
 					fprintf(out_fp,"%lu -%lu %lu 0\n", 	z,a,s);			//z + -a + s
 					fprintf(out_fp,"%lu -%lu -%lu 0\n", z,a,b);			//z + -a + -b
 					fprintf(fpKEYINFO,"%lu\n",s);
-					fprintf(fpMUXOUT, "%lu %lu\n",a,z);
+					//fprintf(fpMUXOUT, "%lu %lu\n",a,z);
 					printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
 					printf("-%lu %lu %lu 0\n",	 z,a,s);			//-z + a + s
 					printf("-%lu %lu -%lu 0\n", z,b,s);				//-z + b + -s
@@ -463,9 +380,10 @@ void obfuscation(char *benchName){
 				{
 					//ファンアウト数が1のときMUXを2つ追加
 					if(rt->n_out == 1){
-						printf("2\n");
+						//printf("2\n");
 						//MUX1
 						Ulong a = rt->line_id+1;
+						//Ulong b = r[g]->line_id+1;
 						Ulong b = 0;
 						for(int i=0;i<m_node;i++){
 							b = r[g]->line_id+1;
@@ -476,12 +394,6 @@ void obfuscation(char *benchName){
 								break;
 							}
 						}
-/*						while(r[g]->lv_pi > rt->lv_pi && r[g]->flag == 1)
-						{
-							Ulong b = r[g]->line_id+1;
-							g++;
-						}
-						r[g-1]->flag = 1;*/
 
 						aList[k] = a;
 						Ulong bz11 = z;
@@ -495,11 +407,11 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"-%lu %lu 0\n",bz12,a);			//-z + a
 						fprintf(out_fp,"%lu -%lu 0\n",bz12,a);			//z+ -a
 
-						printf("-%lu %lu 0\n",bz11,a);					//-z + a
+						/*printf("-%lu %lu 0\n",bz11,a);					//-z + a
 						printf("%lu -%lu 0\n",bz11,a);					//z+ -a
 						printf("-%lu %lu 0\n",bz12,a);					//-z + a
 						printf("%lu -%lu 0\n",bz12,a);					//z+ -a
-
+*/
 						//Branch
 						Ulong bz21 = z;									//ブランチの出力。二個目のMUXの入力bとなる
 						z+=2;
@@ -509,12 +421,12 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"%lu -%lu 0\n",bz21,b);			//z+ -a
 						fprintf(out_fp,"-%lu %lu 0\n",bz22,b);			//-z + a
 						fprintf(out_fp,"%lu -%lu 0\n",bz22,b);			//z+ -a
-						printf("-%lu %lu 0\n",bz21,b);					//-z + a
+						/*printf("-%lu %lu 0\n",bz21,b);					//-z + a
 						printf("%lu -%lu 0\n",bz21,b);					//z+ -a
 						printf("-%lu %lu 0\n",bz22,b);					//-z + a
 						printf("%lu -%lu 0\n",bz22,b);					//z+ -a
 
-						printf("\n");
+						printf("\n");*/
 
 						//MUX
 						zList[k] = z;									//MUXの出力
@@ -533,20 +445,20 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,b,s);			//z + -b + -s
 						fprintf(out_fp,"%lu -%lu %lu 0\n", 	z,a,s);			//z + -a + s
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,a,b);			//z + -a + -b
-						printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
+					/*	printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
 						printf("-%lu %lu %lu 0\n",	 z,a,s);			//-z + a + s
 						printf("-%lu %lu -%lu 0\n", z,b,s);				//-z + b + -s
 						printf("%lu -%lu -%lu 0\n", z,b,s);				//z + -b + -s
 						printf("%lu -%lu %lu 0\n",  z,a,s);				//z + -a + s
-						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b
+						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b*/
 
 						//fprintf(fpKEYINFO,"%lu\n",s);
-						fprintf(fpMUXOUT, "%lu %lu\n",a,z);
+						//fprintf(fpMUXOUT, "%lu %lu\n",a,z);
 						//s+=2;
 						z+=2;
-						//g++;
+						g++;
 
-						printf("\n");
+						//printf("\n");
 
 						//MUX2
 						//a = r[g]->line_id+1;
@@ -559,12 +471,7 @@ void obfuscation(char *benchName){
 								break;
 							}
 						}
-/*						while(r[g]->lv_pi > rt->lv_pi && r[g]->flag == 1)
-						{
-							a = r[g]->line_id+1;
-							g++;
-						}
-						r[g-1]->flag = 1;*/
+
 						b = bz12;
 						aList[k] = a;
 						zList[k] = z;
@@ -575,25 +482,26 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,b,s);			//z + -b + -s
 						fprintf(out_fp,"%lu -%lu %lu 0\n", 	z,a,s);			//z + -a + s
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,a,b);			//z + -a + -b
-						printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
+					/*	printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
 						printf("-%lu %lu %lu 0\n",	 z,a,s);			//-z + a + s
 						printf("-%lu %lu -%lu 0\n", z,b,s);				//-z + b + -s
 						printf("%lu -%lu -%lu 0\n", z,b,s);				//z + -b + -s
 						printf("%lu -%lu %lu 0\n",  z,a,s);				//z + -a + s
-						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b
+						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b*/
 
 						fprintf(fpKEYINFO,"%lu\n",s);
-						fprintf(fpMUXOUT, "%lu %lu\n",a,z);
+						//fprintf(fpMUXOUT, "%lu %lu\n",a,z);
 						max = z;
 						s+=2;
 						z+=2;
-						//g++;
+						g++;
 						k++;
 					}
 					//ファンアウト数が1以上の時MUXを1つ追加+1
 					else if(rt->n_out > 1){
-						printf("1\n");
+						//printf("1\n");
 						Ulong a = route2[i][j+1]->line_id+1;
+						//Ulong b = r[g]->line_id+1;
 						Ulong b = 0;
 						for(int i=0;i<m_node;i++){
 							b = r[g]->line_id+1;
@@ -604,12 +512,7 @@ void obfuscation(char *benchName){
 								break;
 							}
 						}
-/*						while(r[g]->lv_pi > rt->lv_pi && r[g]->flag == 1)
-						{
-							Ulong b = r[g]->line_id+1;
-							g++;
-						}
-						r[g-1]->flag = 1;*/
+
 						aList[k] = a;
 						Ulong bz1 = z;
 						z+=2;
@@ -620,10 +523,10 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"-%lu %lu 0\n",bz2,b);			//-z + a(入力aに当たる信号線がUlong b)
 						fprintf(out_fp,"%lu -%lu 0\n",bz2,b);			//z+ -a
 
-						printf("-%lu %lu 0\n",bz1,b);					//-z + a
+						/*printf("-%lu %lu 0\n",bz1,b);					//-z + a
 						printf("%lu -%lu 0\n",bz1,b);					//z+ -a
 						printf("-%lu %lu 0\n",bz2,b);					//-z + a
-						printf("%lu -%lu 0\n",bz2,b);					//z+ -a
+						printf("%lu -%lu 0\n",bz2,b);					//z+ -a*/
 
 						//MUX
 						z+=2;
@@ -640,17 +543,17 @@ void obfuscation(char *benchName){
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,b,s);				//z + -b + -s
 						fprintf(out_fp,"%lu -%lu %lu 0\n", 	z,a,s);				//z + -a + s
 						fprintf(out_fp,"%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b
-						printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
+					/*	printf("-%lu %lu %lu 0\n",  z,a,b);				//-z + a + b
 						printf("-%lu %lu %lu 0\n",	z,a,s);				//-z + a + s
 						printf("-%lu %lu -%lu 0\n", z,b,s);				//-z + b + -s
 						printf("%lu -%lu -%lu 0\n", z,b,s);				//z + -b + -s
 						printf("%lu -%lu %lu 0\n",  z,a,s);				//z + -a + s
-						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b
+						printf("%lu -%lu -%lu 0\n", z,a,b);				//z + -a + -b*/
 
 						fprintf(fpKEYINFO,"%lu\n",s);
-						fprintf(fpMUXOUT, "%lu %lu\n",a,z);
+						//fprintf(fpMUXOUT, "%lu %lu\n",a,z);
 						max = z;
-						//g++;
+						g++;
 						s+=2;
 						z+=2;
 						k++;
@@ -660,14 +563,14 @@ void obfuscation(char *benchName){
 			}
 		}
 	}
-	printf("count:%d\n",k);
+/*	printf("count:%d\n",k);
 	for (int cnt = 0; cnt < k; cnt++)
 	{
-		fprintf(fpMUXOUT, "%lu %lu\n",aList[cnt],zList[cnt]);
+		//fprintf(fpMUXOUT, "%lu %lu\n",aList[cnt],zList[cnt]);
 		printf("%d\n", cnt);
 		printf("a:%lu\n", aList[cnt]);
 		printf("z:%lu\n", zList[cnt]);
-	}
+	}*/
 	//k = 0;
 	//printf("N:%d\n", N);
 	//通常のcnf変換
@@ -1481,16 +1384,8 @@ void obfuscation(char *benchName){
 
 	topgun_close(fpCNF, funcName);
 
-    //fprintf(fpCNFEND,"%lu\n",variables);
     fprintf(fpCNFEND,"%lu\n",max);
     topgun_close(fpCNFEND, funcName);
-
-    /* キーの信号線をファイルへ出力する*/
- /*   for (int i = 0; i < k+1; i++)
-    {
-    	fprintf(fpKEYINFO,"%lu\n",key[i]);
-    	printf("%lu\n",key[i]);
-    }*/
 
     topgun_close(fpKEYINFO, funcName);
 
